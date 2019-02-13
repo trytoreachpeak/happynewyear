@@ -17,16 +17,16 @@ import java.util.List;
 
 public class ThirdFragment extends Fragment {
 
-    private List<TeacherMessageItem> messageItemList = new ArrayList<>();
+    private List<TeacherMessageItem> studyItemList = new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.third_fragment,container,false);
         RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.teacher_study_recycler);
-        initTeacherMessageItem();
+        initTeacherStudyItem();
         LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
-        TeacherMessageAdapter adapter = new TeacherMessageAdapter(messageItemList);
+        TeacherStudyAdapter adapter = new TeacherStudyAdapter(studyItemList);
         recyclerView.setAdapter(adapter);
 
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar_third_fragment);
@@ -36,10 +36,10 @@ public class ThirdFragment extends Fragment {
         return view;
     }
 
-    private void initTeacherMessageItem(){
+    private void initTeacherStudyItem(){
         TeacherMessageItem testExample=new TeacherMessageItem("课程名称",
                 R.drawable.shenqing_img,"某某班","某某班");
-        messageItemList.add(testExample);
+        studyItemList.add(testExample);
     }
 
 }

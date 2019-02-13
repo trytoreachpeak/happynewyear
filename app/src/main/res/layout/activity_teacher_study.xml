@@ -4,19 +4,21 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_teacher_message"
+        android:id="@+id/toolbar_first_fragment"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:navigationIcon="@mipmap/ic_back">
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <!--app:navigationIcon="@mipmap/ic_back"-->
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="22sp"
-            android:text="设置"/>
+            android:layout_gravity="center"
+            android:text="学习"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#fefefe"/>
     </android.support.v7.widget.Toolbar>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -24,8 +26,9 @@
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#FFFFFF">
+            android:layout_height="40dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="-2dp">
             <TextView
                 android:id="@+id/materialsLayout"
                 android:layout_width="match_parent"
@@ -35,7 +38,8 @@
                 android:text="资料"
                 android:textColor="#000000"
                 android:textSize="20sp"
-                android:background="@drawable/selector"/>
+                android:background="@drawable/selector"
+                />
             <TextView
                 android:id="@+id/homeworkLayout"
                 android:layout_width="match_parent"
@@ -45,11 +49,12 @@
                 android:text="作业"
                 android:textColor="#000000"
                 android:textSize="20sp"
-                android:background="@drawable/selector"/>
+                android:background="@drawable/selector"
+                />
         </LinearLayout>
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="10dp"
+            android:layout_height="7dp"
             android:layout_below="@id/linearLayout"
             android:id="@+id/scrollbar"
             android:scaleType="matrix"
