@@ -32,12 +32,14 @@
 
         <ImageView
             android:id="@+id/choose_image"
-            android:layout_width="wrap_content"
-            android:layout_height="37dp"
+            android:layout_width="45dp"
+            android:layout_height="20dp"
             android:layout_alignBottom="@id/login_choice"
             android:layout_alignParentTop="true"
+            android:layout_marginLeft="23dp"
             android:layout_marginTop="3dp"
             android:layout_marginBottom="0dp"
+            android:layout_marginRight="4dp"
             android:src="@drawable/choose_image" />
 
         <Spinner

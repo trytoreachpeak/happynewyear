@@ -12,9 +12,20 @@
         <activity android:name=".ActivityLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".HomepageOfTeacher"></activity>
+        <activity android:name=".teacherMessage" />
+        <activity android:name=".TeacherSettings" />
+        <activity android:name=".TeacherSettingsModifypassword" />
+        <activity android:name=".TeacherSettingsIdentityverifi" />
+        <activity android:name=".TeacherFeedback"></activity>
+        <activity android:name=".TeacherSettingsBindphone" />
+        <activity android:name=".TeacherPersoninfo"></activity>
+        <activity android:name=".TeacherSchool"></activity>
+        <activity android:name=".TeacherStudy">
+
         </activity>
     </application>
 
