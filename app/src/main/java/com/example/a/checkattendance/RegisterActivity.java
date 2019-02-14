@@ -27,7 +27,7 @@ public class RegisterActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(RegisterActivity.this,"注册",Toast.LENGTH_SHORT).show();
-                Intent intent= new Intent(RegisterActivity.this,StudentHomepageActivity.class);
+                Intent intent= new Intent(RegisterActivity.this,ActivityLogin.class);
                 startActivity(intent);
                 finish();
             }
