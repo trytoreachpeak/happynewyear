@@ -9,24 +9,48 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityLogin">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".HomepageOfTeacher"></activity>
+        <activity android:name=".ActivityLogin" />
+        <activity android:name=".HomepageOfTeacher" />
         <activity android:name=".teacherMessage" />
         <activity android:name=".TeacherSettings" />
         <activity android:name=".TeacherSettingsModifypassword" />
         <activity android:name=".TeacherSettingsIdentityverifi" />
-        <activity android:name=".TeacherFeedback"></activity>
+        <activity android:name=".TeacherFeedback" />
         <activity android:name=".TeacherSettingsBindphone" />
-        <activity android:name=".TeacherPersoninfo"></activity>
-        <activity android:name=".TeacherSchool"></activity>
-        <activity android:name=".TeacherStudy">
+        <activity android:name=".TeacherPersoninfo" />
+        <activity android:name=".TeacherSchool" />
+        <activity android:name=".TeacherStudy" />
+        <activity android:name=".RegisterActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".StudentHomepageActivity" />
+        <activity android:name=".StudentQingjiaActivity" />
+        <activity android:name=".StudentChatActivity" />
+        <activity android:name=".StudentMobanActivity" />
+        <activity android:name=".StudentSetActivity" />
+        <activity android:name=".StudentInformationActivity" />
+        <activity android:name=".StudentKechengActivity" />
+        <activity android:name=".StudentChatingActivity" />
+        <activity android:name=".StudentpasswordActivity" />
+        <activity android:name=".StudentShenfenActivity" />
+        <activity android:name=".StudentPhoneActivity"></activity>
+        <provider
+            android:authorities="com.example.gdzc.cameralbumtest.fileprovider"
+        android:name="android.support.v4.content.FileProvider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+        <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_paths">
+
+    </meta-data>
+</provider>
+
+
     </application>
 
 </manifest>

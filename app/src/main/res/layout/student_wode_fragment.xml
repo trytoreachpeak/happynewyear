@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/wode_bg"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="533">
+        <ImageView
+            android:id="@+id/information"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/touxiangframe_wo"/>
+        <ImageView
+            android:id="@+id/set"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/set_wode"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1387">
+
+        <Button
+            android:id="@+id/xuexiao"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/xuexiao_wode"
+            android:layout_weight="134"/>
+        <Button
+            android:id="@+id/kecheng"
+            android:background="@drawable/kecheng_wode"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="134"/>
+        <Button
+            android:id="@+id/banji"
+            android:background="@drawable/banji_wode"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="134"/>
+
+        <Button
+            android:id="@+id/guanyu"
+            android:background="@drawable/guanyu_wode"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="134"/>
+        <Button
+            android:id="@+id/fankui"
+            android:background="@drawable/fankui_wode"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="134"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="583">
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

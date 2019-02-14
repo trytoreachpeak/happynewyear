@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1920">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="180"
+        android:layout_gravity="center"
+        android:background="#66cc99">
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:text="设置"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="#f4f4f4"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+        </TextView>
+        <Button
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="match_parent"
+            android:background="@drawable/back_qj"
+            />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="390">
+        <ImageView
+            android:id="@+id/mima"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:src="@drawable/mima_set"
+            android:layout_weight="130"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/shenfen"
+            android:layout_height="0dp"
+            android:src="@drawable/shengfen_set"
+            android:layout_weight="130"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/phone"
+            android:src="@drawable/phone_set"
+            android:layout_weight="130"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1127">
+        <Button
+            android:id="@+id/finish"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/finish_set"
+            android:layout_height="50dp" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1920"
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="180"
+        android:layout_gravity="center"
+        android:background="#66cc99">
+
+        <TextView
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:text="绑定手机"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="#f4f4f4"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+        <Button
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="match_parent"
+            android:background="@drawable/back_qj"
+            />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50">
+    </FrameLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/tel_phone"
+        android:layout_weight="130"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="1080"
+        android:background="@drawable/frame1_qj"
+        android:layout_weight="130">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="150"
+            android:layout_height="match_parent" />
+        <EditText
+            android:layout_width="0dp"
+            android:background="@null"
+            android:layout_weight="800"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/syan_phone"
+        android:layout_weight="130"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="1080"
+        android:background="@drawable/frame1_qj"
+        android:layout_weight="130">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="150"
+            android:layout_height="match_parent" />
+        <EditText
+            android:layout_width="0dp"
+            android:background="@null"
+            android:layout_weight="500"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/yan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:text="获取验证码"
+            android:textSize="20dp"
+            android:textColor="#66cc99"
+            android:gravity="center"
+            android:layout_weight="430"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="950">
+        <Button
+            android:id="@+id/confirm"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/confirm_shenfen"
+            android:layout_height="50dp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

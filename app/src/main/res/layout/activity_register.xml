@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/register_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="247.5">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="00dp"
+            android:layout_weight="2"
+            android:layout_gravity="center_vertical"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/zhu_reg"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_weight="814">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="9"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="164.952dp"
+                android:layout_height="0dp"
+                android:layout_weight="135"
+                android:src="@drawable/phonet_reg">
+            </ImageView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/phones_reg"
+                android:orientation="horizontal"
+                android:layout_weight="123">
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="85">
+                </ImageView>
+                <EditText
+                    android:id="@+id/edittext_1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="450"
+                    android:background="@null"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="50">
+                </ImageView>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="164.952dp"
+                android:layout_height="0dp"
+                android:layout_weight="135"
+                android:src="@drawable/yant_reg">
+            </ImageView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="123"
+                android:background="@drawable/yans_reg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="85">
+                </ImageView>
+                <EditText
+                    android:id="@+id/edittext_2"
+                    android:layout_weight="200"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@null" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="50">
+                </ImageView>
+                <Button
+                    android:id="@+id/button_2"
+                    android:layout_width="0dp"
+                    android:layout_height="17dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="200"
+                    android:background="@drawable/yan" />
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="50">
+                </ImageView>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="164.952dp"
+                android:layout_height="0dp"
+                android:layout_weight="135"
+                android:src="@drawable/mimat_reg">
+            </ImageView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/mimas_reg"
+                android:orientation="horizontal"
+                android:layout_weight="123">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="85">
+                </ImageView>
+                <EditText
+                    android:id="@+id/edittext_3"
+                    android:layout_width="0dp"
+                    android:layout_weight="450"
+                    android:layout_height="match_parent"
+                    android:background="@null"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="50">
+                </ImageView>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="164.952dp"
+                android:layout_height="0dp"
+                android:layout_weight="135"
+                android:src="@drawable/chongt_reg">
+            </ImageView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/chongs_reg"
+                android:orientation="horizontal"
+                android:layout_weight="123">
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="85">
+                </ImageView>
+                <EditText
+                    android:id="@+id/edittext_4"
+                    android:layout_width="0dp"
+                    android:layout_weight="450"
+                    android:layout_height="match_parent"
+                    android:background="@null"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="50">
+                </ImageView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"></ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="858.5">
+        <Button
+            android:id="@+id/button_1"
+            android:layout_marginTop="50dp"
+            android:layout_height="48.5dp"
+            android:layout_width="280dp"
+            android:layout_gravity="center"
+            android:background="@drawable/register" />
+    </LinearLayout>
+
+</LinearLayout>
