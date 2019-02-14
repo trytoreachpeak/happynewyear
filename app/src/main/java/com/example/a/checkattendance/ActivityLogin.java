@@ -14,6 +14,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.a.checkattendance.student.StudentHomepageActivity;
 import com.example.a.checkattendance.teacher.HomepageOfTeacher;
 
 public class ActivityLogin extends AppCompatActivity implements View.OnClickListener{
@@ -29,6 +30,7 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
     private CheckBox rememberPass;
     private SharedPreferences.Editor editor;
     private SharedPreferences pref;
+    private Button loginRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
         accountText = (EditText)findViewById(R.id.login_account);
         passwordText = (EditText)findViewById(R.id.login_password);
         rememberPass = (CheckBox)findViewById(R.id.remember_pass);
+
 
 
 
@@ -93,29 +96,49 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
 
         loginButton = (Button)findViewById(R.id.login_button);
         loginButton.setOnClickListener(this);
+        loginRegister = (Button)findViewById(R.id.login_register);
+        loginRegister.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-
-        loginAccount=accountText.getText().toString();
-        loginPassword=passwordText.getText().toString();
-        if(loginChoice.equals("教师端")&&loginAccount.equals("admin")&&loginPassword.equals("123456")){
-            editor = pref.edit();
-            if(rememberPass.isChecked()) {
-                editor.putString("choice", loginChoice);
-                editor.putString("account", loginAccount);
-                editor.putString("password", loginPassword);
-                editor.putBoolean("remember",true);
-                editor.apply();
-            }else{
-                editor.clear();
-            }
-            editor.apply();
-            //sharepreference保存密码
-            Intent intent = new Intent(ActivityLogin.this,HomepageOfTeacher.class);
-            startActivity(intent);
-            finish();
+        Intent intent;
+        switch(v.getId()) {
+            case R.id.login_button:
+                loginAccount = accountText.getText().toString();
+                loginPassword = passwordText.getText().toString();
+                if ((loginChoice.equals("教师端") && loginAccount.equals("admin") && loginPassword.equals("123456"))||
+                        (loginChoice.equals("学生端") && loginAccount.equals("admin") && loginPassword.equals("123456")) ) {
+                    editor = pref.edit();
+                    if (rememberPass.isChecked()) {
+                        editor.putString("choice", loginChoice);
+                        editor.putString("account", loginAccount);
+                        editor.putString("password", loginPassword);
+                        editor.putBoolean("remember", true);
+                        editor.apply();
+                    } else {
+                        editor.clear();
+                    }
+                    editor.apply();
+                    //sharepreference保存密码
+                    switch(loginChoice) {
+                        case "学生端":
+                            intent = new Intent(ActivityLogin.this, StudentHomepageActivity.class);
+                            startActivity(intent);
+                            finish();
+                            break;
+                        case "教师端":
+                            intent = new Intent(ActivityLogin.this, HomepageOfTeacher.class);
+                            startActivity(intent);
+                            finish();
+                            break;
+                    }
+                }
+                break;
+            case R.id.login_register:
+                intent = new Intent(ActivityLogin.this,RegisterActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 
