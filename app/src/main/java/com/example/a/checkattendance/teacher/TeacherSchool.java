@@ -1,13 +1,15 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.teacher;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class TeacherPersoninfo extends AppCompatActivity {
+import com.example.a.checkattendance.R;
+
+public class TeacherSchool extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_personinfo);
+        setContentView(R.layout.activity_teacher_school);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.teacher;
 
 public class TeacherMessageItem {
     private String messageCategory;

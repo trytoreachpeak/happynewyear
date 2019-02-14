@@ -1,10 +1,12 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.teacher;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
+
+import com.example.a.checkattendance.R;
 
 public class TeacherSettings extends AppCompatActivity implements View.OnClickListener{
     CardView modifyPassword;

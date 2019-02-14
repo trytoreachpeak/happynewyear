@@ -1,4 +1,4 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.teacher;
 
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -13,6 +13,8 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.a.checkattendance.R;
 
 import java.util.ArrayList;
 

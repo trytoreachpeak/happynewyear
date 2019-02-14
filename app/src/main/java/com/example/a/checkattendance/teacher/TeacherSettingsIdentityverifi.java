@@ -1,7 +1,9 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.teacher;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.a.checkattendance.R;
 
 public class TeacherSettingsIdentityverifi extends AppCompatActivity {
 

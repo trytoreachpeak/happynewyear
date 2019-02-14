@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
     <!---<fragment
         android:id="@+id/abc"
-        android:name="com.example.a.checkattendance.FirstFragment"
+        android:name="com.example.a.checkattendance.teacher.FirstFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>-->

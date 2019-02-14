@@ -1,16 +1,17 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.teacher;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.a.checkattendance.R;
 
 public class HomepageOfTeacher extends AppCompatActivity implements View.OnClickListener {
 

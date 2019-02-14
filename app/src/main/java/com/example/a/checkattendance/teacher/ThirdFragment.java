@@ -1,4 +1,4 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.teacher;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,6 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.a.checkattendance.R;
+import com.example.a.checkattendance.teacher.TeacherMessageItem;
+import com.example.a.checkattendance.teacher.TeacherStudyAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

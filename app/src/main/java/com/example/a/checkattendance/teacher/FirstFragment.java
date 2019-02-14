@@ -1,4 +1,4 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.teacher;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,10 +8,11 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+
+import com.example.a.checkattendance.R;
 
 public class FirstFragment extends Fragment implements View.OnClickListener{
     LinearLayout teacherMessage;
@@ -33,7 +34,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
         Intent intent;
         switch(v.getId()){
             case R.id.teacher_message:
-                intent = new Intent(getActivity(),teacherMessage.class);
+                intent = new Intent(getActivity(), com.example.a.checkattendance.teacher.teacherMessage.class);
                 startActivity(intent);
                 break;
         }

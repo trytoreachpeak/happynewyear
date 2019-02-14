@@ -13,7 +13,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
+
+import com.example.a.checkattendance.teacher.HomepageOfTeacher;
 
 public class ActivityLogin extends AppCompatActivity implements View.OnClickListener{
     String[] str = {"学生端", "教师端", "辅导员端", "管理端"};
