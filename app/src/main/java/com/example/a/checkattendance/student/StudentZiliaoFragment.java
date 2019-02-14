@@ -1,4 +1,4 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.student;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.example.a.checkattendance.R;
+import com.example.a.checkattendance.student.StudentMobanActivity;
+import com.example.a.checkattendance.student.Ziliao;
+import com.example.a.checkattendance.student.ZiliaoAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.student;
 
 public class Class {
     private String name;

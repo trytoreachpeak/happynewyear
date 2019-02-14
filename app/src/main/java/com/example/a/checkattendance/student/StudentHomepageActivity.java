@@ -1,12 +1,14 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.student;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import com.example.a.checkattendance.R;
+import com.example.a.checkattendance.student.BaseActivity;
 
 public class StudentHomepageActivity extends BaseActivity implements View.OnClickListener{
 

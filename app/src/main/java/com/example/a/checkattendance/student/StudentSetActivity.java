@@ -1,4 +1,4 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.student;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.a.checkattendance.teacher.ActivityCollector;
+import com.example.a.checkattendance.R;
 
 public class StudentSetActivity extends BaseActivity implements View.OnClickListener{
 

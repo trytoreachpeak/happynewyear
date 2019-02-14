@@ -1,4 +1,4 @@
-package com.example.a.checkattendance.teacher;
+package com.example.a.checkattendance.student;
 
 import android.app.Activity;
 

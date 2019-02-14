@@ -1,12 +1,13 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.student;
 
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.a.checkattendance.R;
 
 import org.feezu.liuli.timeselector.TimeSelector;
 

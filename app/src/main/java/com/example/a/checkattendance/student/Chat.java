@@ -1,10 +1,10 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.student;
 
-public class Zuoye {
+public class Chat {
     private String name;
     private  int imageId;
 
-    public Zuoye(String name, int imageId){
+    public Chat(String name, int imageId){
         this.name=name;
         this.imageId=imageId;
     }

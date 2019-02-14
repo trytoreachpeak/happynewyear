@@ -1,4 +1,5 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.student;
+
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,40 +9,43 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
+import com.example.a.checkattendance.R;
+
 import java.util.List;
 
-public class ClassAdapter extends ArrayAdapter<Class> {
+public class ZuoyeAdapter extends ArrayAdapter<Zuoye> {
     private int resourceId;
 
-    public ClassAdapter(Context context,int textViewResourceId, List <Class> objects){
+    public ZuoyeAdapter(Context context,int textViewResourceId, List <Zuoye> objects){
         super(context,textViewResourceId,objects);
         resourceId=textViewResourceId;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        Class class1=getItem(position);
+        Zuoye zuoye=getItem(position);
         View view;
         ViewHolder viewHolder;
         if (convertView==null) {
             view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
             viewHolder=new ViewHolder();
-            viewHolder.classImage=(ImageView) view.findViewById(R.id.class_image);
-            viewHolder.className= (TextView) view.findViewById(R.id.class_name);
+            viewHolder.ZuoyeImage=(ImageView) view.findViewById(R.id.zuoye_image);
+            viewHolder.ZuoyeName= (TextView) view.findViewById(R.id.zuoye_name);
             view.setTag(viewHolder);
         }
         else{
             view=convertView;
             viewHolder= (ViewHolder) view.getTag();
         }
-        viewHolder.classImage.setImageResource(class1.getImageId());
-        viewHolder.className.setText(class1.getName());
+        viewHolder.ZuoyeImage.setImageResource(zuoye.getImageId());
+        viewHolder.ZuoyeName.setText(zuoye.getName());
         return view;
     }
     class ViewHolder
     {
-        ImageView classImage;
-        TextView className;
+        ImageView ZuoyeImage;
+        TextView ZuoyeName;
     }
 
 }

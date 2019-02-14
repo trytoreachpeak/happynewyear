@@ -1,12 +1,13 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.student;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-    public class StudentpasswordActivity extends BaseActivity implements View.OnClickListener{
+import com.example.a.checkattendance.R;
+
+public class StudentpasswordActivity extends BaseActivity implements View.OnClickListener{
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {

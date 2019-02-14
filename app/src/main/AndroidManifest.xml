@@ -27,17 +27,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".StudentHomepageActivity" />
-        <activity android:name=".StudentQingjiaActivity" />
-        <activity android:name=".StudentChatActivity" />
-        <activity android:name=".StudentMobanActivity" />
-        <activity android:name=".StudentSetActivity" />
-        <activity android:name=".StudentInformationActivity" />
-        <activity android:name=".StudentKechengActivity" />
-        <activity android:name=".StudentChatingActivity" />
-        <activity android:name=".StudentpasswordActivity" />
-        <activity android:name=".StudentShenfenActivity" />
-        <activity android:name=".StudentPhoneActivity"></activity>
+        <activity android:name=".student.StudentHomepageActivity" />
+        <activity android:name=".student.StudentQingjiaActivity" />
+        <activity android:name=".student.StudentChatActivity" />
+        <activity android:name=".student.StudentMobanActivity" />
+        <activity android:name=".student.StudentSetActivity" />
+        <activity android:name=".student.StudentInformationActivity" />
+        <activity android:name=".student.StudentKechengActivity" />
+        <activity android:name=".student.StudentChatingActivity" />
+        <activity android:name=".student.StudentpasswordActivity" />
+        <activity android:name=".student.StudentShenfenActivity" />
+        <activity android:name=".student.StudentPhoneActivity"></activity>
         <provider
             android:authorities="com.example.gdzc.cameralbumtest.fileprovider"
         android:name="android.support.v4.content.FileProvider"

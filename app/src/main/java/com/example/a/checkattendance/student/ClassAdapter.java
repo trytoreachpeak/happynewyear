@@ -1,4 +1,4 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.student;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,42 +8,43 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
+import com.example.a.checkattendance.R;
+import com.example.a.checkattendance.student.Class;
 
 import java.util.List;
 
-public class ChatAdapter extends ArrayAdapter<Chat> {
+public class ClassAdapter extends ArrayAdapter<Class> {
     private int resourceId;
 
-    public ChatAdapter(Context context,int textViewResourceId, List <Chat> objects){
+    public ClassAdapter(Context context,int textViewResourceId, List <Class> objects){
         super(context,textViewResourceId,objects);
         resourceId=textViewResourceId;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        Chat chat=getItem(position);
+        Class class1=getItem(position);
         View view;
         ViewHolder viewHolder;
         if (convertView==null) {
             view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
             viewHolder=new ViewHolder();
-            viewHolder.ChatImage=(ImageView) view.findViewById(R.id.chat_image);
-            viewHolder.ChatName= (TextView) view.findViewById(R.id.chat_name);
+            viewHolder.classImage=(ImageView) view.findViewById(R.id.class_image);
+            viewHolder.className= (TextView) view.findViewById(R.id.class_name);
             view.setTag(viewHolder);
         }
         else{
             view=convertView;
             viewHolder= (ViewHolder) view.getTag();
         }
-        viewHolder.ChatImage.setImageResource(chat.getImageId());
-        viewHolder.ChatName.setText(chat.getName());
+        viewHolder.classImage.setImageResource(class1.getImageId());
+        viewHolder.className.setText(class1.getName());
         return view;
     }
     class ViewHolder
     {
-        ImageView ChatImage;
-        TextView ChatName;
+        ImageView classImage;
+        TextView className;
     }
 
 }

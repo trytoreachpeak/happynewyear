@@ -1,4 +1,4 @@
-package com.example.a.checkattendance;
+package com.example.a.checkattendance.student;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.a.checkattendance.R;
 
-    public class StudentWodeFragment extends Fragment implements View.OnClickListener{
+
+public class StudentWodeFragment extends Fragment implements View.OnClickListener{
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.student_wode_fragment, container, false);
