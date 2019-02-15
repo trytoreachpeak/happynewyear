@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityLogin" >
+        <activity android:name=".ActivityLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,9 +26,7 @@
         <activity android:name=".teacher.TeacherPersoninfo" />
         <activity android:name=".teacher.TeacherSchool" />
         <activity android:name=".teacher.TeacherStudy" />
-        <activity android:name=".RegisterActivity">
-
-        </activity>
+        <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".student.StudentHomepageActivity" />
         <activity android:name=".student.StudentQingjiaActivity" />
         <activity android:name=".student.StudentChatActivity" />
@@ -39,20 +37,21 @@
         <activity android:name=".student.StudentChatingActivity" />
         <activity android:name=".student.StudentpasswordActivity" />
         <activity android:name=".student.StudentShenfenActivity" />
-        <activity android:name=".student.StudentPhoneActivity"></activity>
+        <activity android:name=".student.StudentPhoneActivity" />
+
         <provider
+            android:name="android.support.v4.content.FileProvider"
             android:authorities="com.example.gdzc.cameralbumtest.fileprovider"
-        android:name="android.support.v4.content.FileProvider"
-        android:exported="false"
-        android:grantUriPermissions="true">
-        <meta-data
-        android:name="android.support.FILE_PROVIDER_PATHS"
-        android:resource="@xml/file_paths">
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
 
-    </meta-data>
-</provider>
+        <activity android:name=".counsellor.CounsellorHomepage">
 
-
+        </activity>
     </application>
 
 </manifest>

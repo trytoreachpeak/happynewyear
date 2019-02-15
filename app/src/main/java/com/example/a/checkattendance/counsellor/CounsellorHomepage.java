@@ -1,4 +1,4 @@
-package com.example.a.checkattendance.teacher;
+package com.example.a.checkattendance.counsellor;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,21 +12,19 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.a.checkattendance.R;
+import com.example.a.checkattendance.student.BaseActivity;
+import com.example.a.checkattendance.teacher.FirstFragment;
+import com.example.a.checkattendance.teacher.ForthFragment;
+import com.example.a.checkattendance.teacher.ThirdFragment;
 
-public class HomepageOfTeacher extends AppCompatActivity implements View.OnClickListener {
+public class CounsellorHomepage extends BaseActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homepage_of_teacher);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_homepage);
-        //setSupportActionBar(toolbar);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //getSupportActionBar().setHomeButtonEnabled(true);
-        //toolbar.setTitle("");
-        //toolbar.setVisibility(View.GONE);
+        setContentView(R.layout.activity_counsellor_homepage);
 
-       replaceFragment(new FirstFragment());
+        replaceFragment(new CounsellorFirstFragment());
 
         ImageView firstguideImage = (ImageView) findViewById(R.id.firstguide_img);
         TextView firstguideTxt = (TextView) findViewById(R.id.firstguide_txt);
@@ -36,11 +34,9 @@ public class HomepageOfTeacher extends AppCompatActivity implements View.OnClick
         LinearLayout firstguide = (LinearLayout)findViewById(R.id.firstguide);
         LinearLayout secondguide = (LinearLayout)findViewById(R.id.secondguide);
         LinearLayout thirdguide = (LinearLayout)findViewById(R.id.thirdguide);
-        LinearLayout forthguide = (LinearLayout)findViewById(R.id.forthguide);
         firstguide.setOnClickListener(this);
         secondguide.setOnClickListener(this);
         thirdguide.setOnClickListener(this);
-        forthguide.setOnClickListener(this);
 
     }
     @Override
@@ -59,12 +55,12 @@ public class HomepageOfTeacher extends AppCompatActivity implements View.OnClick
         ImageView firstguideImage = (ImageView) findViewById(R.id.firstguide_img);
         ImageView secondguideImage = (ImageView) findViewById(R.id.secondguide_img);
         ImageView thirdguideImage = (ImageView) findViewById(R.id.thirdguide_img);
-        ImageView forthguideImage = (ImageView) findViewById(R.id.forthguide_img);
+        //ImageView forthguideImage = (ImageView) findViewById(R.id.forthguide_img);
 
         TextView firstguideTxt = (TextView) findViewById(R.id.firstguide_txt);
         TextView secondguideTxt = (TextView) findViewById(R.id.secondguide_txt);
-        TextView thirdTxt = (TextView) findViewById(R.id.thirdguide_txt);
-        TextView forthTxt = (TextView) findViewById(R.id.forthguide_txt);
+        TextView thirdguideTxt = (TextView) findViewById(R.id.thirdguide_txt);
+        //TextView forthTxt = (TextView) findViewById(R.id.forthguide_txt);
         //Toolbar toolbar=view.findViewById(R.id.toolbar_homepage);
         switch (view.getId()){
             case R.id.firstguide://点击“联系人”触发的监听事件
@@ -72,65 +68,47 @@ public class HomepageOfTeacher extends AppCompatActivity implements View.OnClick
                 firstguideImage.setImageResource(R.mipmap.firstguide_light);
                 secondguideImage.setImageResource(R.mipmap.chat_icon_dark);
                 thirdguideImage.setImageResource(R.mipmap.thirdguide_dark);
-                forthguideImage.setImageResource(R.mipmap.forthguide_dark);
+                //forthguideImage.setImageResource(R.mipmap.forthguide_dark);
                 firstguideTxt.setTextColor(getResources().getColor(R.color.colorPrimary));
                 secondguideTxt.setTextColor(getResources().getColor(R.color.huiSe));
-                thirdTxt.setTextColor(getResources().getColor(R.color.huiSe));
-                forthTxt.setTextColor(getResources().getColor(R.color.huiSe));
+                thirdguideTxt.setTextColor(getResources().getColor(R.color.huiSe));
+                //forthTxt.setTextColor(getResources().getColor(R.color.huiSe));
                 //----------------------------------------------------------------------------------
                 //---------------------------添加联系人Fragment-------------------------------------
-                replaceFragment(new FirstFragment());
+                replaceFragment(new CounsellorFirstFragment());
                 //getSupportActionBar().show();
                 //----------------------------------------------------------------------------------
                 break;
-            case R.id.secondguide://点击“联系人”触发的监听事件
-                //---------------------------联系人处高亮，其他灰色---------------------------------
+            case R.id.secondguide://点击“知识”触发的监听事件
+                //---------------------------知识处高亮，其他灰色-----------------------------------
                 firstguideImage.setImageResource(R.mipmap.firstguide_dark);
                 secondguideImage.setImageResource(R.mipmap.chat_icon_light);
                 thirdguideImage.setImageResource(R.mipmap.thirdguide_dark);
-                forthguideImage.setImageResource(R.mipmap.forthguide_dark);
+                //forthguideImage.setImageResource(R.mipmap.forthguide_dark);
                 firstguideTxt.setTextColor(getResources().getColor(R.color.huiSe));
                 secondguideTxt.setTextColor(getResources().getColor(R.color.colorPrimary));
-                thirdTxt.setTextColor(getResources().getColor(R.color.huiSe));
-                forthTxt.setTextColor(getResources().getColor(R.color.huiSe));
-                //----------------------------------------------------------------------------------
-                //---------------------------添加联系人Fragment-------------------------------------
-                replaceFragment(new SecondFragment());
-                //getSupportActionBar().show();
-                //----------------------------------------------------------------------------------
-                break;
-            case R.id.thirdguide://点击“知识”触发的监听事件
-                //---------------------------知识处高亮，其他灰色-----------------------------------
-                firstguideImage.setImageResource(R.mipmap.firstguide_dark);
-                secondguideImage.setImageResource(R.mipmap.chat_icon_dark);
-                thirdguideImage.setImageResource(R.mipmap.thirdguide_light);
-                forthguideImage.setImageResource(R.mipmap.forthguide_dark);
-                firstguideTxt.setTextColor(getResources().getColor(R.color.huiSe));
-                secondguideTxt.setTextColor(getResources().getColor(R.color.huiSe));
-                thirdTxt.setTextColor(getResources().getColor(R.color.colorPrimary));
-                forthTxt.setTextColor(getResources().getColor(R.color.huiSe));
+                thirdguideTxt.setTextColor(getResources().getColor(R.color.huiSe));
+                //forthTxt.setTextColor(getResources().getColor(R.color.huiSe));
                 //----------------------------------------------------------------------------------
                 //---------------------------添加知识Fragment---------------------------------------
                 //getSupportActionBar().show();
-                replaceFragment(new ThirdFragment());
+                replaceFragment(new CounsellorSecondFragment());
 
                 //----------------------------------------------------------------------------------
                 break;
-            case R.id.forthguide://点击“我的”触发的监听事件
+            case R.id.thirdguide://点击“我的”触发的监听事件
                 //---------------------------我的处高亮，其他灰色-----------------------------------
                 firstguideImage.setImageResource(R.mipmap.firstguide_dark);
                 secondguideImage.setImageResource(R.mipmap.chat_icon_dark);
-                thirdguideImage.setImageResource(R.mipmap.thirdguide_dark);
-                forthguideImage.setImageResource(R.mipmap.forthguide_light);
+                thirdguideImage.setImageResource(R.mipmap.thirdguide_light);
+                //forthguideImage.setImageResource(R.mipmap.forthguide_light);
                 firstguideTxt.setTextColor(getResources().getColor(R.color.huiSe));
                 secondguideTxt.setTextColor(getResources().getColor(R.color.huiSe));
-                thirdTxt.setTextColor(getResources().getColor(R.color.huiSe));
-                forthTxt.setTextColor(getResources().getColor(R.color.colorPrimary));
+                thirdguideTxt.setTextColor(getResources().getColor(R.color.colorPrimary));
+                //forthTxt.setTextColor(getResources().getColor(R.color.colorPrimary));
                 //----------------------------------------------------------------------------------
                 //getSupportActionBar().hide();
-                replaceFragment(new ForthFragment());
-
-
+                replaceFragment(new CounsellorThirdFragment());
                 break;
             default:break;
         }
