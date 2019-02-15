@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="37dp"
         android:background="#f4f4f4">
         <android.support.v7.widget.CardView
             android:id="@+id/teacher_school"
@@ -61,11 +61,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
                     android:layout_marginTop="2dp"
                     android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textSize="22sp"
+                    android:layout_marginLeft="34dp"
                     android:text="学校"
-                    android:textSize="26sp"
                     android:textStyle="bold"/>
                 <ImageView
                     android:layout_marginLeft="140dp"
@@ -96,11 +97,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
                     android:layout_marginTop="2dp"
                     android:gravity="center"
                     android:text="课程"
-                    android:textSize="26sp"
+                    android:layout_gravity="center"
+                    android:textSize="22sp"
+                    android:layout_marginLeft="34dp"
                     android:textStyle="bold"/>
                 <ImageView
                     android:layout_marginLeft="140dp"
@@ -131,11 +133,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
                     android:layout_marginTop="2dp"
                     android:gravity="center"
                     android:text="班级"
-                    android:textSize="26sp"
+                    android:layout_gravity="center"
+                    android:textSize="22sp"
+                    android:layout_marginLeft="34dp"
                     android:textStyle="bold"/>
                 <ImageView
                     android:layout_marginLeft="140dp"
@@ -167,11 +170,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
                     android:layout_marginTop="2dp"
                     android:gravity="center"
                     android:text="关于"
-                    android:textSize="26sp"
+                    android:layout_gravity="center"
+                    android:textSize="22sp"
+                    android:layout_marginLeft="37dp"
                     android:textStyle="bold"/>
                 <ImageView
                     android:layout_marginLeft="140dp"
@@ -203,11 +207,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
                     android:layout_marginTop="2dp"
                     android:gravity="center"
                     android:text="反馈"
-                    android:textSize="26sp"
+                    android:layout_gravity="center"
+                    android:textSize="22sp"
+                    android:layout_marginLeft="35dp"
                     android:textStyle="bold"/>
                 <ImageView
                     android:layout_marginLeft="140dp"

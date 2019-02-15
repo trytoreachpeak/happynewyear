@@ -30,6 +30,83 @@
             android:layout_height="match_parent"
             >
             <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="13dp"
+                app:contentPadding="6dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#fafafa">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingRight="17dp"
+                    android:paddingLeft="17dp">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/curriculum_img"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="-10dp"
+                            android:textStyle="bold"
+                            android:textSize="22dp"
+                            android:text="课 程"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/teacher_message"
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp">
+                        <ImageView
+                            android:layout_width="58dp"
+                            android:layout_height="53dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="0dp"
+                            android:src="@mipmap/teacher_message"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="-1dp"
+                            android:textStyle="bold"
+                            android:textSize="22dp"
+                            android:text="消 息"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="9dp">
+                        <ImageView
+                            android:layout_width="59dp"
+                            android:layout_height="57dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/secondguide_dark"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="-6dp"
+                            android:textStyle="bold"
+                            android:textSize="22dp"
+                            android:text="课 表"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
                 android:id="@+id/now_class"
                 app:cardCornerRadius="8dp"
                 android:layout_width="match_parent"
@@ -159,6 +236,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginBottom="30dp"
                 app:cardElevation="10dp"
                 app:cardBackgroundColor="#fafafa">
 
@@ -251,84 +329,6 @@
                             android:gravity="left"
                             android:textSize="19sp"
                             android:text="5#401"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="30dp"
-                app:contentPadding="6dp"
-                app:cardElevation="6dp"
-                app:cardBackgroundColor="#fafafa">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingRight="17dp"
-                    android:paddingLeft="17dp">
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content">
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_gravity="center"
-                            android:src="@mipmap/curriculum_img"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="-10dp"
-                            android:textStyle="bold"
-                            android:textSize="22dp"
-                            android:text="课 程"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/teacher_message"
-                        android:orientation="vertical"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="8dp">
-                        <ImageView
-                            android:layout_width="58dp"
-                            android:layout_height="53dp"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="0dp"
-                            android:src="@mipmap/teacher_message"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="-1dp"
-                            android:textStyle="bold"
-                            android:textSize="22dp"
-                            android:text="消 息"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="9dp">
-                        <ImageView
-                            android:layout_width="59dp"
-                            android:layout_height="57dp"
-                            android:layout_gravity="center"
-                            android:src="@mipmap/secondguide_dark"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="-6dp"
-                            android:textStyle="bold"
-                            android:textSize="22dp"
-                            android:text="课 表"/>
                     </LinearLayout>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
