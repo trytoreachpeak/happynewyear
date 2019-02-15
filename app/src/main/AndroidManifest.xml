@@ -26,10 +26,9 @@
         <activity android:name=".teacher.TeacherPersoninfo" />
         <activity android:name=".teacher.TeacherSchool" />
         <activity android:name=".teacher.TeacherStudy" />
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".student.StudentHomepageActivity" />
         <activity android:name=".student.StudentQingjiaActivity" />
-        <activity android:name=".student.StudentChatActivity" />
         <activity android:name=".student.StudentMobanActivity" />
         <activity android:name=".student.StudentSetActivity" />
         <activity android:name=".student.StudentInformationActivity" />
@@ -46,12 +45,11 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".counsellor.CounsellorHomepage">
-
-        </activity>
+        <activity android:name=".counsellor.CounsellorHomepage"></activity>
+        <activity android:name=".student.StudentFeedbackActivity"></activity>
     </application>
 
 </manifest>
