@@ -7,9 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.a.checkattendance.student.BaseActivity;
-import com.example.a.checkattendance.student.StudentHomepageActivity;
-
 
 public class RegisterActivity extends BaseActivity {
 

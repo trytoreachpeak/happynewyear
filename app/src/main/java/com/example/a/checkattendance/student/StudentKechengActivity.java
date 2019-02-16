@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.a.checkattendance.R;
-import com.example.a.checkattendance.student.BaseActivity;
+import com.example.a.checkattendance.BaseActivity;
 
 public class StudentKechengActivity extends BaseActivity implements View.OnClickListener{
 

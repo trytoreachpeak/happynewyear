@@ -14,6 +14,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.a.checkattendance.Admin.AdminHomepage;
 import com.example.a.checkattendance.counsellor.CounsellorHomepage;
 import com.example.a.checkattendance.student.StudentHomepageActivity;
 import com.example.a.checkattendance.teacher.HomepageOfTeacher;
@@ -110,7 +111,8 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                 loginPassword = passwordText.getText().toString();
                 if ((loginChoice.equals("教师端") && loginAccount.equals("admin") && loginPassword.equals("123456"))||
                         (loginChoice.equals("学生端") && loginAccount.equals("admin") && loginPassword.equals("123456"))||
-                        (loginChoice.equals("辅导员端") && loginAccount.equals("admin") && loginPassword.equals("123456"))){
+                        (loginChoice.equals("辅导员端") && loginAccount.equals("admin") && loginPassword.equals("123456"))||
+                        (loginChoice.equals("管理端") && loginAccount.equals("admin") && loginPassword.equals("123456"))){
                     editor = pref.edit();
                     if (rememberPass.isChecked()) {
                         editor.putString("choice", loginChoice);
@@ -136,6 +138,11 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                             break;
                         case "辅导员端":
                             intent = new Intent(ActivityLogin.this, CounsellorHomepage.class);
+                            startActivity(intent);
+                            finish();
+                            break;
+                        case "管理端":
+                            intent = new Intent(ActivityLogin.this, AdminHomepage.class);
                             startActivity(intent);
                             finish();
                             break;

@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.a.checkattendance.ActivityCollector;
+import com.example.a.checkattendance.BaseActivity;
 import com.example.a.checkattendance.R;
 
 public class StudentSetActivity extends BaseActivity implements View.OnClickListener{

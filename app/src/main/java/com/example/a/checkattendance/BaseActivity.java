@@ -1,4 +1,4 @@
-package com.example.a.checkattendance.student;
+package com.example.a.checkattendance;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

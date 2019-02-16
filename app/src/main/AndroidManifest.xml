@@ -48,8 +48,12 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".counsellor.CounsellorHomepage"></activity>
-        <activity android:name=".student.StudentFeedbackActivity"></activity>
+        <activity android:name=".counsellor.CounsellorHomepage" />
+        <activity android:name=".student.StudentFeedbackActivity" />
+        <activity android:name=".Admin.AdminHomepage" />
+        <activity android:name=".Admin.AdminAnalysisActivity" />
+        <activity android:name=".Admin.AdminStatisticsActivity" />
+        <activity android:name=".Admin.AdminTestActivity"></activity>
     </application>
 
 </manifest>
