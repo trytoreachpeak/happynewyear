@@ -42,8 +42,11 @@ public class ThirdFragment extends Fragment {
 
     private void initTeacherStudyItem(){
         TeacherMessageItem testExample=new TeacherMessageItem("课程名称",
-                R.drawable.shenqing_img,"某某班","某某班");
+                R.drawable.shenqing_img,"某某班");
         studyItemList.add(testExample);
+        TeacherMessageItem testExample1=new TeacherMessageItem("我",
+                R.drawable.shenqing_img,"我");
+        studyItemList.add(testExample1);
     }
 
 }
