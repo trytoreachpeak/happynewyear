@@ -1,4 +1,4 @@
-package com.example.a.checkattendance.student;
+package com.example.a.checkattendance.Admin;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,44 +8,43 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import com.example.a.checkattendance.R;
 import com.example.a.checkattendance.student.Chat;
 
 import java.util.List;
 
-public class ChatAdapter extends ArrayAdapter<Chat> {
+public class FloorAdapter extends ArrayAdapter<Floor> {
     private int resourceId;
 
-    public ChatAdapter(Context context,int textViewResourceId, List <Chat> objects){
+    public FloorAdapter(Context context, int textViewResourceId, List<Floor> objects){
         super(context,textViewResourceId,objects);
         resourceId=textViewResourceId;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        Chat chat=getItem(position);
+        Floor floor=getItem(position);
         View view;
-        ViewHolder viewHolder;
+        com.example.a.checkattendance.Admin.FloorAdapter.ViewHolder viewHolder;
         if (convertView==null) {
             view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
-            viewHolder=new ViewHolder();
-            viewHolder.ChatImage=(ImageView) view.findViewById(R.id.chat_image);
-            viewHolder.ChatName= (TextView) view.findViewById(R.id.chat_name);
+            viewHolder=new com.example.a.checkattendance.Admin.FloorAdapter.ViewHolder();
+
+            viewHolder.FloorName= (TextView) view.findViewById(R.id.floor_name);
             view.setTag(viewHolder);
         }
         else{
             view=convertView;
-            viewHolder= (ViewHolder) view.getTag();
+            viewHolder= (com.example.a.checkattendance.Admin.FloorAdapter.ViewHolder) view.getTag();
         }
-        viewHolder.ChatImage.setImageResource(chat.getImageId());
-        viewHolder.ChatName.setText(chat.getName());
+
+        viewHolder.FloorName.setText(floor.getName());
         return view;
     }
-    public class ViewHolder
+    class ViewHolder
     {
-        ImageView ChatImage;
-        TextView ChatName;
+
+        TextView FloorName;
     }
 
 }

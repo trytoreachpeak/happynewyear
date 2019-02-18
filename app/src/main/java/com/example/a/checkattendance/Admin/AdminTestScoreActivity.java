@@ -17,8 +17,7 @@ import android.widget.Toast;
 import com.example.a.checkattendance.BaseActivity;
 import com.example.a.checkattendance.R;
 
-public class AdminAnalysisActivity extends BaseActivity implements View.OnClickListener{
-
+public class AdminTestScoreActivity extends BaseActivity implements View.OnClickListener{
     public String[] groups = { "一年级", "二年级", "三年级" };
 
     public String[][] children = {
@@ -30,32 +29,39 @@ public class AdminAnalysisActivity extends BaseActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_analysis);
+        setContentView(R.layout.activity_admin_test_score);
         Button button_back=(Button)findViewById(R.id.back);
         button_back.setOnClickListener(this);
 
+
+
         ExpandableListView expandableListView = (ExpandableListView)findViewById(R.id.expandableListView);
-        expandableListView.setAdapter(new AdminAnalysisActivity.ExpandableAdapter(groups,children));
+        expandableListView.setAdapter(new AdminTestScoreActivity.ExpandableAdapter(groups,children));
 //设置子条目的点击监听
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 
-                Toast.makeText(AdminAnalysisActivity.this, "当前点击的是：："+groups[groupPosition]+"的"+children[groupPosition][childPosition], Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminTestScoreActivity.this, "当前点击的是：："+groups[groupPosition]+"的"+children[groupPosition][childPosition], Toast.LENGTH_SHORT).show();
 
 
-                Toast.makeText(AdminAnalysisActivity.this, "当前点击的是：："+groups[groupPosition]+"的"+children[groupPosition][childPosition], Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminTestScoreActivity.this, "当前点击的是：："+groups[groupPosition]+"的"+children[groupPosition][childPosition], Toast.LENGTH_SHORT).show();
 
-                String data=children[groupPosition][childPosition];
-                Intent intent=new Intent(AdminAnalysisActivity.this,AdminClassAnalysisActivity.class);
-                intent.putExtra("extra_data",data);
-                startActivity(intent);
+
                 //这里return true的话子列表不会展开  return false才展开
                 return false;
             }
         });
-    }
 
+
+
+
+
+
+
+
+
+    }
 
 
     @Override
@@ -149,7 +155,7 @@ public class AdminAnalysisActivity extends BaseActivity implements View.OnClickL
             AbsListView.LayoutParams lp = new AbsListView.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-            TextView textView = new TextView(AdminAnalysisActivity.this);
+            TextView textView = new TextView(AdminTestScoreActivity.this);
             textView.setLayoutParams(lp);
             textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
             textView.setPadding(42, 12, 12, 12);
@@ -163,7 +169,7 @@ public class AdminAnalysisActivity extends BaseActivity implements View.OnClickL
             AbsListView.LayoutParams lp = new AbsListView.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-            TextView textView = new TextView(AdminAnalysisActivity.this);
+            TextView textView = new TextView(AdminTestScoreActivity.this);
             textView.setLayoutParams(lp);
             textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
             textView.setPadding(100, 12, 12, 12);

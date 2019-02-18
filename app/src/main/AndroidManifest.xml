@@ -56,7 +56,12 @@
         <activity android:name=".Admin.AdminTestActivity" />
         <activity android:name=".Admin.AdminClassStatisticsActivity" />
         <activity android:name=".Admin.AdminPersonStatisticsActivity" />
-        <activity android:name=".Admin.AdminPersonalStatisticsActivity"></activity>
+        <activity android:name=".Admin.AdminPersonalStatisticsActivity" />
+        <activity android:name=".Admin.AdminTestScoreActivity" />
+        <activity android:name=".Admin.AdminTestclassroomActivity" />
+        <activity android:name=".Admin.AdminTestTimeActivity" />
+        <activity android:name=".Admin.AdminTestSituationActivity" />
+        <activity android:name=".Admin.AdminClassAnalysisActivity"></activity>
     </application>
 
 </manifest>

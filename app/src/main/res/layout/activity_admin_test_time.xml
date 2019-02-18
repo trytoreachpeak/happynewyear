@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1920"
-    android:orientation="vertical"
-    tools:context=".Admin.AdminTestActivity">
+    android:orientation="vertical">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -16,7 +15,7 @@
         <TextView
             android:layout_width="240dp"
             android:layout_height="match_parent"
-            android:text="考试情况"
+            android:text="考场情况"
             android:textSize="30dp"
             android:textStyle="bold"
             android:textColor="#f4f4f4"
@@ -75,55 +74,12 @@
                     android:textColor="#666666"/>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/score"
+    </LinearLayout>
+    <ListView
+        android:id="@+id/list_test"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:weightSum="1080"
-        android:layout_weight="150">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="600"
-            android:gravity="center_horizontal|bottom"
-            android:textSize="30dp"
-            android:text="考试成绩"
-            android:layout_height="match_parent" />
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="300"/>
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@mipmap/admin_right"
-            android:layout_weight="100"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/testroom"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:weightSum="1080"
-        android:layout_weight="150">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="600"
-            android:gravity="center_horizontal|bottom"
-            android:textSize="30dp"
-            android:text="考场情况"
-            android:layout_height="match_parent" />
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="300"/>
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@mipmap/admin_right"
-            android:layout_weight="100"/>
-    </LinearLayout>
-
-
+        android:layout_weight="1600"></ListView>
 </LinearLayout>
+
