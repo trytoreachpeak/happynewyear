@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:weightSum="1920"
     android:layout_height="match_parent"
-    tools:context=".Admin.AdminStatisticsActivity">
+    android:weightSum="1920"
+    android:orientation="vertical"
+    tools:context=".Admin.AdminPersonStatisticsActivity">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="140dp"
             android:layout_height="match_parent"
-            android:text="数据统计"
+            android:text="班级成员"
             android:textSize="30dp"
             android:textStyle="bold"
             android:textColor="#f4f4f4"
@@ -75,17 +75,11 @@
                     android:textColor="#666666"/>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-    <ExpandableListView
-        android:id ="@+id/expandableListView"
-        android:layout_width ="match_parent"
-        android:layout_height ="0dp"
-        android:layout_weight="1600"
-        android:groupIndicator="@null"
-        />
-
-
-
-
+</LinearLayout>
+    <ListView
+        android:id="@+id/list_person"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1600"></ListView>
 </LinearLayout>

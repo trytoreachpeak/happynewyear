@@ -3,9 +3,10 @@ package com.example.a.checkattendance.Admin;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.a.checkattendance.BaseActivity;
 import com.example.a.checkattendance.R;
 
-public class AdminAnalysisActivity extends AppCompatActivity {
+public class AdminAnalysisActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

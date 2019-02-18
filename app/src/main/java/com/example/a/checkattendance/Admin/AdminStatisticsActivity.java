@@ -1,5 +1,6 @@
 package com.example.a.checkattendance.Admin;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,13 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.a.checkattendance.BaseActivity;
 import com.example.a.checkattendance.R;
 
-public class AdminStatisticsActivity extends AppCompatActivity {
+public class AdminStatisticsActivity extends BaseActivity implements View.OnClickListener{
     public String[] groups = { "一年级", "二年级", "三年级" };
 
     public String[][] children = {
@@ -29,6 +32,11 @@ public class AdminStatisticsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_statistics);
 
+        Button button_back=(Button)findViewById(R.id.back);
+        button_back.setOnClickListener(this);
+
+
+
         ExpandableListView expandableListView = (ExpandableListView)findViewById(R.id.expandableListView);
         expandableListView.setAdapter(new ExpandableAdapter(groups,children));
 //设置子条目的点击监听
@@ -38,6 +46,13 @@ public class AdminStatisticsActivity extends AppCompatActivity {
 
                 Toast.makeText(AdminStatisticsActivity.this, "当前点击的是：："+groups[groupPosition]+"的"+children[groupPosition][childPosition], Toast.LENGTH_SHORT).show();
 
+
+                Toast.makeText(AdminStatisticsActivity.this, "当前点击的是：："+groups[groupPosition]+"的"+children[groupPosition][childPosition], Toast.LENGTH_SHORT).show();
+
+                String data=children[groupPosition][childPosition];
+                Intent intent=new Intent(AdminStatisticsActivity.this,AdminClassStatisticsActivity.class);
+                intent.putExtra("extra_data",data);
+                startActivity(intent);
                 //这里return true的话子列表不会展开  return false才展开
                 return false;
             }
@@ -45,7 +60,27 @@ public class AdminStatisticsActivity extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
     }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.back:
+                finish();
+                break;
+            default:
+                break;
+        }
+    }
+
+
 
 
 
@@ -95,7 +130,7 @@ public class AdminStatisticsActivity extends AppCompatActivity {
         //获取一个视图显示给定组，存放groups
         public View getGroupView(int groupPosition, boolean isExpanded, View convertView,
                                  ViewGroup parent) {
-            TextView textView = getGenericView(24);
+            TextView textView = getGenericView1(24);
             textView.setText(getGroup(groupPosition).toString());
             return textView;
         }
@@ -103,7 +138,7 @@ public class AdminStatisticsActivity extends AppCompatActivity {
         //获取一个视图显示在给定的组 的儿童的数据，就是存放children
         public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
                                  View convertView, ViewGroup parent) {
-            TextView textView = getGenericView(18);
+            TextView textView = getGenericView2(18);
             textView.setText(getChild(groupPosition, childPosition).toString());
             return textView;
         }
@@ -120,7 +155,7 @@ public class AdminStatisticsActivity extends AppCompatActivity {
 
 
         //自定义的创建TextView
-        public TextView getGenericView(int mTextSize) {
+        public TextView getGenericView1(int mTextSize) {
             // Layout parameters for the ExpandableListView
             AbsListView.LayoutParams lp = new AbsListView.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -129,6 +164,20 @@ public class AdminStatisticsActivity extends AppCompatActivity {
             textView.setLayoutParams(lp);
             textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
             textView.setPadding(42, 12, 12, 12);
+            textView.setTextSize(mTextSize);
+            textView.setTextColor(Color.BLACK);
+            return textView;
+        }
+
+        public TextView getGenericView2(int mTextSize) {
+            // Layout parameters for the ExpandableListView
+            AbsListView.LayoutParams lp = new AbsListView.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+            TextView textView = new TextView(AdminStatisticsActivity.this);
+            textView.setLayoutParams(lp);
+            textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
+            textView.setPadding(100, 12, 12, 12);
             textView.setTextSize(mTextSize);
             textView.setTextColor(Color.BLACK);
             return textView;
