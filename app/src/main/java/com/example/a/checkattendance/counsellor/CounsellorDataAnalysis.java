@@ -12,22 +12,22 @@ import com.example.a.checkattendance.teacher.TeacherMessageItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CounsellorDataStatistics extends AppCompatActivity {
-    private List<TeacherMessageItem> CounsellorDSItemList = new ArrayList<>();
+public class CounsellorDataAnalysis extends AppCompatActivity {
+    private List<TeacherMessageItem> CounsellorDAItemList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_counsellor_data_statistics);
-        initCounsellorDSItem();
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.counsellor_data_statis_recycler);
+        setContentView(R.layout.activity_counsellor_data_analysis);
+        initCounsellorDAItem();
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.counsellor_data_analysis_recycler);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        CounsellorDataStatisticsAdapter adapter = new CounsellorDataStatisticsAdapter(CounsellorDSItemList);
+        CounsellorDataAnalysisAdapter adapter = new CounsellorDataAnalysisAdapter(CounsellorDAItemList);
         recyclerView.setAdapter(adapter);
     }
-    private void initCounsellorDSItem(){
+    private void initCounsellorDAItem(){
         TeacherMessageItem testExample=new TeacherMessageItem("班级名",
                 R.drawable.shenqing_img,"出勤率？% 专注度 高/中/低");
-        CounsellorDSItemList.add(testExample);
+        CounsellorDAItemList.add(testExample);
     }
 }

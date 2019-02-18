@@ -33,7 +33,7 @@ public class CounsellorFirstFragment extends Fragment implements View.OnClickLis
         initCounsellorCCItem();
         LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
-        TeacherStudyAdapter adapter = new TeacherStudyAdapter(CounsellorCCItemList);
+        CounsellorClassConditionAdapter adapter = new CounsellorClassConditionAdapter(CounsellorCCItemList);
         recyclerView.setAdapter(adapter);
 
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar_first_fragment);
@@ -42,6 +42,8 @@ public class CounsellorFirstFragment extends Fragment implements View.OnClickLis
 
         LinearLayout DataStatistics = (LinearLayout)view.findViewById(R.id.data_statistics_button);
         DataStatistics.setOnClickListener(this);
+        LinearLayout DataAnalysis = (LinearLayout)view.findViewById(R.id.data_analysis_button);
+        DataAnalysis.setOnClickListener(this);
         return view;
     }
     private void initCounsellorCCItem(){
@@ -59,6 +61,10 @@ public class CounsellorFirstFragment extends Fragment implements View.OnClickLis
         switch(v.getId()){
             case R.id.data_statistics_button:
                 intent = new Intent(getActivity(),CounsellorDataStatistics.class);
+                startActivity(intent);
+                break;
+            case R.id.data_analysis_button:
+                intent = new Intent(getActivity(),CounsellorDataAnalysis.class);
                 startActivity(intent);
                 break;
         }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.a.checkattendance">
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -10,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityLogin"></activity>
+        <activity android:name=".ActivityLogin">
+
+        </activity>
         <activity android:name=".teacher.HomepageOfTeacher" />
         <activity android:name=".teacher.teacherMessage" />
         <activity android:name=".teacher.TeacherSettings" />
@@ -46,10 +47,11 @@
 
         <activity android:name=".counsellor.CounsellorHomepage" />
         <activity android:name=".counsellor.CounsellorDataStatistics" />
-        <activity android:name=".counsellor.CounsellorDSClass">
-
-        </activity>
-        <activity android:name=".counsellor.CounsellorClassmateList">
+        <activity android:name=".counsellor.CounsellorDSClass"></activity>
+        <activity android:name=".counsellor.CounsellorClassmateList" />
+        <activity android:name=".counsellor.CounsellorDSStudent" />
+        <activity android:name=".counsellor.CounsellorDataAnalysis" />
+        <activity android:name=".counsellor.CounsellorDAClass">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
