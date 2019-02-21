@@ -19,12 +19,13 @@ import com.example.a.checkattendance.R;
 
 public class AdminAnalysisActivity extends BaseActivity implements View.OnClickListener{
 
-    public String[] groups = { "一年级", "二年级", "三年级" };
+    public String[] groups1 = { "一年级", "二年级", "三年级" ,"课程"};
 
-    public String[][] children = {
-            { "软嵌181", "软嵌182"},
-            { "计171", "软嵌172" },
-            { "物联网161", "物联网162", "网工161"},
+    public String[][] children1 = {
+            {"软嵌181", "软嵌182"},
+            {"计171", "软嵌172"},
+            {"物联网161", "物联网162", "网工161"},
+            {"高数","计算机","英语","物理"}
     };
 
     @Override
@@ -35,21 +36,28 @@ public class AdminAnalysisActivity extends BaseActivity implements View.OnClickL
         button_back.setOnClickListener(this);
 
         ExpandableListView expandableListView = (ExpandableListView)findViewById(R.id.expandableListView);
-        expandableListView.setAdapter(new AdminAnalysisActivity.ExpandableAdapter(groups,children));
+        expandableListView.setAdapter(new AdminAnalysisActivity.ExpandableAdapter(groups1,children1));
 //设置子条目的点击监听
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 
-                Toast.makeText(AdminAnalysisActivity.this, "当前点击的是：："+groups[groupPosition]+"的"+children[groupPosition][childPosition], Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminAnalysisActivity.this, "当前点击的是："+groups1[groupPosition]+"的"+children1[groupPosition][childPosition], Toast.LENGTH_SHORT).show();
 
 
-                Toast.makeText(AdminAnalysisActivity.this, "当前点击的是：："+groups[groupPosition]+"的"+children[groupPosition][childPosition], Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminAnalysisActivity.this, "当前点击的是："+groups1[groupPosition]+"的"+children1[groupPosition][childPosition], Toast.LENGTH_SHORT).show();
 
-                String data=children[groupPosition][childPosition];
-                Intent intent=new Intent(AdminAnalysisActivity.this,AdminClassAnalysisActivity.class);
-                intent.putExtra("extra_data",data);
-                startActivity(intent);
+                String data=children1[groupPosition][childPosition];
+                if(groups1[groupPosition]!="课程") {
+                    Intent intent = new Intent(AdminAnalysisActivity.this, AdminClassAnalysisActivity.class);
+                    intent.putExtra("extra_data", data);
+                    startActivity(intent);
+                }
+                else if(groups1[groupPosition]=="课程"){
+                    Intent intent = new Intent(AdminAnalysisActivity.this, AdminCourseActivity.class);
+                    intent.putExtra("extra_data", data);
+                    startActivity(intent);
+                }
                 //这里return true的话子列表不会展开  return false才展开
                 return false;
             }

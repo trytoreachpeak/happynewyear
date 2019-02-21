@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="1920"
-    tools:context=".fragment.ziliao_fragment">
+    android:weightSum="1920">
 
 
     <LinearLayout

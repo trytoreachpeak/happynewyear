@@ -61,7 +61,10 @@
         <activity android:name=".Admin.AdminTestclassroomActivity" />
         <activity android:name=".Admin.AdminTestTimeActivity" />
         <activity android:name=".Admin.AdminTestSituationActivity" />
-        <activity android:name=".Admin.AdminClassAnalysisActivity"></activity>
+        <activity android:name=".Admin.AdminClassAnalysisActivity" />
+        <activity android:name=".Admin.AdminPersonAnalysisActivity" />
+        <activity android:name=".Admin.AdminPersonalAnalysisActivity" />
+        <activity android:name=".Admin.AdminCourseActivity"></activity>
     </application>
 
 </manifest>

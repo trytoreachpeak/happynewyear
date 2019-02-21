@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:weightSum="1920"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -13,9 +13,9 @@
         android:background="#66cc99">
 
         <TextView
-            android:layout_width="140dp"
+            android:layout_width="240dp"
             android:layout_height="match_parent"
-            android:text="数据分析"
+            android:text="班级成员"
             android:textSize="30dp"
             android:textStyle="bold"
             android:textColor="#f4f4f4"
@@ -74,22 +74,11 @@
                     android:textColor="#666666"/>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-    <LinearLayout
+    </LinearLayout>
+    <ListView
+        android:id="@+id/list_person"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1600">
-        <ExpandableListView
-            android:id ="@+id/expandableListView"
-            android:layout_width ="match_parent"
-            android:layout_height ="wrap_content"
-            android:groupIndicator="@null"
-            />
-
-    </LinearLayout>
-
-
-
-
+        android:layout_weight="1600"></ListView>
 </LinearLayout>
