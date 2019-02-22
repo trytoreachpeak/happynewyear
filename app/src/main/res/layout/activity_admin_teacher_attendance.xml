@@ -4,20 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="1920">
+    android:weightSum="1920"
+    android:orientation="vertical">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="180"
-        android:layout_gravity="center"
         android:background="#66cc99">
 
         <TextView
-            android:id="@+id/classname"
-            android:layout_width="140dp"
+            android:layout_width="240dp"
             android:layout_height="match_parent"
-            android:text="sss"
+            android:text="考勤情况"
             android:textSize="30dp"
             android:textStyle="bold"
             android:textColor="#f4f4f4"
@@ -32,52 +30,9 @@
             android:layout_height="match_parent"
             android:background="@drawable/back_qj"
             />
-
     </FrameLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="160">
 
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/ziliao"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:text="资料"
-                android:gravity="center"
-                android:textSize="20dp"
-                android:background="@drawable/frame_ke"
-                android:textStyle="bold"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/zuoye"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:text="作业"
-                android:textSize="20dp"
-                android:background="@drawable/frame_ke"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"/>
-
-        </RelativeLayout>
-
-    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -119,14 +74,11 @@
                     android:textColor="#666666"/>
             </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
-    <FrameLayout
-        android:id="@+id/frameLayoutId"
+    <ListView
+        android:id="@+id/list_teacher"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1440">
-
-    </FrameLayout>
-
-
+        android:layout_weight="1600"></ListView>
 </LinearLayout>

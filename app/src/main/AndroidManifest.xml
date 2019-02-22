@@ -64,6 +64,11 @@
         <activity android:name=".Admin.AdminClassAnalysisActivity" />
         <activity android:name=".Admin.AdminPersonAnalysisActivity" />
         <activity android:name=".Admin.AdminPersonalAnalysisActivity" />
+        <activity android:name=".Admin.AdminCourseAnalysisActivity" />
+        <activity android:name=".Admin.AdminIssueActivity" />
+        <activity android:name=".Admin.AdminTeacherAttendanceActivity" />
+        <activity android:name=".Admin.AdminClassAttendanceActivity" />
+        <activity android:name=".Admin.AdminPersonalAttendanceActivity" />
         <activity android:name=".Admin.AdminCourseActivity"></activity>
     </application>
 

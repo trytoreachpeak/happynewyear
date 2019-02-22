@@ -27,43 +27,56 @@
         android:layout_height="0dp"
         />
 
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
         android:layout_height="0dp"
         android:layout_weight="280"
-        android:layout_gravity="center"
-        android:background="@drawable/top_h"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:cardElevation="5dp"
+        app:cardBackgroundColor="#fafafa">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="7"
         android:orientation="horizontal">
 
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.85"/>
         <Button
             android:id="@+id/kecheng"
             android:layout_width="0dp"
-            android:layout_height="78.476dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
             android:layout_gravity="center_vertical"
             android:background="@drawable/course_h"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.85"/>
 
         <Button
             android:id="@+id/qingjia"
             android:layout_width="0dp"
-            android:layout_height="78.857dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
             android:layout_gravity="center_vertical"
             android:background="@drawable/leave_h"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
         <Button
             android:id="@+id/kebiao"
             android:layout_width="0dp"
-            android:layout_height="78.857dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginRight="50dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/class_h"/>
     </LinearLayout>
+    </android.support.v7.widget.CardView>
     <ImageView
         android:layout_width="284.190dp"
         android:layout_height="0dp"
@@ -82,11 +95,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:weightSum="6.5"
         android:layout_gravity="center">
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
             android:padding="3dp">
             <TextView
                 android:layout_marginLeft="5dp"
@@ -108,8 +123,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp">
+            android:layout_height="0dp"
+            android:layout_weight="1">
             <TextView
                 android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
@@ -128,8 +143,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp">
+            android:layout_height="0dp"
+            android:layout_weight="1">
             <TextView
                 android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
@@ -148,8 +163,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp">
+            android:layout_height="0dp"
+            android:layout_weight="1">
             <TextView
                 android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
@@ -168,21 +183,20 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp">
+            android:layout_height="0dp"
+            android:layout_weight="1">
             <TextView
-                android:layout_marginLeft="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="19sp"
-                android:text=" 出勤情况 "/>
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_height="match_parent"
+                android:textSize="18dp"
+                android:text="出勤情况 "/>
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginLeft="20dp"
-                android:gravity="left"
-                android:textSize="19sp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:gravity="center_vertical"
+                android:textSize="15dp"
                 android:text="出勤/缺勤"/>
         </LinearLayout>
     </LinearLayout>

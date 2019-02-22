@@ -28,6 +28,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
                 <LinearLayout
+                    android:id="@+id/Admin_class"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -45,11 +46,12 @@
                         android:layout_weight="1"
                         android:textStyle="bold"
                         android:gravity="center"
-                        android:text="课 程 安 排"/>
+                        android:text="教 室 使 用"/>
 
 
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/Admin_attendance"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -145,6 +147,7 @@
 
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/Admin_course"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
@@ -194,6 +197,7 @@
             android:textStyle="bold"
             android:textSize="25dp"/>
         <Button
+            android:id="@+id/issue"
             android:layout_width="0dp"
             android:layout_weight="300"
             android:layout_marginTop="4dp"

@@ -5,10 +5,11 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/class_image"
+        android:id="@+id/teacher_image"
         android:layout_width="60dp"
         android:layout_height="match_parent" />
     <LinearLayout
+        android:layout_marginLeft="8dp"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="60dp">
@@ -16,17 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
+
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="0.9"
-                android:layout_height="match_parent"
-                android:text="考试时间："
-                android:textSize="15dp"
-                android:gravity="center_vertical"
-                android:textStyle="bold"
-               />
-            <TextView
-                android:id="@+id/test_time"
+                android:id="@+id/teacher_name"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="match_parent"
@@ -39,17 +32,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
+
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="0.9"
-                android:layout_height="match_parent"
-                android:text="考试科目："
-                android:textSize="15dp"
-                android:gravity="center_vertical"
-                android:textStyle="bold"
-                />
-            <TextView
-                android:id="@+id/test_subject"
+                android:id="@+id/teacher_attend"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:layout_height="match_parent"

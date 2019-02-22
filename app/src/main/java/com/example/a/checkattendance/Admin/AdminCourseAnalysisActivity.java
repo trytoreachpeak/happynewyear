@@ -20,33 +20,22 @@ import org.feezu.liuli.timeselector.TimeSelector;
 
 import java.util.ArrayList;
 
-public class AdminPersonalAnalysisActivity extends AppCompatActivity implements View.OnClickListener{
-
+public class AdminCourseAnalysisActivity extends AppCompatActivity implements View.OnClickListener{
     private TextView t_time1;
     private TextView t_time2;
     private PieChart mPiechart1;
     private PieChart mPiechart2;
     private PieChart mPiechart3;
-    private PieChart mPiechart4;
-    private PieChart mPiechart5;
     private ArrayList<String> xContents;
     private ArrayList<Entry> yContent;
     private ArrayList<Integer> colors;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_personal_analysis);
-
-        TextView t_name=(TextView) findViewById(R.id.person_name) ;
-        Button button_back=(Button)findViewById(R.id.back);
-        button_back.setOnClickListener(this);
-
-        Intent intent = getIntent();
-        String showdata = intent.getStringExtra("extra_data");
-        t_name.setText(showdata);
-        init();
-        initData(t_time1);
-        initData(t_time2);
+        setContentView(R.layout.activity_admin_course_analysis);
 
         mPiechart1= (PieChart) findViewById(R.id.mPieChart1);
         PieData mPieData1 = getPieData1(4, 100);
@@ -60,14 +49,15 @@ public class AdminPersonalAnalysisActivity extends AppCompatActivity implements 
         PieData mPieData3 = getPieData3(4, 100);
         showChart(mPiechart3, mPieData3);
 
-        mPiechart4= (PieChart) findViewById(R.id.mPieChart4);
-        PieData mPieData4 = getPieData4(4, 100);
-        showChart(mPiechart4, mPieData4);
-
-        mPiechart5= (PieChart) findViewById(R.id.mPieChart5);
-        PieData mPieData5 = getPieData5(4, 100);
-        showChart(mPiechart5, mPieData5);
-
+        TextView t_coursename=(TextView) findViewById(R.id.course_name) ;
+        Button button_back=(Button)findViewById(R.id.back);
+        button_back.setOnClickListener(this);
+        Intent intent = getIntent();
+        String showdata = intent.getStringExtra("extra_data");
+        t_coursename.setText(showdata);
+        init();
+        initData(t_time1);
+        initData(t_time2);
     }
 
     @Override
@@ -85,7 +75,7 @@ public class AdminPersonalAnalysisActivity extends AppCompatActivity implements 
         t_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TimeSelector timeSelector = new TimeSelector(AdminPersonalAnalysisActivity.this, new TimeSelector.ResultHandler() {
+                TimeSelector timeSelector = new TimeSelector(AdminCourseAnalysisActivity.this, new TimeSelector.ResultHandler() {
                     @Override
                     public void handle(String time) {
                         //截取字符串长度，只需要年月日
@@ -182,9 +172,9 @@ public class AdminPersonalAnalysisActivity extends AppCompatActivity implements 
 
         /**展示内容*/
         xContents = new ArrayList<String>();
-        xContents.add("手机");
-        xContents.add("发呆");
-        xContents.add("睡觉");
+        xContents.add("中");
+        xContents.add("优");
+        xContents.add("良");
         float m1=121;
         float m2=41;
         float m3=421;
@@ -233,17 +223,17 @@ public class AdminPersonalAnalysisActivity extends AppCompatActivity implements 
 
         /**展示内容*/
         xContents = new ArrayList<String>();
-        xContents.add("10分钟");
-        xContents.add("20分钟");
-        xContents.add("30分钟");
-        float m1=121;
+
+        xContents.add("出勤");
+        xContents.add("缺勤");
+
         float m2=41;
         float m3=421;
         //将数据展示
 
         //展示比例
         yContent = new ArrayList<Entry>();
-        yContent.add(new Entry(m1,0));
+
         yContent.add(new Entry(m2,1));
         yContent.add(new Entry(m3,2));
 
@@ -299,103 +289,4 @@ public class AdminPersonalAnalysisActivity extends AppCompatActivity implements 
         yContent.add(new Entry(m3,2));
 
     }
-
-
-    private PieData getPieData4(int count,float range){
-
-
-        initData4();
-
-        PieDataSet pieDataSet= new PieDataSet(yContent,null);
-        //设置饼状图之间的距离
-        pieDataSet.setSliceSpace(0f);
-        //设置饼状图之间的颜色
-        pieDataSet.setColors(colors);
-        DisplayMetrics metrics = getResources().getDisplayMetrics();
-        float px = 5 * (metrics.densityDpi / 160f);
-        pieDataSet.setSelectionShift(px); // 选中态多出的长度
-        PieData pieData = new PieData(xContents, pieDataSet);
-
-        return pieData;
-    }
-    //数据源咯，这里我们看预定义饼图区域的颜色、大小、介绍，其中框架会自动计算百分比
-    private void initData4() {
-
-        // 饼图颜色
-        colors = new ArrayList<Integer>();
-
-        colors.add(Color.rgb(205,205,205));
-        colors.add(Color.rgb(114,188,223));
-        colors.add(Color.rgb(255,123,124));
-        colors.add(Color.rgb(57, 135, 200));
-        colors.add(Color.rgb(57, 135, 20));
-        colors.add(Color.rgb(77, 105, 20));
-
-        /**展示内容*/
-        xContents = new ArrayList<String>();
-        xContents.add("有兴趣");
-        xContents.add("没兴趣");
-        xContents.add("一般");
-        float m1=121;
-        float m2=41;
-        float m3=421;
-        //将数据展示
-
-        //展示比例
-        yContent = new ArrayList<Entry>();
-        yContent.add(new Entry(m1,0));
-        yContent.add(new Entry(m2,1));
-        yContent.add(new Entry(m3,2));
-
-    }
-
-
-    private PieData getPieData5(int count,float range){
-
-
-        initData5();
-
-        PieDataSet pieDataSet= new PieDataSet(yContent,null);
-        //设置饼状图之间的距离
-        pieDataSet.setSliceSpace(0f);
-        //设置饼状图之间的颜色
-        pieDataSet.setColors(colors);
-        DisplayMetrics metrics = getResources().getDisplayMetrics();
-        float px = 5 * (metrics.densityDpi / 160f);
-        pieDataSet.setSelectionShift(px); // 选中态多出的长度
-        PieData pieData = new PieData(xContents, pieDataSet);
-
-        return pieData;
-    }
-    //数据源咯，这里我们看预定义饼图区域的颜色、大小、介绍，其中框架会自动计算百分比
-    private void initData5() {
-
-        // 饼图颜色
-        colors = new ArrayList<Integer>();
-
-        colors.add(Color.rgb(205,205,205));
-        colors.add(Color.rgb(114,188,223));
-        colors.add(Color.rgb(255,123,124));
-        colors.add(Color.rgb(57, 135, 200));
-        colors.add(Color.rgb(57, 135, 20));
-        colors.add(Color.rgb(77, 105, 20));
-
-        /**展示内容*/
-        xContents = new ArrayList<String>();
-        xContents.add("有兴趣");
-        xContents.add("没心情");
-        xContents.add("一般");
-        float m1=121;
-        float m2=41;
-        float m3=421;
-        //将数据展示
-
-        //展示比例
-        yContent = new ArrayList<Entry>();
-        yContent.add(new Entry(m1,0));
-        yContent.add(new Entry(m2,1));
-        yContent.add(new Entry(m3,2));
-
-    }
-
 }

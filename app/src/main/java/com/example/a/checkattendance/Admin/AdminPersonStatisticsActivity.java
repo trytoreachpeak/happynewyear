@@ -14,7 +14,7 @@ import com.example.a.checkattendance.R;
 
 public class AdminPersonStatisticsActivity extends BaseActivity implements View.OnClickListener{
 
-    private String[] data= {"林梅","韩天","吴林"};
+    private String[] data= {"林梅","韩天","吴林","李刚","何敏","蔡茂","赵敏","钱东","孙鑫","李伟"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
