@@ -44,6 +44,8 @@ public class CounsellorFirstFragment extends Fragment implements View.OnClickLis
         DataStatistics.setOnClickListener(this);
         LinearLayout DataAnalysis = (LinearLayout)view.findViewById(R.id.data_analysis_button);
         DataAnalysis.setOnClickListener(this);
+        LinearLayout Exam = (LinearLayout)view.findViewById(R.id.exam_button);
+        Exam.setOnClickListener(this);
         return view;
     }
     private void initCounsellorCCItem(){
@@ -66,6 +68,12 @@ public class CounsellorFirstFragment extends Fragment implements View.OnClickLis
             case R.id.data_analysis_button:
                 intent = new Intent(getActivity(),CounsellorDataAnalysis.class);
                 startActivity(intent);
+                break;
+            case R.id.exam_button:
+                intent = new Intent(getActivity(),CounsellorExam.class);
+                startActivity(intent);
+                break;
+            default:
                 break;
         }
     }

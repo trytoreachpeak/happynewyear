@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.a.checkattendance.counsellor.CounsellorHomepage;
 import com.example.a.checkattendance.student.StudentHomepageActivity;
@@ -108,6 +109,7 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
             case R.id.login_button:
                 loginAccount = accountText.getText().toString();
                 loginPassword = passwordText.getText().toString();
+                judegeContentIsNull();
                 if ((loginChoice.equals("教师端") && loginAccount.equals("admin") && loginPassword.equals("123456"))||
                         (loginChoice.equals("学生端") && loginAccount.equals("admin") && loginPassword.equals("123456"))||
                         (loginChoice.equals("辅导员端") && loginAccount.equals("admin") && loginPassword.equals("123456"))){
@@ -151,5 +153,13 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
 
     private void getLoginChoice(String str){
         loginChoice = str;
+    }
+
+    private void judegeContentIsNull(){
+        if(loginAccount.equals("")||loginChoice.equals("")){
+            Toast toast = Toast.makeText(this,null,Toast.LENGTH_SHORT);
+            toast.setText("账号或密码为空，请重新输入");
+            toast.show();
+        }
     }
 }

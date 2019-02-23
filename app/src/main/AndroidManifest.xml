@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityLogin">
-
+        <activity android:name=".ActivityLogin" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".teacher.HomepageOfTeacher" />
         <activity android:name=".teacher.teacherMessage" />
@@ -47,17 +50,18 @@
 
         <activity android:name=".counsellor.CounsellorHomepage" />
         <activity android:name=".counsellor.CounsellorDataStatistics" />
-        <activity android:name=".counsellor.CounsellorDSClass"></activity>
+        <activity android:name=".counsellor.CounsellorDSClass" />
         <activity android:name=".counsellor.CounsellorClassmateList" />
         <activity android:name=".counsellor.CounsellorDSStudent" />
         <activity android:name=".counsellor.CounsellorDataAnalysis" />
-        <activity android:name=".counsellor.CounsellorDAClass">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".counsellor.CounsellorDAClass" />
+        <activity android:name=".counsellor.CounsellorExam">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <activity android:name=".counsellor.CounsellorExamCondition" />
+        <activity android:name=".counsellor.CounsellorExamroomCondition" />
+        <activity android:name=".counsellor.CounsellorExamConditionDetail" />
+        <activity android:name=".counsellor.CounsellorExamroomConditionDetail"></activity>
     </application>
 
 </manifest>
