@@ -10,10 +10,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:background="@drawable/chatframe_chating">
+        android:background="@drawable/bubble">
 
         <TextView
             android:id="@+id/left_msg"
+            android:text="sadasda"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

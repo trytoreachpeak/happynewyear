@@ -40,6 +40,10 @@ public class AdminZhuyeFragment extends Fragment implements View.OnClickListener
     public void onClick(View v) {
         Intent intent;
         switch(v.getId()){
+            case R.id.Admin_class:
+                intent = new Intent(getActivity(),AdminClassuseActivity.class);
+                startActivity(intent);
+                break;
             case R.id.Admin_analysis:
                 intent = new Intent(getActivity(),AdminAnalysisActivity.class);
                 startActivity(intent);

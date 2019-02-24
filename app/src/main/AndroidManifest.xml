@@ -69,7 +69,9 @@
         <activity android:name=".Admin.AdminTeacherAttendanceActivity" />
         <activity android:name=".Admin.AdminClassAttendanceActivity" />
         <activity android:name=".Admin.AdminPersonalAttendanceActivity" />
-        <activity android:name=".Admin.AdminCourseActivity"></activity>
+        <activity android:name=".Admin.AdminCourseActivity" />
+        <activity android:name=".Admin.AdminClassuseActivity" />
+        <activity android:name=".Admin.AdminChatingActivity"></activity>
     </application>
 
 </manifest>

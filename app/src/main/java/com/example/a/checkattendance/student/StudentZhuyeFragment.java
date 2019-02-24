@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.example.a.checkattendance.R;
 
@@ -16,7 +17,7 @@ public class StudentZhuyeFragment extends Fragment implements View.OnClickListen
             View view = inflater.inflate(R.layout.student_zhuye_fragment, container, false);
 
 
-            Button button_qingjia=(Button) view.findViewById(R.id.qingjia);
+            LinearLayout button_qingjia=(LinearLayout) view.findViewById(R.id.qingjia);
             button_qingjia.setOnClickListener(this);
             return view;
         }
