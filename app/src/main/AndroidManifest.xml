@@ -71,7 +71,8 @@
         <activity android:name=".Admin.AdminPersonalAttendanceActivity" />
         <activity android:name=".Admin.AdminCourseActivity" />
         <activity android:name=".Admin.AdminClassuseActivity" />
-        <activity android:name=".Admin.AdminChatingActivity"></activity>
+        <activity android:name=".Admin.AdminChatingActivity" />
+        <activity android:name=".student.StudentAnalysisActivity"></activity>
     </application>
 
 </manifest>

@@ -46,21 +46,21 @@
             android:layout_height="match_parent"
             android:layout_weight="0.85"/>
         <LinearLayout
-            android:id="@+id/statistics"
+            android:id="@+id/analysis"
             android:layout_width="0dp"
             android:orientation="vertical"
             android:layout_height="match_parent"
             android:layout_weight="1.2">
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2.5"
-                android:background="@mipmap/student_qingjia"/>
+                android:src="@mipmap/admin_analysis"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:textStyle="bold"
-                android:text="请假"
+                android:text="统计"
                 android:textSize="17.5dp"
                 android:gravity="center"
                 android:layout_weight="1"/>
@@ -76,11 +76,11 @@
             android:orientation="vertical"
             android:layout_height="match_parent"
             android:layout_weight="1.2">
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2.5"
-                android:background="@mipmap/student_qingjia"/>
+                android:src="@mipmap/student_qingjia"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -100,11 +100,11 @@
             android:orientation="vertical"
             android:layout_height="match_parent"
             android:layout_weight="1.2">
-            <Button
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2.5"
-                android:background="@mipmap/secondguide_dark"/>
+                android:src="@mipmap/secondguide_dark"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"

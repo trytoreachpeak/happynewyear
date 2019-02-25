@@ -9,9 +9,11 @@ import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +27,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
     public class StudentQingjiaActivity extends BaseActivity implements View.OnClickListener{
+        String[] str = {"大学物理-沫沫", "体育-刚任强", "美术-幂廖", "英语-marry"};
+
 
         public static final int TAKE_PHOTO=1;//声明一个请求码，用于识别返回的结果
         private ImageView picture;
@@ -45,6 +49,11 @@ import java.io.IOException;
             button_back.setOnClickListener(this);
             Button button_shenqing=(Button) findViewById(R.id.shenqing);
             button_shenqing.setOnClickListener(this);
+
+            Spinner spinner = (Spinner) findViewById(R.id.couse_choice);
+            ArrayAdapter arrayAdapter = new ArrayAdapter<String>(this,
+                    R.layout.support_simple_spinner_dropdown_item, str);
+            spinner.setAdapter(arrayAdapter);
 
 
             init();

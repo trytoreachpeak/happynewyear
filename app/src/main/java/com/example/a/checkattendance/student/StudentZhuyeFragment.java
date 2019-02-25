@@ -19,6 +19,8 @@ public class StudentZhuyeFragment extends Fragment implements View.OnClickListen
 
             LinearLayout button_qingjia=(LinearLayout) view.findViewById(R.id.qingjia);
             button_qingjia.setOnClickListener(this);
+            LinearLayout b_analysis=(LinearLayout) view.findViewById(R.id.analysis);
+            b_analysis.setOnClickListener(this);
             return view;
         }
         @Override
@@ -27,6 +29,10 @@ public class StudentZhuyeFragment extends Fragment implements View.OnClickListen
                 case R.id.qingjia:
                     Intent intent1= new Intent(getActivity(),StudentQingjiaActivity.class);
                     startActivity(intent1);
+                    break;
+                case R.id.analysis:
+                    Intent intent2= new Intent(getActivity(),StudentAnalysisActivity.class);
+                    startActivity(intent2);
                     break;
                 default:
                     break;
