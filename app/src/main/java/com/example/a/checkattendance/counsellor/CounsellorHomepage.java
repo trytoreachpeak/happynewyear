@@ -35,11 +35,7 @@ public class CounsellorHomepage extends BaseActivity implements View.OnClickList
         thirdguide.setOnClickListener(this);
 
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbar,menu);
-        return true;
-    }
+
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
@@ -57,7 +53,7 @@ public class CounsellorHomepage extends BaseActivity implements View.OnClickList
         TextView secondguideTxt = (TextView) findViewById(R.id.secondguide_txt);
         TextView thirdguideTxt = (TextView) findViewById(R.id.thirdguide_txt);
         //TextView forthTxt = (TextView) findViewById(R.id.forthguide_txt);
-        //Toolbar toolbar=view.findViewById(R.id.toolbar_homepage);
+        //Toolbar toolbar_teacher_main=view.findViewById(R.id.toolbar_homepage);
         switch (view.getId()){
             case R.id.firstguide://点击“联系人”触发的监听事件
                 //---------------------------联系人处高亮，其他灰色---------------------------------

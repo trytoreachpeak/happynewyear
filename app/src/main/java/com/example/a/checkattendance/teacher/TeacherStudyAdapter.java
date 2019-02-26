@@ -22,7 +22,7 @@ public class TeacherStudyAdapter
         ImageView teacher_study_left_img;
         TextView teacher_study_cat;
         TextView teacher_study_class;
-        TextView teacher_study_name;
+        //TextView teacher_study_name;
 
         public ViewHolder(View view) {
             super(view);
@@ -30,7 +30,7 @@ public class TeacherStudyAdapter
             teacher_study_left_img = (ImageView) view.findViewById(R.id.teacher_message_left_img);
             teacher_study_cat = (TextView) view.findViewById(R.id.teacher_message_cat);
             teacher_study_class = (TextView) view.findViewById(R.id.teacher_message_class);
-            teacher_study_name = (TextView) view.findViewById(R.id.teacher_message_name);
+            //teacher_study_name = (TextView) view.findViewById(R.id.teacher_message_name);
         }
     }
     public TeacherStudyAdapter(List<TeacherMessageItem>teacherStudyItem){
@@ -61,7 +61,7 @@ public class TeacherStudyAdapter
         holder.teacher_study_left_img.setImageResource(teacherStudyItem.getMessageLeftImageId());
         holder.teacher_study_cat.setText(teacherStudyItem.getMessageCategory());
         holder.teacher_study_class.setText(teacherStudyItem.getMessageClass());
-        holder.teacher_study_name.setText(teacherStudyItem.getMessageName());
+        //holder.teacher_study_name.setText(teacherStudyItem.getMessageName());
     }
 
     @Override

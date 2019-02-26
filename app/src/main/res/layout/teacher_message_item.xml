@@ -39,20 +39,12 @@
                 android:textColor="#cdcdcd"
                 />
                 <!--android:text="某某班"-->
-            <TextView
-                android:id="@+id/teacher_message_name"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:textSize="18dp"
-                android:textColor="#cdcdcd"
-                />
                 <!--android:text="某某某"-->
         </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#cdcdcd"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="7dp" />
     </LinearLayout>
 </LinearLayout>

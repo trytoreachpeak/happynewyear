@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:layout_gravity="right"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="38dp"
         android:layout_marginRight="30dp"
         android:text="登 录"
         android:textColor="#242526"
@@ -18,26 +18,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="45dp"
         android:text="请选择登录端"
         android:textColor="#afafb0"
-        android:textSize="22sp" />
+        android:textSize="21sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="3dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/rounded_edittext">
 
         <ImageView
             android:id="@+id/choose_image"
-            android:layout_width="45dp"
-            android:layout_height="20dp"
+            android:layout_width="38dp"
+            android:layout_height="13dp"
             android:layout_alignBottom="@id/login_choice"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="23dp"
+            android:layout_marginLeft="27dp"
             android:layout_marginTop="3dp"
             android:layout_marginBottom="0dp"
             android:layout_marginRight="4dp"
@@ -57,24 +57,28 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="3dp"
-        android:text="请输入学号"
+        android:text="请输入账号"
         android:textColor="#afafb0"
-        android:textSize="22sp" />
+        android:textSize="21sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="3dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/rounded_edittext">
 
         <ImageView
             android:id="@+id/account_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="39dp"
+            android:layout_height="39dp"
             android:layout_alignTop="@id/login_account"
             android:layout_alignBottom="@id/login_account"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="0dp"
             android:src="@drawable/account_image" />
 
         <EditText
@@ -83,6 +87,8 @@
             android:layout_height="43dp"
             android:layout_gravity="center"
             android:layout_toRightOf="@id/account_image"
+            android:maxLength="20"
+            android:lines="1"
             android:background="@null" />
     </RelativeLayout>
 
@@ -93,23 +99,25 @@
         android:layout_marginTop="3dp"
         android:text="请输入密码"
         android:textColor="#afafb0"
-        android:textSize="22sp" />
+        android:textSize="21sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="3dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/rounded_edittext">
 
         <ImageView
             android:id="@+id/password_image"
-            android:layout_width="82dp"
-            android:layout_height="match_parent"
+            android:layout_width="29dp"
+            android:layout_height="29dp"
             android:layout_alignTop="@id/login_password"
             android:layout_alignBottom="@id/login_password"
             android:layout_marginTop="0dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="20dp"
             android:layout_marginBottom="0dp"
             android:src="@drawable/password_image" />
 
@@ -120,13 +128,15 @@
             android:layout_gravity="center"
             android:layout_toRightOf="@id/password_image"
             android:background="@null"
+            android:maxLength="16"
+            android:lines="1"
             android:inputType="textPassword"/>
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="30dp"
         android:layout_marginTop="5dp">
         <CheckBox
             android:id="@+id/remember_pass"
@@ -136,29 +146,29 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:text="记住密码"
             />
     </LinearLayout>
     <Button
         android:id="@+id/login_button"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="2dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/bottom_shape"
         android:text="登     录"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="32dp"
         android:textColor="#ffffff"
-        android:textSize="27sp" />
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/login_register"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_gravity="right"
-        android:layout_marginTop="3dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="40dp"
         android:background="@android:color/transparent"
         android:text="没有账号？选择注册"
         android:textColor="#1c81e8"

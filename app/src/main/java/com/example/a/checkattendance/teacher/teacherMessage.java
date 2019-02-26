@@ -26,7 +26,7 @@ public class teacherMessage extends AppCompatActivity {
     }
     private void initTeacherMessageItem(){
         TeacherMessageItem testExample=new TeacherMessageItem("请假申请",
-                R.drawable.shenqing_img,"某某班","某某某");
+                R.drawable.shenqing_img,"某某班");
         messageItemList.add(testExample);
     }
 }

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_first_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <!--app:navigationIcon="@mipmap/ic_back"-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="班级成员"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#fefefe"/>
+    </android.support.v7.widget.Toolbar>
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.a.checkattendance.counsellor.CounsellorClassmateList">
+
+        <ListView
+            android:id="@+id/lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="12dp"
+            android:scrollbars="none"
+            android:paddingRight="36dp"></ListView>
+
+        <com.example.a.checkattendance.counsellor.sidenavigation.LetterIndexView
+            android:id="@+id/letter_index_view"
+            android:layout_width="36dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"/>
+
+        <TextView
+            android:id="@+id/show_letter_in_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/voip_toast_bg"
+            android:gravity="center"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+</LinearLayout>
+

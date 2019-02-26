@@ -19,12 +19,12 @@ public class HomepageOfTeacher extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage_of_teacher);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_homepage);
-        //setSupportActionBar(toolbar);
+        //Toolbar toolbar_teacher_main = (Toolbar) findViewById(R.id.toolbar_homepage);
+        //setSupportActionBar(toolbar_teacher_main);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //getSupportActionBar().setHomeButtonEnabled(true);
-        //toolbar.setTitle("");
-        //toolbar.setVisibility(View.GONE);
+        //toolbar_teacher_main.setTitle("");
+        //toolbar_teacher_main.setVisibility(View.GONE);
 
        replaceFragment(new FirstFragment());
 
@@ -43,11 +43,7 @@ public class HomepageOfTeacher extends AppCompatActivity implements View.OnClick
         forthguide.setOnClickListener(this);
 
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbar,menu);
-        return true;
-    }
+
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
@@ -65,7 +61,7 @@ public class HomepageOfTeacher extends AppCompatActivity implements View.OnClick
         TextView secondguideTxt = (TextView) findViewById(R.id.secondguide_txt);
         TextView thirdTxt = (TextView) findViewById(R.id.thirdguide_txt);
         TextView forthTxt = (TextView) findViewById(R.id.forthguide_txt);
-        //Toolbar toolbar=view.findViewById(R.id.toolbar_homepage);
+        //Toolbar toolbar_teacher_main=view.findViewById(R.id.toolbar_homepage);
         switch (view.getId()){
             case R.id.firstguide://点击“联系人”触发的监听事件
                 //---------------------------联系人处高亮，其他灰色---------------------------------

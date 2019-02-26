@@ -5,20 +5,20 @@
     android:layout_height="match_parent"
     android:background="@drawable/teacher_homepage_background">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_first_fragment"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        app:popupTheme="@style/OverflowMenuStyle">
         <!--app:navigationIcon="@mipmap/ic_back"-->
         <TextView
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="主页"
-            android:textStyle="bold"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textColor="#fefefe"/>
     </android.support.v7.widget.Toolbar>
     <ScrollView
@@ -49,18 +49,17 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content">
                         <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
+                            android:layout_width="69dp"
+                            android:layout_height="69dp"
                             android:layout_gravity="center"
-                            android:src="@mipmap/curriculum_img"/>
+                            android:src="@mipmap/data_analysis"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="-10dp"
-                            android:textStyle="bold"
-                            android:textSize="22dp"
-                            android:text="课 程"/>
+                            android:textSize="19dp"
+                            android:text="数据分析"/>
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/teacher_message"
@@ -80,8 +79,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="-1dp"
-                            android:textStyle="bold"
-                            android:textSize="22dp"
+                            android:textSize="19dp"
                             android:text="消 息"/>
                     </LinearLayout>
                     <LinearLayout
@@ -91,8 +89,8 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="9dp">
                         <ImageView
-                            android:layout_width="59dp"
-                            android:layout_height="57dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:layout_gravity="center"
                             android:src="@mipmap/secondguide_dark"/>
                         <TextView
@@ -100,8 +98,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="-6dp"
-                            android:textStyle="bold"
-                            android:textSize="22dp"
+                            android:textSize="19dp"
                             android:text="课 表"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -130,7 +127,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
-                            android:textSize="24sp"
+                            android:textSize="22sp"
                             android:text="当前课程"/>
 
                         <TextView
@@ -140,7 +137,7 @@
                             android:gravity="center"
                             android:textStyle="bold"
                             android:text="计算机"
-                            android:textSize="24sp" />
+                            android:textSize="22sp" />
                     </LinearLayout>
                     <View
                         android:layout_width="match_parent"
@@ -155,12 +152,12 @@
                             android:layout_marginLeft="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="19sp"
+                            android:textSize="17sp"
                             android:text="课程时间"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="19sp"
+                            android:textSize="17sp"
                             android:layout_weight="1"
                             android:layout_marginLeft="30dp"
                             android:gravity="left"
@@ -175,12 +172,12 @@
                             android:layout_marginLeft="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="19sp"
+                            android:textSize="17sp"
                             android:text="上课班级"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="19sp"
+                            android:textSize="17sp"
                             android:layout_weight="1"
                             android:layout_marginLeft="30dp"
                             android:gravity="left"
@@ -195,7 +192,7 @@
                             android:layout_marginLeft="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="19sp"
+                            android:textSize="17sp"
                             android:text="所在教室"/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -203,7 +200,7 @@
                             android:layout_weight="1"
                             android:layout_marginLeft="30dp"
                             android:gravity="left"
-                            android:textSize="19sp"
+                            android:textSize="17sp"
                             android:text="5#401"/>
                     </LinearLayout>
                     <LinearLayout
@@ -215,7 +212,7 @@
                             android:layout_marginLeft="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="19sp"
+                            android:textSize="17sp"
                             android:text=" 出 勤 率 "/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -223,7 +220,7 @@
                             android:layout_weight="1"
                             android:layout_marginLeft="32dp"
                             android:gravity="left"
-                            android:textSize="19sp"
+                            android:textSize="17sp"
                             android:text="95.65%"/>
                     </LinearLayout>
                 </LinearLayout>
@@ -255,7 +252,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
-                            android:textSize="24sp"
+                            android:textSize="22sp"
                             android:text="下一课程"/>
                         <TextView
                             android:layout_width="0dp"
@@ -263,7 +260,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:textStyle="bold"
-                            android:textSize="24sp"
+                            android:textSize="22sp"
                             android:text="计算机"/>
                     </LinearLayout>
                     <View
@@ -279,12 +276,12 @@
                             android:layout_marginLeft="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="19sp"
+                            android:textSize="17sp"
                             android:text="课程时间"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="19sp"
+                            android:textSize="17sp"
                             android:layout_weight="1"
                             android:layout_marginLeft="30dp"
                             android:gravity="left"
@@ -299,12 +296,12 @@
                             android:layout_marginLeft="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="19sp"
+                            android:textSize="17sp"
                             android:text="上课班级"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="19sp"
+                            android:textSize="17sp"
                             android:layout_weight="1"
                             android:layout_marginLeft="30dp"
                             android:gravity="left"
@@ -319,7 +316,7 @@
                             android:layout_marginLeft="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="19sp"
+                            android:textSize="17sp"
                             android:text="所在教室"/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -327,7 +324,7 @@
                             android:layout_weight="1"
                             android:layout_marginLeft="30dp"
                             android:gravity="left"
-                            android:textSize="19sp"
+                            android:textSize="17sp"
                             android:text="5#401"/>
                     </LinearLayout>
                 </LinearLayout>

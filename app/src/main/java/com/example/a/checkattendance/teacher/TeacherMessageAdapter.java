@@ -21,7 +21,7 @@ public class TeacherMessageAdapter extends RecyclerView.Adapter<TeacherMessageAd
         ImageView teacher_message_left_img;
         TextView teacher_message_cat;
         TextView teacher_message_class;
-        TextView teacher_message_name;
+        //TextView teacher_message_name;
 
         public ViewHolder(View view){
             super(view);
@@ -29,7 +29,7 @@ public class TeacherMessageAdapter extends RecyclerView.Adapter<TeacherMessageAd
             teacher_message_left_img =(ImageView)view.findViewById(R.id.teacher_message_left_img);
             teacher_message_cat=(TextView)view.findViewById(R.id.teacher_message_cat);
             teacher_message_class=(TextView)view.findViewById(R.id.teacher_message_class);
-            teacher_message_name=(TextView)view.findViewById(R.id.teacher_message_name);
+            //teacher_message_name=(TextView)view.findViewById(R.id.teacher_message_name);
         }
     }
     public TeacherMessageAdapter(List<TeacherMessageItem>teacherMessageItem){
@@ -60,7 +60,7 @@ public class TeacherMessageAdapter extends RecyclerView.Adapter<TeacherMessageAd
         holder.teacher_message_left_img.setImageResource(teacherMessageItem.getMessageLeftImageId());
         holder.teacher_message_cat.setText(teacherMessageItem.getMessageCategory());
         holder.teacher_message_class.setText(teacherMessageItem.getMessageClass());
-        holder.teacher_message_name.setText(teacherMessageItem.getMessageName());
+        //holder.teacher_message_name.setText(teacherMessageItem.getMessageName());
     }
 
     @Override
