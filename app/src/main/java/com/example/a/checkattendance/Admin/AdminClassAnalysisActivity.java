@@ -2,8 +2,8 @@ package com.example.a.checkattendance.Admin;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
@@ -12,21 +12,28 @@ import android.widget.TextView;
 import com.example.a.checkattendance.BaseActivity;
 import com.example.a.checkattendance.R;
 
+
+
+
+import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.utils.Legend;
-import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.utils.Legend;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+import com.github.mikephil.charting.utils.ColorTemplate;
+
+
 
 import org.feezu.liuli.timeselector.TimeSelector;
 
 import java.util.ArrayList;
 
-public class AdminClassAnalysisActivity extends BaseActivity implements View.OnClickListener{
+public class AdminClassAnalysisActivity extends BaseActivity implements OnChartValueSelectedListener,View.OnClickListener{
     private TextView t_time1;
     private TextView t_time2;
     private PieChart mPiechart1;
@@ -34,8 +41,6 @@ public class AdminClassAnalysisActivity extends BaseActivity implements View.OnC
     private PieChart mPiechart3;
     private PieChart mPiechart4;
     private PieChart mPiechart5;
-    private ArrayList<String> xContents;
-    private ArrayList<Entry> yContent;
     private ArrayList<Integer> colors;
 
 
@@ -45,25 +50,13 @@ public class AdminClassAnalysisActivity extends BaseActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_class_analysis);
 
-        mPiechart1= (PieChart) findViewById(R.id.mPieChart1);
-        PieData mPieData1 = getPieData1(4, 100);
-        showChart(mPiechart1, mPieData1);
+        initView1(mPiechart1);
+        initView2(mPiechart2);
+        initView3(mPiechart3);
+        initView4(mPiechart4);
+        initView5(mPiechart5);
 
-        mPiechart2= (PieChart) findViewById(R.id.mPieChart2);
-        PieData mPieData2 = getPieData2(4, 100);
-        showChart(mPiechart2, mPieData2);
 
-        mPiechart3= (PieChart) findViewById(R.id.mPieChart3);
-        PieData mPieData3 = getPieData3(4, 100);
-        showChart(mPiechart3, mPieData3);
-
-        mPiechart4= (PieChart) findViewById(R.id.mPieChart4);
-        PieData mPieData4 = getPieData4(4, 100);
-        showChart(mPiechart4, mPieData4);
-
-        mPiechart5= (PieChart) findViewById(R.id.mPieChart5);
-        PieData mPieData5 = getPieData5(4, 100);
-        showChart(mPiechart5, mPieData5);
 
 
         TextView t_classname=(TextView) findViewById(R.id.class_name) ;
@@ -129,295 +122,390 @@ public class AdminClassAnalysisActivity extends BaseActivity implements View.OnC
 
 
 
-    //关键方法在这里-主要用于饼图的画图
-    private void showChart(PieChart pieChart, PieData pieData) {
-
-//           pieChart.setHoleColorTransparent(true);
-
-        pieChart.setUsePercentValues(true);
+    private void initView1(PieChart mPieChart) {
 
 
-        pieChart.setTransparentCircleRadius(0f); // 半透明圈
 
-        pieChart.setHoleRadius(60f);//半径
+        //饼状图
+        mPieChart = (PieChart) findViewById(R.id.mPieChart1);
+        mPieChart.setUsePercentValues(true);
+        mPieChart.getDescription().setEnabled(false);
+        mPieChart.setExtraOffsets(5, 10, 5, 5);
 
-        pieChart.setHoleRadius(0);  //实心圆
+        mPieChart.setDragDecelerationFrictionCoef(0.95f);
+        //设置中间文件
+        //mPieChart.setCenterText(generateCenterSpannableText());
 
-        pieChart.setValueTextSize(10f);
+        mPieChart.setDrawHoleEnabled(false);
+        //mPieChart.setHoleColor(Color.WHITE);
 
-        pieChart.setDescriptionTextSize(15f);
-        pieChart.setDescription("");
+        mPieChart.setTransparentCircleColor(Color.WHITE);
+        mPieChart.setTransparentCircleAlpha(110);
 
-        pieChart.setDrawHoleEnabled(true);
+        mPieChart.setHoleRadius(58f);
+        mPieChart.setTransparentCircleRadius(61f);
 
-        pieChart.setRotationAngle(90); // 初始旋转角度
+        mPieChart.setDrawCenterText(true);
 
-        pieChart.setRotationEnabled(true); // 可以手动旋转
+        mPieChart.setRotationAngle(0);
+        // 触摸旋转
+        mPieChart.setRotationEnabled(true);
+        mPieChart.setHighlightPerTapEnabled(true);
 
-        pieChart.setUsePercentValues(true);  //显示成百分比
+        //变化监听
+        mPieChart.setOnChartValueSelectedListener(this);
 
+        //模拟数据
+        ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
+        entries.add(new PieEntry(40, "优秀"));
+        entries.add(new PieEntry(20, "满分"));
+        entries.add(new PieEntry(30, "及格"));
+        entries.add(new PieEntry(10, "不及格"));
 
         //设置数据
-        pieChart.setData(pieData);
+        setData(entries,mPieChart);
 
+        mPieChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
 
-        Legend mLegend = pieChart.getLegend();  //设置比例图
-//          mLegend.setPosition(Legend.LegendPosition.RIGHT_OF_CHART);  //最右边显示
-//          mLegend.setForm(Legend.LegendForm.LINE);  //设置比例图的形状，默认是方形
-        mLegend.setXEntrySpace(7f);
-        mLegend.setTextSize(15f);
+        Legend l = mPieChart.getLegend();
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
+        l.setOrientation(Legend.LegendOrientation.VERTICAL);
+        l.setDrawInside(false);
+        l.setXEntrySpace(7f);
+        l.setYEntrySpace(0f);
+        l.setYOffset(0f);
 
-        pieChart.animateXY(1000, 1000);  //设置动画
-//        pieChart.spin(2000, 0, 360);
-    }
+        // 输入标签样式
+        mPieChart.setEntryLabelColor(Color.WHITE);
+        mPieChart.setEntryLabelTextSize(12f);
 
-    private PieData getPieData1(int count,float range){
+        Legend legend =mPieChart.getLegend();
 
+        legend.setEnabled(false);
 
-        initData1();
-
-        PieDataSet pieDataSet= new PieDataSet(yContent,null);
-        //设置饼状图之间的距离
-        pieDataSet.setSliceSpace(0f);
-        //设置饼状图之间的颜色
-        pieDataSet.setColors(colors);
-        DisplayMetrics metrics = getResources().getDisplayMetrics();
-        float px = 5 * (metrics.densityDpi / 160f);
-        pieDataSet.setSelectionShift(px); // 选中态多出的长度
-        PieData pieData = new PieData(xContents, pieDataSet);
-
-        return pieData;
-    }
-    //数据源咯，这里我们看预定义饼图区域的颜色、大小、介绍，其中框架会自动计算百分比
-    private void initData1() {
-
-        // 饼图颜色
-        colors = new ArrayList<Integer>();
-
-        colors.add(Color.rgb(205,205,205));
-        colors.add(Color.rgb(114,188,223));
-        colors.add(Color.rgb(255,123,124));
-        colors.add(Color.rgb(57, 135, 200));
-        colors.add(Color.rgb(57, 135, 20));
-        colors.add(Color.rgb(77, 105, 20));
-
-        /**展示内容*/
-        xContents = new ArrayList<String>();
-        xContents.add("手机");
-        xContents.add("发呆");
-        xContents.add("睡觉");
-        float m1=121;
-        float m2=41;
-        float m3=421;
-        //将数据展示
-
-        //展示比例
-        yContent = new ArrayList<Entry>();
-        yContent.add(new Entry(m1,0));
-        yContent.add(new Entry(m2,1));
-        yContent.add(new Entry(m3,2));
 
     }
 
+    private void initView2(PieChart mPieChart) {
 
 
 
-    private PieData getPieData2(int count,float range){
+        //饼状图
+        mPieChart = (PieChart) findViewById(R.id.mPieChart2);
+        mPieChart.setUsePercentValues(true);
+        mPieChart.getDescription().setEnabled(false);
+        mPieChart.setExtraOffsets(5, 10, 5, 5);
 
+        mPieChart.setDragDecelerationFrictionCoef(0.95f);
+        //设置中间文件
+        //mPieChart.setCenterText(generateCenterSpannableText());
 
-        initData2();
+        mPieChart.setDrawHoleEnabled(false);
+        //mPieChart.setHoleColor(Color.WHITE);
 
-        PieDataSet pieDataSet= new PieDataSet(yContent,null);
-        //设置饼状图之间的距离
-        pieDataSet.setSliceSpace(0f);
-        //设置饼状图之间的颜色
-        pieDataSet.setColors(colors);
-        DisplayMetrics metrics = getResources().getDisplayMetrics();
-        float px = 5 * (metrics.densityDpi / 160f);
-        pieDataSet.setSelectionShift(px); // 选中态多出的长度
-        PieData pieData = new PieData(xContents, pieDataSet);
+        mPieChart.setTransparentCircleColor(Color.WHITE);
+        mPieChart.setTransparentCircleAlpha(110);
 
-        return pieData;
-    }
-    //数据源咯，这里我们看预定义饼图区域的颜色、大小、介绍，其中框架会自动计算百分比
-    private void initData2() {
+        mPieChart.setHoleRadius(58f);
+        mPieChart.setTransparentCircleRadius(61f);
 
-        // 饼图颜色
-        colors = new ArrayList<Integer>();
+        mPieChart.setDrawCenterText(true);
 
-        colors.add(Color.rgb(205,205,205));
-        colors.add(Color.rgb(114,188,223));
-        colors.add(Color.rgb(255,123,124));
-        colors.add(Color.rgb(57, 135, 200));
-        colors.add(Color.rgb(57, 135, 20));
-        colors.add(Color.rgb(77, 105, 20));
+        mPieChart.setRotationAngle(0);
+        // 触摸旋转
+        mPieChart.setRotationEnabled(true);
+        mPieChart.setHighlightPerTapEnabled(true);
 
-        /**展示内容*/
-        xContents = new ArrayList<String>();
-        xContents.add("10分钟");
-        xContents.add("20分钟");
-        xContents.add("30分钟");
-        float m1=121;
-        float m2=41;
-        float m3=421;
-        //将数据展示
+        //变化监听
+        mPieChart.setOnChartValueSelectedListener(this);
 
-        //展示比例
-        yContent = new ArrayList<Entry>();
-        yContent.add(new Entry(m1,0));
-        yContent.add(new Entry(m2,1));
-        yContent.add(new Entry(m3,2));
+        //模拟数据
+        ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
+        entries.add(new PieEntry(40, "优秀"));
+        entries.add(new PieEntry(20, "满分"));
+        entries.add(new PieEntry(30, "及格"));
+        entries.add(new PieEntry(10, "不及格"));
 
-    }
+        //设置数据
+        setData(entries,mPieChart);
 
+        mPieChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
 
+        Legend l = mPieChart.getLegend();
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
+        l.setOrientation(Legend.LegendOrientation.VERTICAL);
+        l.setDrawInside(false);
+        l.setXEntrySpace(7f);
+        l.setYEntrySpace(0f);
+        l.setYOffset(0f);
 
+        // 输入标签样式
+        mPieChart.setEntryLabelColor(Color.WHITE);
+        mPieChart.setEntryLabelTextSize(12f);
 
-    private PieData getPieData3(int count,float range){
+        Legend legend =mPieChart.getLegend();
 
+        legend.setEnabled(false);
 
-        initData3();
-
-        PieDataSet pieDataSet= new PieDataSet(yContent,null);
-        //设置饼状图之间的距离
-        pieDataSet.setSliceSpace(0f);
-        //设置饼状图之间的颜色
-        pieDataSet.setColors(colors);
-        DisplayMetrics metrics = getResources().getDisplayMetrics();
-        float px = 5 * (metrics.densityDpi / 160f);
-        pieDataSet.setSelectionShift(px); // 选中态多出的长度
-        PieData pieData = new PieData(xContents, pieDataSet);
-
-        return pieData;
-    }
-    //数据源咯，这里我们看预定义饼图区域的颜色、大小、介绍，其中框架会自动计算百分比
-    private void initData3() {
-
-        // 饼图颜色
-        colors = new ArrayList<Integer>();
-
-        colors.add(Color.rgb(205,205,205));
-        colors.add(Color.rgb(114,188,223));
-        colors.add(Color.rgb(255,123,124));
-        colors.add(Color.rgb(57, 135, 200));
-        colors.add(Color.rgb(57, 135, 20));
-        colors.add(Color.rgb(77, 105, 20));
-
-        /**展示内容*/
-        xContents = new ArrayList<String>();
-        xContents.add("10分钟");
-        xContents.add("20分钟");
-        xContents.add("30分钟");
-        float m1=121;
-        float m2=41;
-        float m3=421;
-        //将数据展示
-
-        //展示比例
-        yContent = new ArrayList<Entry>();
-        yContent.add(new Entry(m1,0));
-        yContent.add(new Entry(m2,1));
-        yContent.add(new Entry(m3,2));
 
     }
 
+    private void initView3(PieChart mPieChart) {
 
-    private PieData getPieData4(int count,float range){
 
 
-        initData4();
+        //饼状图
+        mPieChart = (PieChart) findViewById(R.id.mPieChart3);
+        mPieChart.setUsePercentValues(true);
+        mPieChart.getDescription().setEnabled(false);
+        mPieChart.setExtraOffsets(5, 10, 5, 5);
 
-        PieDataSet pieDataSet= new PieDataSet(yContent,null);
-        //设置饼状图之间的距离
-        pieDataSet.setSliceSpace(0f);
-        //设置饼状图之间的颜色
-        pieDataSet.setColors(colors);
-        DisplayMetrics metrics = getResources().getDisplayMetrics();
-        float px = 5 * (metrics.densityDpi / 160f);
-        pieDataSet.setSelectionShift(px); // 选中态多出的长度
-        PieData pieData = new PieData(xContents, pieDataSet);
+        mPieChart.setDragDecelerationFrictionCoef(0.95f);
+        //设置中间文件
+        //mPieChart.setCenterText(generateCenterSpannableText());
 
-        return pieData;
+        mPieChart.setDrawHoleEnabled(false);
+        //mPieChart.setHoleColor(Color.WHITE);
+
+        mPieChart.setTransparentCircleColor(Color.WHITE);
+        mPieChart.setTransparentCircleAlpha(110);
+
+        mPieChart.setHoleRadius(58f);
+        mPieChart.setTransparentCircleRadius(61f);
+
+        mPieChart.setDrawCenterText(true);
+
+        mPieChart.setRotationAngle(0);
+        // 触摸旋转
+        mPieChart.setRotationEnabled(true);
+        mPieChart.setHighlightPerTapEnabled(true);
+
+        //变化监听
+        mPieChart.setOnChartValueSelectedListener(this);
+
+        //模拟数据
+        ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
+        entries.add(new PieEntry(40, "优秀"));
+        entries.add(new PieEntry(20, "满分"));
+        entries.add(new PieEntry(30, "及格"));
+        entries.add(new PieEntry(10, "不及格"));
+
+        //设置数据
+        setData(entries,mPieChart);
+
+        mPieChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
+
+        Legend l = mPieChart.getLegend();
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
+        l.setOrientation(Legend.LegendOrientation.VERTICAL);
+        l.setDrawInside(false);
+        l.setXEntrySpace(7f);
+        l.setYEntrySpace(0f);
+        l.setYOffset(0f);
+
+        // 输入标签样式
+        mPieChart.setEntryLabelColor(Color.WHITE);
+        mPieChart.setEntryLabelTextSize(12f);
+
+        Legend legend =mPieChart.getLegend();
+
+        legend.setEnabled(false);
+
+
     }
-    //数据源咯，这里我们看预定义饼图区域的颜色、大小、介绍，其中框架会自动计算百分比
-    private void initData4() {
 
-        // 饼图颜色
-        colors = new ArrayList<Integer>();
+    private void initView4(PieChart mPieChart) {
 
-        colors.add(Color.rgb(205,205,205));
-        colors.add(Color.rgb(114,188,223));
-        colors.add(Color.rgb(255,123,124));
-        colors.add(Color.rgb(57, 135, 200));
-        colors.add(Color.rgb(57, 135, 20));
-        colors.add(Color.rgb(77, 105, 20));
 
-        /**展示内容*/
-        xContents = new ArrayList<String>();
-        xContents.add("有兴趣");
-        xContents.add("没兴趣");
-        xContents.add("一般");
-        float m1=121;
-        float m2=41;
-        float m3=421;
-        //将数据展示
 
-        //展示比例
-        yContent = new ArrayList<Entry>();
-        yContent.add(new Entry(m1,0));
-        yContent.add(new Entry(m2,1));
-        yContent.add(new Entry(m3,2));
+        //饼状图
+        mPieChart = (PieChart) findViewById(R.id.mPieChart4);
+        mPieChart.setUsePercentValues(true);
+        mPieChart.getDescription().setEnabled(false);
+        mPieChart.setExtraOffsets(5, 10, 5, 5);
+
+        mPieChart.setDragDecelerationFrictionCoef(0.95f);
+        //设置中间文件
+        //mPieChart.setCenterText(generateCenterSpannableText());
+
+        mPieChart.setDrawHoleEnabled(false);
+        //mPieChart.setHoleColor(Color.WHITE);
+
+        mPieChart.setTransparentCircleColor(Color.WHITE);
+        mPieChart.setTransparentCircleAlpha(110);
+
+        mPieChart.setHoleRadius(58f);
+        mPieChart.setTransparentCircleRadius(61f);
+
+        mPieChart.setDrawCenterText(true);
+
+        mPieChart.setRotationAngle(0);
+        // 触摸旋转
+        mPieChart.setRotationEnabled(true);
+        mPieChart.setHighlightPerTapEnabled(true);
+
+        //变化监听
+        mPieChart.setOnChartValueSelectedListener(this);
+
+        //模拟数据
+        ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
+        entries.add(new PieEntry(40, "优秀"));
+        entries.add(new PieEntry(20, "满分"));
+        entries.add(new PieEntry(30, "及格"));
+        entries.add(new PieEntry(10, "不及格"));
+
+        //设置数据
+        setData(entries,mPieChart);
+
+        mPieChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
+
+        Legend l = mPieChart.getLegend();
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
+        l.setOrientation(Legend.LegendOrientation.VERTICAL);
+        l.setDrawInside(false);
+        l.setXEntrySpace(7f);
+        l.setYEntrySpace(0f);
+        l.setYOffset(0f);
+
+        // 输入标签样式
+        mPieChart.setEntryLabelColor(Color.WHITE);
+        mPieChart.setEntryLabelTextSize(12f);
+
+        Legend legend =mPieChart.getLegend();
+
+        legend.setEnabled(false);
+
+
+    }
+
+    private void initView5(PieChart mPieChart) {
+
+
+
+        //饼状图
+        mPieChart = (PieChart) findViewById(R.id.mPieChart5);
+        mPieChart.setUsePercentValues(true);
+        mPieChart.getDescription().setEnabled(false);
+        mPieChart.setExtraOffsets(5, 10, 5, 5);
+
+        mPieChart.setDragDecelerationFrictionCoef(0.95f);
+        //设置中间文件
+        //mPieChart.setCenterText(generateCenterSpannableText());
+
+        mPieChart.setDrawHoleEnabled(false);
+        //mPieChart.setHoleColor(Color.WHITE);
+
+        mPieChart.setTransparentCircleColor(Color.WHITE);
+        mPieChart.setTransparentCircleAlpha(110);
+
+        mPieChart.setHoleRadius(58f);
+        mPieChart.setTransparentCircleRadius(61f);
+
+        mPieChart.setDrawCenterText(true);
+
+        mPieChart.setRotationAngle(0);
+        // 触摸旋转
+        mPieChart.setRotationEnabled(true);
+        mPieChart.setHighlightPerTapEnabled(true);
+
+        //变化监听
+        mPieChart.setOnChartValueSelectedListener(this);
+
+        //模拟数据
+        ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
+        entries.add(new PieEntry(40, "优秀"));
+        entries.add(new PieEntry(20, "满分"));
+        entries.add(new PieEntry(30, "及格"));
+        entries.add(new PieEntry(10, "不及格"));
+
+        //设置数据
+        setData(entries,mPieChart);
+
+        mPieChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
+
+        Legend l = mPieChart.getLegend();
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
+        l.setOrientation(Legend.LegendOrientation.VERTICAL);
+        l.setDrawInside(false);
+        l.setXEntrySpace(7f);
+        l.setYEntrySpace(0f);
+        l.setYOffset(0f);
+
+        // 输入标签样式
+        mPieChart.setEntryLabelColor(Color.WHITE);
+        mPieChart.setEntryLabelTextSize(12f);
+
+        Legend legend =mPieChart.getLegend();
+
+        legend.setEnabled(false);
+
 
     }
 
 
-    private PieData getPieData5(int count,float range){
 
 
-        initData5();
-
-        PieDataSet pieDataSet= new PieDataSet(yContent,null);
-        //设置饼状图之间的距离
-        pieDataSet.setSliceSpace(0f);
-        //设置饼状图之间的颜色
-        pieDataSet.setColors(colors);
-        DisplayMetrics metrics = getResources().getDisplayMetrics();
-        float px = 5 * (metrics.densityDpi / 160f);
-        pieDataSet.setSelectionShift(px); // 选中态多出的长度
-        PieData pieData = new PieData(xContents, pieDataSet);
-
-        return pieData;
+    //设置中间文字
+    private SpannableString generateCenterSpannableText() {
+        //原文：MPAndroidChart\ndeveloped by Philipp Jahoda
+        SpannableString s = new SpannableString("刘某人程序员\n我仿佛听到有人说我帅");
+        //s.setSpan(new RelativeSizeSpan(1.7f), 0, 14, 0);
+        //s.setSpan(new StyleSpan(Typeface.NORMAL), 14, s.length() - 15, 0);
+        // s.setSpan(new ForegroundColorSpan(Color.GRAY), 14, s.length() - 15, 0);
+        //s.setSpan(new RelativeSizeSpan(.8f), 14, s.length() - 15, 0);
+        // s.setSpan(new StyleSpan(Typeface.ITALIC), s.length() - 14, s.length(), 0);
+        // s.setSpan(new ForegroundColorSpan(ColorTemplate.getHoloBlue()), s.length() - 14, s.length(), 0);
+        return s;
     }
-    //数据源咯，这里我们看预定义饼图区域的颜色、大小、介绍，其中框架会自动计算百分比
-    private void initData5() {
 
-        // 饼图颜色
-        colors = new ArrayList<Integer>();
+    //设置数据
+    private void setData(ArrayList<PieEntry> entries,PieChart mPieChart) {
+        PieDataSet dataSet = new PieDataSet(entries, "三年级一班");
+        dataSet.setSliceSpace(3f);
+        dataSet.setSelectionShift(5f);
 
-        colors.add(Color.rgb(205,205,205));
-        colors.add(Color.rgb(114,188,223));
-        colors.add(Color.rgb(255,123,124));
-        colors.add(Color.rgb(57, 135, 200));
-        colors.add(Color.rgb(57, 135, 20));
-        colors.add(Color.rgb(77, 105, 20));
+        //数据和颜色
+        ArrayList<Integer> colors = new ArrayList<Integer>();
+        for (int c : ColorTemplate.VORDIPLOM_COLORS)
+            colors.add(c);
+        for (int c : ColorTemplate.JOYFUL_COLORS)
+            colors.add(c);
+        for (int c : ColorTemplate.COLORFUL_COLORS)
+            colors.add(c);
+        for (int c : ColorTemplate.LIBERTY_COLORS)
+            colors.add(c);
+        for (int c : ColorTemplate.PASTEL_COLORS)
+            colors.add(c);
+        colors.add(ColorTemplate.getHoloBlue());
+        dataSet.setColors(colors);
+        PieData data = new PieData(dataSet);
+        data.setValueFormatter(new PercentFormatter());
+        data.setValueTextSize(11f);
+        data.setValueTextColor(Color.WHITE);
+        mPieChart.setData(data);
+        mPieChart.highlightValues(null);
+        //刷新
+        mPieChart.invalidate();
+    }
 
-        /**展示内容*/
-        xContents = new ArrayList<String>();
-        xContents.add("有兴趣");
-        xContents.add("没心情");
-        xContents.add("一般");
-        float m1=121;
-        float m2=41;
-        float m3=421;
-        //将数据展示
 
-        //展示比例
-        yContent = new ArrayList<Entry>();
-        yContent.add(new Entry(m1,0));
-        yContent.add(new Entry(m2,1));
-        yContent.add(new Entry(m3,2));
+    @Override
+    public void onValueSelected(Entry e, Highlight h) {
+
+    }
+
+    @Override
+    public void onNothingSelected() {
 
     }
 
 
 }
+
+
+
