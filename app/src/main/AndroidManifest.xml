@@ -29,7 +29,6 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".student.StudentHomepageActivity" />
         <activity android:name=".student.StudentQingjiaActivity" />
-        <activity android:name=".student.StudentChatActivity" />
         <activity android:name=".student.StudentMobanActivity" />
         <activity android:name=".student.StudentSetActivity" />
         <activity android:name=".student.StudentInformationActivity" />
@@ -49,7 +48,32 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".counsellor.CounsellorHomepage" />
+        <activity android:name=".counsellor.CounsellorHomepage">
+        </activity>
+        <activity android:name=".student.StudentFeedbackActivity" />
+        <activity android:name=".Admin.AdminHomepage" />
+        <activity android:name=".Admin.AdminAnalysisActivity" />
+        <activity android:name=".Admin.AdminStatisticsActivity" />
+        <activity android:name=".Admin.AdminTestActivity" />
+        <activity android:name=".Admin.AdminClassStatisticsActivity" />
+        <activity android:name=".Admin.AdminPersonStatisticsActivity" />
+        <activity android:name=".Admin.AdminPersonalStatisticsActivity" />
+        <activity android:name=".Admin.AdminTestScoreActivity" />
+        <activity android:name=".Admin.AdminTestclassroomActivity" />
+        <activity android:name=".Admin.AdminTestTimeActivity" />
+        <activity android:name=".Admin.AdminTestSituationActivity" />
+        <activity android:name=".Admin.AdminClassAnalysisActivity" />
+        <activity android:name=".Admin.AdminPersonAnalysisActivity" />
+        <activity android:name=".Admin.AdminPersonalAnalysisActivity" />
+        <activity android:name=".Admin.AdminCourseAnalysisActivity" />
+        <activity android:name=".Admin.AdminIssueActivity" />
+        <activity android:name=".Admin.AdminTeacherAttendanceActivity" />
+        <activity android:name=".Admin.AdminClassAttendanceActivity" />
+        <activity android:name=".Admin.AdminPersonalAttendanceActivity" />
+        <activity android:name=".Admin.AdminCourseActivity" />
+        <activity android:name=".Admin.AdminClassuseActivity" />
+        <activity android:name=".Admin.AdminChatingActivity" />
+        <activity android:name=".student.StudentAnalysisActivity"></activity>
         <activity android:name=".counsellor.CounsellorDataStatistics" />
         <activity android:name=".counsellor.CounsellorDSClass" />
         <activity android:name=".counsellor.CounsellorClassmateList" />

@@ -42,7 +42,7 @@ public class ChatAdapter extends ArrayAdapter<Chat> {
         viewHolder.ChatName.setText(chat.getName());
         return view;
     }
-    class ViewHolder
+    public class ViewHolder
     {
         ImageView ChatImage;
         TextView ChatName;

@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.a.checkattendance.R;
-import com.example.a.checkattendance.student.BaseActivity;
+import com.example.a.checkattendance.BaseActivity;
 
 public class CounsellorHomepage extends BaseActivity implements View.OnClickListener{
 

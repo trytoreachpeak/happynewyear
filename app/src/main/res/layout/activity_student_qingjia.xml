@@ -12,17 +12,19 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="180"
-        android:layout_gravity="center"
         android:background="#66cc99">
 
+        <TextView
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:text="请假申请"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="#f4f4f4"
+            android:gravity="center"
+            android:layout_gravity="center">
 
-        <ImageView
-            android:layout_width="140.952dp"
-            android:layout_height="30.857dp"
-            android:layout_gravity="center"
-            android:background="@drawable/qjsq_qj">
-
-        </ImageView>
+        </TextView>
         <Button
             android:id="@+id/back"
             android:layout_width="50dp"
@@ -35,14 +37,48 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:layout_weight="656">
+        android:layout_weight="791">
 
-        <LinearLayout
+
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:weightSum="1080"
             android:layout_weight="135"
-            android:background="@drawable/frame1_qj">
+            app:cardElevation="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1080">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="395"
+                android:textColor="#666666"
+                android:textSize="25dp"
+                android:gravity="center"
+                android:text="请假课程"/>
+
+            <Spinner
+                android:id="@+id/couse_choice"
+                android:layout_width="0dp"
+                android:layout_weight="700"
+                android:layout_height="43dp"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@id/choose_image" />
+
+        </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="135"
+            app:cardElevation="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1080">
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -61,13 +97,17 @@
 
 
         </LinearLayout>
+        </android.support.v7.widget.CardView>
 
-        <LinearLayout
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:weightSum="1080"
             android:layout_weight="135"
-            android:background="@drawable/frame1_qj">
+            app:cardElevation="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1080">
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -85,13 +125,18 @@
                 android:layout_weight="520"/>
 
         </LinearLayout>
+        </android.support.v7.widget.CardView>
 
-        <LinearLayout
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:weightSum="1080"
             android:layout_weight="135"
-            android:background="@drawable/frame1_qj">
+            app:cardElevation="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1080"
+            android:layout_weight="135">
             <TextView
                 android:id="@+id/sex1"
                 android:layout_width="0dp"
@@ -110,13 +155,17 @@
                 android:layout_weight="520"/>
 
         </LinearLayout>
+        </android.support.v7.widget.CardView>
 
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="212"
+            app:cardElevation="5dp">
         <LinearLayout
             android:id="@+id/take_photo"
             android:layout_width="match_parent"
-            android:layout_weight="212"
-            android:background="@drawable/frame2_qj"
-            android:layout_height="0dp">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:layout_gravity="center"
@@ -134,13 +183,15 @@
                 android:textSize="20dp"
                 android:text="请上传请假条"/>
         </LinearLayout>
+        </android.support.v7.widget.CardView>
     </LinearLayout>
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:background="@drawable/qjsq_bg"
-        android:layout_weight="684">
+        android:layout_weight="649">
         <ImageView
             android:id="@+id/picture"
             android:layout_centerInParent="true"
@@ -152,7 +203,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="400">
+        android:layout_weight="300">
         <Button
             android:id="@+id/shenqing"
             android:layout_width="342dp"

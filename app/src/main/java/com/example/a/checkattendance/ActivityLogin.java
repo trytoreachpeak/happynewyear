@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.a.checkattendance.Admin.AdminHomepage;
 import com.example.a.checkattendance.counsellor.CounsellorHomepage;
 import com.example.a.checkattendance.gsonitem.LoginCounsellor;
 import com.example.a.checkattendance.gsonitem.LoginStudent;
@@ -231,6 +232,13 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                                         });
                             }
                             break;
+                        case "管理端":
+                            if(loginAccount.equals("admin")){
+                                saveInfor();
+                                //判断是否选了保存密码并执行相应操作
+                                intentToManager();
+                                //转入相应界面
+                            }
                         default:
                             break;
                     }
@@ -282,6 +290,11 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
     }
     private void intentToCounsellor(){
         Intent intent = new Intent(ActivityLogin.this, CounsellorHomepage.class);
+        startActivity(intent);
+        finish();
+    }
+    private void intentToManager(){
+        Intent intent = new Intent(ActivityLogin.this, AdminHomepage.class);
         startActivity(intent);
         finish();
     }

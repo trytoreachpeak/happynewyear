@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.a.checkattendance.R;
-import com.example.a.checkattendance.student.BaseActivity;
+import com.example.a.checkattendance.BaseActivity;
 
 public class StudentKechengActivity extends BaseActivity implements View.OnClickListener{
 
@@ -32,19 +32,27 @@ public class StudentKechengActivity extends BaseActivity implements View.OnClick
             textView_classname.setText(showdata);
 
             replaceFragment(new StudentZiliaoFragment());
+            textView_ziliao.setTextColor(getResources().getColor(R.color.colorPrimary));
+            textView_zuoye.setTextColor(getResources().getColor(R.color.huiSe));
         }
 
         @Override
         public void onClick(View v){
+            TextView textView_ziliao=(TextView) findViewById(R.id.ziliao) ;
+            TextView textView_zuoye=(TextView) findViewById(R.id.zuoye) ;
             switch(v.getId()){
                 case R.id.back:
                     finish();
                     break;
                 case R.id.ziliao:
                     replaceFragment(new StudentZiliaoFragment());
+                    textView_ziliao.setTextColor(getResources().getColor(R.color.colorPrimary));
+                    textView_zuoye.setTextColor(getResources().getColor(R.color.huiSe));
                     break;
                 case R.id.zuoye:
                     replaceFragment(new StudentZuoyeFragment());
+                    textView_zuoye.setTextColor(getResources().getColor(R.color.colorPrimary));
+                    textView_ziliao.setTextColor(getResources().getColor(R.color.huiSe));
                     break;
                 default:
                     break;

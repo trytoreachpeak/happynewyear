@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1920"
+    android:orientation="vertical"
+    tools:context=".Admin.AdminPersonalStatisticsActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="180"
+        android:background="#66cc99">
+
+        <TextView
+            android:id="@+id/person_name"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:text="sss"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="#f4f4f4"
+            android:gravity="center"
+            android:layout_centerHorizontal="true">
+
+        </TextView>
+        <Button
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="match_parent"
+            android:background="@drawable/back_qj"
+            />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="160">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:weightSum="1080"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="450"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text="选择时间范围"/>
+
+            <TextView
+                android:id="@+id/time1"
+                android:layout_width="0dp"
+                android:layout_weight="290"
+                android:gravity="center"
+                android:layout_height="20dp"
+                android:text="选择时间范围"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="50"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:layout_height="20dp"
+                android:text="-"/>
+            <TextView
+                android:id="@+id/time2"
+                android:layout_width="0dp"
+                android:layout_weight="290"
+                android:gravity="center"
+                android:layout_height="20dp"
+                android:text="选择时间范围"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="460"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:cardElevation="5dp"
+        app:cardBackgroundColor="#fafafa">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:weightSum="460"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:weightSum="600"
+                android:layout_weight="120">
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="100"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="20"
+                    android:src="@mipmap/amdin_dot"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="上课状态："
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:layout_weight="200"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="优秀"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:layout_weight="80"/>
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="100"
+                    android:src="@mipmap/admin_laugh"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="240">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:weightSum="3"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <TextView
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_width="match_parent"
+                        android:text="X%"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="#66cc99"
+                        android:layout_height="0dp"
+                        android:textSize="20dp"
+                        android:background="@mipmap/admin_frame_statistics"
+                        android:layout_weight="2"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:text="出勤率"
+                        android:gravity="center"
+                        android:textSize="20dp"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:weightSum="3"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <TextView
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:text="X%"
+                        android:gravity="center"
+                        android:textColor="#66cc99"
+                        android:layout_height="0dp"
+                        android:textSize="20dp"
+                        android:background="@mipmap/admin_frame_statistics"
+                        android:layout_weight="2"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:text="专注度"
+                        android:gravity="center"
+                        android:textSize="20dp"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:weightSum="1000"
+                android:layout_weight="100">
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="780"
+                    android:layout_height="match_parent" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="170">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="130"
+                        android:layout_height="match_parent"
+                        android:text="详情"
+                        android:gravity="center"
+                        android:textColor="#66cc99"
+                        android:textSize="15dp"/>
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="40"
+                        android:layout_height="match_parent"
+                        android:src="@mipmap/admin_shu"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>/
+
+</LinearLayout>
