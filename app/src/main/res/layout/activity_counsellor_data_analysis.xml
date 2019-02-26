@@ -4,20 +4,20 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_first_fragment"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="@mipmap/ic_back">
         <!--app:navigationIcon="@mipmap/ic_back"-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="数据分析"
-            android:textStyle="bold"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textColor="#fefefe"/>
     </android.support.v7.widget.Toolbar>
     <ScrollView
