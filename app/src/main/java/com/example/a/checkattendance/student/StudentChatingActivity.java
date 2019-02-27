@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,16 +35,29 @@ import java.util.List;
             String showdata = intent.getStringExtra("extra_data");
             textView_chatname.setText(showdata);
 
-            final EditText inputText=(EditText)findViewById(R.id.input);
             Button sendBtn=(Button)findViewById(R.id.send);
+
+            Button b_more=(Button)findViewById(R.id.more);
+           final EditText inputText=(EditText)findViewById(R.id.input);
+
+           inputText.setOnClickListener(this);
+
+
+
+
+
+
+
+
+
 
             final RecyclerView msgRecyclerView=(RecyclerView)findViewById(R.id.msg);
             LinearLayoutManager layoutManager=new LinearLayoutManager(this);
             msgRecyclerView.setLayoutManager(layoutManager);
 
+
             final MsgAdapter adapter=new MsgAdapter(msgList);
             msgRecyclerView.setAdapter(adapter);
-
             sendBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -69,6 +84,9 @@ import java.util.List;
 
         @Override
         public void onClick(View v){
+            EditText inputText=(EditText)findViewById(R.id.input);
+            Button sendBtn=(Button)findViewById(R.id.send);
+            Button b_more=(Button)findViewById(R.id.more);
             switch(v.getId()){
                 case R.id.back:
                     finish();
