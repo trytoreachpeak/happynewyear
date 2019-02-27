@@ -35,14 +35,38 @@ import java.util.List;
             String showdata = intent.getStringExtra("extra_data");
             textView_chatname.setText(showdata);
 
-            Button sendBtn=(Button)findViewById(R.id.send);
+           final  Button sendBtn=(Button)findViewById(R.id.send);
 
-            Button b_more=(Button)findViewById(R.id.more);
+           final  Button b_more=(Button)findViewById(R.id.more);
            final EditText inputText=(EditText)findViewById(R.id.input);
 
            inputText.setOnClickListener(this);
 
 
+            inputText.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    String serch_textip=inputText.getText().toString().trim();
+                    if(!serch_textip.isEmpty())                                  //判断IP输入框是否为空
+                    {sendBtn.setVisibility(View.VISIBLE);
+                        b_more.setVisibility(View.GONE); }
+                    else if(serch_textip.isEmpty())                                  //判断IP输入框是否为空
+                    {sendBtn.setVisibility(View.GONE);
+                        b_more.setVisibility(View.VISIBLE); }
+                }
+
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count,int after) {
+
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+
+                }
+            });
 
 
 
