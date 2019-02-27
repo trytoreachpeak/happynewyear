@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.a.checkattendance.Admin.AdminHomepage;
 import com.example.a.checkattendance.counsellor.CounsellorHomepage;
 import com.example.a.checkattendance.gsonitem.LoginCounsellor;
+import com.example.a.checkattendance.gsonitem.LoginManager;
 import com.example.a.checkattendance.gsonitem.LoginStudent;
 import com.example.a.checkattendance.gsonitem.LoginTeacher;
 import com.example.a.checkattendance.student.StudentHomepageActivity;
@@ -138,14 +139,15 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                                 //转入相应界面
                             }
                             else{
-                                HttpUtil.sendLoginRequest("http://192.168.137.1:80/get_data.json",
-                                        HttpUtil.createLoginJson("student", loginAccount, loginPassword), new okhttp3.Callback() {
+                                HttpUtil.sendLoginRequest
+                                        ("http://192.168.1.111:5000/api/v1/students/login/",
+                                                HttpUtil.createLoginJson("student", loginAccount, loginPassword), new okhttp3.Callback() {
                                     @Override
                                     public void onResponse(Call call, Response response) throws IOException {
                                         Gson gson = new Gson();
                                         java.lang.reflect.Type type = new TypeToken<LoginStudent>() {
                                         }.getType();
-                                        LoginStudent loginStudent = gson.fromJson(response.body().string(), type);
+                                        final LoginStudent loginStudent = gson.fromJson(response.body().string(), type);
                                         //解析json
                                         if (loginStudent.getStatus() == 200
                                                 && loginStudent.getData().getMsg() == 1) {
@@ -153,17 +155,18 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                                             //判断是否选了保存密码并执行相应操作
                                             intentToStudent();
                                             //转入相应界面
-                                        } else {
-                                            problem();
+                                        } else if(loginStudent.getStatus()==200
+                                                &&loginStudent.getData().getMsg()==0) {
+                                            accountPasswordWorry();
                                         }
                                     }
                                     @Override
                                     public void onFailure(Call call, IOException e) {
-                                        problem();
+                                        serverConnectFail();
                                     }
                                 });
                             }
-                                break;
+                            break;
                         case "教师端":
                             if(loginAccount.equals("admin")){
                                 saveInfor();
@@ -172,7 +175,7 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                                 //转入相应界面
                             }
                             else{
-                                HttpUtil.sendLoginRequest("http://192.168.137.1:80/get_data.json",
+                                HttpUtil.sendLoginRequest("http://192.168.1.111:5000/api/v1/teachers/login/",
                                         HttpUtil.createLoginJson("teacher", loginAccount, loginPassword), new okhttp3.Callback() {
                                     @Override
                                     public void onResponse(Call call, Response response) throws IOException {
@@ -187,13 +190,14 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                                             //判断是否选了保存密码并执行相应操作
                                             intentToTeacher();
                                             //转入相应界面
-                                        } else {
-                                            problem();
+                                        } else if(loginTeacher.getStatus()==200
+                                                &&loginTeacher.getData().getMsg()==0) {
+                                            accountPasswordWorry();
                                         }
                                     }
                                     @Override
                                     public void onFailure(Call call, IOException e) {
-                                        problem();
+                                        serverConnectFail();
                                     }
                                 });
                             }
@@ -206,7 +210,7 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                                 //转入相应界面
                             }
                             else{
-                                HttpUtil.sendLoginRequest("http://192.168.137.1:80/get_data.json",
+                                HttpUtil.sendLoginRequest("http://192.168.1.111:5000/api/v1/counsellors/login/",
                                         HttpUtil.createLoginJson("counsellor", loginAccount, loginPassword), new okhttp3.Callback() {
                                             @Override
                                             public void onResponse(Call call, Response response) throws IOException {
@@ -221,13 +225,14 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                                                     //判断是否选了保存密码并执行相应操作
                                                     intentToCounsellor();
                                                     //转入相应界面
-                                                } else {
-                                                    problem();
+                                                } else if(loginCounsellor.getStatus()==200
+                                                        &&loginCounsellor.getData().getMsg()==0) {
+                                                    accountPasswordWorry();
                                                 }
                                             }
                                             @Override
                                             public void onFailure(Call call, IOException e) {
-                                                problem();
+                                                serverConnectFail();
                                             }
                                         });
                             }
@@ -238,7 +243,34 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                                 //判断是否选了保存密码并执行相应操作
                                 intentToManager();
                                 //转入相应界面
+                            }else{
+                                HttpUtil.sendLoginRequest("http://192.168.1.111:5000/api/v1/managers/login/",
+                                        HttpUtil.createLoginJson("manager", loginAccount, loginPassword), new okhttp3.Callback() {
+                                            @Override
+                                            public void onResponse(Call call, Response response) throws IOException {
+                                                Gson gson = new Gson();
+                                                java.lang.reflect.Type type = new TypeToken<LoginManager>() {
+                                                }.getType();
+                                                LoginManager loginManager = gson.fromJson(response.body().string(), type);
+                                                //解析json
+                                                if (loginManager.getStatus() == 200
+                                                        && loginManager.getData().getMsg() == 1) {
+                                                    saveInfor();
+                                                    //判断是否选了保存密码并执行相应操作
+                                                    intentToManager();
+                                                    //转入相应界面
+                                                } else if(loginManager.getStatus()==200
+                                                        &&loginManager.getData().getMsg()==0) {
+                                                    accountPasswordWorry();
+                                                }
+                                            }
+                                            @Override
+                                            public void onFailure(Call call, IOException e) {
+                                                serverConnectFail();
+                                            }
+                                        });
                             }
+                            break;
                         default:
                             break;
                     }
@@ -298,9 +330,26 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
         startActivity(intent);
         finish();
     }
-    private void problem(){
-        Toast toast = Toast.makeText(this,null,Toast.LENGTH_SHORT);
-        toast.setText("登录失败");
-        toast.show();
+    private void serverConnectFail(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast toast = Toast.makeText(ActivityLogin.this,
+                        null,Toast.LENGTH_SHORT);
+                toast.setText("服务器连接失败");
+                toast.show();
+            }
+        });
+    }
+    private void accountPasswordWorry(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast toast = Toast.makeText(ActivityLogin.this,
+                        null,Toast.LENGTH_SHORT);
+                toast.setText("账号和密码错误，请重新输入");
+                toast.show();
+            }
+        });
     }
 }

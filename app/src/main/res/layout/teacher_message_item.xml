@@ -7,8 +7,8 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="5dp"
-        android:layout_width="75dp"
-        android:layout_height="75dp"/>
+        android:layout_width="65dp"
+        android:layout_height="65dp"/>
         <!--android:src="@drawable/shenqing_img" -->
 
     <LinearLayout
@@ -16,26 +16,26 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_marginTop="12dp">
+        android:layout_marginTop="9dp">
         <TextView
             android:id="@+id/teacher_message_cat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:layout_marginLeft="6dp"
-            android:textSize="23dp"/>
+            android:layout_marginLeft="3dp"
+            android:textSize="21dp"/>
             <!--android:text="请假申请" -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_marginLeft="6dp">
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="3dp">
             <TextView
                 android:id="@+id/teacher_message_class"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
+                android:textSize="17dp"
                 android:textColor="#cdcdcd"
                 />
                 <!--android:text="某某班"-->
@@ -45,6 +45,6 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#cdcdcd"
-            android:layout_marginTop="7dp" />
+            android:layout_marginTop="4dp" />
     </LinearLayout>
 </LinearLayout>

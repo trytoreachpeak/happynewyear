@@ -1,5 +1,6 @@
 package com.example.a.checkattendance.counsellor;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -42,7 +43,17 @@ public class CounsellorDataAnalysis extends AppCompatActivity {
             }
         });
         //setHasOptionsMenu(true);
-        toolbar.setOverflowIcon(getResources().getDrawable(R.mipmap.icon_add));
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent = new Intent(CounsellorDataAnalysis.this,
+                        CounsellorClassmateList.class);
+                startActivity(intent);
+                return false;
+            }
+        });
+        toolbar.setOverflowIcon(getResources().getDrawable(R.mipmap.classmate_icon));
     }
     private void initCounsellorDAItem(){
         TeacherMessageItem testExample=new TeacherMessageItem("班级名",
@@ -52,9 +63,10 @@ public class CounsellorDataAnalysis extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        //inflater.inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
