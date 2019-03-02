@@ -39,37 +39,70 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:weightSum="1080"
         android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="20"/>
         <ImageView
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:background="@drawable/voice_chating"
-            android:layout_weight="1"/>
+            android:layout_weight="120"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="20"/>
 
         <EditText
             android:id="@+id/input"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:background="@null"
-            android:layout_weight="7"
+            android:layout_weight="620"
             android:hint="请输入"
             android:maxLines="2"
             />
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="20"/>
         <ImageView
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="120"
             android:background="@drawable/face_chating"
             android:layout_height="40dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"/>
+
         <Button
             android:id="@+id/send"
             android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone"
+            android:layout_weight="125"
+            android:textSize="15dp"
+            android:background="#66cc99"
+            android:textColor="#f4f4f4"
+            android:text="发 送" />
+
+
+        <Button
+            android:id="@+id/more"
+            android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_weight="1"
+            android:visibility="visible"
+            android:layout_weight="120"
             android:background="@drawable/add_chating"
             />
-
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="8dp"></LinearLayout>
 
 </LinearLayout>

@@ -4,15 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/chat_image"
         android:layout_width="60dp"
-        android:layout_height="60dp" />
-    <TextView
-        android:id="@+id/chat_name"
-        android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="10dp"></TextView>
+        android:src="@drawable/tree"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="60dp">
+
+        <TextView
+            android:id="@+id/chat_name"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="111"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="[在线]"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"></TextView>
+    </LinearLayout>
+
 
 </LinearLayout>
