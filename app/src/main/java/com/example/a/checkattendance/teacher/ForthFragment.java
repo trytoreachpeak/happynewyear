@@ -25,37 +25,11 @@ public class ForthFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.forth_fragment,container,false);
-        settings=(ImageView)view.findViewById(R.id.teacher_setting_button);
-        settings.setOnClickListener(this);
-        teacherSchool=(CardView)view.findViewById(R.id.teacher_school);
-        teacherSchool.setOnClickListener(this);
-        headPortrait=(CircleImageView)view.findViewById(R.id.head_portrait);
-        headPortrait.setOnClickListener(this);
-        teacherFeedback=(CardView)view.findViewById(R.id.teacher_feedback);
-        teacherFeedback.setOnClickListener(this);
         return view;
     }
 
     @Override
     public void onClick(View v) {
-        Intent intent;
-        switch(v.getId()){
-            case R.id.teacher_setting_button:
-                intent = new Intent(getActivity(),TeacherSettings.class);
-                startActivity(intent);
-                break;
-            case R.id.teacher_school:
-                intent = new Intent(getActivity(),TeacherSchool.class);
-                startActivity(intent);
-                break;
-            case R.id.head_portrait:
-                intent = new Intent(getActivity(),TeacherPersoninfo.class);
-                startActivity(intent);
-                break;
-            case R.id.teacher_feedback:
-                intent = new Intent(getActivity(),TeacherFeedback.class);
-                startActivity(intent);
-                break;
-        }
+
     }
 }

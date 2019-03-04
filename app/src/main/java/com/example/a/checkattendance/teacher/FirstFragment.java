@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -17,6 +18,12 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.a.checkattendance.R;
+import com.example.a.checkattendance.bannerFunc.GlideImageLoader;
+import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FirstFragment extends Fragment implements View.OnClickListener{
     LinearLayout teacherMessage;
@@ -32,6 +39,31 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
 
         teacherMessage=(LinearLayout)view.findViewById(R.id.teacher_message);
         teacherMessage.setOnClickListener(this);
+
+        List<Integer> images= new ArrayList<>();
+        images.add(R.drawable.banner_img_1);
+        images.add(R.drawable.banner_img_2);
+        images.add(R.drawable.banner_img_3);
+        Banner banner = (Banner) view.findViewById(R.id.banner);
+        //设置图片加载器
+        banner.setImageLoader(new GlideImageLoader());
+        //设置图片集合
+        banner.setImages(images);
+        //banner设置方法全部调用完毕时最后调用
+        banner.setDelayTime(3000);
+        banner.start();
+
+        //增加点击事件
+        banner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                Toast.makeText(getActivity(), "position"+position, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        CardView classNow = (CardView)view.findViewById(R.id.now_class);
+        //classNow.setVisibility(View.GONE);
+
         return view;
     }
 

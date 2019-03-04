@@ -3,7 +3,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/teacher_homepage_background">
+
+    >
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -23,94 +24,32 @@
     </android.support.v7.widget.Toolbar>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:src="@drawable/teacher_homepage_background_v1"
+                android:scaleType="fitXY"/>
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             >
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="13dp"
-                app:contentPadding="6dp"
-                app:cardElevation="6dp"
-                app:cardBackgroundColor="#fafafa">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingRight="17dp"
-                    android:paddingLeft="17dp">
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content">
-                        <ImageView
-                            android:layout_width="69dp"
-                            android:layout_height="69dp"
-                            android:layout_gravity="center"
-                            android:src="@mipmap/data_analysis"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="-10dp"
-                            android:textSize="19dp"
-                            android:text="数据分析"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/teacher_message"
-                        android:orientation="vertical"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="8dp">
-                        <ImageView
-                            android:layout_width="58dp"
-                            android:layout_height="53dp"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="0dp"
-                            android:src="@mipmap/teacher_message"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="-1dp"
-                            android:textSize="19dp"
-                            android:text="消 息"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="9dp">
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_gravity="center"
-                            android:src="@mipmap/secondguide_dark"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="-6dp"
-                            android:textSize="19dp"
-                            android:text="课 表"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
                 android:id="@+id/now_class"
                 app:cardCornerRadius="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                app:cardElevation="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="10dp"
+                app:cardElevation="5dp"
                 app:cardBackgroundColor="#fafafa">
 
                 <LinearLayout
@@ -127,7 +66,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
-                            android:textSize="22sp"
+                            android:textSize="21sp"
                             android:text="当前课程"/>
 
                         <TextView
@@ -135,14 +74,14 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:textStyle="bold"
                             android:text="计算机"
-                            android:textSize="22sp" />
+                            android:textColor="#4f4f4f"
+                            android:textSize="20sp" />
                     </LinearLayout>
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#000"/>
+                        android:background="#e6e6e6"/>
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -153,6 +92,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="17sp"
+                            android:textColor="#4f4f4f"
                             android:text="课程时间"/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -161,7 +101,8 @@
                             android:layout_weight="1"
                             android:layout_marginLeft="30dp"
                             android:gravity="left"
-                            android:text="2019.2.25 07:50-09:20"/>
+                            android:textColor="#4f4f4f"
+                            android:text="2019/2/25 1-2节"/>
                     </LinearLayout>
                     <LinearLayout
                         android:orientation="horizontal"
@@ -173,6 +114,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="17sp"
+                            android:textColor="#4f4f4f"
                             android:text="上课班级"/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -181,6 +123,7 @@
                             android:layout_weight="1"
                             android:layout_marginLeft="30dp"
                             android:gravity="left"
+                            android:textColor="#4f4f4f"
                             android:text="物联网"/>
                     </LinearLayout>
                     <LinearLayout
@@ -193,6 +136,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="17sp"
+                            android:textColor="#4f4f4f"
                             android:text="所在教室"/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -200,6 +144,7 @@
                             android:layout_weight="1"
                             android:layout_marginLeft="30dp"
                             android:gravity="left"
+                            android:textColor="#4f4f4f"
                             android:textSize="17sp"
                             android:text="5#401"/>
                     </LinearLayout>
@@ -213,6 +158,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="17sp"
+                            android:textColor="#4f4f4f"
                             android:text=" 出 勤 率 "/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -220,6 +166,7 @@
                             android:layout_weight="1"
                             android:layout_marginLeft="32dp"
                             android:gravity="left"
+                            android:textColor="#4f4f4f"
                             android:textSize="17sp"
                             android:text="95.65%"/>
                     </LinearLayout>
@@ -230,11 +177,10 @@
                 app:cardCornerRadius="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="30dp"
-                app:cardElevation="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="20dp"
+                app:cardElevation="5dp"
                 app:cardBackgroundColor="#fafafa">
 
                 <LinearLayout
@@ -252,21 +198,22 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
-                            android:textSize="22sp"
+                            android:textSize="21sp"
                             android:text="下一课程"/>
+
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:textStyle="bold"
-                            android:textSize="22sp"
-                            android:text="计算机"/>
+                            android:text="计算机"
+                            android:textColor="#4f4f4f"
+                            android:textSize="20sp" />
                     </LinearLayout>
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="#000"/>
+                        android:background="#e6e6e6"/>
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -277,6 +224,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="17sp"
+                            android:textColor="#4f4f4f"
                             android:text="课程时间"/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -285,7 +233,8 @@
                             android:layout_weight="1"
                             android:layout_marginLeft="30dp"
                             android:gravity="left"
-                            android:text="2019.2.25 07:50-09:20"/>
+                            android:textColor="#4f4f4f"
+                            android:text="2019/2/25 1-2节"/>
                     </LinearLayout>
                     <LinearLayout
                         android:orientation="horizontal"
@@ -297,6 +246,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="17sp"
+                            android:textColor="#4f4f4f"
                             android:text="上课班级"/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -305,6 +255,7 @@
                             android:layout_weight="1"
                             android:layout_marginLeft="30dp"
                             android:gravity="left"
+                            android:textColor="#4f4f4f"
                             android:text="物联网"/>
                     </LinearLayout>
                     <LinearLayout
@@ -317,6 +268,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="17sp"
+                            android:textColor="#4f4f4f"
                             android:text="所在教室"/>
                         <TextView
                             android:layout_width="wrap_content"
@@ -324,11 +276,330 @@
                             android:layout_weight="1"
                             android:layout_marginLeft="30dp"
                             android:gravity="left"
+                            android:textColor="#4f4f4f"
                             android:textSize="17sp"
                             android:text="5#401"/>
                     </LinearLayout>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="17dp"
+                android:paddingLeft="17dp">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/data_analysis"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="-14dp"
+                        android:textSize="15dp"
+                        android:text="数据分析"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/teacher_message"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp">
+                    <ImageView
+                        android:layout_marginTop="2dp"
+                        android:layout_width="37dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="0dp"
+                        android:src="@mipmap/teacher_message"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="-2.5dp"
+                        android:textSize="15dp"
+                        android:text="消息"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="9dp">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/secondguide_dark"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="-5.1dp"
+                        android:textSize="15dp"
+                        android:text="课表"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="9dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/history_icon" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="-5.6dp"
+                        android:textSize="15dp"
+                        android:text="课堂历史"/>
+                </LinearLayout>
+            </LinearLayout>
+            <com.youth.banner.Banner
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/banner"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="21dp"
+                android:layout_marginRight="21dp"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                />
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="#f4f4f4"/>
+            <!--#dde0e4-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@mipmap/reading_icon"/>
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15sp"
+                        android:text="阅读"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#e6e6e6"/>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#4f4f4f"
+                        android:textSize="16sp"
+                        android:text="习近平总书记重要讲话在两岸产生强烈共鸣"/>
+                    <RelativeLayout
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:textSize="14sp"
+                            android:textColor="#999999"
+                            android:text="国家新闻"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:textSize="14sp"
+                            android:textColor="#999999"
+                            android:text="31.0万阅读量"/>
+                    </RelativeLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#e6e6e6"/>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#4f4f4f"
+                        android:textSize="16sp"
+                        android:text="习近平讲故事：中南海要始终直通人民群众"/>
+                    <RelativeLayout
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:textSize="14sp"
+                            android:textColor="#999999"
+                            android:text="正能量"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:textSize="14sp"
+                            android:textColor="#999999"
+                            android:text="31.5万阅读量"/>
+                    </RelativeLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#e6e6e6"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="20dp"
+                            android:singleLine="false"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="210dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="#4f4f4f"
+                            android:textSize="16sp"
+                            android:text="家长们注意了：教育孩子，从改变自我开始"/>
+                        <RelativeLayout
+                            android:layout_marginTop="25dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="7dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:textSize="14sp"
+                                android:textColor="#999999"
+                                android:text="教子有方"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:textSize="14sp"
+                                android:textColor="#999999"
+                                android:text="1.3万阅读量"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="95dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/parent_and_children"
+                        />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#e6e6e6"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="20dp"
+                            android:singleLine="false"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="210dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="#4f4f4f"
+                            android:textSize="16sp"
+                            android:text="上学时，老师经常讲的几句话，最后一句太搞笑了"/>
+                        <RelativeLayout
+                            android:layout_marginTop="25dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="7dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:textSize="14sp"
+                                android:textColor="#999999"
+                                android:text="文苑"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:textSize="14sp"
+                                android:textColor="#999999"
+                                android:text="56.1万阅读量"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="95dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/teacher_and_student"
+                        />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
+        </FrameLayout>
     </ScrollView>
 </LinearLayout>

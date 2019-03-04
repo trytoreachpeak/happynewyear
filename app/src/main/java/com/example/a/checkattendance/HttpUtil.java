@@ -28,4 +28,30 @@ public class HttpUtil {
         Log.d("test",jsonObject.toString());
         return jsonObject.toString();
     }
+    public static String createStudentIdJson(String studentId){
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("studentid",studentId);
+        Log.d("test",jsonObject.toString());
+        return jsonObject.toString();
+    }
+    public static String createClassJson(String studentclass){
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("studentclass",studentclass);
+        Log.d("testabc",jsonObject.toString());
+        return jsonObject.toString();
+    }
+    public static String createTeacherAttendanceJson(String teacherid,String courseid){
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("teacherid",teacherid);
+        jsonObject.addProperty("courseid",courseid);
+        Log.d("testabc",jsonObject.toString());
+        return jsonObject.toString();
+    }
+    public static String createSingleClassConditionJson(String teacherid,String courseid){
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("teacherid",teacherid);
+        jsonObject.addProperty("courseid",courseid);
+        Log.d("testabc",jsonObject.toString());
+        return jsonObject.toString();
+    }
 }
