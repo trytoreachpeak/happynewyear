@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.a.checkattendance.BaseActivity;
@@ -31,6 +32,8 @@ import java.util.List;
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_student_chating);
 
+            ImageView imageView_member=(ImageView)findViewById(R.id.member);
+            imageView_member.setOnClickListener(this);
             Button button_back=(Button) findViewById(R.id.back) ;
             button_back.setOnClickListener(this);
             init();
@@ -125,6 +128,10 @@ import java.util.List;
             switch(v.getId()){
                 case R.id.back:
                     finish();
+                    break;
+                case R.id.member:
+                    Intent intent1 = new Intent(StudentChatingActivity.this, StudentChatmemberActivity.class);
+                    startActivity(intent1);
                     break;
 
                 default:

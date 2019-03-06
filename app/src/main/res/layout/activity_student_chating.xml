@@ -14,8 +14,7 @@
             android:layout_width="140dp"
             android:layout_height="match_parent"
             android:text="sss"
-            android:textSize="30dp"
-            android:textStyle="bold"
+            android:textSize="22sp"
             android:textColor="#f4f4f4"
             android:gravity="center"
             android:layout_gravity="center">
@@ -28,6 +27,13 @@
             android:layout_height="match_parent"
             android:background="@drawable/back_qj"
             />
+        <ImageView
+            android:id="@+id/member"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="right|center_vertical"
+            android:src="@mipmap/member"/>
 
     </FrameLayout>
 

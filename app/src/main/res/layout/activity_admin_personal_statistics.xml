@@ -18,8 +18,7 @@
             android:layout_width="140dp"
             android:layout_height="match_parent"
             android:text="sss"
-            android:textSize="30dp"
-            android:textStyle="bold"
+            android:textSize="22sp"
             android:textColor="#f4f4f4"
             android:gravity="center"
             android:layout_centerHorizontal="true">
@@ -173,7 +172,7 @@
                         android:layout_marginRight="25dp"
                         android:textStyle="bold"
                         android:layout_width="match_parent"
-                        android:text="X%"
+                        android:text="高"
                         android:gravity="center"
                         android:textColor="#66cc99"
                         android:layout_height="0dp"

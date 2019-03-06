@@ -16,12 +16,11 @@
         <TextView
             android:layout_width="240dp"
             android:layout_height="match_parent"
-            android:text="考试情况"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:textColor="#f4f4f4"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:layout_gravity="center">
+            android:text="考试情况"
+            android:textColor="#f4f4f4"
+            android:textSize="22sp">
 
         </TextView>
         <Button
@@ -41,53 +40,51 @@
         android:orientation="vertical"
         android:layout_weight="140">
 
-        <ImageView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_gravity="center">
-        </ImageView>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_weight="4"
-            android:weightSum="1080"
-            android:layout_height="0dp">
+        </TextView>
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="50"
-                android:layout_height="match_parent" />
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="980"
-                android:layout_height="match_parent"
-                android:background="@drawable/search">
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/search_x"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textSize="15dp"
-                    android:text="搜索"
-                    android:textColor="#666666"/>
-            </LinearLayout>
-        </LinearLayout>
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_height="0dp"
+            android:background="#ededed"
+            android:layout_weight="4">
+        </SearchView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center">
+
+        </TextView>
+
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:background="#e5e5e5">
+
+    </View>
 
     <LinearLayout
         android:id="@+id/score"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:weightSum="1080"
-        android:layout_weight="150">
+        android:layout_weight="120">
         <TextView
             android:layout_width="0dp"
             android:layout_weight="600"
-            android:gravity="center_horizontal|bottom"
-            android:textSize="30dp"
+            android:gravity="center"
+            android:textSize="20dp"
             android:text="考试成绩"
             android:layout_height="match_parent" />
         <ImageView
@@ -101,17 +98,25 @@
             android:layout_weight="100"/>
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:background="#e5e5e5">
+
+    </View>
+
     <LinearLayout
         android:id="@+id/testroom"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:weightSum="1080"
-        android:layout_weight="150">
+        android:layout_weight="120">
         <TextView
             android:layout_width="0dp"
             android:layout_weight="600"
-            android:gravity="center_horizontal|bottom"
-            android:textSize="30dp"
+            android:gravity="center"
+            android:textSize="20dp"
             android:text="考场情况"
             android:layout_height="match_parent" />
         <ImageView
@@ -125,5 +130,12 @@
             android:layout_weight="100"/>
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:background="#e5e5e5">
+
+    </View>
 
 </LinearLayout>

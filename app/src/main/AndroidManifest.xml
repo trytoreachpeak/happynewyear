@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.a.checkattendance">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/AppTheme">
         <activity android:name=".ActivityLogin">
             <intent-filter>
@@ -49,8 +51,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".counsellor.CounsellorHomepage">
-        </activity>
+        <activity android:name=".counsellor.CounsellorHomepage"></activity>
         <activity android:name=".student.StudentFeedbackActivity" />
         <activity android:name=".Admin.AdminHomepage" />
         <activity android:name=".Admin.AdminAnalysisActivity" />
@@ -74,21 +75,20 @@
         <activity android:name=".Admin.AdminCourseActivity" />
         <activity android:name=".Admin.AdminClassuseActivity" />
         <activity android:name=".Admin.AdminChatingActivity" />
-        <activity android:name=".student.StudentAnalysisActivity"></activity>
+        <activity android:name=".student.StudentAnalysisActivity" />
         <activity android:name=".counsellor.CounsellorDataStatistics" />
         <activity android:name=".counsellor.CounsellorDSClass" />
         <activity android:name=".counsellor.CounsellorClassmateList" />
         <activity android:name=".counsellor.CounsellorDSStudent" />
         <activity android:name=".counsellor.CounsellorDataAnalysis" />
         <activity android:name=".counsellor.CounsellorDAClass" />
-        <activity android:name=".counsellor.CounsellorExam"></activity>
+        <activity android:name=".counsellor.CounsellorExam" />
         <activity android:name=".counsellor.CounsellorExamCondition" />
         <activity android:name=".counsellor.CounsellorExamroomCondition" />
         <activity android:name=".counsellor.CounsellorExamConditionDetail" />
         <activity android:name=".counsellor.CounsellorExamroomConditionDetail" />
-        <activity android:name=".teacher.TeacherTimetable">
-
-        </activity>
+        <activity android:name=".teacher.TeacherTimetable"></activity>
+        <activity android:name=".student.StudentChatmemberActivity"></activity>
     </application>
 
 </manifest>
