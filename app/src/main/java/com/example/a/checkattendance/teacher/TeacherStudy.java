@@ -1,6 +1,7 @@
 package com.example.a.checkattendance.teacher;
 
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 public class TeacherStudy extends AppCompatActivity implements View.OnClickListener{
     private ViewPager viewPager;
     private ArrayList<View> pageview;
-    private TextView materialsLayout;
+    private TextView testLayout;
     private TextView homeworkLayout;
     // 滚动条图片
     private ImageView scrollbar;
@@ -40,12 +41,12 @@ public class TeacherStudy extends AppCompatActivity implements View.OnClickListe
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         //查找布局文件用LayoutInflater.inflate
         LayoutInflater inflater =getLayoutInflater();
-        View view1 = inflater.inflate(R.layout.teacher_materials, null);
-        View view2 = inflater.inflate(R.layout.teacher_homework, null);
-        materialsLayout = (TextView)findViewById(R.id.materialsLayout);
+        View view1 = inflater.inflate(R.layout.teacher_homework, null);
+        View view2 = inflater.inflate(R.layout.teacher_test, null);
         homeworkLayout = (TextView)findViewById(R.id.homeworkLayout);
+        testLayout= (TextView)findViewById(R.id.testLayout);
         scrollbar = (ImageView)findViewById(R.id.scrollbar);
-        materialsLayout.setOnClickListener(this);
+        testLayout.setOnClickListener(this);
         homeworkLayout.setOnClickListener(this);
         pageview =new ArrayList<View>();
         //添加想要切换的界面
@@ -129,6 +130,14 @@ public class TeacherStudy extends AppCompatActivity implements View.OnClickListe
             //动画持续时间，单位为毫秒
             animation.setDuration(200);
             //滚动条开始动画
+            if(arg0==0){
+                homeworkLayout.setTextColor(Color.parseColor("#66cc99"));
+                testLayout.setTextColor(Color.parseColor("#999999"));
+            }
+            else if(arg0==1){
+                homeworkLayout.setTextColor(Color.parseColor("#999999"));
+                testLayout.setTextColor(Color.parseColor("#66cc99"));
+            }
             scrollbar.startAnimation(animation);
         }
 
@@ -144,11 +153,11 @@ public class TeacherStudy extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view){
         switch (view.getId()){
-            case R.id.materialsLayout:
+            case R.id.homeworkLayout:
                 //点击"视频“时切换到第一页
                 viewPager.setCurrentItem(0);
                 break;
-            case R.id.homeworkLayout:
+            case R.id.testLayout:
                 //点击“音乐”时切换的第二页
                 viewPager.setCurrentItem(1);
                 break;

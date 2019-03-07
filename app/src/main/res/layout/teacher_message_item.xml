@@ -7,8 +7,8 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="5dp"
-        android:layout_width="65dp"
-        android:layout_height="65dp"/>
+        android:layout_width="57dp"
+        android:layout_height="57dp"/>
         <!--android:src="@drawable/shenqing_img" -->
 
     <LinearLayout
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:layout_marginLeft="3dp"
-            android:textSize="21dp"/>
+            android:textSize="18dp"/>
             <!--android:text="请假申请" -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,7 +35,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:textSize="17dp"
+                android:textSize="16dp"
                 android:textColor="#cdcdcd"
                 />
                 <!--android:text="某某班"-->
@@ -43,8 +43,8 @@
         </LinearLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#cdcdcd"
-            android:layout_marginTop="4dp" />
+            style="@style/LineHeight"
+            android:background="#e5e5e5"
+            android:layout_marginTop="2.5dp" />
     </LinearLayout>
 </LinearLayout>

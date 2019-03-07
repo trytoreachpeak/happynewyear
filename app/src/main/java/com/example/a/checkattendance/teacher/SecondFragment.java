@@ -12,9 +12,17 @@ import android.widget.Button;
 
 import com.example.a.checkattendance.HttpUtil;
 import com.example.a.checkattendance.R;
+import com.example.a.checkattendance.gsonitem.CounsellorGetStudentsOfClassAttendance;
+import com.example.a.checkattendance.gsonitem.GetLessonConditionUntilNow;
 import com.example.a.checkattendance.gsonitem.GetSingleStudentIdentity;
 import com.example.a.checkattendance.gsonitem.GetStudentsOfClassIdentity;
 import com.example.a.checkattendance.gsonitem.GetTeacherAttendance;
+import com.example.a.checkattendance.gsonitem.ManagerGetAllStudentAttendance;
+import com.example.a.checkattendance.gsonitem.ManagerGetAllTeacherAttendance;
+import com.example.a.checkattendance.gsonitem.ManagerGetSingleStudentCondition;
+import com.example.a.checkattendance.gsonitem.ManagerGetSingleTeacherAttendance;
+import com.example.a.checkattendance.gsonitem.StudentGetAllSubjectCondition;
+import com.example.a.checkattendance.gsonitem.StudentGetLessonCondition;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -33,21 +41,24 @@ public class SecondFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HttpUtil.sendLoginRequest(
-                        "http://192.168.1.111:5000/api/v1/teachers/getsign/",
+                HttpUtil.sendGetRequest(
+                        "http://192.168.137.1:5000/api/v1/managers/getstudents/",
+                        //"http://192.168.137.1:80/test11.json",
                         //"http://10.0.2.2/test.json",
-                        HttpUtil.createTeacherAttendanceJson("123456","123"),
+                        //HttpUtil.createTeacherIdJson("123456"),
                         new okhttp3.Callback(){
                             @Override
                             public void onResponse(Call call, Response response) throws IOException {
                                 Gson gson = new Gson();
-                                java.lang.reflect.Type type = new TypeToken<GetTeacherAttendance>() {
+                                java.lang.reflect.Type type = new TypeToken<ManagerGetAllStudentAttendance>() {
                                 }.getType();
-                                GetTeacherAttendance getTeacherAttendance= gson.fromJson(response.body().string(), type);
-                                Log.d("testabc",getTeacherAttendance.getStatus()+"");
-                                Log.d("testabc",getTeacherAttendance.getData().size()+"");
-                                Log.d("testabc",getTeacherAttendance.getData().get(0).getDate());
-                                Log.d("testabc",getTeacherAttendance.getData().get(0).getSignouttime());
+                                ManagerGetAllStudentAttendance managerGetAllStudentAttendance= gson.fromJson(response.body().string(), type);
+                                Log.d("testabc",managerGetAllStudentAttendance.getStatus()+"");
+                                Log.d("testabc",managerGetAllStudentAttendance.getData().size()+"");
+                                Log.d("testabc",managerGetAllStudentAttendance.getData().get(0).getStudentname());
+                                Log.d("testabc",managerGetAllStudentAttendance.getData().get(0).getTeachername());
+                                Log.d("testabc",managerGetAllStudentAttendance.getData().get(0).getSignnum()+"");
+                                Log.d("testabc",managerGetAllStudentAttendance.getData().get(0).getSigninnum()+"");
                             }
                             @Override
                             public void onFailure(Call call, IOException e) {

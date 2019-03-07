@@ -1,7 +1,5 @@
 package com.example.a.checkattendance.gsonitem;
 
-import java.sql.Date;
-import java.sql.Timestamp;
 import java.util.List;
 
 public class GetTeacherAttendance {

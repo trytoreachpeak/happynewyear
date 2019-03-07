@@ -4,20 +4,20 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_first_fragment"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="50.5dp"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        app:popupTheme="@style/OverflowMenuStyle">
         <!--app:navigationIcon="@mipmap/ic_back"-->
         <TextView
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="学习"
-            android:textStyle="bold"
-            android:textSize="25sp"
+            android:text="课程1"
+            style="@style/ToolbarTextSize"
             android:textColor="#fefefe"/>
     </android.support.v7.widget.Toolbar>
     <RelativeLayout
@@ -28,18 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="#FFFFFF"
-            android:layout_marginBottom="-2dp">
-            <TextView
-                android:id="@+id/materialsLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="资料"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:background="@drawable/selector"
-                />
+            >
             <TextView
                 android:id="@+id/homeworkLayout"
                 android:layout_width="match_parent"
@@ -47,11 +36,24 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="作业"
-                android:textColor="#000000"
-                android:textSize="20sp"
+                android:textColor="#66cc99"
+                android:textSize="18sp"
+                android:background="@drawable/selector"
+                />
+            <TextView
+                android:id="@+id/testLayout"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="测试"
+                android:textColor="#999999"
+                android:textSize="18sp"
                 android:background="@drawable/selector"
                 />
         </LinearLayout>
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="7dp"
@@ -59,6 +61,11 @@
             android:id="@+id/scrollbar"
             android:scaleType="matrix"
             android:src="@drawable/scrollbar"/>
+        <View
+            android:layout_below="@id/scrollbar"
+            android:layout_width="match_parent"
+            style="@style/LineHeight"
+            android:background="#e5e5e5"/>
         <android.support.v4.view.ViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"

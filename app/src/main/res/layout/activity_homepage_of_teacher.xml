@@ -18,11 +18,11 @@
     </FrameLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        style="@style/LineHeight"
         android:background="#e5e5e5"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="9.2mm"
         android:orientation="horizontal"
     >
         <LinearLayout
@@ -35,8 +35,8 @@
             >
             <ImageView
                 android:id="@+id/firstguide_img"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="28.9dp"
+                android:layout_height="28.9dp"
                 android:src="@mipmap/firstguide_dark"
                 android:layout_gravity="center"
                 />
@@ -46,7 +46,9 @@
                 android:layout_height="wrap_content"
                 android:text="主页"
                 android:gravity="center"
+                android:layout_marginTop="-1.3dp"
                 android:textColor="#afafb0"
+                android:textSize="13sp"
                 />
         </LinearLayout>
         <LinearLayout
@@ -59,8 +61,8 @@
             >
             <ImageView
                 android:id="@+id/secondguide_img"
-                android:layout_width="33dp"
-                android:layout_height="33dp"
+                android:layout_width="26.5dp"
+                android:layout_height="26.5dp"
                 android:src="@mipmap/chat_icon_dark"
                 android:layout_gravity="center"
                 />
@@ -70,7 +72,9 @@
                 android:layout_height="wrap_content"
                 android:text="聊天"
                 android:gravity="center"
+                android:layout_marginTop="-0.67dp"
                 android:textColor="#afafb0"
+                android:textSize="13sp"
                 />
         </LinearLayout>
         <LinearLayout
@@ -83,8 +87,8 @@
             >
             <ImageView
                 android:id="@+id/thirdguide_img"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="30.2dp"
+                android:layout_height="30.1dp"
                 android:src="@mipmap/thirdguide_dark"
                 android:layout_gravity="center"
                 />
@@ -94,7 +98,9 @@
                 android:layout_height="wrap_content"
                 android:text="学习"
                 android:gravity="center"
+                android:layout_marginTop="-2.2dp"
                 android:textColor="#afafb0"
+                android:textSize="13sp"
                 />
         </LinearLayout>
         <LinearLayout
@@ -107,8 +113,8 @@
             >
             <ImageView
                 android:id="@+id/forthguide_img"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
                 android:src="@mipmap/forthguide_dark"
                 android:layout_gravity="center"
                 />
@@ -119,6 +125,8 @@
                 android:text="我的"
                 android:gravity="center"
                 android:textColor="#afafb0"
+                android:textSize="13sp"
+                android:layout_marginTop="0.2dp"
                 />
         </LinearLayout>
     </LinearLayout>

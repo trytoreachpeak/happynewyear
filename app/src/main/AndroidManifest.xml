@@ -24,10 +24,16 @@
         <activity android:name=".teacher.TeacherSettingsModifypassword" >
 
         </activity>
-        <activity android:name=".teacher.TeacherSettingsIdentityverifi" />
+        <activity android:name=".teacher.TeacherSettingsIdentityverifi" >
+
+        </activity>
         <activity android:name=".teacher.TeacherFeedback" />
-        <activity android:name=".teacher.TeacherSettingsBindphone" />
-        <activity android:name=".teacher.TeacherPersoninfo" />
+        <activity android:name=".teacher.TeacherSettingsBindphone" >
+
+        </activity>
+        <activity android:name=".teacher.TeacherPersoninfo" >
+
+        </activity>
         <activity android:name=".teacher.TeacherSchool" />
         <activity android:name=".teacher.TeacherStudy" />
         <activity android:name=".RegisterActivity" />
@@ -79,11 +85,15 @@
         <activity android:name=".Admin.AdminChatingActivity" />
         <activity android:name=".student.StudentAnalysisActivity"></activity>
         <activity android:name=".counsellor.CounsellorDataStatistics" />
-        <activity android:name=".counsellor.CounsellorDSClass" />
+        <activity android:name=".counsellor.CounsellorDSClass" >
+
+        </activity>
         <activity android:name=".counsellor.CounsellorClassmateList" />
         <activity android:name=".counsellor.CounsellorDSStudent" />
         <activity android:name=".counsellor.CounsellorDataAnalysis" />
-        <activity android:name=".counsellor.CounsellorDAClass" />
+        <activity android:name=".counsellor.CounsellorDAClass" >
+
+        </activity>
         <activity android:name=".counsellor.CounsellorExam"></activity>
         <activity android:name=".counsellor.CounsellorExamCondition" />
         <activity android:name=".counsellor.CounsellorExamroomCondition" />
@@ -92,6 +102,7 @@
         <activity android:name=".teacher.TeacherTimetable">
 
         </activity>
+        <activity android:name=".teacher.TeacherHomework"/>
     </application>
 
 </manifest>

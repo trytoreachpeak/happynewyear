@@ -4,19 +4,21 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_teacher_message"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="50.5dp"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:navigationIcon="@mipmap/ic_back">
+        <!--app:navigationIcon="@mipmap/ic_back"-->
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="22sp"
-            android:text="绑定手机"/>
+            android:layout_gravity="center"
+            android:text="绑定手机"
+            android:textSize="20sp"
+            android:textColor="#fefefe"/>
     </android.support.v7.widget.Toolbar>
     <LinearLayout
         android:orientation="vertical"
@@ -24,120 +26,77 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="#f4f4f4">
-        <android.support.v7.widget.CardView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            app:cardCornerRadius="8dp"
-            app:contentPadding="6dp"
-            app:cardElevation="1dp"
-            android:background="#ffffff">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="24dp"
-                    android:textSize="24sp"
-                    android:layout_gravity="center"
-                    android:textColor="#666666"
-                    android:text="手机号码"/>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
+            android:layout_height="1dp"
+            android:layout_marginTop="7dp"
+            android:background="#e5e5e5"/>
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            app:cardCornerRadius="8dp"
-            app:contentPadding="6dp"
-            app:cardElevation="1dp"
-            android:background="#ffffff">
-            <LinearLayout
+            android:layout_height="46dp"
+            android:background="#ffffff"
+            android:layout_marginTop="8dp"
+            android:padding="6dp">
+            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="24dp"
-                    android:background="@null"
-                    android:textColor="#666666"
-                    android:layout_gravity="center"
-                    android:textSize="23sp" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
+                android:layout_height="35dp"
+                android:layout_marginLeft="10.5dp"
+                android:layout_centerVertical="true"
+                android:textSize="17.5sp"
+                android:maxLength="11"
+                android:lines="1"
+                android:hint="请输入手机号"
+                android:background="@null" />
+        </RelativeLayout>
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            app:cardCornerRadius="8dp"
-            app:contentPadding="6dp"
-            app:cardElevation="1dp"
+            android:layout_height="wrap_content"
             android:background="#ffffff">
-            <LinearLayout
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="24dp"
-                    android:textSize="24sp"
-                    android:layout_gravity="center"
-                    android:textColor="#666666"
-                    android:text="输入验证码"/>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
+                android:layout_height="1dp"
+                android:layout_marginLeft="19.2dp"
+                android:background="#e5e5e5"/>
+        </LinearLayout>
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            app:cardCornerRadius="8dp"
-            app:contentPadding="6dp"
-            app:cardElevation="1dp"
-            android:background="#ffffff">
-            <LinearLayout
+            android:layout_height="46dp"
+            android:background="#ffffff"
+            android:padding="6dp">
+            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="24dp"
-                    android:background="@null"
-                    android:textColor="#666666"
-                    android:layout_gravity="center"
-                    android:textSize="23sp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:layout_gravity="center"
-                    android:textSize="23sp"
-                    android:textColor="#66cc99"
-                    android:text="获取验证码"/>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
+                android:layout_height="35dp"
+                android:layout_marginLeft="10.5dp"
+                android:layout_centerVertical="true"
+                android:textSize="17.5sp"
+                android:maxLength="11"
+                android:lines="1"
+                android:hint="请输入验证码"
+                android:background="@null" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginRight="8dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:background="@android:color/transparent"
+                android:text="获取验证码"
+                android:textColor="#66cc99"
+                android:textSize="16.5sp" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e5e5e5"/>
         <Button
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="60dp"
-            android:background="@drawable/bottom_shape"
-            android:text="确认修改"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bottom_shape_v1"
+            android:text="确定"
             android:textColor="#ffffff"
-            android:textSize="27sp" />
+            android:textSize="19sp" />
     </LinearLayout>
 </LinearLayout>

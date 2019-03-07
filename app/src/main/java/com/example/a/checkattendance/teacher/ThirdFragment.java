@@ -33,7 +33,7 @@ public class ThirdFragment extends Fragment {
         TeacherStudyAdapter adapter = new TeacherStudyAdapter(studyItemList);
         recyclerView.setAdapter(adapter);
 
-        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar_third_fragment);
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         toolbar.setTitle("");
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
 
@@ -41,11 +41,11 @@ public class ThirdFragment extends Fragment {
     }
 
     private void initTeacherStudyItem(){
-        TeacherMessageItem testExample=new TeacherMessageItem("课程名称",
+        TeacherMessageItem testExample=new TeacherMessageItem("课程名称1",
                 R.drawable.shenqing_img,"某某班");
         studyItemList.add(testExample);
-        TeacherMessageItem testExample1=new TeacherMessageItem("我",
-                R.drawable.shenqing_img,"我");
+        TeacherMessageItem testExample1=new TeacherMessageItem("课程名称1",
+                R.drawable.shenqing_img,"某某班");
         studyItemList.add(testExample1);
     }
 

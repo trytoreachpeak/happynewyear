@@ -3,15 +3,26 @@ package com.example.a.checkattendance.counsellor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.a.checkattendance.HttpUtil;
 import com.example.a.checkattendance.R;
-import com.example.a.checkattendance.student.StudentQingjiaActivity;
+import com.example.a.checkattendance.gsonitem.GetSingleLessonCondtion;
+import com.example.a.checkattendance.gsonitem.StudentGetSubjectCondition;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.feezu.liuli.timeselector.TimeSelector;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Response;
 
 public class CounsellorDSClass extends AppCompatActivity implements View.OnClickListener{
     private LinearLayout detail;
@@ -37,6 +48,9 @@ public class CounsellorDSClass extends AppCompatActivity implements View.OnClick
         init2();
         initData1();
         initData2();
+
+        Button button = (Button)findViewById(R.id.test_1);
+        button.setOnClickListener(this);
 
     }
     private void initData1() {
@@ -105,6 +119,31 @@ public class CounsellorDSClass extends AppCompatActivity implements View.OnClick
                 finish();
                 Toast.makeText(CounsellorDSClass.this, "完成", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.test_1:
+                String temp = startTime.getText().toString();
+                HttpUtil.sendLoginRequest(
+                        "http://192.168.1.111:5000/api/v1/students/getsign/",
+                        //"http://10.0.2.2/test.json",
+                        HttpUtil.createStudentSubjectConditionJson("1613022047","123"),
+                        new okhttp3.Callback(){
+                            @Override
+                            public void onResponse(Call call, Response response) throws IOException {
+                                Gson gson = new Gson();
+                                java.lang.reflect.Type type = new TypeToken<StudentGetSubjectCondition>() {
+                                }.getType();
+                                StudentGetSubjectCondition getSubjectCondition= gson.fromJson(response.body().string(), type);
+                                Log.d("testabc",getSubjectCondition.getStatus()+"");
+                                Log.d("testabc",getSubjectCondition.getData().size()+"");
+                                Log.d("testabc",getSubjectCondition.getData().get(0).getStudentid());
+                                Log.d("testabc",getSubjectCondition.getData().get(0).getStudentname());
+                                Log.d("testabc",getSubjectCondition.getData().get(0).getSignintime());
+                            }
+                            @Override
+                            public void onFailure(Call call, IOException e) {
+                                Log.d("testabc","connect fail");
+                            }
+                        }
+                );
             default:
                 break;
         }
