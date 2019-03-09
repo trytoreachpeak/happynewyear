@@ -27,13 +27,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/back_qj"
             />
-        <ImageView
-            android:id="@+id/member"
-            android:layout_width="30dp"
-            android:layout_height="50dp"
-            android:layout_marginRight="15dp"
-            android:layout_gravity="right|center_vertical"
-            android:src="@mipmap/member"/>
+
 
     </FrameLayout>
 

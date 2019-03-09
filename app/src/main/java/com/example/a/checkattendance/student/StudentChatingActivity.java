@@ -145,8 +145,7 @@ import java.util.List;
          */
         private void init() {
             msgList.add(new Msg("你好", Msg.TYPE.RECEIVED));
-            msgList.add(new Msg("你好，请问你是？", Msg.TYPE.SENT));
-            msgList.add(new Msg("我是 deniro，很高兴认识你^_^", Msg.TYPE.RECEIVED));
+
         }
 
 
