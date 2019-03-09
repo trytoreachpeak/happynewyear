@@ -45,13 +45,13 @@ public class StudentChatFragment extends Fragment implements View.OnClickListene
         for (int i=0;i<1;i++) {
             Chat yangyue=new Chat ("杨小玥",R.mipmap.portrait4);
             chatList.add(yangyue);
-            Chat liuqi=new Chat ("刘少奇",R.mipmap.portrait5);
+            Chat liuqi=new Chat ("刘奇",R.mipmap.portrait5);
             chatList.add(liuqi);
-            Chat caizhouyu=new Chat ("菜粥鱼",R.mipmap.portrait1);
+            Chat caizhouyu=new Chat ("蔡周宇",R.mipmap.portrait1);
             chatList.add(caizhouyu);
-            Chat shaozhenyu=new Chat ("邵正兴",R.mipmap.portrait3);
+            Chat shaozhenyu=new Chat ("邵正宇",R.mipmap.portrait3);
             chatList.add(shaozhenyu);
-            Chat wujunyao=new Chat ("吴均瑶",R.mipmap.portrait2);
+            Chat wujunyao=new Chat ("吴君瑶",R.mipmap.portrait2);
             chatList.add(wujunyao);
             Chat shenmiren=new Chat ("神秘人",R.mipmap.portrait6);
             chatList.add(shenmiren);

@@ -2,58 +2,39 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="#ededed"
+
     android:orientation="vertical"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:weightSum="3"
+        android:weightSum="7"
         android:orientation="vertical"
-        android:layout_weight="240">
+        android:layout_weight="140">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_gravity="center">
         </ImageView>
-        <LinearLayout
+        <SearchView
             android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:weightSum="1080"
-            android:layout_height="0dp">
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_height="0dp"
+            android:background="#ededed"
+            android:layout_weight="4">
+        </SearchView>
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="50"
-                android:layout_height="match_parent" />
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="980"
-                android:layout_height="match_parent"
-                android:background="@drawable/search">
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/search_x"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textSize="15dp"
-                    android:text="搜索"
-                    android:textColor="#666666"/>
-            </LinearLayout>
-        </LinearLayout>
     </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1680">
+        android:layout_weight="1780">
 
         <ListView
             android:id="@+id/list_xuexi"
