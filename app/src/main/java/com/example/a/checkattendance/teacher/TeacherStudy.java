@@ -3,6 +3,8 @@ package com.example.a.checkattendance.teacher;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Matrix;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -18,10 +20,11 @@ import android.widget.TextView;
 import com.example.a.checkattendance.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TeacherStudy extends AppCompatActivity implements View.OnClickListener{
     private ViewPager viewPager;
-    private ArrayList<View> pageview;
+    private List<Fragment> pageview;
     private TextView testLayout;
     private TextView homeworkLayout;
     // 滚动条图片
@@ -48,12 +51,18 @@ public class TeacherStudy extends AppCompatActivity implements View.OnClickListe
         scrollbar = (ImageView)findViewById(R.id.scrollbar);
         testLayout.setOnClickListener(this);
         homeworkLayout.setOnClickListener(this);
-        pageview =new ArrayList<View>();
+        pageview =new ArrayList<Fragment>();
         //添加想要切换的界面
-        pageview.add(view1);
-        pageview.add(view2);
+        FirstFragment fragment1 = new FirstFragment();
+        ForthFragment fragment2 = new ForthFragment();
+        pageview.add(fragment1);
+        pageview.add(fragment2);
         //数据适配器
-        PagerAdapter mPagerAdapter = new PagerAdapter(){
+        FragmentPagerAdapter mPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()){
+            @Override
+            public Fragment getItem(int i) {
+                return pageview.get(i);
+            }
 
             @Override
             //获取当前窗体界面数
@@ -62,22 +71,22 @@ public class TeacherStudy extends AppCompatActivity implements View.OnClickListe
                 return pageview.size();
             }
 
-            @Override
+            //@Override
             //判断是否由对象生成界面
-            public boolean isViewFromObject(View arg0, Object arg1) {
+            //public boolean isViewFromObject(View arg0, Object arg1) {
                 // TODO Auto-generated method stub
-                return arg0==arg1;
-            }
+             //   return arg0==arg1;
+            //}
             //使从ViewGroup中移出当前View
-            public void destroyItem(View arg0, int arg1, Object arg2) {
-                ((ViewPager) arg0).removeView(pageview.get(arg1));
-            }
+            //public void destroyItem(View arg0, int arg1, Object arg2) {
+                //((ViewPager) arg0).removeView(pageview.get(arg1));
+            //}
 
             //返回一个对象，这个对象表明了PagerAdapter适配器选择哪个对象放在当前的ViewPager中
-            public Object instantiateItem(View arg0, int arg1){
-                ((ViewPager)arg0).addView(pageview.get(arg1));
-                return pageview.get(arg1);
-            }
+            //public Object instantiateItem(View arg0, int arg1){
+                //((ViewPager)arg0).addView(pageview.get(arg1));
+               // return pageview.get(arg1);
+            //}
         };
         //绑定适配器
         viewPager.setAdapter(mPagerAdapter);

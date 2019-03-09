@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CheckAttendance</string>
+    <string name="app_name">勤学早</string>
 
     <string-array name="arrUsernames">
         <item>阿妹</item>
