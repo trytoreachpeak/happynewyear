@@ -44,18 +44,18 @@ public class AdminTeacherAttendanceActivity extends BaseActivity implements View
 
     private void initclasses(){
         for (int i=0;i<1;i++) {
-            Teacher shuxue=new Teacher ("苗丽丽","98%",R.drawable.kecheng);
-            teacherList.add(shuxue);
-            Teacher yingyu=new Teacher ("秦高","98.2%",R.drawable.kecheng);
-            teacherList.add(yingyu);
-            Teacher shuxue2=new Teacher ("苗丽丽","98%",R.drawable.kecheng);
-            teacherList.add(shuxue);
-            Teacher yingyu3=new Teacher ("秦高","98.2%",R.drawable.kecheng);
-            teacherList.add(yingyu);
-            Teacher shuxue4=new Teacher ("苗丽丽","98%",R.drawable.kecheng);
-            teacherList.add(shuxue);
-            Teacher yingyu5=new Teacher ("秦高","98.2%",R.drawable.kecheng);
-            teacherList.add(yingyu);
+            Teacher teacher1=new Teacher ("苗丽丽","98%",R.mipmap.teacher);
+            teacherList.add(teacher1);
+            Teacher teacher2=new Teacher ("秦高","98.2%",R.mipmap.teacher);
+            teacherList.add(teacher2);
+            Teacher teacher3=new Teacher ("华含","98%",R.mipmap.teacher);
+            teacherList.add(teacher3);
+            Teacher teacher4=new Teacher ("谢红","98.2%",R.mipmap.teacher);
+            teacherList.add(teacher4);
+            Teacher teacher5=new Teacher ("刚任强","98%",R.mipmap.teacher);
+            teacherList.add(teacher5);
+            Teacher teacher6=new Teacher ("朱浩","98.2%",R.mipmap.teacher);
+            teacherList.add(teacher6);
         }
     }
     @Override

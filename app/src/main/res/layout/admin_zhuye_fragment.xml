@@ -121,7 +121,7 @@
                         android:layout_weight="1"
                         android:textStyle="bold"
                         android:gravity="center"
-                        android:text="数 据 统 计"/>
+                        android:text="班 级 统 计"/>
 
 
                 </LinearLayout>
@@ -142,7 +142,7 @@
                         android:layout_weight="1"
                         android:textStyle="bold"
                         android:gravity="center"
-                        android:text="数 据 分 析"/>
+                        android:text="课 程 分 析"/>
 
 
                 </LinearLayout>
@@ -211,6 +211,7 @@
 
     </LinearLayout>
     <ListView
+        android:id="@+id/list_floor"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1040"></ListView>

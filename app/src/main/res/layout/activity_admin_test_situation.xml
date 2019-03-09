@@ -82,7 +82,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="物联网181"
-            android:textSize="25dp"
+            android:textSize="22dp"
             android:gravity="center_vertical"
             android:layout_weight="500"/>
     </LinearLayout>
@@ -103,7 +103,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="高等数学A（一）"
-            android:textSize="25dp"
+            android:textSize="22dp"
             android:gravity="center_vertical"
             android:layout_weight="500"/>
     </LinearLayout>
@@ -145,7 +145,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="8号楼301"
-            android:textSize="25dp"
+            android:textSize="22dp"
             android:gravity="center_vertical"
             android:layout_weight="500"/>
     </LinearLayout>

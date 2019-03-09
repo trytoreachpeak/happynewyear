@@ -19,6 +19,7 @@ import java.util.List;
 
 public class AdminChatFragment extends Fragment implements View.OnClickListener{
     private List<Chat> chatList=new ArrayList<>();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.admin_chat_fragment, container, false);
