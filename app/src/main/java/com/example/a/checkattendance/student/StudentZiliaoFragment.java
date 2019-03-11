@@ -40,10 +40,14 @@ import java.util.List;
 
         private void initclasses(){
             for (int i=0;i<1;i++) {
-                Ziliao shuxue=new Ziliao ("总结",R.drawable.kecheng);
+                Ziliao shuxue=new Ziliao ("第一章测试",R.mipmap.student_kecheng);
                 ziliaoList.add(shuxue);
-                Ziliao yingyu=new Ziliao ("提纲",R.drawable.kecheng);
+                Ziliao yingyu=new Ziliao ("第二章测试",R.mipmap.student_kecheng);
                 ziliaoList.add(yingyu);
+                Ziliao three=new Ziliao ("第三章测试",R.mipmap.student_kecheng);
+                ziliaoList.add(three);
+                Ziliao four=new Ziliao ("第四章测试",R.mipmap.student_kecheng);
+                ziliaoList.add(four);
             }
         }
     }

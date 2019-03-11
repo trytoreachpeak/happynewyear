@@ -8,8 +8,7 @@
     android:orientation="vertical">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="180"
+        android:layout_height="50.5dp"
         android:layout_gravity="center"
         android:background="#66cc99">
 
@@ -28,6 +27,13 @@
             android:layout_height="match_parent"
             android:background="@drawable/back_qj"
             />
+        <ImageView
+            android:id="@+id/member"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="right|center_vertical"
+            android:src="@mipmap/member"/>
     </FrameLayout>
     <FrameLayout
         android:layout_width="match_parent"
@@ -40,14 +46,27 @@
         android:weightSum="1080"
         android:layout_height="0dp">
 
-        <SearchView
-            android:layout_width="match_parent"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:layout_height="match_parent" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="980"
             android:layout_height="match_parent"
-            android:background="#ededed"
-            android:layout_weight="4">
-        </SearchView>
+            android:background="@drawable/search">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/search_x"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:text="搜索"
+                android:textColor="#666666"/>
+        </LinearLayout>
     </LinearLayout>
     <FrameLayout
         android:layout_width="match_parent"

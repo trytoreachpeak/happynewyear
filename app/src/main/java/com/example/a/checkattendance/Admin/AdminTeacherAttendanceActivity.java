@@ -52,10 +52,7 @@ public class AdminTeacherAttendanceActivity extends BaseActivity implements View
             teacherList.add(teacher3);
             Teacher teacher4=new Teacher ("谢红","98.2%",R.mipmap.teacher);
             teacherList.add(teacher4);
-            Teacher teacher5=new Teacher ("刚任强","98%",R.mipmap.teacher);
-            teacherList.add(teacher5);
-            Teacher teacher6=new Teacher ("朱浩","98.2%",R.mipmap.teacher);
-            teacherList.add(teacher6);
+
         }
     }
     @Override

@@ -44,10 +44,14 @@ import java.util.List;
 
         private void initclasses(){
             for (int i=0;i<1;i++) {
-                Class shuxue=new Class ("数学",R.drawable.kecheng);
+                Class shuxue=new Class ("高等数学(一)",R.drawable.kecheng);
                 classList.add(shuxue);
-                Class yingyu=new Class ("英语",R.drawable.kecheng);
+                Class yingyu=new Class ("英语(二)",R.drawable.kecheng);
                 classList.add(yingyu);
+                Class shuju=new Class ("数据结构",R.drawable.kecheng);
+                classList.add(shuju);
+                Class java=new Class ("JAVA编程设计",R.drawable.kecheng);
+                classList.add(java);
             }
         }
     }
