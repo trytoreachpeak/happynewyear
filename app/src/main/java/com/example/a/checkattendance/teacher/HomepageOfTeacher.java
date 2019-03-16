@@ -14,7 +14,11 @@ import android.widget.TextView;
 import com.example.a.checkattendance.R;
 
 public class HomepageOfTeacher extends AppCompatActivity implements View.OnClickListener {
-
+    private  Fragment  currentFragment = new Fragment();
+    private FirstFragment firstFragment = new FirstFragment();
+    private SecondFragment secondFragment = new SecondFragment();
+    private ThirdFragment thirdFragment = new ThirdFragment();
+    private ForthFragment forthFragment = new ForthFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +30,17 @@ public class HomepageOfTeacher extends AppCompatActivity implements View.OnClick
         //toolbar_teacher_main.setTitle("");
         //toolbar_teacher_main.setVisibility(View.GONE);
 
-       replaceFragment(new FirstFragment());
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.lay_fragment, firstFragment);
+        ft.add(R.id.lay_fragment, secondFragment);
+        ft.add(R.id.lay_fragment, thirdFragment);
+        ft.add(R.id.lay_fragment, forthFragment);
+        ft.hide(secondFragment);
+        ft.hide(thirdFragment);
+        ft.hide(forthFragment);
+        ft.commit();
+
 
         ImageView firstguideImage = (ImageView) findViewById(R.id.firstguide_img);
         TextView firstguideTxt = (TextView) findViewById(R.id.firstguide_txt);
@@ -44,12 +58,7 @@ public class HomepageOfTeacher extends AppCompatActivity implements View.OnClick
 
     }
 
-    private void replaceFragment(Fragment fragment){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.lay_fragment,fragment);
-        transaction.commit();
-    }
+
     @Override
     public void onClick(View view) {
         ImageView firstguideImage = (ImageView) findViewById(R.id.firstguide_img);
@@ -62,6 +71,9 @@ public class HomepageOfTeacher extends AppCompatActivity implements View.OnClick
         TextView thirdTxt = (TextView) findViewById(R.id.thirdguide_txt);
         TextView forthTxt = (TextView) findViewById(R.id.forthguide_txt);
         //Toolbar toolbar_teacher_main=view.findViewById(R.id.toolbar_homepage);
+
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft= fm.beginTransaction();
         switch (view.getId()){
             case R.id.firstguide://点击“联系人”触发的监听事件
                 //---------------------------联系人处高亮，其他灰色---------------------------------
@@ -75,7 +87,12 @@ public class HomepageOfTeacher extends AppCompatActivity implements View.OnClick
                 forthTxt.setTextColor(getResources().getColor(R.color.huiSe));
                 //----------------------------------------------------------------------------------
                 //---------------------------添加联系人Fragment-------------------------------------
-                replaceFragment(new FirstFragment());
+
+                ft.show(firstFragment)
+                        .hide(secondFragment)
+                        .hide(thirdFragment)
+                        .hide(forthFragment)
+                        .commit();
                 //getSupportActionBar().show();
                 //----------------------------------------------------------------------------------
                 break;
@@ -91,7 +108,12 @@ public class HomepageOfTeacher extends AppCompatActivity implements View.OnClick
                 forthTxt.setTextColor(getResources().getColor(R.color.huiSe));
                 //----------------------------------------------------------------------------------
                 //---------------------------添加联系人Fragment-------------------------------------
-                replaceFragment(new SecondFragment());
+
+                ft.show(secondFragment)
+                        .hide(firstFragment)
+                        .hide(thirdFragment)
+                        .hide(forthFragment)
+                        .commit();
                 //getSupportActionBar().show();
                 //----------------------------------------------------------------------------------
                 break;
@@ -108,7 +130,11 @@ public class HomepageOfTeacher extends AppCompatActivity implements View.OnClick
                 //----------------------------------------------------------------------------------
                 //---------------------------添加知识Fragment---------------------------------------
                 //getSupportActionBar().show();
-                replaceFragment(new ThirdFragment());
+                ft.show(thirdFragment)
+                        .hide(secondFragment)
+                        .hide(firstFragment)
+                        .hide(forthFragment)
+                        .commit();
 
                 //----------------------------------------------------------------------------------
                 break;
@@ -124,7 +150,11 @@ public class HomepageOfTeacher extends AppCompatActivity implements View.OnClick
                 forthTxt.setTextColor(getResources().getColor(R.color.colorPrimary));
                 //----------------------------------------------------------------------------------
                 //getSupportActionBar().hide();
-                replaceFragment(new ForthFragment());
+                ft.show(forthFragment)
+                        .hide(secondFragment)
+                        .hide(thirdFragment)
+                        .hide(firstFragment)
+                        .commit();
 
 
                 break;

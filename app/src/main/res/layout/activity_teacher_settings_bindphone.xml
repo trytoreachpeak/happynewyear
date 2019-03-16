@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="绑定手机"
-            android:textSize="20sp"
+            style="@style/ToolbarTextSize"
             android:textColor="#fefefe"/>
     </android.support.v7.widget.Toolbar>
     <LinearLayout
@@ -28,14 +28,13 @@
         android:background="#f4f4f4">
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="7dp"
+            style="@style/LineHeight"
+            android:layout_marginTop="0.85mm"
             android:background="#e5e5e5"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:background="#ffffff"
-            android:layout_marginTop="8dp"
             android:padding="6dp">
             <EditText
                 android:layout_width="match_parent"
@@ -54,7 +53,7 @@
             android:background="#ffffff">
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                style="@style/LineHeight"
                 android:layout_marginLeft="19.2dp"
                 android:background="#e5e5e5"/>
         </LinearLayout>
@@ -86,7 +85,7 @@
         </RelativeLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            style="@style/LineHeight"
             android:background="#e5e5e5"/>
         <Button
             android:layout_width="match_parent"

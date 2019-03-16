@@ -36,16 +36,23 @@ public class ThirdFragment extends Fragment {
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         toolbar.setTitle("");
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         return view;
     }
 
     private void initTeacherStudyItem(){
-        TeacherMessageItem testExample=new TeacherMessageItem("课程名称1",
-                R.drawable.shenqing_img,"某某班");
+        TeacherMessageItem testExample=new TeacherMessageItem("高等数学(一)",
+                R.mipmap.subject_icon,"计172");
         studyItemList.add(testExample);
-        TeacherMessageItem testExample1=new TeacherMessageItem("课程名称1",
-                R.drawable.shenqing_img,"某某班");
+        TeacherMessageItem testExample1=new TeacherMessageItem("英语(二)",
+                R.mipmap.subject_icon,"计172");
+        studyItemList.add(testExample1);
+        TeacherMessageItem testExample2=new TeacherMessageItem("数据结构",
+                R.mipmap.subject_icon,"计172");
+        studyItemList.add(testExample1);
+        TeacherMessageItem testExample3=new TeacherMessageItem("JAVA编程设计",
+                R.mipmap.subject_icon,"计172");
         studyItemList.add(testExample1);
     }
 

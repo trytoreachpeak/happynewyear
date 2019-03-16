@@ -34,5 +34,8 @@
     <style name="ToolbarTextSize">
         <item name="android:textSize">18sp</item>
     </style>
+    <style name="RealtimeClassroomTextSize">
+        <item name="android:textSize">16.5sp</item>
+    </style>
 
 </resources>

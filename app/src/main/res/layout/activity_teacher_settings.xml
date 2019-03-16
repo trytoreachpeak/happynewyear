@@ -2,7 +2,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:background="#f4f4f4">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="设置"
-            android:textSize="20sp"
+            style="@style/ToolbarTextSize"
             android:textColor="#fefefe"/>
     </android.support.v7.widget.Toolbar>
     <LinearLayout
@@ -28,22 +29,23 @@
         android:background="#f4f4f4">
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="7dp"
+            style="@style/LineHeight"
+            android:layout_marginTop="0.85mm"
             android:background="#e5e5e5"/>
         <RelativeLayout
+            android:id="@+id/person_info"
             android:layout_width="match_parent"
-            android:layout_height="46dp"
+            android:layout_height="45dp"
             android:background="#ffffff"
             android:padding="6dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:textSize="17.5sp"
+                style="@style/TeacherForthFragmentTextSize"
                 android:textColor="#333333"
                 android:layout_marginLeft="12dp"
-                android:text="账号管理" />
+                android:text="个人信息" />
             <ImageView
                 android:layout_alignParentRight="true"
                 android:layout_width="21dp"
@@ -58,20 +60,21 @@
             android:background="#ffffff">
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                style="@style/LineHeight"
                 android:layout_marginLeft="19.2dp"
                 android:background="#e5e5e5"/>
         </LinearLayout>
         <RelativeLayout
+            android:id="@+id/modify_password"
             android:layout_width="match_parent"
-            android:layout_height="46dp"
+            android:layout_height="45dp"
             android:background="#ffffff"
             android:padding="6dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:textSize="17.5sp"
+                style="@style/TeacherForthFragmentTextSize"
                 android:textColor="#333333"
                 android:layout_marginLeft="12dp"
                 android:text="修改密码" />
@@ -89,20 +92,21 @@
             android:background="#ffffff">
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                style="@style/LineHeight"
                 android:layout_marginLeft="19.2dp"
                 android:background="#e5e5e5"/>
         </LinearLayout>
         <RelativeLayout
+            android:id="@+id/identity_verifi"
             android:layout_width="match_parent"
-            android:layout_height="46dp"
+            android:layout_height="45dp"
             android:background="#ffffff"
             android:padding="6dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:textSize="17.5sp"
+                style="@style/TeacherForthFragmentTextSize"
                 android:textColor="#333333"
                 android:layout_marginLeft="12dp"
                 android:text="身份认证" />
@@ -120,20 +124,21 @@
             android:background="#ffffff">
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                style="@style/LineHeight"
                 android:layout_marginLeft="19.2dp"
                 android:background="#e5e5e5"/>
         </LinearLayout>
         <RelativeLayout
+            android:id="@+id/bind_phone"
             android:layout_width="match_parent"
-            android:layout_height="46dp"
+            android:layout_height="45dp"
             android:background="#ffffff"
             android:padding="6dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:textSize="17.5sp"
+                style="@style/TeacherForthFragmentTextSize"
                 android:textColor="#333333"
                 android:layout_marginLeft="12dp"
                 android:text="绑定手机" />
@@ -147,23 +152,24 @@
         </RelativeLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            style="@style/LineHeight"
             android:background="#e5e5e5"/>
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="7dp"
+            style="@style/LineHeight"
+            android:layout_marginTop="0.85mm"
             android:background="#e5e5e5"/>
         <RelativeLayout
+            android:id="@+id/remind_before_class"
             android:layout_width="match_parent"
-            android:layout_height="46dp"
+            android:layout_height="45dp"
             android:background="#ffffff"
             android:padding="6dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:textSize="17.5sp"
+                style="@style/TeacherForthFragmentTextSize"
                 android:textColor="#333333"
                 android:layout_marginLeft="12dp"
                 android:text="上课前提醒" />
@@ -177,23 +183,24 @@
         </RelativeLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            style="@style/LineHeight"
             android:background="#e5e5e5"/>
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="7dp"
+            style="@style/LineHeight"
+            android:layout_marginTop="0.85mm"
             android:background="#e5e5e5"/>
         <RelativeLayout
+            android:id="@+id/software_version"
             android:layout_width="match_parent"
-            android:layout_height="46dp"
+            android:layout_height="45dp"
             android:background="#ffffff"
             android:padding="6dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:textSize="17.5sp"
+                style="@style/TeacherForthFragmentTextSize"
                 android:textColor="#333333"
                 android:layout_marginLeft="12dp"
                 android:text="软件版本" />
@@ -211,20 +218,21 @@
             android:background="#ffffff">
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                style="@style/LineHeight"
                 android:layout_marginLeft="19.2dp"
                 android:background="#e5e5e5"/>
         </LinearLayout>
         <RelativeLayout
+            android:id="@+id/about_us"
             android:layout_width="match_parent"
-            android:layout_height="46dp"
+            android:layout_height="45dp"
             android:background="#ffffff"
             android:padding="6dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:textSize="17.5sp"
+                style="@style/TeacherForthFragmentTextSize"
                 android:textColor="#333333"
                 android:layout_marginLeft="12dp"
                 android:text="关于我们" />
@@ -238,7 +246,7 @@
         </RelativeLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            style="@style/LineHeight"
             android:background="#e5e5e5"/>
     </LinearLayout>
 </LinearLayout>

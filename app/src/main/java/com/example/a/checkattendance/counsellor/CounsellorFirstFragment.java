@@ -36,9 +36,10 @@ public class CounsellorFirstFragment extends Fragment implements View.OnClickLis
         CounsellorClassConditionAdapter adapter = new CounsellorClassConditionAdapter(CounsellorCCItemList);
         recyclerView.setAdapter(adapter);
 
-        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar_first_fragment);
-        toolbar.setTitle("");
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        //toolbar.setTitle("");
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         LinearLayout DataStatistics = (LinearLayout)view.findViewById(R.id.data_statistics_button);
         DataStatistics.setOnClickListener(this);

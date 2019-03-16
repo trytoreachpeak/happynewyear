@@ -34,7 +34,6 @@ public class ForthFragment extends Fragment implements View.OnClickListener{
         subject=(RelativeLayout)view.findViewById(R.id.subject);
         myAttendance=(RelativeLayout)view.findViewById(R.id.my_attendance);
         feedback=(RelativeLayout)view.findViewById(R.id.feedback_icon);
-        query=(RelativeLayout)view.findViewById(R.id.query);
         settings=(RelativeLayout)view.findViewById(R.id.settings);
 
         settings.setOnClickListener(this);

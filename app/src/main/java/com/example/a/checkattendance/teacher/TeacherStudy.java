@@ -1,5 +1,7 @@
 package com.example.a.checkattendance.teacher;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Matrix;
@@ -9,6 +11,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,11 +44,29 @@ public class TeacherStudy extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_study);
+
+        TextView title = (TextView)findViewById(R.id.title);
+        Intent intent = getIntent();
+        String titleText=intent.getStringExtra("titleText");
+        title.setText(titleText);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         //查找布局文件用LayoutInflater.inflate
         LayoutInflater inflater =getLayoutInflater();
-        View view1 = inflater.inflate(R.layout.teacher_homework, null);
-        View view2 = inflater.inflate(R.layout.teacher_test, null);
+        //View view1 = inflater.inflate(R.layout.teacher_homework, null);
+        //View view2 = inflater.inflate(R.layout.teacher_test, null);
         homeworkLayout = (TextView)findViewById(R.id.homeworkLayout);
         testLayout= (TextView)findViewById(R.id.testLayout);
         scrollbar = (ImageView)findViewById(R.id.scrollbar);
@@ -53,8 +74,8 @@ public class TeacherStudy extends AppCompatActivity implements View.OnClickListe
         homeworkLayout.setOnClickListener(this);
         pageview =new ArrayList<Fragment>();
         //添加想要切换的界面
-        FirstFragment fragment1 = new FirstFragment();
-        ForthFragment fragment2 = new ForthFragment();
+        TeacherHomeworkFragment fragment1 = new TeacherHomeworkFragment();
+        TeacherTestFragment fragment2 = new TeacherTestFragment();
         pageview.add(fragment1);
         pageview.add(fragment2);
         //数据适配器
@@ -171,6 +192,12 @@ public class TeacherStudy extends AppCompatActivity implements View.OnClickListe
                 viewPager.setCurrentItem(1);
                 break;
         }
+    }
+
+    public static void actionStart(Context context, String title){
+        Intent intent = new Intent(context,TeacherStudy.class);
+        intent.putExtra("titleText",title);
+        context.startActivity(intent);
     }
 }
 

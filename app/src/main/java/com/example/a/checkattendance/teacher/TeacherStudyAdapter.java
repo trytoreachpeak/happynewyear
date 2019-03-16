@@ -48,8 +48,9 @@ public class TeacherStudyAdapter
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
                 TeacherMessageItem teacherStudyItem = mTeacherStudyItem.get(position);
-                Intent intent = new Intent(v.getContext(),TeacherStudy.class);
-                v.getContext().startActivity(intent);
+                TeacherStudy.actionStart(v.getContext(),teacherStudyItem.getMessageCategory());
+                //Intent intent = new Intent(v.getContext(),TeacherStudy.class);
+                //v.getContext().startActivity(intent);
             }
         });
         return holder;
