@@ -34,7 +34,7 @@ public class AdminChatFragment extends Fragment implements View.OnClickListener{
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Chat chat=chatList.get(position);
                 String data=chat.getName();
-                Intent intent=new Intent(getActivity(),StudentChatingActivity.class);
+                Intent intent=new Intent(getActivity(),AdminChatingActivity.class);
                 intent.putExtra("extra_data",data);
                 startActivity(intent);
             }

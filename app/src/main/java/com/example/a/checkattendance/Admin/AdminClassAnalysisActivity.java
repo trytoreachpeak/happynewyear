@@ -62,8 +62,8 @@ public class AdminClassAnalysisActivity extends BaseActivity implements OnChartV
         TextView t_classname=(TextView) findViewById(R.id.class_name) ;
         Button button_back=(Button)findViewById(R.id.back);
         button_back.setOnClickListener(this);
-        Button button_person=(Button)findViewById(R.id.person);
-        button_person.setOnClickListener(this);
+
+
         Intent intent = getIntent();
         String showdata = intent.getStringExtra("extra_data");
         t_classname.setText(showdata);
@@ -75,10 +75,7 @@ public class AdminClassAnalysisActivity extends BaseActivity implements OnChartV
     @Override
     public void onClick(View v){
         switch(v.getId()){
-            case R.id.person:
-                Intent intent = new Intent(AdminClassAnalysisActivity.this,AdminPersonAnalysisActivity.class);
-                startActivity(intent);
-                break;
+
             case R.id.back:
                 finish();
                 break;

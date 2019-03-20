@@ -39,6 +39,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:background="#f4f4f4"
         android:weightSum="1080"
         android:layout_height="wrap_content">
         <TextView
@@ -47,7 +48,8 @@
             android:layout_weight="20"/>
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="7mm"
+            android:layout_gravity="center"
             android:background="@drawable/voice_chating"
             android:layout_weight="120"/>
         <TextView
@@ -72,8 +74,9 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_weight="120"
+            android:layout_gravity="center"
             android:background="@drawable/face_chating"
-            android:layout_height="40dp" />
+            android:layout_height="7mm" />
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -82,8 +85,8 @@
         <Button
             android:id="@+id/send"
             android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center_vertical"
+            android:layout_height="5mm"
+            android:layout_gravity="center"
             android:visibility="gone"
             android:layout_weight="125"
             android:textSize="15dp"
@@ -95,14 +98,15 @@
         <Button
             android:id="@+id/more"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="7mm"
             android:visibility="visible"
+            android:layout_gravity="center"
             android:layout_weight="120"
             android:background="@drawable/add_chating"
             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="8dp"></LinearLayout>
+        android:layout_height="2dp"></LinearLayout>
 
 </LinearLayout>
