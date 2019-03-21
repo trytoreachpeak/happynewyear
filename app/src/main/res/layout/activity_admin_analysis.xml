@@ -5,16 +5,17 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:weightSum="1920"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Admin.AdminStatisticsActivity">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="50.5dp"
         android:background="#66cc99">
 
         <TextView
             android:layout_width="140dp"
             android:layout_height="match_parent"
-            android:text="数据分析"
+            android:text="课程分析"
             android:textSize="22sp"
             android:textColor="#f4f4f4"
             android:gravity="center"
@@ -33,9 +34,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         android:weightSum="6"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="140">
 
         <ImageView
             android:layout_width="match_parent"
@@ -46,6 +48,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_weight="4"
+            android:weightSum="1080"
             android:layout_height="0dp">
 
             <SearchView
@@ -59,20 +62,12 @@
         </LinearLayout>
     </LinearLayout>
 
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1920">
-        <ExpandableListView
-            android:id ="@+id/expandableListView"
-            android:layout_width ="match_parent"
-            android:layout_height ="wrap_content"
-            android:groupIndicator="@null"
-            />
-
-    </LinearLayout>
+    <ListView
+        android:id ="@+id/list_teacher"
+        android:layout_width ="match_parent"
+        android:layout_height ="0dp"
+        android:layout_weight="1600"
+        />
 
 
 

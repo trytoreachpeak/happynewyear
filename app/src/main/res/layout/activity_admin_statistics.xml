@@ -9,8 +9,7 @@
     tools:context=".Admin.AdminStatisticsActivity">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="180"
+        android:layout_height="50.5dp"
         android:background="#66cc99">
 
         <TextView
@@ -64,11 +63,10 @@
     </LinearLayout>
 
     <ExpandableListView
-        android:id ="@+id/expandableListView"
+        android:id ="@+id/expandableListView1"
         android:layout_width ="match_parent"
         android:layout_height ="0dp"
         android:layout_weight="1600"
-        android:groupIndicator="@null"
         />
 
 

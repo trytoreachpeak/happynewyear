@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="70dp"
         android:layout_gravity="left"
-        android:background="@mipmap/bubble">
+        android:background="@mipmap/message_left">
 
         <TextView
             android:id="@+id/left_msg"
