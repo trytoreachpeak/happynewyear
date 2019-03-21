@@ -27,7 +27,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
     public class StudentQingjiaActivity extends BaseActivity implements View.OnClickListener{
-        String[] str = {"大学物理-沫沫", "体育-刚任强", "美术-幂廖", "英语-marry"};
+        String[] str = {"大学物理-华含", "体育-刚任强", "高数-苗丽丽", "英语-秦高"};
 
 
         public static final int TAKE_PHOTO=1;//声明一个请求码，用于识别返回的结果

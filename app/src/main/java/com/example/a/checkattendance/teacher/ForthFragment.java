@@ -39,6 +39,9 @@ public class ForthFragment extends Fragment implements View.OnClickListener{
         settings.setOnClickListener(this);
         settings_up.setOnClickListener(this);
         personInfo.setOnClickListener(this);
+        myAttendance.setOnClickListener(this);
+        feedback.setOnClickListener(this);
+        subject.setOnClickListener(this);
         return view;
     }
 
@@ -58,7 +61,20 @@ public class ForthFragment extends Fragment implements View.OnClickListener{
                 intent = new Intent(getActivity(), TeacherSettings.class);
                 startActivity(intent);
                 break;
-            default:break;
+            case R.id.my_attendance:
+                intent = new Intent(getActivity(),TeacherMyAttendanceChooseCourse.class);
+                startActivity(intent);
+                break;
+            case R.id.feedback_icon:
+                intent = new Intent(getActivity(),TeacherFeedback.class);
+                startActivity(intent);
+                break;
+            case R.id.subject:
+                intent = new Intent(getActivity(),TeacherMyCourse.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
         }
     }
 }

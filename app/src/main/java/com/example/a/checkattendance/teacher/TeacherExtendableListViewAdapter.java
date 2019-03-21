@@ -8,6 +8,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
 import com.example.a.checkattendance.R;
+import com.example.a.checkattendance.gsonitem.GetSingleLessonCondtion;
 
 import java.util.ArrayList;
 
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 public class TeacherExtendableListViewAdapter extends BaseExpandableListAdapter {
     private Context mcontext;
     public ArrayList<ClassBean> parentData;
-    public ArrayList<ArrayList<StudentBean>> childData;
+    public ArrayList<ArrayList<GetSingleLessonCondtion.Data>> childData;
 
     @Override
     // 获取分组的个数
@@ -26,9 +27,7 @@ public class TeacherExtendableListViewAdapter extends BaseExpandableListAdapter 
     //获取指定分组中的子选项的个数
     @Override
     public int getChildrenCount(int groupPosition)
-    {   if( childData.get(groupPosition)==null){
-        return 0;
-    }
+    {
         return childData.get(groupPosition).size();
     }
 
@@ -107,25 +106,43 @@ public class TeacherExtendableListViewAdapter extends BaseExpandableListAdapter 
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         ChildViewHolder childViewHolder;
         if (convertView==null){
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.child_item,parent,false);
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.children_item,parent,false);
             childViewHolder = new ChildViewHolder();
             childViewHolder.studentName = (TextView)convertView.findViewById(R.id.student_name);
             childViewHolder.studentId = (TextView)convertView.findViewById(R.id.student_id);
             childViewHolder.renzhenCount = (TextView)convertView.findViewById(R.id.renzhen_count);
             childViewHolder.burenzhenCount = (TextView)convertView.findViewById(R.id.burenzhen_count);
             childViewHolder.shuijiaoCount = (TextView)convertView.findViewById(R.id.shuijiao_count);
-            childViewHolder.jiaotoujieerCount = (TextView)convertView.findViewById(R.id.jiaotoujieer_count);
+            childViewHolder.studentComment = (TextView)convertView.findViewById(R.id.student_comment);
             convertView.setTag(childViewHolder);
 
         }else {
             childViewHolder = (ChildViewHolder) convertView.getTag();
         }
-        childViewHolder.studentName.setText(childData.get(groupPosition).get(childPosition).getChildName());
-        childViewHolder.studentId.setText(childData.get(groupPosition).get(childPosition).getChildId());
-        childViewHolder.renzhenCount.setText(childData.get(groupPosition).get(childPosition).getRenzhen());
-        childViewHolder.burenzhenCount.setText(childData.get(groupPosition).get(childPosition).getBurenzhen());
-        childViewHolder.shuijiaoCount.setText(childData.get(groupPosition).get(childPosition).getShuijiao());
-        childViewHolder.jiaotoujieerCount.setText(childData.get(groupPosition).get(childPosition).getJiaotoujieer());
+        childViewHolder.studentName.setText(childData.get(groupPosition).get(childPosition).getStudentname());
+        childViewHolder.studentId.setText(childData.get(groupPosition).get(childPosition).getStudentid());
+        childViewHolder.renzhenCount.setText(String.valueOf(childData.get(groupPosition).get(childPosition).getSseriousnum()));
+        childViewHolder.burenzhenCount.setText(String.valueOf(childData.get(groupPosition).get(childPosition).getSlazynum()));
+        childViewHolder.shuijiaoCount.setText(String.valueOf(childData.get(groupPosition).get(childPosition).getSsleepnum()));
+        int temp= childData.get(groupPosition).get(childPosition).getIsserious()
+                +childData.get(groupPosition).get(childPosition).getIslazy()
+                +childData.get(groupPosition).get(childPosition).getIssleep();
+        String tempText;
+        switch(temp){
+            case 1:
+                tempText="认真";
+                break;
+            case 2:
+                tempText="睡觉";
+                break;
+            case 3:
+                tempText="不认真";
+                break;
+            default:
+                tempText="没有评价";
+                break;
+        }
+        childViewHolder.studentComment.setText(tempText);
         return convertView;
     }
 
@@ -146,6 +163,6 @@ public class TeacherExtendableListViewAdapter extends BaseExpandableListAdapter 
         TextView renzhenCount;
         TextView burenzhenCount;
         TextView shuijiaoCount;
-        TextView jiaotoujieerCount;
+        TextView studentComment;
     }
 }

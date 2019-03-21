@@ -27,6 +27,11 @@ import java.util.List;
 
 public class FirstFragment extends Fragment implements View.OnClickListener{
     LinearLayout teacherMessage;
+    LinearLayout dataAnalysis;
+    LinearLayout timetable;
+    LinearLayout classHistory;
+    CardView nowClass;
+    CardView nextClass;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -34,11 +39,22 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         toolbar.setTitle("");
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-        setHasOptionsMenu(true);
-        toolbar.setOverflowIcon(getResources().getDrawable(R.mipmap.icon_add));     //设置菜单图标
+        //setHasOptionsMenu(true);
+        //toolbar.setOverflowIcon(getResources().getDrawable(R.mipmap.icon_add));     //设置菜单图标
 
         teacherMessage=(LinearLayout)view.findViewById(R.id.teacher_message);
         teacherMessage.setOnClickListener(this);
+        nowClass=(CardView)view.findViewById(R.id.now_class);
+        nowClass.setOnClickListener(this);
+        nextClass=(CardView)view.findViewById(R.id.next_class);
+        nextClass.setOnClickListener(this);
+        dataAnalysis=(LinearLayout)view.findViewById(R.id.data_analysis);
+        dataAnalysis.setOnClickListener(this);
+        timetable=(LinearLayout)view.findViewById(R.id.timetable);
+        timetable.setOnClickListener(this);
+        classHistory=(LinearLayout)view.findViewById(R.id.class_histroy);
+        classHistory.setOnClickListener(this);
+
 
         List<Integer> images= new ArrayList<>();
         images.add(R.drawable.banner_img_1);
@@ -67,30 +83,9 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
         return view;
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_main, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.menu_1:
-                Toast.makeText(getActivity(), "我是第一个", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.menu_2:
-                Toast.makeText(getActivity(), "我是第二个", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.menu_3:
-                Toast.makeText(getActivity(), "我是第三个", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.menu_4:
-                Toast.makeText(getActivity(), "我是第四个", Toast.LENGTH_SHORT).show();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+
+
 
     @Override
     public void onClick(View v) {
@@ -100,7 +95,39 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
                 intent = new Intent(getActivity(), com.example.a.checkattendance.teacher.teacherMessage.class);
                 startActivity(intent);
                 break;
+            case R.id.next_class:
+                Toast toast = Toast.makeText(getContext(), null, Toast.LENGTH_SHORT);
+                toast.setText("该课程还未开始");
+                toast.show();
+                break;
+            case R.id.now_class:
+                intent = new Intent(getActivity(),TeacherRealtimeClassroom.class);
+                startActivity(intent);
+                break;
+            case R.id.class_histroy:
+                intent = new Intent(getActivity(),TeacherClassHistory.class);
+                startActivity(intent);
+                break;
+            case R.id.data_analysis:
+                intent = new Intent(getActivity(),TeacherDataAnalysis.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
         }
     }
-
+   /* @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_main, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu_1:
+                Toast.makeText(getActivity(), "我是第一个", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }*/
 }

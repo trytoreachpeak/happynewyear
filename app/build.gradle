@@ -39,4 +39,6 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
     implementation 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0'
     implementation project(':libraryscrollnumber')
+    implementation 'com.github.yellowhai:TimeSelector:1.8.7'
+    implementation 'com.haibin:calendarview:3.2.9'
 }

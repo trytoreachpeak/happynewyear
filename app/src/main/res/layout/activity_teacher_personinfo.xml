@@ -273,5 +273,15 @@
             android:layout_width="match_parent"
             style="@style/LineHeight"
             android:background="#e5e5e5"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bottom_shape_v2"
+            android:text="退出登录"
+            android:textColor="#ffffff"
+            android:textSize="19sp" />
     </LinearLayout>
 </LinearLayout>

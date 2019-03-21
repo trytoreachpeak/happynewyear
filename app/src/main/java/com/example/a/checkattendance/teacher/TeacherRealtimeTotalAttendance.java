@@ -12,17 +12,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.a.checkattendance.R;
+import com.example.a.checkattendance.gsonitem.GetSingleLessonCondtion;
 
 import java.util.ArrayList;
 
-public class TeacherRealtimeTotalAttendance extends AppCompatActivity implements View.OnClickListener{
-    private ArrayList<StudentBean> childData = new ArrayList<>();
-    private  ArrayList<ArrayList<StudentBean>> mchildData = new ArrayList<>();
-    private ArrayList<StudentBean> attendList = new ArrayList<>();
-    private ArrayList<StudentBean> absencelist = new ArrayList<>();
-    private ArrayList<StudentBean> lateattendList = new ArrayList<>();
-    private ArrayList<StudentBean> earlyleaveList = new ArrayList<>();
-    private ArrayList<StudentBean> leaveList = new ArrayList<>();
+public class TeacherRealtimeTotalAttendance extends AppCompatActivity
+        implements View.OnClickListener,ModifyInnerData{
+    private ArrayList<GetSingleLessonCondtion.Data> attendList = new ArrayList<>();
+    private ArrayList<GetSingleLessonCondtion.Data> absencelist = new ArrayList<>();
+    private ArrayList<GetSingleLessonCondtion.Data> lateattendList = new ArrayList<>();
+    private ArrayList<GetSingleLessonCondtion.Data> earlyleaveList = new ArrayList<>();
+    private ArrayList<GetSingleLessonCondtion.Data> leaveList = new ArrayList<>();
 
     private LinearLayout attendBackground;
     private LinearLayout absenceBackground;
@@ -34,18 +34,44 @@ public class TeacherRealtimeTotalAttendance extends AppCompatActivity implements
     private TextView lateattendText;
     private TextView earlyleaveText;
     private TextView leaveText;
+
+    private TextView totalNum;
     TeacherRealtimeTotalAttendanceAdapter adapter;
+    {
+        classifyData();
+    }
+    @Override
+    public void change(GetSingleLessonCondtion.Data data,int i){
+        switch(i){
+            case 0:
+                attendList.add(data);
+                break;
+            case 1:
+                absencelist.add(data);
+                break;
+            case 2:
+                lateattendList.add(data);
+                break;
+            case 3:
+                earlyleaveList.add(data);
+                break;
+            case 4:
+                leaveList.add(data);
+                break;
+                default:break;
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_realtime_total_attendance);
 
-        Intent intent = getIntent();
-        Bundle args = intent.getBundleExtra("BUNDLE");
-        mchildData = (ArrayList<ArrayList<StudentBean>>) args.getSerializable("ARRAYLIST");
-        initData();
+        //Intent intent = getIntent();
+        //Bundle args = intent.getBundleExtra("BUNDLE");
+        //mchildData = (ArrayList<ArrayList<StudentBean>>) args.getSerializable("ARRAYLIST");
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //toolbar.setTitle("");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -56,10 +82,15 @@ public class TeacherRealtimeTotalAttendance extends AppCompatActivity implements
             }
         });
 
+        totalNum = (TextView)findViewById(R.id.total_num);
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("出勤共").append(String.valueOf(attendList.size())).append("人");
+        totalNum.setText(stringBuilder.toString());
+
         RecyclerView recyclerView=(RecyclerView)findViewById(R.id.recyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        adapter=new TeacherRealtimeTotalAttendanceAdapter(attendList);
+        adapter=new TeacherRealtimeTotalAttendanceAdapter(attendList,0,this);
         recyclerView.setAdapter(adapter);
 
         attendBackground=(LinearLayout)findViewById(R.id.attend_background);
@@ -80,28 +111,26 @@ public class TeacherRealtimeTotalAttendance extends AppCompatActivity implements
         leaveBackground.setOnClickListener(this);
 
     }
-    private void initData(){
-        for (ArrayList<StudentBean> arrayStudentBean:TeacherRealtimeClassroom.childData){
-            for(StudentBean studentBean:arrayStudentBean){//到时候RealClassRoom的数据可以联网更新。这里传数据上去。
-                switch(studentBean.getAttendanceStatus()){
-                    case 0:
-                        attendList.add(studentBean);
-                        break;
-                    case 1:
-                        absencelist.add(studentBean);
-                        break;
-                    case 2:
-                        lateattendList.add(studentBean);
-                        break;
-                    case 3:
-                        earlyleaveList.add(studentBean);
-                        break;
-                    case 4:
-                        leaveList.add(studentBean);
-                        break;
-                    default:
-                        break;
-                }
+    private void classifyData(){
+        for (GetSingleLessonCondtion.Data data:TeacherRealtimeClassroom.secondlessonData){
+            switch(data.getSstate()){
+                case 0:
+                    attendList.add(data);
+                    break;
+                case 1:
+                    absencelist.add(data);
+                    break;
+                case 2:
+                    lateattendList.add(data);
+                    break;
+                case 3:
+                    earlyleaveList.add(data);
+                    break;
+                case 4:
+                    leaveList.add(data);
+                    break;
+                default:
+                    break;
             }
         }
     }
@@ -109,6 +138,7 @@ public class TeacherRealtimeTotalAttendance extends AppCompatActivity implements
 
     @Override
     public void onClick(View v) {
+        StringBuilder stringBuilder;
         switch(v.getId()){
             case R.id.attend_background:
                 attendBackground.setBackgroundColor(Color.parseColor("#66cc99"));
@@ -122,7 +152,10 @@ public class TeacherRealtimeTotalAttendance extends AppCompatActivity implements
                 lateattendText.setTextColor(Color.parseColor("#333333"));
                 earlyleaveText.setTextColor(Color.parseColor("#333333"));
                 leaveText.setTextColor(Color.parseColor("#333333"));
-                adapter.updateData(attendList);
+                stringBuilder = new StringBuilder();
+                stringBuilder.append("出勤共").append(String.valueOf(attendList.size())).append("人");
+                totalNum.setText(stringBuilder.toString());
+                adapter.updateData(attendList,0);
                 break;
             case R.id.absence_background:
                 attendBackground.setBackgroundResource(R.drawable.choose_button);
@@ -136,7 +169,10 @@ public class TeacherRealtimeTotalAttendance extends AppCompatActivity implements
                 lateattendText.setTextColor(Color.parseColor("#333333"));
                 earlyleaveText.setTextColor(Color.parseColor("#333333"));
                 leaveText.setTextColor(Color.parseColor("#333333"));
-                adapter.updateData(absencelist);
+                stringBuilder= new StringBuilder();
+                stringBuilder.append("缺勤共").append(String.valueOf(absencelist.size())).append("人");
+                totalNum.setText(stringBuilder.toString());
+                adapter.updateData(absencelist,1);
                 break;
             case R.id.lateattend_background:
                 attendBackground.setBackgroundResource(R.drawable.choose_button);
@@ -150,7 +186,10 @@ public class TeacherRealtimeTotalAttendance extends AppCompatActivity implements
                 lateattendText.setTextColor(Color.parseColor("#ffffff"));
                 earlyleaveText.setTextColor(Color.parseColor("#333333"));
                 leaveText.setTextColor(Color.parseColor("#333333"));
-                adapter.updateData(lateattendList);
+                stringBuilder= new StringBuilder();
+                stringBuilder.append("迟到共").append(String.valueOf(lateattendList.size())).append("人");
+                totalNum.setText(stringBuilder.toString());
+                adapter.updateData(lateattendList,2);
                 break;
             case R.id.earlyleave_background:
                 attendBackground.setBackgroundResource(R.drawable.choose_button);
@@ -164,7 +203,10 @@ public class TeacherRealtimeTotalAttendance extends AppCompatActivity implements
                 lateattendText.setTextColor(Color.parseColor("#333333"));
                 earlyleaveText.setTextColor(Color.parseColor("#ffffff"));
                 leaveText.setTextColor(Color.parseColor("#333333"));
-                adapter.updateData(earlyleaveList);
+                stringBuilder= new StringBuilder();
+                stringBuilder.append("早退共").append(String.valueOf(earlyleaveList.size())).append("人");
+                totalNum.setText(stringBuilder.toString());
+                adapter.updateData(earlyleaveList,3);
                 break;
             case R.id.leave_background:
                 attendBackground.setBackgroundResource(R.drawable.choose_button);
@@ -178,7 +220,10 @@ public class TeacherRealtimeTotalAttendance extends AppCompatActivity implements
                 lateattendText.setTextColor(Color.parseColor("#333333"));
                 earlyleaveText.setTextColor(Color.parseColor("#333333"));
                 leaveText.setTextColor(Color.parseColor("#ffffff"));
-                adapter.updateData(leaveList);
+                stringBuilder= new StringBuilder();
+                stringBuilder.append("请假共").append(String.valueOf(leaveList.size())).append("人");
+                totalNum.setText(stringBuilder.toString());
+                adapter.updateData(leaveList,4);
                 break;
                 default:break;
 

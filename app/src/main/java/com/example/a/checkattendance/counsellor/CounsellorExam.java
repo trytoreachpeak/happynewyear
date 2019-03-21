@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.example.a.checkattendance.R;
 
@@ -15,15 +16,16 @@ public class CounsellorExam extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_counsellor_exam);
-        LinearLayout ExamCondition = (LinearLayout)findViewById(R.id.exam_condition);
-        LinearLayout ExamRoomCondition = (LinearLayout)findViewById(R.id.exam_room_condition);
+        RelativeLayout ExamCondition = (RelativeLayout)findViewById(R.id.exam_condition);
+        RelativeLayout ExamRoomCondition = (RelativeLayout)findViewById(R.id.exam_room_condition);
         ExamCondition.setOnClickListener(this);
         ExamRoomCondition.setOnClickListener(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("");
+        //toolbar.setTitle("");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

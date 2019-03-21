@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.a.checkattendance.R;
+import com.example.a.checkattendance.gsonitem.GetSingleLessonCondtion;
 
 import org.w3c.dom.Text;
 
@@ -20,7 +21,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class TeacherRealtimeTotalAttendanceAdapter
         extends RecyclerView.Adapter<TeacherRealtimeTotalAttendanceAdapter.ViewHolder> {
-    private ArrayList<StudentBean> mchildData;
+    private ArrayList<GetSingleLessonCondtion.Data> mchildData;
+    private ModifyInnerData mmodifyInnerData;
+    private int mchooseNow;
     static class ViewHolder extends RecyclerView.ViewHolder{
         TextView studentName;
         TextView attendanceStatus;
@@ -42,10 +45,13 @@ public class TeacherRealtimeTotalAttendanceAdapter
             chooseLeave=(Button)view.findViewById(R.id.choose_leave);
         }
     }
-    public TeacherRealtimeTotalAttendanceAdapter(ArrayList<StudentBean> childData){
+    public TeacherRealtimeTotalAttendanceAdapter(ArrayList<GetSingleLessonCondtion.Data> childData,int chooseNow,ModifyInnerData modifyInnerData){
         mchildData=childData;
+        mchooseNow =chooseNow;
+        mmodifyInnerData=modifyInnerData;
     }
-    public void updateData(ArrayList<StudentBean> childData){
+    public void updateData(ArrayList<GetSingleLessonCondtion.Data> childData,int chooseNow){
+        mchooseNow=chooseNow;
         mchildData=childData;
         notifyDataSetChanged();
     }
@@ -59,42 +65,55 @@ public class TeacherRealtimeTotalAttendanceAdapter
             @Override
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
-                StudentBean studentBean = mchildData.get(position);
-                studentBean.setAttendanceStatus(0);
-                notifyItemChanged(position);
+                GetSingleLessonCondtion.Data studentBean = mchildData.get(position);
+                studentBean.setSstate(0);
+                mmodifyInnerData.change(studentBean,0);
+                mchildData.remove(position);
+                notifyItemRemoved(position);
             }
         });
         holder.chooseAbsence.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
-                StudentBean studentBean = mchildData.get(position);
-                studentBean.setAttendanceStatus(1);
-                Log.d("testabc",mchildData.get(position).getAttendanceStatus()+"");
+                GetSingleLessonCondtion.Data studentBean = mchildData.get(position);
+                studentBean.setSstate(1);
+                mmodifyInnerData.change(studentBean,1);
+                mchildData.remove(position);
+                notifyItemRemoved(position);
             }
         });
         holder.chooseLateattend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
-                StudentBean studentBean = mchildData.get(position);
-                studentBean.setAttendanceStatus(2);
+                GetSingleLessonCondtion.Data studentBean = mchildData.get(position);
+                studentBean.setSstate(2);
+                mmodifyInnerData.change(studentBean,2);
+                mchildData.remove(position);
+                notifyItemRemoved(position);
             }
         });
         holder.chooseEarlyleave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
-                StudentBean studentBean = mchildData.get(position);
-                studentBean.setAttendanceStatus(3);
+                GetSingleLessonCondtion.Data studentBean = mchildData.get(position);
+                studentBean.setSstate(3);
+                mmodifyInnerData.change(studentBean,3);
+                mchildData.remove(position);
+                notifyItemRemoved(position);
             }
         });
         holder.chooseLeave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
-                StudentBean studentBean = mchildData.get(position);
-                studentBean.setAttendanceStatus(4);
+                GetSingleLessonCondtion.Data studentBean = mchildData.get(position);
+                studentBean.setSstate(4);
+                mmodifyInnerData.change(studentBean,4);
+                mchildData.remove(position);
+                notifyItemRemoved(position);
             }
         });
 
@@ -103,10 +122,49 @@ public class TeacherRealtimeTotalAttendanceAdapter
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        StudentBean studentBean = mchildData.get(position);
-        holder.studentName.setText(studentBean.getChildName());
-        holder.studentId.setText(studentBean.getChildId());
-        switch(studentBean.getAttendanceStatus()){
+        GetSingleLessonCondtion.Data studentBean = mchildData.get(position);
+        holder.studentName.setText(studentBean.getStudentname());
+        holder.studentId.setText(studentBean.getStudentid());
+        switch (mchooseNow){
+            case 0:
+                holder.chooseAttend.setVisibility(View.GONE);
+                holder.chooseAbsence.setVisibility(View.VISIBLE);
+                holder.chooseLateattend.setVisibility(View.VISIBLE);
+                holder.chooseEarlyleave.setVisibility(View.VISIBLE);
+                holder.chooseLeave.setVisibility(View.VISIBLE);
+                break;
+            case 1:
+                holder.chooseAttend.setVisibility(View.VISIBLE);
+                holder.chooseAbsence.setVisibility(View.GONE);
+                holder.chooseLateattend.setVisibility(View.VISIBLE);
+                holder.chooseEarlyleave.setVisibility(View.VISIBLE);
+                holder.chooseLeave.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                holder.chooseAttend.setVisibility(View.VISIBLE);
+                holder.chooseAbsence.setVisibility(View.VISIBLE);
+                holder.chooseLateattend.setVisibility(View.GONE);
+                holder.chooseEarlyleave.setVisibility(View.VISIBLE);
+                holder.chooseLeave.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                holder.chooseAttend.setVisibility(View.VISIBLE);
+                holder.chooseAbsence.setVisibility(View.VISIBLE);
+                holder.chooseLateattend.setVisibility(View.VISIBLE);
+                holder.chooseEarlyleave.setVisibility(View.GONE);
+                holder.chooseLeave.setVisibility(View.VISIBLE);
+                break;
+            case 4:
+                holder.chooseAttend.setVisibility(View.VISIBLE);
+                holder.chooseAbsence.setVisibility(View.VISIBLE);
+                holder.chooseLateattend.setVisibility(View.VISIBLE);
+                holder.chooseEarlyleave.setVisibility(View.VISIBLE);
+                holder.chooseLeave.setVisibility(View.GONE);
+                break;
+            default:
+                break;
+        }
+        switch(studentBean.getSstate()){
             case 0:
                 holder.attendanceStatus.setText("出勤");
                 break;

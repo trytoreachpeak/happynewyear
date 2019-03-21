@@ -288,6 +288,7 @@
                 android:paddingRight="17dp"
                 android:paddingLeft="17dp">
                 <LinearLayout
+                    android:id="@+id/data_analysis"
                     android:orientation="vertical"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -328,6 +329,7 @@
                         android:text="消息"/>
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/timetable"
                     android:orientation="vertical"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -347,6 +349,7 @@
                         android:text="课表"/>
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/class_histroy"
                     android:orientation="vertical"
                     android:layout_width="0dp"
                     android:layout_weight="1"

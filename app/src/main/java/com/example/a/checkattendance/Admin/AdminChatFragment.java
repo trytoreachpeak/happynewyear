@@ -19,6 +19,7 @@ import java.util.List;
 
 public class AdminChatFragment extends Fragment implements View.OnClickListener{
     private List<Chat> chatList=new ArrayList<>();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.admin_chat_fragment, container, false);
@@ -45,10 +46,18 @@ public class AdminChatFragment extends Fragment implements View.OnClickListener{
 
     private void initclasses(){
         for (int i=0;i<1;i++) {
-            Chat shuxue=new Chat ("小红",R.drawable.kecheng);
-            chatList.add(shuxue);
-            Chat yingyu=new Chat ("小明",R.drawable.kecheng);
-            chatList.add(yingyu);
+            Chat yangyue=new Chat ("杨小玥",R.mipmap.portrait4);
+            chatList.add(yangyue);
+            Chat liuqi=new Chat ("刘奇",R.mipmap.portrait5);
+            chatList.add(liuqi);
+            Chat caizhouyu=new Chat ("蔡周宇",R.mipmap.portrait1);
+            chatList.add(caizhouyu);
+            Chat shaozhenyu=new Chat ("邵正宇",R.mipmap.portrait3);
+            chatList.add(shaozhenyu);
+            Chat wujunyao=new Chat ("吴君瑶",R.mipmap.portrait2);
+            chatList.add(wujunyao);
+            Chat shenmiren=new Chat ("神秘人",R.mipmap.portrait6);
+            chatList.add(shenmiren);
         }
     }
     @Override

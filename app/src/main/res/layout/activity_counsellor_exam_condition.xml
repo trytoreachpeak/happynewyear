@@ -2,11 +2,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:background="#f4f4f4">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="50.5dp"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -17,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="考试成绩"
-            android:textSize="20sp"
+            style="@style/ToolbarTextSize"
             android:textColor="#fefefe"/>
     </android.support.v7.widget.Toolbar>
     <ScrollView
@@ -35,57 +36,57 @@
                 android:layout_height="35dp"
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/rounded_edittext"/>
-            <LinearLayout
-                android:orientation="vertical"
+            <RelativeLayout
+                android:id="@+id/class_number_one"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:id="@+id/class_number_one"
-                    android:layout_width="match_parent"
-                    android:layout_height="44dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="45dp"
-                        android:textSize="22sp"
-                        android:text="班级1"/>
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="200dp"
-                        android:src="@mipmap/right_arrow_img"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#e7e7e7"
-                    android:layout_marginTop="-1dp" />
-                <LinearLayout
-                    android:id="@+id/class_number_two"
-                    android:layout_width="match_parent"
-                    android:layout_height="44dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="45dp"
-                        android:textSize="22sp"
-                        android:text="班级2"/>
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="200dp"
-                        android:src="@mipmap/right_arrow_img"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#e7e7e7"
-                    android:layout_marginTop="-1dp"/>
-            </LinearLayout>
+                android:layout_height="46dp"
+                android:layout_marginTop="0.8mm"
+                android:padding="6dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="40dp"
+                    android:textColor="#333333"
+                    android:text="班级1" />
+                <ImageView
+                    android:layout_alignParentRight="true"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/right_arrow_img"/>
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                style="@style/LineHeight"
+                android:background="#e5e5e5"/>
+            <RelativeLayout
+                android:id="@+id/class_number_two"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:padding="6dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="40dp"
+                    android:textColor="#333333"
+                    android:text="班级2" />
+                <ImageView
+                    android:layout_alignParentRight="true"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/right_arrow_img"/>
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                style="@style/LineHeight"
+                android:background="#e5e5e5"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

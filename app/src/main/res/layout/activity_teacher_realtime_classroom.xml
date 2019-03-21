@@ -23,6 +23,7 @@
             android:text="课程1"
             style="@style/ToolbarTextSize"
             android:textColor="#fefefe"/>
+
     </android.support.v7.widget.Toolbar>
     <ScrollView
         android:layout_width="match_parent"
@@ -148,6 +149,7 @@
                     android:layout_marginLeft="10dp"
                     android:text="总人数" />
                 <TextView
+                    android:id="@+id/total_num"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -178,6 +180,7 @@
                     android:layout_marginLeft="10dp"
                     android:text="签到情况" />
                 <TextView
+                    android:id="@+id/attendance_condition"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:gravity="center"
@@ -189,7 +192,7 @@
                     android:text="出勤12 迟到11 缺勤0 请假1"
                     />
                 <Button
-                    android:id="@+id/update"
+                    android:id="@+id/check"
                     android:layout_width="50dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"

@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_1"
+        android:orderInCategory="80"
+        android:title="图表"
+        android:icon="@mipmap/add"
+        app:showAsAction="always" />
+</menu>

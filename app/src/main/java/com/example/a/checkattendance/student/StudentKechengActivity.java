@@ -31,9 +31,9 @@ public class StudentKechengActivity extends BaseActivity implements View.OnClick
             String showdata = intent.getStringExtra("extra_data");
             textView_classname.setText(showdata);
 
-            replaceFragment(new StudentZiliaoFragment());
-            textView_ziliao.setTextColor(getResources().getColor(R.color.colorPrimary));
-            textView_zuoye.setTextColor(getResources().getColor(R.color.huiSe));
+            replaceFragment(new StudentZuoyeFragment());
+            textView_zuoye.setTextColor(getResources().getColor(R.color.colorPrimary));
+            textView_ziliao.setTextColor(getResources().getColor(R.color.huiSe));
         }
 
         @Override

@@ -23,26 +23,18 @@ import org.feezu.liuli.timeselector.TimeSelector;
             setContentView(R.layout.activity_student_information);
 
 
-            t_sex=(TextView) findViewById(R.id.sex2);
-            t_sex.setOnClickListener(this);
-            Button b_back =(Button) findViewById(R.id.back);
-            b_back.setOnClickListener(this);
 
 
-            init();
-            initData();
+
+
 
         }
 
         @Override
         public void onClick(View v){
             switch(v.getId()){
-                case R.id.sex2:
-                    ShowChoise();
-                    break;
-                case R.id.back:
-                    finish();
-                    break;
+
+
                 default:
                     break;
             }

@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="1.1mm"
+        android:paddingBottom="1.1mm">
+        <TextView
+            android:id="@+id/datetime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="#333333"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="2019-03-19 11:03"/>
+        <TextView
+            android:id="@+id/week_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/datetime"
+            android:textColor="#333333"
+            android:layout_marginLeft="5dp"
+            android:text="星期三"/>
+        <TextView
+            android:id="@+id/attendance_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textColor="#66cc99"
+            android:layout_marginRight="10dp"
+            android:text="已签到"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        style="@style/LineHeight"
+        android:background="#e5e5e5" />
+</LinearLayout>

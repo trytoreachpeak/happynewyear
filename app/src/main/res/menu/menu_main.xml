@@ -3,23 +3,8 @@
     <item
         android:id="@+id/menu_1"
         android:orderInCategory="80"
-        android:title="我是第一个"
-        app:showAsAction="never" />
+        android:title="图表"
+        android:icon="@mipmap/chart_icon"
+        app:showAsAction="always" />
 
-    <item
-        android:id="@+id/menu_2"
-        android:orderInCategory="80"
-        android:title="我是第二个"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/menu_3"
-        android:orderInCategory="80"
-        android:title="我是第三个"
-        app:showAsAction="never" />
-
-    <item
-        android:id="@+id/menu_4"
-        android:orderInCategory="80"
-        android:title="我是第四个"
-        app:showAsAction="never" />
 </menu>

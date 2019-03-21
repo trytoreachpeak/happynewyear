@@ -4,15 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/class_image"
+    <LinearLayout
         android:layout_width="60dp"
-        android:layout_height="60dp" />
+        android:layout_height="60dp">
+        <ImageView
+            android:id="@+id/class_image"
+            android:layout_width="60dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/class_icon"
+            android:layout_height="50dp" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/class_name"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_gravity="center_vertical"
+        android:text="体育"
+        android:textSize="20dp"
+        android:gravity="center_vertical"
         android:layout_marginLeft="10dp"></TextView>
 
 </LinearLayout>

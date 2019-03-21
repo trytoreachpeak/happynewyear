@@ -18,8 +18,7 @@
             android:layout_width="250dp"
             android:layout_height="match_parent"
             android:text="sss"
-            android:textSize="30dp"
-            android:textStyle="bold"
+            android:textSize="22sp"
             android:textColor="#f4f4f4"
             android:gravity="center"
             android:layout_centerHorizontal="true">
@@ -35,11 +34,12 @@
 
         <Button
             android:id="@+id/person"
-            android:layout_width="50dp"
+            android:layout_width="32dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_height="40dp"
-            android:background="@mipmap/admin_person"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/member"
             />
     </RelativeLayout>
 

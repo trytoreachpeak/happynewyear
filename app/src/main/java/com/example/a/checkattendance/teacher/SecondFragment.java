@@ -14,6 +14,7 @@ import com.example.a.checkattendance.HttpUtil;
 import com.example.a.checkattendance.R;
 import com.example.a.checkattendance.gsonitem.CounsellorGetStudentsOfClassAttendance;
 import com.example.a.checkattendance.gsonitem.GetLessonConditionUntilNow;
+import com.example.a.checkattendance.gsonitem.GetSingleLessonCondtion;
 import com.example.a.checkattendance.gsonitem.GetSingleStudentIdentity;
 import com.example.a.checkattendance.gsonitem.GetStudentsOfClassIdentity;
 import com.example.a.checkattendance.gsonitem.GetTeacherAttendance;
@@ -41,8 +42,9 @@ public class SecondFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                HttpUtil.sendGetRequest(
-                        "http://192.168.137.1:5000/api/v1/managers/getstudents/",
+                HttpUtil.sendLoginRequest(
+                        "http://203.195.156.24:7000/api/v1/teachers/studentssign/",
+                        HttpUtil.createSingleClassConditionJson("2019-03-18",5,"123456"),
                         //"http://192.168.137.1:80/test11.json",
                         //"http://10.0.2.2/test.json",
                         //HttpUtil.createTeacherIdJson("123456"),
@@ -50,15 +52,15 @@ public class SecondFragment extends Fragment {
                             @Override
                             public void onResponse(Call call, Response response) throws IOException {
                                 Gson gson = new Gson();
-                                java.lang.reflect.Type type = new TypeToken<ManagerGetAllStudentAttendance>() {
+                                java.lang.reflect.Type type = new TypeToken<GetSingleLessonCondtion>() {
                                 }.getType();
-                                ManagerGetAllStudentAttendance managerGetAllStudentAttendance= gson.fromJson(response.body().string(), type);
-                                Log.d("testabc",managerGetAllStudentAttendance.getStatus()+"");
-                                Log.d("testabc",managerGetAllStudentAttendance.getData().size()+"");
-                                Log.d("testabc",managerGetAllStudentAttendance.getData().get(0).getStudentname());
-                                Log.d("testabc",managerGetAllStudentAttendance.getData().get(0).getTeachername());
-                                Log.d("testabc",managerGetAllStudentAttendance.getData().get(0).getSignnum()+"");
-                                Log.d("testabc",managerGetAllStudentAttendance.getData().get(0).getSigninnum()+"");
+                                GetSingleLessonCondtion getSingleLessonCondtion= gson.fromJson(response.body().string(), type);
+                                Log.d("testabc",getSingleLessonCondtion.getStatus()+"");
+                                Log.d("testabc",getSingleLessonCondtion.getData().size()+"");
+                                Log.d("testabc",getSingleLessonCondtion.getData().get(0).getStudentname());
+                                Log.d("testabc",getSingleLessonCondtion.getData().get(0).getSstate()+"");
+                                Log.d("testabc",getSingleLessonCondtion.getData().get(0).getSignouttime()+"");
+                                Log.d("testabc",getSingleLessonCondtion.getData().get(0).getIslazy()+"");
                             }
                             @Override
                             public void onFailure(Call call, IOException e) {

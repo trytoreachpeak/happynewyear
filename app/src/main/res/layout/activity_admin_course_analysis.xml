@@ -18,8 +18,7 @@
             android:layout_width="250dp"
             android:layout_height="match_parent"
             android:text="sss"
-            android:textSize="30dp"
-            android:textStyle="bold"
+            android:textSize="22sp"
             android:textColor="#f4f4f4"
             android:gravity="center"
             android:layout_centerHorizontal="true">

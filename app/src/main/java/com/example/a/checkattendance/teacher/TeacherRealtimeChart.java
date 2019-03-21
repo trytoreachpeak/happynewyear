@@ -7,12 +7,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.example.a.checkattendance.R;
+import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
@@ -31,18 +33,20 @@ public class TeacherRealtimeChart extends AppCompatActivity {
     MultiScrollNumber scrollNumber1;
     MultiScrollNumber scrollNumber2;
     LineChart lineChart;
+    BarChart barChart;
+    BarChart barChart1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_realtime_chart);
         scrollNumber1=(MultiScrollNumber)findViewById(R.id.scroll_number_1);
-        scrollNumber1.setTextColors(new int[]{R.color.whilecolor});
+        scrollNumber1.setTextColors(new int[]{R.color.whilecolor,R.color.whilecolor});
         scrollNumber1.setScrollVelocity(25);
         scrollNumber1.setNumber(9);
         scrollNumber2=(MultiScrollNumber)findViewById(R.id.scroll_number_2);
-        scrollNumber2.setTextColors(new int[]{R.color.whilecolor});
+        scrollNumber2.setTextColors(new int[]{R.color.whilecolor,R.color.whilecolor});
         scrollNumber2.setScrollVelocity(25);
-        scrollNumber2.setNumber(18);
+        scrollNumber2.setNumber(58);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //toolbar.setTitle("");
@@ -56,7 +60,13 @@ public class TeacherRealtimeChart extends AppCompatActivity {
             }
         });
 
-        lineChart=(LineChart)findViewById(R.id.line_chart_1);
+        initFirstChart();
+        initSecondChart();
+        initThirdChart();
+
+    }
+    private void initFirstChart(){
+        lineChart=(LineChart)findViewById(R.id.line_chart_2);
         XAxis xAxis = lineChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);//设置x轴的显示位置
         xAxis.setAxisLineColor(Color.parseColor("#888888"));
@@ -66,7 +76,7 @@ public class TeacherRealtimeChart extends AppCompatActivity {
         xAxis.setValueFormatter(new IAxisValueFormatter() {
             @Override
             public String getFormattedValue(float value, AxisBase axis) {
-                return String.valueOf((int)value*10).concat("min");
+                    return String.valueOf((int)value*10).concat("min");
             }
 
             @Override
@@ -86,7 +96,7 @@ public class TeacherRealtimeChart extends AppCompatActivity {
         yAxis.setDrawGridLines(false);
         List<Entry> entries = new ArrayList<>();
         for (int i = 0; i < 12; i++)
-            entries.add(new Entry(i, new Random().nextInt(120)));
+            entries.add(new Entry(i, new Random().nextInt(57)));
 
         lineChart.setScaleEnabled(false);//禁止缩放x和y轴
         lineChart.animateXY(1300,1300);
@@ -121,5 +131,29 @@ public class TeacherRealtimeChart extends AppCompatActivity {
         dataSet.setLineWidth(2f);//线条宽度
         lineChart.setData(lineData);
         lineChart.invalidate();
+    }
+    private void initSecondChart(){
+        barChart=(BarChart)findViewById(R.id.line_chart_3);
+        BarChartManager barChartManager = new BarChartManager(barChart);
+
+        List<BarEntry> yVals = new ArrayList<>();
+        yVals.add(new BarEntry(1f, 80f));
+        yVals.add(new BarEntry(2f, 50f));
+        yVals.add(new BarEntry(3f, 60f));
+        yVals.add(new BarEntry(4f, 60f));
+        yVals.add(new BarEntry(5f, 70f));
+        String label = "";
+        barChartManager.showBarChart(yVals, label, Color.parseColor("#36a16b"));
+    }
+    private void initThirdChart(){
+        barChart1=(BarChart)findViewById(R.id.line_chart_4);
+        BarChartManager barChartManager = new BarChartManager(barChart1);
+
+        List<BarEntry> yVals = new ArrayList<>();
+        yVals.add(new BarEntry(1f, 80f));
+        yVals.add(new BarEntry(2f, 50f));
+        yVals.add(new BarEntry(3f, 60f));
+        String label = "";
+        barChartManager.showBarChart1(yVals, label, Color.parseColor("#36a16b"));
     }
 }

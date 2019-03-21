@@ -2,11 +2,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:background="#f4f4f4">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="50.5dp"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -17,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="N号楼XXX"
-            android:textSize="20sp"
+            style="@style/ToolbarTextSize"
             android:textColor="#fefefe"/>
     </android.support.v7.widget.Toolbar>
     <ScrollView
@@ -35,7 +36,6 @@
                 android:layout_height="35dp"
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/rounded_edittext"/>
-
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -49,16 +49,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="37dp"
-                        android:text="考试班级："
-                        android:textColor="#666666"
-                        android:textSize="23sp"/>
+                        android:text="考试班级"
+                        android:textColor="#333333"
+                        android:textSize="16.5sp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7dp"
-                        android:textColor="#bcbcbc"
+                        android:textColor="#333333"
                         android:text="物联网181"
-                        android:textSize="22sp"/>
+                        android:textSize="16.5sp"/>
                 </LinearLayout>
                 <View
                     android:layout_width="match_parent"
@@ -73,16 +73,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="37dp"
-                        android:text="考试科目："
-                        android:textColor="#666666"
-                        android:textSize="23sp"/>
+                        android:text="考试科目"
+                        android:textColor="#333333"
+                        android:textSize="16.5sp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7dp"
-                        android:textColor="#bcbcbc"
+                        android:textColor="#333333"
                         android:text="高等数学A（一）"
-                        android:textSize="22sp"/>
+                        android:textSize="16.5sp"/>
                 </LinearLayout>
                 <View
                     android:layout_width="match_parent"
@@ -97,16 +97,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="37dp"
-                        android:text="考试时间："
-                        android:textColor="#666666"
-                        android:textSize="23sp"/>
+                        android:text="考试时间"
+                        android:textColor="#333333"
+                        android:textSize="16.5sp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="2019-01-09 10:30-12:30"
-                        android:textColor="#bcbcbc"
-                        android:textSize="22sp" />
+                        android:textColor="#333333"
+                        android:textSize="16.5sp" />
                 </LinearLayout>
                 <View
                     android:layout_width="match_parent"
@@ -121,16 +121,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="37dp"
-                        android:text="考试教室："
-                        android:textColor="#666666"
-                        android:textSize="23sp"/>
+                        android:text="考试教室"
+                        android:textColor="#333333"
+                        android:textSize="16.5sp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7dp"
-                        android:textColor="#bcbcbc"
+                        android:textColor="#333333"
                         android:text="8号楼301"
-                        android:textSize="22sp"/>
+                        android:textSize="16.5sp"/>
                 </LinearLayout>
                 <View
                     android:layout_width="match_parent"

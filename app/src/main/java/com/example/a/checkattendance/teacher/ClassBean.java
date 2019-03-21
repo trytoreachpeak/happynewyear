@@ -20,4 +20,5 @@ public class ClassBean {
     private String groupClass;
     private String groupNum;
 
+
 }

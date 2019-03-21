@@ -18,8 +18,7 @@
             android:layout_width="140dp"
             android:layout_height="match_parent"
             android:text="sss"
-            android:textSize="30dp"
-            android:textStyle="bold"
+            android:textSize="22sp"
             android:textColor="#f4f4f4"
             android:gravity="center"
             android:layout_gravity="center">
@@ -46,10 +45,10 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/ziliao"
+                android:id="@+id/zuoye"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:text="资料"
+                android:text="作业"
                 android:gravity="center"
                 android:textSize="20dp"
                 android:background="@drawable/frame_ke"
@@ -64,10 +63,10 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/zuoye"
+                android:id="@+id/ziliao"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:text="作业"
+                android:text="测试"
                 android:textSize="20dp"
                 android:background="@drawable/frame_ke"
                 android:textStyle="bold"

@@ -139,7 +139,7 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                             }
                             else{
                                 HttpUtil.sendLoginRequest
-                                        ("http://192.168.1.111:5000/api/v1/students/login/",
+                                        ("http://203.195.156.24:7000/api/v1/students/login/",
                                                 HttpUtil.createLoginJson("student", loginAccount, loginPassword), new okhttp3.Callback() {
                                     @Override
                                     public void onResponse(Call call, Response response) throws IOException {
@@ -174,7 +174,7 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                                 //转入相应界面
                             }
                             else{
-                                HttpUtil.sendLoginRequest("http://192.168.1.111:5000/api/v1/teachers/login/",
+                                HttpUtil.sendLoginRequest("http://203.195.156.24:7000/api/v1/teachers/login/",
                                         HttpUtil.createLoginJson("teacher", loginAccount, loginPassword), new okhttp3.Callback() {
                                     @Override
                                     public void onResponse(Call call, Response response) throws IOException {
@@ -209,7 +209,7 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                                 //转入相应界面
                             }
                             else{
-                                HttpUtil.sendLoginRequest("http://192.168.1.111:5000/api/v1/counsellors/login/",
+                                HttpUtil.sendLoginRequest("http://203.195.156.24:7000/api/v1/counsellors/login/",
                                         HttpUtil.createLoginJson("counsellor", loginAccount, loginPassword), new okhttp3.Callback() {
                                             @Override
                                             public void onResponse(Call call, Response response) throws IOException {
@@ -243,7 +243,7 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                                 intentToManager();
                                 //转入相应界面
                             }else{
-                                HttpUtil.sendLoginRequest("http://192.168.1.111:5000/api/v1/managers/login/",
+                                HttpUtil.sendLoginRequest("http://203.195.156.24:7000/api/v1/managers/login/",
                                         HttpUtil.createLoginJson("manager", loginAccount, loginPassword), new okhttp3.Callback() {
                                             @Override
                                             public void onResponse(Call call, Response response) throws IOException {

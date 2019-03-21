@@ -74,7 +74,7 @@ public class CounsellorDataAnalysis extends AppCompatActivity {
             case R.id.menu_1:
                 //Toast.makeText(getActivity(), "我是第一个", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.menu_2:
+            /*case R.id.menu_2:
                 //Toast.makeText(getActivity(), "我是第二个", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.menu_3:
@@ -82,7 +82,7 @@ public class CounsellorDataAnalysis extends AppCompatActivity {
                 break;
             case R.id.menu_4:
                 //Toast.makeText(getActivity(), "我是第四个", Toast.LENGTH_SHORT).show();
-                break;
+                break;*/
         }
         return super.onOptionsItemSelected(item);
     }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@mipmap/admin_group"/>
+    <TextView
+        android:id="@+id/gCount"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignBaseline="@+id/gName"
+        android:layout_alignBottom="@+id/gName"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="66dp"
+        android:text="个数" />
+
+    <TextView
+        android:id="@+id/gName"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textSize="22dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="35dp"
+        android:layout_centerVertical="true"
+        android:text="课程/年级" />
+
+</RelativeLayout>

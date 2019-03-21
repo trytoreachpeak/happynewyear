@@ -17,7 +17,7 @@ public class TeacherSettings extends AppCompatActivity implements View.OnClickLi
     RelativeLayout bindPhone;
     RelativeLayout remindBeforeClass;
     RelativeLayout softwareVersion;
-    RelativeLayout aboutUs;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +42,13 @@ public class TeacherSettings extends AppCompatActivity implements View.OnClickLi
         bindPhone=(RelativeLayout)findViewById(R.id.bind_phone);
         remindBeforeClass=(RelativeLayout)findViewById(R.id.remind_before_class);
         softwareVersion=(RelativeLayout)findViewById(R.id.software_version);
-        aboutUs=(RelativeLayout)findViewById(R.id.about_us);
 
         personInfo.setOnClickListener(this);
         modifyPassword.setOnClickListener(this);
         identityVerifi.setOnClickListener(this);
         bindPhone.setOnClickListener(this);
+        remindBeforeClass.setOnClickListener(this);
+        softwareVersion.setOnClickListener(this);
     }
 
     @Override
@@ -70,7 +71,16 @@ public class TeacherSettings extends AppCompatActivity implements View.OnClickLi
                 intent = new Intent(this, TeacherSettingsBindphone.class);
                 startActivity(intent);
                 break;
-            default:break;
+            case R.id.remind_before_class:
+                intent = new Intent(this,TeacherRemindBeforeClass.class);
+                startActivity(intent);
+                break;
+            case R.id.software_version:
+                intent = new Intent(this,TeacherSoftwareVersion.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
 
         }
     }

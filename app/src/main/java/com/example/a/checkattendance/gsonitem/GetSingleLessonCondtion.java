@@ -23,8 +23,6 @@ public class GetSingleLessonCondtion {
 
     private List<Data> data;
     public static class Data{
-
-
         public String getStudentid() {
             return studentid;
         }
@@ -81,6 +79,30 @@ public class GetSingleLessonCondtion {
             this.signouttime = signouttime;
         }
 
+        public int getSseriousnum() {
+            return sseriousnum;
+        }
+
+        public void setSseriousnum(int sseriousnum) {
+            this.sseriousnum = sseriousnum;
+        }
+
+        public int getSsleepnum() {
+            return ssleepnum;
+        }
+
+        public void setSsleepnum(int ssleepnum) {
+            this.ssleepnum = ssleepnum;
+        }
+
+        public int getSlazynum() {
+            return slazynum;
+        }
+
+        public void setSlazynum(int slazynum) {
+            this.slazynum = slazynum;
+        }
+
         public int getIsserious() {
             return isserious;
         }
@@ -105,6 +127,14 @@ public class GetSingleLessonCondtion {
             this.islazy = islazy;
         }
 
+        public int getSstate() {
+            return sstate;
+        }
+
+        public void setSstate(int sstate) {
+            this.sstate = sstate;
+        }
+
         private String studentid;
         private String studentname;
         private String studentclass;
@@ -112,8 +142,17 @@ public class GetSingleLessonCondtion {
         private String signintime;
         private int issignout;
         private String signouttime;
+        private int sseriousnum;
+        private int ssleepnum;
+        private int slazynum;
         private int isserious;
         private int issleep;
         private int islazy;
+        private int sstate;
+        private void merge(GetSingleLessonCondtion.Data data){
+            sseriousnum+=data.sseriousnum;
+            ssleepnum+=data.ssleepnum;
+            slazynum+=data.slazynum;
+        }
     }
 }
