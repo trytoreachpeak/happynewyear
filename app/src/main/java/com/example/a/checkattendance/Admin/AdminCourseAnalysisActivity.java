@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.SpannableString;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -50,8 +51,16 @@ public class AdminCourseAnalysisActivity extends AppCompatActivity implements On
         initView3(mPiechart3);
 
         TextView t_coursename=(TextView) findViewById(R.id.course_name) ;
-        Button button_back=(Button)findViewById(R.id.back);
-        button_back.setOnClickListener(this);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.mipmap.ic_back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         Intent intent = getIntent();
         String showdata = intent.getStringExtra("extra_data");
         t_coursename.setText(showdata);
@@ -63,9 +72,7 @@ public class AdminCourseAnalysisActivity extends AppCompatActivity implements On
     @Override
     public void onClick(View v){
         switch(v.getId()){
-            case R.id.back:
-                finish();
-                break;
+
             default:
                 break;
         }

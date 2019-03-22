@@ -111,12 +111,12 @@ public class AdminClassStatisticsActivity extends BaseActivity implements View.O
 
         LineChart lineChart1 = (LineChart) findViewById(R.id.mLineChart1);
         initLineChart4(lineChart1);
-
         LineChart lineChart2 = (LineChart) findViewById(R.id.mLineChart2);
         initLineChart4(lineChart2);
-
         LineChart lineChart3 = (LineChart) findViewById(R.id.mLineChart3);
         initLineChart4(lineChart3);
+
+
     }
 
 
@@ -148,9 +148,7 @@ public class AdminClassStatisticsActivity extends BaseActivity implements View.O
                     l_second.setVisibility(View.GONE);
                 }
                 break;
-            case R.id.back:
-                finish();
-                break;
+
             default:
                 break;
         }

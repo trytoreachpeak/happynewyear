@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,8 +32,16 @@ public class AdminClassAttendanceActivity extends BaseActivity implements View.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_class_attendance);
 
-        Button button_back=(Button)findViewById(R.id.back);
-        button_back.setOnClickListener(this);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.mipmap.ic_back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
 
@@ -61,9 +70,6 @@ public class AdminClassAttendanceActivity extends BaseActivity implements View.O
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.back:
-                finish();
-                break;
             default:
                 break;
         }

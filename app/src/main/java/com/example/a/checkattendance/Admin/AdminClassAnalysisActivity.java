@@ -3,6 +3,7 @@ package com.example.a.checkattendance.Admin;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.SpannableString;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -69,7 +70,16 @@ public class AdminClassAnalysisActivity extends BaseActivity implements View.OnC
         mbarChart4 = (BarChart) findViewById(R.id.mBarChart4);
         showBarChartAlong3(mbarChart4,xValues4,yValues4);
 
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.mipmap.ic_back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         TextView t_classname=(TextView) findViewById(R.id.couse_name) ;
 

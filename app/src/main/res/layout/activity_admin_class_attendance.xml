@@ -6,32 +6,24 @@
     android:orientation="vertical"
     android:weightSum="1920"
     android:layout_height="match_parent">
-    <RelativeLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="180"
-        android:background="#66cc99">
-
+        android:layout_height="50.5dp"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="@mipmap/ic_back">
+        <!--app:navigationIcon="@mipmap/ic_back"-->
         <TextView
             android:id="@+id/teacher_name"
-            android:layout_width="250dp"
-            android:layout_height="match_parent"
-            android:text="sss"
-            android:textSize="22sp"
-            android:textColor="#f4f4f4"
-            android:gravity="center"
-            android:layout_centerHorizontal="true">
-
-        </TextView>
-        <Button
-            android:id="@+id/back"
-            android:layout_width="50dp"
-            android:layout_gravity="center_vertical"
-            android:layout_height="match_parent"
-            android:background="@drawable/back_qj"
-            />
-
-    </RelativeLayout>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="课程名称"
+            android:textSize="20sp"
+            android:textColor="#fefefe"/>
+    </android.support.v7.widget.Toolbar>
 
 
     <LinearLayout

@@ -8,6 +8,7 @@ import android.os.Build;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -45,8 +46,16 @@ import java.io.IOException;
             picture=findViewById(R.id.picture);
             takephoto.setOnClickListener(this);
 
-            Button button_back=(Button) findViewById(R.id.back);
-            button_back.setOnClickListener(this);
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            toolbar.setTitle("");
+            setSupportActionBar(toolbar);
+            toolbar.setNavigationIcon(R.mipmap.ic_back);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
             Button button_shenqing=(Button) findViewById(R.id.shenqing);
             button_shenqing.setOnClickListener(this);
 
@@ -64,9 +73,7 @@ import java.io.IOException;
         @Override
         public void onClick(View v){
             switch(v.getId()){
-                case R.id.back:
-                    finish();
-                    break;
+
                 case R.id.take_photo:
                     File outputImage=new File(getExternalCacheDir(),"output_image.jpg");
                 /*
