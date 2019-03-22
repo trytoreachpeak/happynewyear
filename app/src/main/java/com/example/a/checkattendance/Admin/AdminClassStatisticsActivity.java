@@ -232,7 +232,7 @@ public class AdminClassStatisticsActivity extends BaseActivity implements View.O
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);//设置x轴的显示位置
         xAxis.setAxisLineColor(Color.parseColor("#66cc99"));
         xAxis.setTextColor(Color.parseColor("#66cc99"));
-        xAxis.setTextSize(12f);
+        xAxis.setTextSize(10f);
         xAxis.setAvoidFirstLastClipping(true);//图表将避免第一个和最后一个标签条目被减掉在图表或屏幕的边缘
         xAxis.setValueFormatter(new IAxisValueFormatter() {
             @Override

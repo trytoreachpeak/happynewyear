@@ -159,6 +159,8 @@
                 android:layout_weight="250"/>
             <TextView
                 android:layout_width="match_parent"
+                android:text="    上课状态不错，请加油保持。"
+                android:textSize="20dp"
                 android:layout_height="0dp"
                 android:layout_weight="750"/>
         </LinearLayout>
