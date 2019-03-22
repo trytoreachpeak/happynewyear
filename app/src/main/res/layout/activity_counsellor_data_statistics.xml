@@ -2,22 +2,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:background="#f4f4f4">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_first_fragment"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="50.5dp"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="@mipmap/ic_back">
         <!--app:navigationIcon="@mipmap/ic_back"-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="数据统计"
-            android:textStyle="bold"
-            android:textSize="25sp"
+            android:text="数据分析"
+            style="@style/ToolbarTextSize"
             android:textColor="#fefefe"/>
     </android.support.v7.widget.Toolbar>
     <ScrollView
@@ -28,8 +29,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <SearchView
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp" />
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/rounded_edittext"/>
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/counsellor_data_statis_recycler"
                 android:layout_width="match_parent"

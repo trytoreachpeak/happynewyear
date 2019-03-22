@@ -42,18 +42,18 @@ public class ThirdFragment extends Fragment {
     }
 
     private void initTeacherStudyItem(){
-        TeacherMessageItem testExample=new TeacherMessageItem("高等数学(一)",
-                R.mipmap.subject_icon,"计172");
+        TeacherMessageItem testExample=new TeacherMessageItem("操作系统",
+                R.mipmap.subject_icon,"计161 计162");
         studyItemList.add(testExample);
-        TeacherMessageItem testExample1=new TeacherMessageItem("英语(二)",
-                R.mipmap.subject_icon,"计172");
+        TeacherMessageItem testExample1=new TeacherMessageItem("数据库原理",
+                R.mipmap.subject_icon,"计161 计162");
         studyItemList.add(testExample1);
         TeacherMessageItem testExample2=new TeacherMessageItem("数据结构",
-                R.mipmap.subject_icon,"计172");
-        studyItemList.add(testExample1);
+                R.mipmap.subject_icon,"计161 计162");
+        studyItemList.add(testExample2);
         TeacherMessageItem testExample3=new TeacherMessageItem("JAVA编程设计",
-                R.mipmap.subject_icon,"计172");
-        studyItemList.add(testExample1);
+                R.mipmap.subject_icon,"计161 计162");
+        studyItemList.add(testExample3);
     }
 
 }

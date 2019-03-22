@@ -36,14 +36,14 @@ public class TeacherRealtimeClassroom extends AppCompatActivity implements View.
     private Spinner spinner;
     private NestedExpandableListView  expendList;
     String[] str = {"第1节课", "第2节课","汇总"};
-    public static ArrayList<GetSingleLessonCondtion.Data> firstlessonData= new ArrayList<>();
-    public static ArrayList<GetSingleLessonCondtion.Data> secondlessonData= new ArrayList<>();
-    private   ArrayList<ClassBean> firstparentData = new ArrayList<>();;
-    public  static ArrayList<ArrayList<GetSingleLessonCondtion.Data>> firstchildData = new ArrayList<>();
-    private   ArrayList<ClassBean> secondparentData = new ArrayList<>();;
-    public static ArrayList<ArrayList<GetSingleLessonCondtion.Data>> secondchildData = new ArrayList<>();
-    private   ArrayList<ClassBean> mergedparentData = new ArrayList<>();
-    public static ArrayList<ArrayList<GetSingleLessonCondtion.Data>> mergedchildData = new ArrayList<>();
+    public static ArrayList<GetSingleLessonCondtion.Data> firstlessonData;
+    public static ArrayList<GetSingleLessonCondtion.Data> secondlessonData;
+    private   ArrayList<ClassBean> firstparentData;
+    public  static ArrayList<ArrayList<GetSingleLessonCondtion.Data>> firstchildData;
+    private   ArrayList<ClassBean> secondparentData;
+    public static ArrayList<ArrayList<GetSingleLessonCondtion.Data>> secondchildData ;
+    private   ArrayList<ClassBean> mergedparentData;
+    public static ArrayList<ArrayList<GetSingleLessonCondtion.Data>> mergedchildData;
 
     private int attendnum;
     private int attednlatenum;
@@ -54,18 +54,23 @@ public class TeacherRealtimeClassroom extends AppCompatActivity implements View.
     private Button check;
     private TextView totalNum;
     private TextView attendanceCondition;
-    {   if(firstchildData.size()==0&&secondlessonData.size()==0) {
-        initFakeData();
-        initbasicData();
-        initFirstLessonData();
-        initSecondLessonData();
-        initMergedData();
-    }
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_realtime_classroom);
+            firstlessonData= new ArrayList<>();
+            secondlessonData= new ArrayList<>();
+            firstparentData = new ArrayList<>();;
+            firstchildData = new ArrayList<>();
+            secondparentData = new ArrayList<>();
+            secondchildData = new ArrayList<>();
+            mergedparentData = new ArrayList<>();
+            mergedchildData = new ArrayList<>();
+            initFakeData();
+            initbasicData();
+            initFirstLessonData();
+            initSecondLessonData();
+            initMergedData();
 
         totalNum= (TextView)findViewById(R.id.total_num);
         attendanceCondition=(TextView)findViewById(R.id.attendance_condition);

@@ -37,10 +37,9 @@
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/rounded_edittext"/>
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/counsellor_data_analysis_recycler"
+                android:id="@+id/course_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

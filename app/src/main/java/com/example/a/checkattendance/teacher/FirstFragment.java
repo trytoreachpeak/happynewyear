@@ -109,7 +109,11 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
                 startActivity(intent);
                 break;
             case R.id.data_analysis:
-                intent = new Intent(getActivity(),TeacherDataAnalysis.class);
+                intent = new Intent(getActivity(),TeacherDataAnalysisChooseClass.class);
+                startActivity(intent);
+                break;
+            case R.id.timetable:
+                intent = new Intent(getActivity(),TeacherTimetable.class);
                 startActivity(intent);
                 break;
             default:

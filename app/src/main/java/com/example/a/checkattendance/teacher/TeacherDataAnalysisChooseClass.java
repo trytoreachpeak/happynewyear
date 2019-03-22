@@ -12,20 +12,12 @@ import com.example.a.checkattendance.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TeacherMyAttendanceChooseCourse extends AppCompatActivity {
+public class TeacherDataAnalysisChooseClass extends AppCompatActivity {
     private List<TeacherMessageItem> courseList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_my_attendance_choose_course);
-
-        initItem();
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.course_list);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        TeacherMyAttendanceCCAdapter adapter = new TeacherMyAttendanceCCAdapter(courseList);
-        recyclerView.setAdapter(adapter);
-
+        setContentView(R.layout.activity_teacher_data_analysis_choose_class);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //toolbar.setTitle("");
         setSupportActionBar(toolbar);
@@ -37,6 +29,13 @@ public class TeacherMyAttendanceChooseCourse extends AppCompatActivity {
                 finish();
             }
         });
+
+        initItem();
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.course_list);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        TeacherMyAttendanceCCAdapter adapter = new TeacherMyAttendanceCCAdapter(courseList);
+        recyclerView.setAdapter(adapter);
     }
     private void initItem(){
         TeacherMessageItem item1

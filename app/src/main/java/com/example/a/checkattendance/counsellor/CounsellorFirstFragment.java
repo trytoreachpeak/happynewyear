@@ -50,11 +50,11 @@ public class CounsellorFirstFragment extends Fragment implements View.OnClickLis
         return view;
     }
     private void initCounsellorCCItem(){
-        TeacherMessageItem testExample=new TeacherMessageItem("班级1",
-                R.drawable.shenqing_img,"某某班");
+        TeacherMessageItem testExample=new TeacherMessageItem("计161",
+                R.drawable.banji_img,"正在上课中:高等数学(一)");
         CounsellorCCItemList.add(testExample);
-        TeacherMessageItem testExample1=new TeacherMessageItem("我",
-                R.drawable.shenqing_img,"我");
+        TeacherMessageItem testExample1=new TeacherMessageItem("计162",
+                R.drawable.banji_img,"正在上课中:高等数学(一)");
         CounsellorCCItemList.add(testExample1);
     }
 

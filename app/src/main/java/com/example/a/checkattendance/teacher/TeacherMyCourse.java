@@ -59,8 +59,17 @@ public class TeacherMyCourse extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     private void initData(){
-        TeacherMyCourseItem data1 = new TeacherMyCourseItem("1-7周","JXJ-511",
-                "周一 1-2节","数据结构","-软嵌171 软嵌172","58");
+        TeacherMyCourseItem data1 = new TeacherMyCourseItem("1-16周","JX02-302",
+                "周一 1-2节","操作系统","-计161 计162","58人");
         mlist.add(data1);
+        TeacherMyCourseItem data2 = new TeacherMyCourseItem("1-16周","JX08-514",
+                "周二 3-5节","数据库原理","-计161 计162","58人");
+        mlist.add(data2);
+        TeacherMyCourseItem data3 = new TeacherMyCourseItem("1-16周","JX03-303",
+                "周三 1-2节","数据结构","-计161 计162","58人");
+        mlist.add(data3);
+        TeacherMyCourseItem data4 = new TeacherMyCourseItem("1-16周","JX18-205",
+                "周五 6-8节","JAVA程序设计","-计161 计162","58人");
+        mlist.add(data4);
     }
 }

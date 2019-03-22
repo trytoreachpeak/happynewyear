@@ -3,6 +3,8 @@ package com.example.a.checkattendance.student;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +21,9 @@ public class StudentChatFragment extends Fragment implements View.OnClickListene
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.student_chat_fragment, container, false);
-
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
 
         initclasses();
         ChatAdapter adapter=new ChatAdapter(getActivity(),R.layout.chat_item,chatList);

@@ -1,5 +1,6 @@
 package com.example.a.checkattendance.counsellor;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -41,15 +42,15 @@ public class CounsellorDataAnalysisAdapter
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.teacher_message_item,parent,false);
         final ViewHolder holder = new ViewHolder(view);
-        /*holder.studyView.setOnClickListener(new View.OnClickListener(){
+        holder.DAView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
-                TeacherMessageItem teacherStudyItem = mTeacherStudyItem.get(position);
-                Intent intent = new Intent(v.getContext(),TeacherStudy.class);
+                TeacherMessageItem teacherStudyItem = mCounsellorDAItem.get(position);
+                Intent intent = new Intent(v.getContext(),CounsellorDAClass.class);
                 v.getContext().startActivity(intent);
             }
-        });*/
+        });
         return holder;
     }
 

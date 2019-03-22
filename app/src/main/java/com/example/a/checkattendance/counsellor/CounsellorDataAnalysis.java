@@ -35,7 +35,8 @@ public class CounsellorDataAnalysis extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //toolbar.setTitle("");
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,16 +45,16 @@ public class CounsellorDataAnalysis extends AppCompatActivity {
         });
         //setHasOptionsMenu(true);
 
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                Intent intent = new Intent(CounsellorDataAnalysis.this,
-                        CounsellorClassmateList.class);
-                startActivity(intent);
-                return false;
-            }
-        });
-        toolbar.setOverflowIcon(getResources().getDrawable(R.mipmap.classmate_icon));
+//        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                Intent intent = new Intent(CounsellorDataAnalysis.this,
+//                        CounsellorClassmateList.class);
+//                startActivity(intent);
+//                return false;
+//            }
+//        });
+//        toolbar.setOverflowIcon(getResources().getDrawable(R.mipmap.classmate_icon));
     }
     private void initCounsellorDAItem(){
         TeacherMessageItem testExample=new TeacherMessageItem("班级名",
@@ -61,29 +62,5 @@ public class CounsellorDataAnalysis extends AppCompatActivity {
         CounsellorDAItemList.add(testExample);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.menu_1:
-                //Toast.makeText(getActivity(), "我是第一个", Toast.LENGTH_SHORT).show();
-                break;
-            /*case R.id.menu_2:
-                //Toast.makeText(getActivity(), "我是第二个", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.menu_3:
-                //Toast.makeText(getActivity(), "我是第三个", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.menu_4:
-                //Toast.makeText(getActivity(), "我是第四个", Toast.LENGTH_SHORT).show();
-                break;*/
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

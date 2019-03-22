@@ -12,11 +12,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.a.checkattendance.R;
+import com.example.a.checkattendance.student.StudentChatFragment;
 
 public class HomepageOfTeacher extends AppCompatActivity implements View.OnClickListener {
     private  Fragment  currentFragment = new Fragment();
     private FirstFragment firstFragment = new FirstFragment();
-    private SecondFragment secondFragment = new SecondFragment();
+    private StudentChatFragment secondFragment = new StudentChatFragment();
     private ThirdFragment thirdFragment = new ThirdFragment();
     private ForthFragment forthFragment = new ForthFragment();
     @Override

@@ -157,6 +157,8 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                                         } else if(loginStudent.getStatus()==200
                                                 &&loginStudent.getData().getMsg()==0) {
                                             accountPasswordWorry();
+                                        }else{
+                                            exception();
                                         }
                                     }
                                     @Override
@@ -192,6 +194,8 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                                         } else if(loginTeacher.getStatus()==200
                                                 &&loginTeacher.getData().getMsg()==0) {
                                             accountPasswordWorry();
+                                        }else{
+                                            exception();
                                         }
                                     }
                                     @Override
@@ -227,6 +231,8 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                                                 } else if(loginCounsellor.getStatus()==200
                                                         &&loginCounsellor.getData().getMsg()==0) {
                                                     accountPasswordWorry();
+                                                }else{
+                                                    exception();
                                                 }
                                             }
                                             @Override
@@ -261,6 +267,8 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                                                 } else if(loginManager.getStatus()==200
                                                         &&loginManager.getData().getMsg()==0) {
                                                     accountPasswordWorry();
+                                                }else{
+                                                    exception();
                                                 }
                                             }
                                             @Override
@@ -347,6 +355,17 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
                 Toast toast = Toast.makeText(ActivityLogin.this,
                         null,Toast.LENGTH_SHORT);
                 toast.setText("账号和密码错误，请重新输入");
+                toast.show();
+            }
+        });
+    }
+    private void exception(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast toast = Toast.makeText(ActivityLogin.this,
+                        null,Toast.LENGTH_SHORT);
+                toast.setText("其他异常");
                 toast.show();
             }
         });

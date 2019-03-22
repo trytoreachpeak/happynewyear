@@ -6,10 +6,13 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/chat_image"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
         android:src="@drawable/tree"
         android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
         android:layout_gravity="center" />
 
     <LinearLayout
@@ -20,17 +23,17 @@
         <TextView
             android:id="@+id/chat_name"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:text="111"
+            android:layout_marginTop="8dp"
             android:gravity="center_vertical"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"></TextView>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:text="[在线]"
-            android:gravity="center_vertical"
-            android:layout_gravity="center_vertical"
+            android:layout_marginTop="9dp"
             android:layout_marginLeft="10dp"></TextView>
     </LinearLayout>
 

@@ -12,15 +12,28 @@ import android.widget.TextView;
 
 import com.example.a.checkattendance.R;
 import com.example.a.checkattendance.BaseActivity;
+import com.example.a.checkattendance.student.StudentChatFragment;
+import com.example.a.checkattendance.teacher.FirstFragment;
+import com.example.a.checkattendance.teacher.ForthFragment;
+import com.example.a.checkattendance.teacher.ThirdFragment;
 
 public class CounsellorHomepage extends BaseActivity implements View.OnClickListener{
-
+    private CounsellorFirstFragment firstFragment = new CounsellorFirstFragment();
+    private StudentChatFragment secondFragment = new StudentChatFragment();
+    private CounsellorThirdFragment thirdFragment = new CounsellorThirdFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_counsellor_homepage);
 
-        replaceFragment(new CounsellorFirstFragment());
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.lay_fragment, firstFragment);
+        ft.add(R.id.lay_fragment, secondFragment);
+        ft.add(R.id.lay_fragment, thirdFragment);
+        ft.hide(secondFragment);
+        ft.hide(thirdFragment);
+        ft.commit();
 
         ImageView firstguideImage = (ImageView) findViewById(R.id.firstguide_img);
         TextView firstguideTxt = (TextView) findViewById(R.id.firstguide_txt);
@@ -36,12 +49,6 @@ public class CounsellorHomepage extends BaseActivity implements View.OnClickList
 
     }
 
-    private void replaceFragment(Fragment fragment){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.lay_fragment,fragment);
-        transaction.commit();
-    }
     @Override
     public void onClick(View view) {
         ImageView firstguideImage = (ImageView) findViewById(R.id.firstguide_img);
@@ -54,6 +61,8 @@ public class CounsellorHomepage extends BaseActivity implements View.OnClickList
         TextView thirdguideTxt = (TextView) findViewById(R.id.thirdguide_txt);
         //TextView forthTxt = (TextView) findViewById(R.id.forthguide_txt);
         //Toolbar toolbar_teacher_main=view.findViewById(R.id.toolbar_homepage);
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft= fm.beginTransaction();
         switch (view.getId()){
             case R.id.firstguide://点击“联系人”触发的监听事件
                 //---------------------------联系人处高亮，其他灰色---------------------------------
@@ -67,7 +76,10 @@ public class CounsellorHomepage extends BaseActivity implements View.OnClickList
                 //forthTxt.setTextColor(getResources().getColor(R.color.huiSe));
                 //----------------------------------------------------------------------------------
                 //---------------------------添加联系人Fragment-------------------------------------
-                replaceFragment(new CounsellorFirstFragment());
+                ft.show(firstFragment)
+                        .hide(secondFragment)
+                        .hide(thirdFragment)
+                        .commit();
                 //getSupportActionBar().show();
                 //----------------------------------------------------------------------------------
                 break;
@@ -84,7 +96,10 @@ public class CounsellorHomepage extends BaseActivity implements View.OnClickList
                 //----------------------------------------------------------------------------------
                 //---------------------------添加知识Fragment---------------------------------------
                 //getSupportActionBar().show();
-                replaceFragment(new CounsellorSecondFragment());
+                ft.show(secondFragment)
+                        .hide(firstFragment)
+                        .hide(thirdFragment)
+                        .commit();
 
                 //----------------------------------------------------------------------------------
                 break;
@@ -100,7 +115,10 @@ public class CounsellorHomepage extends BaseActivity implements View.OnClickList
                 //forthTxt.setTextColor(getResources().getColor(R.color.colorPrimary));
                 //----------------------------------------------------------------------------------
                 //getSupportActionBar().hide();
-                replaceFragment(new CounsellorThirdFragment());
+                ft.show(thirdFragment)
+                        .hide(secondFragment)
+                        .hide(firstFragment)
+                        .commit();
                 break;
             default:break;
         }

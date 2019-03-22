@@ -5,8 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1920"
-    android:orientation="vertical">
-    <FrameLayout
+    android:orientation="vertical"
+    android:background="#f4f4f4">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50.5dp"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <!--app:navigationIcon="@mipmap/ic_back"-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="聊天"
+            style="@style/ToolbarTextSize"
+            android:textColor="#fefefe"/>
+    </android.support.v7.widget.Toolbar>
+    <!--<FrameLayout
         android:layout_width="match_parent"
         android:layout_height="50.5dp"
         android:layout_gravity="center"
@@ -34,7 +51,7 @@
             android:layout_marginRight="15dp"
             android:layout_gravity="right|center_vertical"
             android:src="@mipmap/member"/>
-    </FrameLayout>
+    </FrameLayout>-->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"

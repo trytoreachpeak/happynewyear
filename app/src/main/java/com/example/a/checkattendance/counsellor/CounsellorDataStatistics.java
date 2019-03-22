@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.example.a.checkattendance.R;
 import com.example.a.checkattendance.teacher.TeacherMessageAdapter;
@@ -19,6 +21,19 @@ public class CounsellorDataStatistics extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_counsellor_data_statistics);
         initCounsellorDSItem();
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.counsellor_data_statis_recycler);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -26,7 +41,7 @@ public class CounsellorDataStatistics extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
     private void initCounsellorDSItem(){
-        TeacherMessageItem testExample=new TeacherMessageItem("班级名",
+        TeacherMessageItem testExample=new TeacherMessageItem("计161",
                 R.drawable.shenqing_img,"出勤率？% 专注度 高/中/低");
         CounsellorDSItemList.add(testExample);
     }

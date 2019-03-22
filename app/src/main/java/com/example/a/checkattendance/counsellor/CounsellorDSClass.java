@@ -1,9 +1,12 @@
 package com.example.a.checkattendance.counsellor;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -33,9 +36,17 @@ public class CounsellorDSClass extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_counsellor_ds_class);
 
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_first_fragment);
-        toolbar.setTitle("");
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //toolbar.setTitle("");
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         detail = (LinearLayout)findViewById(R.id.detail_button);
         startTime=(TextView)findViewById(R.id.start_time);
@@ -52,6 +63,24 @@ public class CounsellorDSClass extends AppCompatActivity implements View.OnClick
         Button button = (Button)findViewById(R.id.test_1);
         button.setOnClickListener(this);
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.counsellor_da_menu, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()){
+            case R.id.menu_1:
+                intent = new Intent(CounsellorDSClass.this,CounsellorClassmateList.class);
+                startActivity(intent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
     private void initData1() {
         startTime.setOnClickListener(new View.OnClickListener() {

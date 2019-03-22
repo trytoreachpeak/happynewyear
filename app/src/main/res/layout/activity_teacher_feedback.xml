@@ -43,8 +43,8 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/rounded_edittext_feedback"/>
             <ImageView
-                android:layout_width="55dp"
-                android:layout_height="55dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:src="@mipmap/upload_img"
                 android:layout_alignLeft="@id/feedback_windows"
                 android:layout_alignBottom="@+id/feedback_windows"

@@ -13,8 +13,8 @@ import com.example.a.checkattendance.R;
 
 import java.util.List;
 
-public class TeacherMyAttendanceCCAdapter
-        extends RecyclerView.Adapter<TeacherMessageAdapter.ViewHolder>{
+public class TeacherDataAnalysisCCAdapter
+        extends RecyclerView.Adapter<TeacherDataAnalysisCCAdapter.ViewHolder>{
     private List<TeacherMessageItem> mTeacherMessageItem;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
@@ -33,16 +33,16 @@ public class TeacherMyAttendanceCCAdapter
             //teacher_message_name=(TextView)view.findViewById(R.id.teacher_message_name);
         }
     }
-    public TeacherMyAttendanceCCAdapter(List<TeacherMessageItem>teacherMessageItem){
+    public TeacherDataAnalysisCCAdapter(List<TeacherMessageItem>teacherMessageItem){
         mTeacherMessageItem=teacherMessageItem;
     }
 
     @NonNull
     @Override
-    public TeacherMessageAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public TeacherDataAnalysisCCAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.teacher_message_item,parent,false);
-        final TeacherMessageAdapter.ViewHolder holder = new TeacherMessageAdapter.ViewHolder(view);
+        final TeacherDataAnalysisCCAdapter.ViewHolder holder = new TeacherDataAnalysisCCAdapter.ViewHolder(view);
         holder.messageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,22 +50,22 @@ public class TeacherMyAttendanceCCAdapter
                 Intent intent;
                 switch(position){
                     case 0:
-                        intent= new Intent(v.getContext(),TeacherMyAttendance.class);
+                        intent= new Intent(v.getContext(),TeacherDataAnalysis.class);
                         intent.putExtra("whichCourse",position);
                         v.getContext().startActivity(intent);
                         break;
                     case 1:
-                        intent= new Intent(v.getContext(),TeacherMyAttendance.class);
+                        intent= new Intent(v.getContext(),TeacherDataAnalysis.class);
                         intent.putExtra("whichCourse",position);
                         v.getContext().startActivity(intent);
                         break;
                     case 2:
-                        intent= new Intent(v.getContext(),TeacherMyAttendance.class);
+                        intent= new Intent(v.getContext(),TeacherDataAnalysis.class);
                         intent.putExtra("whichCourse",position);
                         v.getContext().startActivity(intent);
                         break;
                     case 3:
-                        intent= new Intent(v.getContext(),TeacherMyAttendance.class);
+                        intent= new Intent(v.getContext(),TeacherDataAnalysis.class);
                         intent.putExtra("whichCourse",position);
                         v.getContext().startActivity(intent);
                         break;
@@ -78,7 +78,7 @@ public class TeacherMyAttendanceCCAdapter
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TeacherMessageAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull TeacherDataAnalysisCCAdapter.ViewHolder holder, int position) {
         TeacherMessageItem teacherMessageItem=mTeacherMessageItem.get(position);
         holder.teacher_message_left_img.setImageResource(teacherMessageItem.getMessageLeftImageId());
         holder.teacher_message_cat.setText(teacherMessageItem.getMessageCategory());
