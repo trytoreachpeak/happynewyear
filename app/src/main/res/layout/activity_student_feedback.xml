@@ -4,19 +4,22 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_student_message"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="50.5dp"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:navigationIcon="@mipmap/ic_back">
+        <!--app:navigationIcon="@mipmap/ic_back"-->
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/couse_name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="22sp"
-            android:text="反馈"/>
+            android:layout_gravity="center"
+            android:text="反馈"
+            android:textSize="20sp"
+            android:textColor="#fefefe"/>
     </android.support.v7.widget.Toolbar>
     <LinearLayout
         android:orientation="vertical"

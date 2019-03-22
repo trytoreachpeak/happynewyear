@@ -3,6 +3,7 @@ package com.example.a.checkattendance.Admin;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -20,17 +21,23 @@ public class AdminTestActivity extends BaseActivity implements View.OnClickListe
         l_score.setOnClickListener(this);
         LinearLayout l_room=(LinearLayout)findViewById(R.id.testroom);
         l_room.setOnClickListener(this);
-        Button button_back=(Button)findViewById(R.id.back);
-        button_back.setOnClickListener(this);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.mipmap.ic_back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     @Override
     public void onClick(View v) {
         Intent intent;
         switch (v.getId()) {
-            case R.id.back:
-                finish();
-                break;
+
             case R.id.score:
                 intent = new Intent(AdminTestActivity.this,AdminTestScoreActivity.class);
                 startActivity(intent);

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
@@ -33,8 +34,16 @@ import java.util.List;
             setContentView(R.layout.activity_student_chating);
 
 
-            Button button_back=(Button) findViewById(R.id.back) ;
-            button_back.setOnClickListener(this);
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            toolbar.setTitle("");
+            setSupportActionBar(toolbar);
+            toolbar.setNavigationIcon(R.mipmap.ic_back);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
             init();
             TextView textView_chatname=(TextView) findViewById(R.id.chatname);
             Intent intent = getIntent();
@@ -125,9 +134,7 @@ import java.util.List;
         public void onClick(View v){
 
             switch(v.getId()){
-                case R.id.back:
-                    finish();
-                    break;
+
 
                 default:
                     break;

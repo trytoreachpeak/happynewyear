@@ -111,12 +111,12 @@ public class AdminClassStatisticsActivity extends BaseActivity implements View.O
 
         LineChart lineChart1 = (LineChart) findViewById(R.id.mLineChart1);
         initLineChart4(lineChart1);
-
         LineChart lineChart2 = (LineChart) findViewById(R.id.mLineChart2);
         initLineChart4(lineChart2);
-
         LineChart lineChart3 = (LineChart) findViewById(R.id.mLineChart3);
         initLineChart4(lineChart3);
+
+
     }
 
 
@@ -148,9 +148,7 @@ public class AdminClassStatisticsActivity extends BaseActivity implements View.O
                     l_second.setVisibility(View.GONE);
                 }
                 break;
-            case R.id.back:
-                finish();
-                break;
+
             default:
                 break;
         }
@@ -232,7 +230,7 @@ public class AdminClassStatisticsActivity extends BaseActivity implements View.O
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);//设置x轴的显示位置
         xAxis.setAxisLineColor(Color.parseColor("#66cc99"));
         xAxis.setTextColor(Color.parseColor("#66cc99"));
-        xAxis.setTextSize(12f);
+        xAxis.setTextSize(10f);
         xAxis.setAvoidFirstLastClipping(true);//图表将避免第一个和最后一个标签条目被减掉在图表或屏幕的边缘
         xAxis.setValueFormatter(new IAxisValueFormatter() {
             @Override
