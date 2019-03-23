@@ -98,10 +98,10 @@ public class StudentAnalysisActivity extends BaseActivity implements OnChartValu
 
         //模拟数据
         ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
-        entries.add(new PieEntry(40, "优秀"));
-        entries.add(new PieEntry(20, "满分"));
-        entries.add(new PieEntry(30, "及格"));
-        entries.add(new PieEntry(10, "不及格"));
+        entries.add(new PieEntry(40, "认真"));
+        entries.add(new PieEntry(20, "不认真"));
+        entries.add(new PieEntry(30, "一般"));
+        entries.add(new PieEntry(10, "睡觉"));
 
         //设置数据
         setData(entries,mPieChart);

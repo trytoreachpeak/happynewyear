@@ -66,7 +66,7 @@ public class StudentZhuyeFragment extends Fragment implements View.OnClickListen
                     startActivity(intent1);
                     break;
                 case R.id.analysis:
-                    Intent intent2= new Intent(getActivity(),StudentAnalysisActivity.class);
+                    Intent intent2= new Intent(getActivity(),StudentStatisticActivity.class);
                     startActivity(intent2);
                     break;
                 case R.id.now_class:
