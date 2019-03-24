@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,8 +20,16 @@ public class StudentKechengActivity extends BaseActivity implements View.OnClick
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_student_kecheng);
 
-            Button button_back=(Button) findViewById(R.id.back) ;
-            button_back.setOnClickListener(this);
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            toolbar.setTitle("");
+            setSupportActionBar(toolbar);
+            toolbar.setNavigationIcon(R.mipmap.ic_back);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
             TextView textView_ziliao=(TextView) findViewById(R.id.ziliao) ;
             textView_ziliao.setOnClickListener(this);
             TextView textView_zuoye=(TextView) findViewById(R.id.zuoye) ;
@@ -41,9 +50,7 @@ public class StudentKechengActivity extends BaseActivity implements View.OnClick
             TextView textView_ziliao=(TextView) findViewById(R.id.ziliao) ;
             TextView textView_zuoye=(TextView) findViewById(R.id.zuoye) ;
             switch(v.getId()){
-                case R.id.back:
-                    finish();
-                    break;
+
                 case R.id.ziliao:
                     replaceFragment(new StudentZiliaoFragment());
                     textView_ziliao.setTextColor(getResources().getColor(R.color.colorPrimary));

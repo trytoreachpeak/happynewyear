@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.SpannableString;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -41,16 +42,22 @@ public class StudentAnalysisActivity extends BaseActivity implements OnChartValu
         initView1(mPiechart1);
 
 
-        Button button_back=(Button)findViewById(R.id.back);
-        button_back.setOnClickListener(this);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.mipmap.ic_back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
     @Override
     public void onClick(View v){
         switch(v.getId()){
-            case R.id.back:
-                finish();
-                break;
+
             default:
                 break;
         }
@@ -91,10 +98,10 @@ public class StudentAnalysisActivity extends BaseActivity implements OnChartValu
 
         //模拟数据
         ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
-        entries.add(new PieEntry(40, "优秀"));
-        entries.add(new PieEntry(20, "满分"));
-        entries.add(new PieEntry(30, "及格"));
-        entries.add(new PieEntry(10, "不及格"));
+        entries.add(new PieEntry(40, "认真"));
+        entries.add(new PieEntry(20, "不认真"));
+        entries.add(new PieEntry(30, "一般"));
+        entries.add(new PieEntry(10, "睡觉"));
 
         //设置数据
         setData(entries,mPieChart);

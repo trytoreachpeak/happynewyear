@@ -67,7 +67,7 @@ public class AdminHomepage extends BaseActivity implements View.OnClickListener{
                 //---------------------------联系人处高亮，其他灰色---------------------------------
                 firstguideImage.setImageResource(R.mipmap.firstguide_light);
                 secondguideImage.setImageResource(R.mipmap.chat_icon_dark);
-                thirdguideImage.setImageResource(R.mipmap.thirdguide_dark);
+                thirdguideImage.setImageResource(R.mipmap.forthguide_dark);
                 //forthguideImage.setImageResource(R.mipmap.forthguide_dark);
                 firstguideTxt.setTextColor(getResources().getColor(R.color.colorPrimary));
                 secondguideTxt.setTextColor(getResources().getColor(R.color.huiSe));
@@ -83,7 +83,7 @@ public class AdminHomepage extends BaseActivity implements View.OnClickListener{
                 //---------------------------知识处高亮，其他灰色-----------------------------------
                 firstguideImage.setImageResource(R.mipmap.firstguide_dark);
                 secondguideImage.setImageResource(R.mipmap.chat_icon_light);
-                thirdguideImage.setImageResource(R.mipmap.thirdguide_dark);
+                thirdguideImage.setImageResource(R.mipmap.forthguide_dark);
                 //forthguideImage.setImageResource(R.mipmap.forthguide_dark);
                 firstguideTxt.setTextColor(getResources().getColor(R.color.huiSe));
                 secondguideTxt.setTextColor(getResources().getColor(R.color.colorPrimary));
@@ -100,7 +100,7 @@ public class AdminHomepage extends BaseActivity implements View.OnClickListener{
                 //---------------------------我的处高亮，其他灰色-----------------------------------
                 firstguideImage.setImageResource(R.mipmap.firstguide_dark);
                 secondguideImage.setImageResource(R.mipmap.chat_icon_dark);
-                thirdguideImage.setImageResource(R.mipmap.thirdguide_light);
+                thirdguideImage.setImageResource(R.mipmap.forthguide_light);
                 //forthguideImage.setImageResource(R.mipmap.forthguide_light);
                 firstguideTxt.setTextColor(getResources().getColor(R.color.huiSe));
                 secondguideTxt.setTextColor(getResources().getColor(R.color.huiSe));

@@ -29,7 +29,8 @@ public class StudentZhuyeFragment extends Fragment implements View.OnClickListen
             button_qingjia.setOnClickListener(this);
             LinearLayout b_analysis=(LinearLayout) view.findViewById(R.id.analysis);
             b_analysis.setOnClickListener(this);
-
+            CardView l_now_class=(CardView)  view.findViewById(R.id.now_class);
+            l_now_class.setOnClickListener(this);
 
             List<Integer> images= new ArrayList<>();
             images.add(R.drawable.banner_img_1);
@@ -65,8 +66,12 @@ public class StudentZhuyeFragment extends Fragment implements View.OnClickListen
                     startActivity(intent1);
                     break;
                 case R.id.analysis:
-                    Intent intent2= new Intent(getActivity(),StudentAnalysisActivity.class);
+                    Intent intent2= new Intent(getActivity(),StudentStatisticActivity.class);
                     startActivity(intent2);
+                    break;
+                case R.id.now_class:
+                    Intent intent3= new Intent(getActivity(),StudentAnalysisActivity.class);
+                    startActivity(intent3);
                     break;
                 default:
                     break;

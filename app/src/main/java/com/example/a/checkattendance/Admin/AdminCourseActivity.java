@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,8 +24,16 @@ public class AdminCourseActivity extends BaseActivity implements View.OnClickLis
 
         replaceFragment(new AdminCourseFragment());
 
-        Button button_back=(Button) findViewById(R.id.back) ;
-        button_back.setOnClickListener(this);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.mipmap.ic_back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         TextView textView_course=(TextView) findViewById(R.id.course) ;
         textView_course.setOnClickListener(this);
@@ -44,9 +53,7 @@ public class AdminCourseActivity extends BaseActivity implements View.OnClickLis
         TextView textView_course=(TextView) findViewById(R.id.course) ;
         TextView textView_teacher=(TextView) findViewById(R.id.teacher) ;
         switch(v.getId()){
-            case R.id.back:
-                finish();
-                break;
+
             case R.id.teacher:
                 replaceFragment(new AdminTeacherFragment());
                 textView_teacher.setTextColor(getResources().getColor(R.color.colorPrimary));

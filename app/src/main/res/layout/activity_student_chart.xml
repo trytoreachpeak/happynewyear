@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="课程名称"
+            android:text="上课状态"
             android:textSize="20sp"
             android:textColor="#fefefe"/>
     </android.support.v7.widget.Toolbar>
@@ -76,42 +76,7 @@
             android:orientation="vertical"
             android:weightSum="1920">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:weightSum="1080">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="100" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="50"
-                    android:src="@mipmap/amdin_dot" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="600"
-                    android:gravity="center_vertical"
-                    android:text="  课程情况分析"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="200" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="70"
-                    android:src="@mipmap/admin_down" />
-            </LinearLayout>
 
             <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/mBarChart1"
@@ -125,23 +90,10 @@
                 android:gravity="center"
                 android:textSize="20dp"
                 android:layout_gravity="center"
-                android:text="各班级专注度"/>
-            <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/mBarChart2"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_gravity="center"
-                android:paddingTop="30dp"/>
+                android:text="各状态次数"/>
 
-            <TextView
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:textSize="20dp"
-                android:layout_gravity="center"
-                android:text="各班级出勤率"/>
-            <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/mBarChart3"
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/mLineChart2"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:layout_gravity="center"
@@ -152,20 +104,7 @@
                 android:gravity="center"
                 android:textSize="20dp"
                 android:layout_gravity="center"
-                android:text="各班级考试情况"/>
-            <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/mBarChart4"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_gravity="center"
-                android:paddingTop="30dp" />
-            <TextView
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:textSize="20dp"
-                android:layout_gravity="center"
-                android:text="教师上课状态"/>
+                android:text="认真上课情况"/>
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"

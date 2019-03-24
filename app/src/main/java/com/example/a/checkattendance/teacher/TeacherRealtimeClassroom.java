@@ -19,10 +19,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.a.checkattendance.ActivityLogin;
 import com.example.a.checkattendance.HttpUtil;
 import com.example.a.checkattendance.Loading_view;
 import com.example.a.checkattendance.R;
 import com.example.a.checkattendance.gsonitem.GetSingleLessonCondtion;
+import com.example.a.checkattendance.gsonitem.LoginStudent;
 import com.example.a.checkattendance.gsonitem.ManagerGetAllStudentAttendance;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -514,5 +516,34 @@ public class TeacherRealtimeClassroom extends AppCompatActivity implements View.
         data10.setIssleep(0);
         data10.setIslazy(0);
         secondlessonData.add(data10);
+    }
+    private void initRealData(){
+        HttpUtil.sendLoginRequest
+                ("http://203.195.156.24:7000/api/v1/teachers/studentssign/",
+                        HttpUtil.createSingleClassConditionJson("2019-03-23", 10, "001"), new okhttp3.Callback() {
+                            @Override
+                            public void onResponse(Call call, Response response) throws IOException {
+                                Gson gson = new Gson();
+                                java.lang.reflect.Type type = new TypeToken<GetSingleLessonCondtion>() {
+                                }.getType();
+                                final GetSingleLessonCondtion condition = gson.fromJson(response.body().string(), type);
+                                //解析json
+                            }
+                            @Override
+                            public void onFailure(Call call, IOException e) {
+                                serverConnectFail();
+                            }
+                        });
+    }
+    private void serverConnectFail(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast toast = Toast.makeText(TeacherRealtimeClassroom.this,
+                        null,Toast.LENGTH_SHORT);
+                toast.setText("服务器连接失败");
+                toast.show();
+            }
+        });
     }
 }

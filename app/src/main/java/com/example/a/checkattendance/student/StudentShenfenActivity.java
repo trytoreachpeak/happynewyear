@@ -8,6 +8,7 @@ import android.os.Build;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -30,12 +31,17 @@ import java.io.IOException;
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_student_shenfen);
-            Button takephoto=(Button) findViewById(R.id.take_photo);
-            picture=findViewById(R.id.picture);
-            takephoto.setOnClickListener(this);
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            toolbar.setTitle("");
+            setSupportActionBar(toolbar);
+            toolbar.setNavigationIcon(R.mipmap.ic_back);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
 
-            Button button_back=(Button) findViewById(R.id.back);
-            button_back.setOnClickListener(this);
             Button button_confirm=(Button) findViewById(R.id.confirm);
             button_confirm.setOnClickListener(this);
         }
@@ -44,36 +50,12 @@ import java.io.IOException;
         @Override
         public void onClick(View v){
             switch(v.getId()){
-                case R.id.back:
-                    finish();
-                    break;
+
                 case R.id.confirm:
                     finish();
                     Toast.makeText(StudentShenfenActivity.this,"完成",Toast.LENGTH_SHORT).show();
                     break;
-                case R.id.take_photo:
-                    File outputImage=new File(getExternalCacheDir(),"output_image.jpg");
-                    try{ //判断图片是否存在，存在则删除在创建，不存在则直接创建
-                        if(outputImage.exists()) {
-                            outputImage.delete();
-                        }
-                        outputImage.createNewFile();
-                    }
-                    catch (IOException e){
-                        e.printStackTrace();
-                    }
-                    if(Build.VERSION.SDK_INT>=24) {
-                        imageUri= FileProvider.getUriForFile(StudentShenfenActivity.this,
-                                "com.example.gdzc.cameralbumtest.fileprovider",outputImage);
-                    }
-                    else {
-                        imageUri=Uri.fromFile(outputImage);
-                    }
-                    Intent intent=new Intent("android.media.action.IMAGE_CAPTURE");
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
-                    startActivityForResult(intent,TAKE_PHOTO);
-                    //调用会返回结果的开启方式，返回成功的话，则把它显示出来
-                    break;
+
                 default:
                     break;
             }

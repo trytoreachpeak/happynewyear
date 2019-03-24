@@ -94,12 +94,15 @@
         <activity android:name=".teacher.TeacherSoftwareVersion" />
         <activity android:name=".teacher.TeacherRemindBeforeClass" />
         <activity android:name=".teacher.TeacherDataAnalysis" />
-        <activity android:name=".teacher.TeacherClassHistory"></activity>
+        <activity android:name=".teacher.TeacherClassHistory" />
         <activity android:name=".teacher.TeacherMyAttendance" />
         <activity android:name=".teacher.TeacherMyAttendanceChooseCourse" />
         <activity android:name=".teacher.TeacherMyCourse" />
         <activity android:name=".teacher.TeacherAddCourse" />
         <activity android:name=".teacher.TeacherDataAnalysisChooseClass" />
+        <activity android:name=".student.StudentStatisticActivity" />
+        <activity android:name=".student.StudentPersonalStatisticActivity" />
+        <activity android:name=".student.StudentChartActivity"></activity>
         <activity android:name=".counsellor.CounsellorMyClass"></activity>
     </application>
 

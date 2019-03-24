@@ -1,34 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <FrameLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:background="#66cc99">
-
+        android:layout_height="50.5dp"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="@mipmap/ic_back">
+        <!--app:navigationIcon="@mipmap/ic_back"-->
         <TextView
             android:id="@+id/chatname"
-            android:layout_width="140dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="sss"
-            android:textSize="22sp"
-            android:textColor="#f4f4f4"
-            android:gravity="center"
-            android:layout_gravity="center">
-
-        </TextView>
-        <Button
-            android:id="@+id/back"
-            android:layout_width="50dp"
-            android:layout_gravity="center_vertical"
-            android:layout_height="match_parent"
-            android:background="@drawable/back_qj"
-            />
-
-    </FrameLayout>
+            android:textSize="20sp"
+            android:textColor="#fefefe"/>
+    </android.support.v7.widget.Toolbar>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/msg"
@@ -38,37 +31,75 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:background="#f4f4f4"
+        android:weightSum="1080"
         android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"/>
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="6mm"
+            android:layout_gravity="center"
             android:background="@drawable/voice_chating"
-            android:layout_weight="1"/>
+            android:layout_weight="100"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"/>
 
         <EditText
             android:id="@+id/input"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:background="@null"
-            android:layout_weight="7"
+            android:layout_weight="620"
+            android:textSize="3mm"
             android:hint="请输入"
             android:maxLines="2"
             />
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="35"/>
         <ImageView
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="100"
+            android:layout_gravity="center"
             android:background="@drawable/face_chating"
-            android:layout_height="40dp" />
+            android:layout_height="6mm" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="35"/>
+
         <Button
             android:id="@+id/send"
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
+            android:layout_height="5mm"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_weight="115"
+            android:textSize="15dp"
+            android:background="#66cc99"
+            android:textColor="#f4f4f4"
+            android:text="发 送" />
+
+
+        <Button
+            android:id="@+id/more"
+            android:layout_width="0dp"
+            android:layout_height="6mm"
+            android:visibility="visible"
+            android:layout_gravity="center"
+            android:layout_weight="100"
             android:background="@drawable/add_chating"
             />
-
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"></LinearLayout>
 
 </LinearLayout>

@@ -95,15 +95,8 @@ public class MyExpandableAdapter extends BaseExpandableListAdapter {
         }
         groupHolderView.groupName.setText(mGroup.get(groupPosition).getName());
 
-        if(groupPosition==0)
-        {
-
             groupHolderView.count.setText(""+mChild.get(groupPosition).size());
-        }
-        else
-        {
-            groupHolderView.count.setText("0");
-        }
+
 
 
         return convertView;
