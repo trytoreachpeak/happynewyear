@@ -44,8 +44,10 @@ public class AdminTeacherAttendanceActivity extends BaseActivity implements View
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Teacher teacher=teacherList.get(position);
                 String data=teacher.getName();
+                String data2=teacher.getAttend();
                 Intent intent=new Intent(AdminTeacherAttendanceActivity.this,AdminClassAttendanceActivity .class);
                 intent.putExtra("extra_data",data);
+                intent.putExtra("extra_data2",data2);
                 startActivity(intent);
             }
         });

@@ -2,36 +2,56 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="1920">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_weight="130"
-        android:weightSum="1080"
-        android:layout_height="0dp">
+        android:layout_height="40dp"
+        android:weightSum="6"
+        android:orientation="vertical">
 
-        <SearchView
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_height="match_parent"
-            android:background="#ededed"
-            android:layout_weight="4">
-        </SearchView>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center">
+        </ImageView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:weightSum="6"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center">
+            </ImageView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="4"
+                android:weightSum="1080"
+                android:layout_height="0dp">
+
+                <SearchView
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="match_parent"
+                    android:background="#ededed"
+                    android:layout_weight="4">
+                </SearchView>
+            </LinearLayout>
+        </LinearLayout>
+
     </LinearLayout>
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="50">
-    </FrameLayout>
 
     <ExpandableListView
-        android:id ="@+id/expandableListView"
+        android:id ="@+id/expandableListView1"
         android:layout_width ="match_parent"
         android:layout_height ="0dp"
         android:layout_weight="1740"
-        android:groupIndicator="@null"
         />
 
 </LinearLayout>

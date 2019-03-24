@@ -33,6 +33,19 @@ public class AdminPersonalAttendanceActivity extends BaseActivity implements Vie
             }
         });
 
+        TextView t_course=(TextView)findViewById(R.id.course_name);
+        TextView t_class=(TextView)findViewById(R.id.class_name);
+        TextView t_chuqin=(TextView)findViewById(R.id.chuqin);
+
+        Intent intent = getIntent();
+        String date_class= intent.getStringExtra("extra_data1");
+        String date_course= intent.getStringExtra("extra_data2");
+        String data_chuqin= intent.getStringExtra("extra_data3");
+        t_class.setText(date_class);
+        t_course.setText(date_course);
+        t_chuqin.setText(data_chuqin);
+
+
         init();
         initData(t_time1);
         initData(t_time2);

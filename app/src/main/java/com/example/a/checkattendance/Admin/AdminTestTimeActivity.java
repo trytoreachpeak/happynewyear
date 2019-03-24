@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.a.checkattendance.BaseActivity;
 import com.example.a.checkattendance.R;
 
 import org.w3c.dom.Text;
@@ -16,7 +17,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdminTestTimeActivity extends AppCompatActivity implements View.OnClickListener{
+public class AdminTestTimeActivity extends BaseActivity implements View.OnClickListener{
     private List<Test> testList=new ArrayList<>();
 
     @Override

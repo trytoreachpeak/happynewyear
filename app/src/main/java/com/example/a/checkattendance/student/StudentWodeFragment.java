@@ -42,7 +42,6 @@ public class StudentWodeFragment extends Fragment implements View.OnClickListene
         subject=(RelativeLayout)view.findViewById(R.id.subject);
         myAttendance=(RelativeLayout)view.findViewById(R.id.my_attendance);
         feedback=(RelativeLayout)view.findViewById(R.id.feedback_icon);
-        query=(RelativeLayout)view.findViewById(R.id.query);
         settings=(RelativeLayout)view.findViewById(R.id.settings);
 
         settings.setOnClickListener(this);
@@ -74,6 +73,8 @@ public class StudentWodeFragment extends Fragment implements View.OnClickListene
                 intent = new Intent(getActivity(),StudentFeedbackActivity.class);
                 startActivity(intent);
                 break;
+                default:
+                    break;
         }
     }
 }

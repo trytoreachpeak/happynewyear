@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin.AdminMemberScoreActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50.5dp"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="@mipmap/ic_back">
+        <!--app:navigationIcon="@mipmap/ic_back"-->
+        <TextView
+            android:id="@+id/teacher_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="成绩"
+            android:textSize="20sp"
+            android:textColor="#fefefe"/>
+
+
+    </android.support.v7.widget.Toolbar>
+    <ListView
+        android:id="@+id/list_person"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1600"></ListView>
+
+</LinearLayout>

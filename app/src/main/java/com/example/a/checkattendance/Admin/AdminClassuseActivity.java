@@ -46,7 +46,7 @@ public class AdminClassuseActivity extends BaseActivity implements View.OnClickL
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Floor floor=floorList.get(position);
                 String data=floor.getName();
-                Toast.makeText(AdminClassuseActivity.this, "当前点击的是：："+floor.getName(), Toast.LENGTH_SHORT).show();
+
 
 
             }

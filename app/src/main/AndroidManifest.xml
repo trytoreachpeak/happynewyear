@@ -79,7 +79,7 @@
         <activity android:name=".counsellor.CounsellorDataStatistics" />
         <activity android:name=".counsellor.CounsellorDSClass" />
         <activity android:name=".counsellor.CounsellorClassmateList" />
-        <activity android:name=".counsellor.CounsellorDAStudent" />
+        <activity android:name=".counsellor.CounsellorDSStudent" />
         <activity android:name=".counsellor.CounsellorDataAnalysis" />
         <activity android:name=".counsellor.CounsellorDAClass" />
         <activity android:name=".counsellor.CounsellorExam" />
@@ -104,6 +104,15 @@
         <activity android:name=".student.StudentPersonalStatisticActivity" />
         <activity android:name=".student.StudentChartActivity"></activity>
         <activity android:name=".counsellor.CounsellorMyClass"></activity>
+        <activity android:name=".student.StudentChartActivity" />
+        <activity android:name=".Admin.AdminTimetableActivity" />
+        <activity android:name=".student.StudentTimetablleActivity" />
+        <activity android:name=".student.StudentHomeworkActivity" />
+        <activity android:name=".Admin.AdminScoreActivity" />
+        <activity android:name=".Admin.AdminMemberScoreActivity" />
+        <activity android:name=".Admin.AdminPersonalScoreActivity" />
+        <activity android:name=".Admin.AdminSettingsActivity" />
+        <activity android:name=".Admin.AdminInformationActivity"></activity>
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.a.checkattendance.Admin.AdminClassAnalysisActivity;
 import com.example.a.checkattendance.Admin.BarChartManager;
+import com.example.a.checkattendance.BaseActivity;
 import com.example.a.checkattendance.R;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
@@ -31,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class StudentChartActivity extends AppCompatActivity {
+public class StudentChartActivity extends BaseActivity {
     private TextView t_time1;
     private TextView t_time2;
 

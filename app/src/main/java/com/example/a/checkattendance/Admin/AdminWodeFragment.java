@@ -17,6 +17,7 @@ import com.example.a.checkattendance.R;
 import com.example.a.checkattendance.student.StudentFeedbackActivity;
 import com.example.a.checkattendance.student.StudentInformationActivity;
 import com.example.a.checkattendance.student.StudentSetActivity;
+import com.example.a.checkattendance.teacher.TeacherPersoninfo;
 import com.example.a.checkattendance.teacher.TeacherSchool;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -40,10 +41,10 @@ public class AdminWodeFragment extends Fragment implements View.OnClickListener 
         subject=(RelativeLayout)view.findViewById(R.id.subject);
         myAttendance=(RelativeLayout)view.findViewById(R.id.my_attendance);
         feedback=(RelativeLayout)view.findViewById(R.id.feedback_icon);
-        query=(RelativeLayout)view.findViewById(R.id.query);
         settings=(RelativeLayout)view.findViewById(R.id.settings);
 
         settings.setOnClickListener(this);
+        feedback.setOnClickListener(this);
         settings_up.setOnClickListener(this);
         personInfo.setOnClickListener(this);
 
@@ -54,8 +55,25 @@ public class AdminWodeFragment extends Fragment implements View.OnClickListener 
     public void onClick(View v) {
         Intent intent;
         switch(v.getId()){
-          default:
-              break;
+            case R.id.up_setting_button:
+                intent = new Intent(getActivity(),AdminSettingsActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.settings:
+                intent = new Intent(getActivity(),AdminSettingsActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.person_info:
+                intent = new Intent(getActivity(),AdminInformationActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.feedback_icon:
+                intent = new Intent(getActivity(),StudentFeedbackActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
         }
     }
 }

@@ -11,12 +11,13 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.a.checkattendance.BaseActivity;
 import com.example.a.checkattendance.R;
 import com.example.a.checkattendance.teacher.TeacherExtendableListViewAdapter;
 import com.example.a.checkattendance.teacher.TeacherRealtimeClassroom;
 import com.example.a.checkattendance.teacher.TeacherRealtimeTotalAttendance;
 
-public class StudentPersonalStatisticActivity extends AppCompatActivity implements View.OnClickListener{
+public class StudentPersonalStatisticActivity extends BaseActivity implements View.OnClickListener{
 
     String[] str = {"第1节课", "第2节课","汇总"};
     private ArrayAdapter<String> arrayAdapter;

@@ -99,7 +99,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:textSize="15dp"
-                    android:text=""/>/>
+                    android:text="www"/>/>
             </LinearLayout>
 
             <LinearLayout
@@ -114,11 +114,12 @@
                     android:textSize="15dp"
                     android:text="  上课班级"/>
                 <TextView
+                    android:id="@+id/class_name"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:textSize="15dp"
-                    android:text=""/>/>
+                    android:text="sss"/>/>
             </LinearLayout>
 
             <LinearLayout
@@ -137,7 +138,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:textSize="15dp"
-                    android:text=""/>/>
+                    android:text="48课时"/>/>
             </LinearLayout>
 
             <LinearLayout
@@ -151,12 +152,13 @@
                     android:layout_weight="1"
                     android:textSize="15dp"
                     android:text="  学分"/>
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:textSize="15dp"
-                    android:text=""/>/>
+                    android:text="2学分"
+                    android:textSize="15dp" />/>
             </LinearLayout>
 
             <LinearLayout
@@ -171,6 +173,7 @@
                     android:textSize="15dp"
                     android:text="  出勤率"/>
                 <TextView
+                    android:id="@+id/chuqin"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"

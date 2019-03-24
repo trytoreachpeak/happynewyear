@@ -182,34 +182,7 @@
                     android:layout_marginLeft="85.5dp"
                     android:background="#e5e5e5"/>
             </LinearLayout>
-            <RelativeLayout
-                android:id="@+id/query"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:background="#ffffff"
-                android:padding="6dp">
-                <ImageView
-                    android:layout_marginLeft="30dp"
-                    android:layout_width="29.5dp"
-                    android:layout_centerVertical="true"
-                    android:layout_height="29.5dp"
-                    android:src="@mipmap/query_icon"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    style="@style/TeacherForthFragmentTextSize"
-                    android:layout_marginLeft="81dp"
-                    android:textColor="#333333"
-                    android:text="疑问" />
-                <ImageView
-                    android:layout_alignParentRight="true"
-                    android:layout_width="21dp"
-                    android:layout_height="21dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_centerVertical="true"
-                    android:src="@mipmap/right_arrow_img"/>
-            </RelativeLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

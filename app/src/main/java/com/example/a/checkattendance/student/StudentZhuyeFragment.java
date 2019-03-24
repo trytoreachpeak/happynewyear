@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.a.checkattendance.R;
 import com.example.a.checkattendance.bannerFunc.GlideImageLoader;
+import com.example.a.checkattendance.teacher.TeacherTimetable;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerListener;
 
@@ -27,6 +28,8 @@ public class StudentZhuyeFragment extends Fragment implements View.OnClickListen
 
             LinearLayout button_qingjia=(LinearLayout) view.findViewById(R.id.qingjia);
             button_qingjia.setOnClickListener(this);
+            LinearLayout l_kebiao=(LinearLayout) view.findViewById(R.id.kebiao);
+            l_kebiao.setOnClickListener(this);
             LinearLayout b_analysis=(LinearLayout) view.findViewById(R.id.analysis);
             b_analysis.setOnClickListener(this);
             CardView l_now_class=(CardView)  view.findViewById(R.id.now_class);
@@ -72,6 +75,10 @@ public class StudentZhuyeFragment extends Fragment implements View.OnClickListen
                 case R.id.now_class:
                     Intent intent3= new Intent(getActivity(),StudentAnalysisActivity.class);
                     startActivity(intent3);
+                    break;
+                case R.id.kebiao:
+                    Intent intent4= new Intent(getActivity(),TeacherTimetable.class);
+                    startActivity(intent4);
                     break;
                 default:
                     break;

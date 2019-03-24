@@ -1,6 +1,7 @@
 package com.example.a.checkattendance.Admin;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,14 +19,22 @@ import android.widget.Toast;
 import com.example.a.checkattendance.BaseActivity;
 import com.example.a.checkattendance.R;
 
-public class AdminClassAttendanceActivity extends BaseActivity implements View.OnClickListener{
-    public String[] groups = { "高数", "物理", "计算机" };
+import java.util.ArrayList;
+import java.util.List;
 
-    public String[][] children = {
-            { "软嵌181", "软嵌182"},
-            { "计171", "软嵌172" },
-            { "物联网161", "物联网162", "网工161"},
-    };
+public class AdminClassAttendanceActivity extends BaseActivity implements View.OnClickListener{
+    private ExpandableListView ep;
+    private String data_teacher;
+    private MyExpandableAdapter myAdapter;
+    /* 一级数据源 */
+    List<GroupInfo> groupList;
+    /* 二级数据源 */
+    List<List<ChildInfo>> childList;
+
+    List<ChildInfo>cList1;
+    List<ChildInfo>cList2;
+    List<ChildInfo>cList3;
+    List<ChildInfo>cList4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,28 +52,13 @@ public class AdminClassAttendanceActivity extends BaseActivity implements View.O
             }
         });
 
+        TextView t_teacher=(TextView)findViewById(R.id.teacher_name) ;
+        Intent intent = getIntent();
+        String date_teacher= intent.getStringExtra("extra_data");
+        t_teacher.setText(date_teacher);
 
-
-        ExpandableListView expandableListView = (ExpandableListView)findViewById(R.id.expandableListView);
-        expandableListView.setAdapter(new AdminClassAttendanceActivity.ExpandableAdapter(groups,children));
-//设置子条目的点击监听
-        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-
-                Toast.makeText(AdminClassAttendanceActivity.this, "当前点击的是：："+groups[groupPosition]+"的"+children[groupPosition][childPosition], Toast.LENGTH_SHORT).show();
-
-
-                Toast.makeText(AdminClassAttendanceActivity.this, "当前点击的是：："+groups[groupPosition]+"的"+children[groupPosition][childPosition], Toast.LENGTH_SHORT).show();
-
-                String data=children[groupPosition][childPosition];
-                Intent intent=new Intent(AdminClassAttendanceActivity.this,AdminPersonalAttendanceActivity.class);
-                intent.putExtra("extra_data",data);
-                startActivity(intent);
-                //这里return true的话子列表不会展开  return false才展开
-                return false;
-            }
-        });
+        ep = (ExpandableListView)findViewById(R.id.expandableListView);
+        init();
     }
 
     @Override
@@ -77,101 +71,76 @@ public class AdminClassAttendanceActivity extends BaseActivity implements View.O
 
 
 
-    public  class  ExpandableAdapter extends BaseExpandableListAdapter {
+    public void init()
+    {
+        groupList = new ArrayList<GroupInfo>();
+        groupList.add(new GroupInfo("操作系统"));
+        groupList.add(new GroupInfo("数据库原理"));
+        groupList.add(new GroupInfo("数据结构"));
+        groupList.add(new GroupInfo("JAVA程序设计"));
 
-        public String[] groups;
-        public String[][] children;
+        cList1 = new ArrayList<ChildInfo>();
+        cList2 = new ArrayList<ChildInfo>();
+        cList3 = new ArrayList<ChildInfo>();
+        cList4 = new ArrayList<ChildInfo>();
 
-        public ExpandableAdapter(String[] groups, String[][] children) {
-            this.groups = groups;
-            this.children = children;
-        }
+        cList2.add(new ChildInfo("软嵌161", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList2.add(new ChildInfo("计161", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList2.add(new ChildInfo("物联网161", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList2.add(new ChildInfo("网络工程161", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList2.add(new ChildInfo("计嵌161", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList2.add(new ChildInfo("软工161", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
 
-        //获取与给定的组相关的数据，得到数组groups中元素的数据
-        public Object getGroup(int groupPosition) {
-            return groups[groupPosition];
-        }
-
-        //获取与孩子在给定的组相关的数据,得到数组children中元素的数据
-        public Object getChild(int groupPosition, int childPosition) {
-            return children[groupPosition][childPosition];
-        }
-
-        //获取的群体数量，得到groups里元素的个数
-        public int getGroupCount() {
-            return groups.length;
-        }
-
-        //取得指定组中的children个数，就是groups中每一个条目中的个数
-        public int getChildrenCount(int groupPosition) {
-            return children[groupPosition].length;
-        }
-
-        //获取组在给定的位置编号，即groups中元素的ID
-        public long getGroupId(int groupPosition) {
-            return groupPosition;
-        }
-
-        //获取在给定的组的children的ID，也就是children中元素的ID
-        public long getChildId(int groupPosition, int childPosition) {
-            return childPosition;
-        }
-
-        //获取一个视图显示给定组，存放groups
-        public View getGroupView(int groupPosition, boolean isExpanded, View convertView,
-                                 ViewGroup parent) {
-            TextView textView = getGenericView1(24);
-            textView.setText(getGroup(groupPosition).toString());
-            return textView;
-        }
-
-        //获取一个视图显示在给定的组 的儿童的数据，就是存放children
-        public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
-                                 View convertView, ViewGroup parent) {
-            TextView textView = getGenericView2(18);
-            textView.setText(getChild(groupPosition, childPosition).toString());
-            return textView;
-        }
-
-        //孩子在指定的位置是可选的，即：children中的元素是可点击的
-        public boolean isChildSelectable(int groupPosition, int childPosition) {
-            return true;
-        }
-
-        //表示孩子是否和组ID是跨基础数据的更改稳定
-        public boolean hasStableIds() {
-            return true;
-        }
+        cList3.add(new ChildInfo("软嵌171", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList3.add(new ChildInfo("计171", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList3.add(new ChildInfo("物联网171", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList3.add(new ChildInfo("网络工程171", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList3.add(new ChildInfo("计嵌171", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList3.add(new ChildInfo("软工171", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
 
 
-        //自定义的创建TextView
-        public TextView getGenericView1(int mTextSize) {
-            // Layout parameters for the ExpandableListView
-            AbsListView.LayoutParams lp = new AbsListView.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        childList = new ArrayList<List<ChildInfo>>();
+        childList.add(cList1);
+        childList.add(cList2);
+        childList.add(cList3);
+        childList.add(cList4);
 
-            TextView textView = new TextView(AdminClassAttendanceActivity.this);
-            textView.setLayoutParams(lp);
-            textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
-            textView.setPadding(42, 12, 12, 12);
-            textView.setTextSize(mTextSize);
-            textView.setTextColor(Color.BLACK);
-            return textView;
-        }
 
-        public TextView getGenericView2(int mTextSize) {
-            // Layout parameters for the ExpandableListView
-            AbsListView.LayoutParams lp = new AbsListView.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        myAdapter = new MyExpandableAdapter(groupList,childList,this);
+        ep.setAdapter(myAdapter);
 
-            TextView textView = new TextView(AdminClassAttendanceActivity.this);
-            textView.setLayoutParams(lp);
-            textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
-            textView.setPadding(100, 12, 12, 12);
-            textView.setTextSize(mTextSize);
-            textView.setTextColor(Color.BLACK);
-            return textView;
-        }
+        ep.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+            @Override
+            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+
+                return false;
+            }
+        });
+
+
+
+        ep.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+
+
+                String data_class=childList.get(groupPosition).get(childPosition).getChildName();
+                String data_couse=groupList.get(groupPosition).getName();
+
+                Intent intent = new Intent(AdminClassAttendanceActivity.this, AdminPersonalAttendanceActivity.class);
+                intent.putExtra("extra_data1", data_class);
+                intent.putExtra("extra_data2", data_couse);
+
+                Intent intent2 = getIntent();
+                String date_teacher= intent2.getStringExtra("extra_data2");
+                intent.putExtra("extra_data3", date_teacher);
+                startActivity(intent);
+
+                //这里return true的话子列表不会展开  return false才展开
+                return false;
+            }
+        });
+
 
     }
 }

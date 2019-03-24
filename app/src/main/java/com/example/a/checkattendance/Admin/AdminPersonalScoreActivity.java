@@ -1,4 +1,4 @@
-package com.example.a.checkattendance.student;
+package com.example.a.checkattendance.Admin;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,12 +8,12 @@ import android.view.View;
 import com.example.a.checkattendance.BaseActivity;
 import com.example.a.checkattendance.R;
 
-public class StudentFeedbackActivity extends BaseActivity {
+public class AdminPersonalScoreActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_feedback);
+        setContentView(R.layout.activity_admin_personal_score);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);

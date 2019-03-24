@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.a.checkattendance.BaseActivity;
 import com.example.a.checkattendance.R;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -28,7 +29,7 @@ import org.feezu.liuli.timeselector.TimeSelector;
 
 import java.util.ArrayList;
 
-public class AdminCourseAnalysisActivity extends AppCompatActivity implements OnChartValueSelectedListener,View.OnClickListener{
+public class AdminCourseAnalysisActivity extends BaseActivity implements OnChartValueSelectedListener,View.OnClickListener{
     private TextView t_time1;
     private TextView t_time2;
     private PieChart mPiechart1;
