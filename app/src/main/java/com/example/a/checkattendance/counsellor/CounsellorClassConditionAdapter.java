@@ -8,9 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.a.checkattendance.R;
 import com.example.a.checkattendance.teacher.TeacherMessageItem;
+import com.example.a.checkattendance.teacher.TeacherRealtimeClassroom;
 import com.example.a.checkattendance.teacher.TeacherStudy;
 
 import java.util.List;
@@ -43,15 +45,33 @@ public class CounsellorClassConditionAdapter
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.teacher_message_item,parent,false);
         final ViewHolder holder = new ViewHolder(view);
-        /*holder.studyView.setOnClickListener(new View.OnClickListener(){
+        holder.CCView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
-                TeacherMessageItem teacherStudyItem = mTeacherStudyItem.get(position);
-                Intent intent = new Intent(v.getContext(),TeacherStudy.class);
-                v.getContext().startActivity(intent);
+                TeacherMessageItem teacherStudyItem = mCounsellorCCItem.get(position);
+                switch(position){
+                    case 0:
+                        TeacherRealtimeClassroom.actionStart(v.getContext(), "操作系统",
+                                "正在上课","2019-04-01 6-8节","2/2节");
+                        break;
+                    case 1:
+                        TeacherRealtimeClassroom.actionStart(v.getContext(), "操作系统",
+                                "正在上课","2019-04-01 6-8节","2/2节");
+                        break;
+                    case 2:
+                        Toast toast = Toast.makeText(v.getContext(), null, Toast.LENGTH_SHORT);
+                        toast.setText("该课程还未开始");
+                        toast.show();
+                        break;
+                    case 3:
+                        Toast toast1 = Toast.makeText(v.getContext(), null, Toast.LENGTH_SHORT);
+                        toast1.setText("该课程还未开始");
+                        toast1.show();
+                        break;
+                }
             }
-        });*/
+        });
         return holder;
     }
 

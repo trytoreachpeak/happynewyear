@@ -15,11 +15,15 @@ import android.widget.Toast;
 import com.example.a.checkattendance.R;
 import com.example.a.checkattendance.teacher.TeacherMessageAdapter;
 import com.example.a.checkattendance.teacher.TeacherMessageItem;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.Entry;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CounsellorDataAnalysis extends AppCompatActivity {
+
     private List<TeacherMessageItem> CounsellorDAItemList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +61,18 @@ public class CounsellorDataAnalysis extends AppCompatActivity {
 //        toolbar.setOverflowIcon(getResources().getDrawable(R.mipmap.classmate_icon));
     }
     private void initCounsellorDAItem(){
-        TeacherMessageItem testExample=new TeacherMessageItem("班级名",
-                R.drawable.shenqing_img,"出勤率？% 专注度 高/中/低");
+        TeacherMessageItem testExample=new TeacherMessageItem("计161",
+                R.drawable.banji_img,"");
         CounsellorDAItemList.add(testExample);
+        TeacherMessageItem testExample1=new TeacherMessageItem("计162",
+                R.drawable.banji_img,"");
+        CounsellorDAItemList.add(testExample1);
+        TeacherMessageItem testExample2=new TeacherMessageItem("软工161",
+                R.drawable.banji_img,"");
+        CounsellorDAItemList.add(testExample2);
+        TeacherMessageItem testExample3=new TeacherMessageItem("软工162",
+                R.drawable.banji_img,"");
+        CounsellorDAItemList.add(testExample3);
     }
 
 

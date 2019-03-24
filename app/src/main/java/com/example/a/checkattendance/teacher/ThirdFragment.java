@@ -51,7 +51,7 @@ public class ThirdFragment extends Fragment {
         TeacherMessageItem testExample2=new TeacherMessageItem("数据结构",
                 R.mipmap.subject_icon,"计161 计162");
         studyItemList.add(testExample2);
-        TeacherMessageItem testExample3=new TeacherMessageItem("JAVA编程设计",
+        TeacherMessageItem testExample3=new TeacherMessageItem("JAVA程序设计",
                 R.mipmap.subject_icon,"计161 计162");
         studyItemList.add(testExample3);
     }

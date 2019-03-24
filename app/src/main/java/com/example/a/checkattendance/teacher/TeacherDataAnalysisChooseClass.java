@@ -34,7 +34,7 @@ public class TeacherDataAnalysisChooseClass extends AppCompatActivity {
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.course_list);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        TeacherMyAttendanceCCAdapter adapter = new TeacherMyAttendanceCCAdapter(courseList);
+        TeacherDataAnalysisCCAdapter adapter = new TeacherDataAnalysisCCAdapter(courseList);
         recyclerView.setAdapter(adapter);
     }
     private void initItem(){

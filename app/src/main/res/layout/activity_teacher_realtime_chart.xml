@@ -60,6 +60,7 @@
                             android:layout_marginLeft="5dp"
                             android:textSize="13dp"/>
                         <TextView
+                            android:id="@+id/first_text"
                             android:layout_toRightOf="@id/locate_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -70,6 +71,7 @@
                             android:textSize="13dp"
                             />
                         <ImageView
+                            android:id="@+id/first_left_arrow"
                             android:layout_toLeftOf="@id/first_right_arrow"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
@@ -173,6 +175,7 @@
                             android:layout_marginLeft="5dp"
                             android:textSize="13dp"/>
                         <TextView
+                            android:id="@+id/second_text"
                             android:layout_toRightOf="@id/locate_4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -183,6 +186,7 @@
                             android:textSize="13dp"
                             />
                         <ImageView
+                            android:id="@+id/second_left_arrow"
                             android:layout_toLeftOf="@id/second_right_arrow"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
@@ -241,6 +245,7 @@
                             android:layout_marginLeft="5dp"
                             android:textSize="13dp"/>
                         <TextView
+                            android:id="@+id/third_text"
                             android:layout_toRightOf="@id/locate_5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -251,6 +256,7 @@
                             android:textSize="13dp"
                             />
                         <ImageView
+                            android:id="@+id/third_left_arrow"
                             android:layout_toLeftOf="@id/third_right_arrow"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
@@ -310,6 +316,7 @@
                             android:layout_marginLeft="5dp"
                             android:textSize="13dp"/>
                         <TextView
+                            android:id="@+id/forth_text"
                             android:layout_toRightOf="@id/locate_6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -320,6 +327,7 @@
                             android:textSize="13dp"
                             />
                         <ImageView
+                            android:id="@+id/forth_left_arrow"
                             android:layout_toLeftOf="@id/forth_right_arrow"
                             android:layout_width="25dp"
                             android:layout_height="25dp"

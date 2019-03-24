@@ -33,119 +33,6 @@
             android:layout_height="match_parent">
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="16mm"
-                app:cardCornerRadius="5dp"
-                android:layout_marginTop="2.1mm"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                app:cardElevation="0dp"
-                app:cardBackgroundColor="#66cc99">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="4.1mm"
-                        android:layout_marginTop="0.7mm"
-                        android:layout_marginBottom="0.2mm"
-                        android:layout_marginLeft="6dp">
-                        <TextView
-                            android:id="@+id/locate_1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:textColor="#ffffff"
-                            android:text="课堂活跃度"
-                            android:layout_marginLeft="5dp"
-                            android:textSize="13dp"/>
-                        <TextView
-                            android:layout_toRightOf="@id/locate_1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:textColor="#ffffff"
-                            android:layout_marginLeft="10dp"
-                            android:text="汇总"
-                            android:textSize="13dp"
-                            />
-                        <ImageView
-                            android:layout_toLeftOf="@id/first_right_arrow"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginRight="24dp"
-                            android:layout_centerVertical="true"
-                            android:src="@mipmap/small_arrow_left"/>
-                        <ImageView
-                            android:id="@+id/first_right_arrow"
-                            android:layout_alignParentRight="true"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginRight="12dp"
-                            android:src="@mipmap/small_arrow_right"/>
-                    </RelativeLayout>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.1mm"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginRight="7dp"
-                        android:background="#90dab5"/>
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="0.3mm">
-                        <RelativeLayout
-                            android:layout_width="105dp"
-                            android:layout_height="match_parent"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginLeft="30dp">
-                            <TextView
-                                android:layout_alignParentTop="true"
-                                android:id="@+id/locate_2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerHorizontal="true"
-                                android:textColor="#94dbb8"
-                                android:textSize="13dp"
-                                android:text="举手人数"/>
-                            <top.wuhaojie.library.MultiScrollNumber
-                                android:id="@+id/scroll_number_1"
-                                android:layout_below="@id/locate_2"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginTop="-1.5mm"
-                                android:layout_width="match_parent"
-                                app:number_size="37"
-                                android:layout_height="wrap_content"/>
-                        </RelativeLayout>
-                        <RelativeLayout
-                            android:layout_width="105dp"
-                            android:layout_height="match_parent"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginRight="30dp">
-                            <TextView
-                                android:layout_alignParentTop="true"
-                                android:id="@+id/locate_3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerHorizontal="true"
-                                android:textColor="#94dbb8"
-                                android:textSize="13dp"
-                                android:text="回答问题人数"/>
-                            <top.wuhaojie.library.MultiScrollNumber
-                                android:id="@+id/scroll_number_2"
-                                android:layout_below="@id/locate_3"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginTop="-1.5mm"
-                                android:layout_width="match_parent"
-                                app:number_size="37"
-                                android:layout_height="wrap_content"/>
-                        </RelativeLayout>
-                    </RelativeLayout>
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
                 android:layout_height="46mm"
                 app:cardCornerRadius="5dp"
                 android:layout_marginTop="2.1mm"
@@ -169,7 +56,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:textColor="#ffffff"
-                            android:text="学生认真听课人数"
+                            android:text="平均认真人数"
                             android:layout_marginLeft="5dp"
                             android:textSize="13dp"/>
                         <TextView
@@ -179,7 +66,7 @@
                             android:layout_centerVertical="true"
                             android:textColor="#ffffff"
                             android:layout_marginLeft="10dp"
-                            android:text="汇总"
+                            android:text="每节课"
                             android:textSize="13dp"
                             />
                         <ImageView
@@ -237,7 +124,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:textColor="#ffffff"
-                            android:text="考勤情况"
+                            android:text="平均考勤情况"
                             android:layout_marginLeft="5dp"
                             android:textSize="13dp"/>
                         <TextView
@@ -247,7 +134,7 @@
                             android:layout_centerVertical="true"
                             android:textColor="#ffffff"
                             android:layout_marginLeft="10dp"
-                            android:text="汇总"
+                            android:text="每节课"
                             android:textSize="13dp"
                             />
                         <ImageView
@@ -278,75 +165,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="44mm"
                         android:layout_marginBottom="1mm" />
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="46mm"
-                app:cardCornerRadius="5dp"
-                android:layout_marginTop="2.1mm"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                app:cardElevation="0dp"
-                app:cardBackgroundColor="#66cc99"
-                android:layout_marginBottom="2mm">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="4.1mm"
-                        android:layout_marginTop="0.7mm"
-                        android:layout_marginBottom="0.2mm"
-                        android:layout_marginLeft="6dp">
-                        <TextView
-                            android:id="@+id/locate_6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:textColor="#ffffff"
-                            android:text="状态次数统计"
-                            android:layout_marginLeft="5dp"
-                            android:textSize="13dp"/>
-                        <TextView
-                            android:layout_toRightOf="@id/locate_6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:textColor="#ffffff"
-                            android:layout_marginLeft="10dp"
-                            android:text="汇总"
-                            android:textSize="13dp"
-                            />
-                        <ImageView
-                            android:layout_toLeftOf="@id/forth_right_arrow"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginRight="24dp"
-                            android:layout_centerVertical="true"
-                            android:src="@mipmap/small_arrow_left"/>
-                        <ImageView
-                            android:id="@+id/forth_right_arrow"
-                            android:layout_alignParentRight="true"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginRight="12dp"
-                            android:src="@mipmap/small_arrow_right"/>
-                    </RelativeLayout>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.1mm"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginRight="7dp"
-                        android:background="#90dab5"/>
-                    <com.github.mikephil.charting.charts.BarChart
-                        android:id="@+id/line_chart_4"
-                        android:layout_width="match_parent"
-                        android:layout_height="44mm"
-                        android:layout_marginBottom="1mm"
-                        />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>

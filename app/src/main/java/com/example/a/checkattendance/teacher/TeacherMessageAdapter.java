@@ -47,8 +47,8 @@ public class TeacherMessageAdapter extends RecyclerView.Adapter<TeacherMessageAd
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
                 TeacherMessageItem teacherMessageItem=mTeacherMessageItem.get(position);
-                Intent intent = new Intent(v.getContext(),TeacherStudy.class);
-                v.getContext().startActivity(intent);
+                //Intent intent = new Intent(v.getContext(),TeacherStudy.class);
+                //v.getContext().startActivity(intent);
             }
         });
         return holder;

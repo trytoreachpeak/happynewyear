@@ -48,6 +48,7 @@ public class CounsellorDataStatisticsAdapter
                 int position = holder.getAdapterPosition();
                 TeacherMessageItem teacherStudyItem = mCounsellorDSItem.get(position);
                 Intent intent = new Intent(v.getContext(),CounsellorDSClass.class);
+                intent.putExtra("title",teacherStudyItem.getMessageCategory());
                 v.getContext().startActivity(intent);
             }
         });

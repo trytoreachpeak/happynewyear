@@ -66,9 +66,9 @@ public class TeacherRealtimeTotalAttendance extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_realtime_total_attendance);
 
-        //Intent intent = getIntent();
-        //Bundle args = intent.getBundleExtra("BUNDLE");
-        //mchildData = (ArrayList<ArrayList<StudentBean>>) args.getSerializable("ARRAYLIST");
+        Intent intent = getIntent();
+        TextView title =(TextView)findViewById(R.id.title);
+        title.setText(intent.getStringExtra("title"));
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

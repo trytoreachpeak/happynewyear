@@ -77,9 +77,9 @@
         <activity android:name=".Admin.AdminChatingActivity" />
         <activity android:name=".student.StudentAnalysisActivity" />
         <activity android:name=".counsellor.CounsellorDataStatistics" />
-        <activity android:name=".counsellor.CounsellorDSClass"></activity>
+        <activity android:name=".counsellor.CounsellorDSClass" />
         <activity android:name=".counsellor.CounsellorClassmateList" />
-        <activity android:name=".counsellor.CounsellorDSStudent" />
+        <activity android:name=".counsellor.CounsellorDAStudent" />
         <activity android:name=".counsellor.CounsellorDataAnalysis" />
         <activity android:name=".counsellor.CounsellorDAClass" />
         <activity android:name=".counsellor.CounsellorExam" />
@@ -87,19 +87,20 @@
         <activity android:name=".counsellor.CounsellorExamroomCondition" />
         <activity android:name=".counsellor.CounsellorExamConditionDetail" />
         <activity android:name=".counsellor.CounsellorExamroomConditionDetail" />
-        <activity android:name=".teacher.TeacherTimetable"></activity>
+        <activity android:name=".teacher.TeacherTimetable" />
         <activity android:name=".teacher.TeacherRealtimeClassroom" />
         <activity android:name=".teacher.TeacherRealtimeTotalAttendance" />
         <activity android:name=".teacher.TeacherRealtimeChart" />
         <activity android:name=".teacher.TeacherSoftwareVersion" />
         <activity android:name=".teacher.TeacherRemindBeforeClass" />
         <activity android:name=".teacher.TeacherDataAnalysis" />
-        <activity android:name=".teacher.TeacherClassHistory" />
+        <activity android:name=".teacher.TeacherClassHistory"></activity>
         <activity android:name=".teacher.TeacherMyAttendance" />
         <activity android:name=".teacher.TeacherMyAttendanceChooseCourse" />
         <activity android:name=".teacher.TeacherMyCourse" />
         <activity android:name=".teacher.TeacherAddCourse" />
-        <activity android:name=".teacher.TeacherDataAnalysisChooseClass"></activity>
+        <activity android:name=".teacher.TeacherDataAnalysisChooseClass" />
+        <activity android:name=".counsellor.CounsellorMyClass"></activity>
     </application>
 
 </manifest>

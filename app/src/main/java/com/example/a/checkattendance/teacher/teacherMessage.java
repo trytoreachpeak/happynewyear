@@ -43,7 +43,10 @@ public class teacherMessage extends AppCompatActivity {
     }
     private void initTeacherMessageItem(){
         TeacherMessageItem testExample=new TeacherMessageItem("请假申请",
-                R.drawable.shenqing_img,"某某班");
+                R.drawable.shenqing_img,"计161 蔡周宇");
         messageItemList.add(testExample);
+        TeacherMessageItem testExample1=new TeacherMessageItem("请假申请",
+                R.drawable.shenqing_img,"计162 邵正宇");
+        messageItemList.add(testExample1);
     }
 }

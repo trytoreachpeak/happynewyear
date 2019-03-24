@@ -1,182 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:background="#f4f4f4"
+    >
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_first_fragment"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="50.5dp"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        app:popupTheme="@style/OverflowMenuStyle"
+        app:navigationIcon="@mipmap/ic_back">
         <!--app:navigationIcon="@mipmap/ic_back"-->
         <TextView
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="某某某"
-            android:textStyle="bold"
-            android:textSize="25sp"
+            android:text="数据分析"
+            style="@style/ToolbarTextSize"
             android:textColor="#fefefe"/>
     </android.support.v7.widget.Toolbar>
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="14dp"
-            android:paddingBottom="10dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="选择时间范围"
-                android:layout_marginLeft="15dp"
-                android:textSize="20sp"
-                />
-            <TextView
-                android:id="@+id/start_time"
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:textSize="17sp"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:background="@drawable/rounded_edittext_time"/>
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="—"
-                android:textSize="17sp"
-                android:layout_marginLeft="3dp"/>
-            <TextView
-                android:id="@+id/end_time"
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:textSize="17sp"
-                android:layout_marginLeft="3dp"
-                android:gravity="center"
-                android:background="@drawable/rounded_edittext_time"/>
-        </LinearLayout>
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="13dp"
-            app:contentPadding="6dp"
-            app:cardElevation="6dp"
-            app:cardBackgroundColor="#fafafa">
-            <LinearLayout
-                android:orientation="vertical"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingRight="17dp"
-                android:paddingLeft="17dp">
+                android:layout_height="46mm"
+                app:cardCornerRadius="5dp"
+                android:layout_marginTop="2.1mm"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#66cc99">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_margin="20dp"
-                        android:layout_width="17dp"
-                        android:layout_height="17dp"
-                        android:src="@mipmap/small_point_icon"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="上课状态："
-                        android:textSize="24sp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_gravity="center"
-                        android:text="优秀"
-                        android:textSize="24sp"/>
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_gravity="center"
-                        android:src="@mipmap/happy_icon"/>
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="4.1mm"
+                        android:layout_marginTop="0.7mm"
+                        android:layout_marginBottom="0.2mm"
+                        android:layout_marginLeft="6dp">
+                        <TextView
+                            android:id="@+id/locate_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:textColor="#ffffff"
+                            android:text="考勤情况"
+                            android:layout_marginLeft="5dp"
+                            android:textSize="13dp"/>
+                        <TextView
+                            android:id="@+id/third_text"
+                            android:layout_toRightOf="@id/locate_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:textColor="#ffffff"
+                            android:layout_marginLeft="10dp"
+                            android:text="最近一个星期"
+                            android:textSize="13dp"
+                            />
+                        <ImageView
+                            android:id="@+id/third_left_arrow"
+                            android:layout_toLeftOf="@id/third_right_arrow"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="24dp"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/small_arrow_left"/>
+                        <ImageView
+                            android:id="@+id/third_right_arrow"
+                            android:layout_alignParentRight="true"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="12dp"
+                            android:src="@mipmap/small_arrow_right"/>
+                    </RelativeLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1mm"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginRight="7dp"
+                        android:background="#90dab5"/>
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/line_chart_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="44mm"
+                        android:layout_marginBottom="1mm" />
                 </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="46mm"
+                app:cardCornerRadius="5dp"
+                android:layout_marginTop="2.1mm"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#66cc99"
+                android:layout_marginBottom="2mm">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp">
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="4.1mm"
+                        android:layout_marginTop="0.7mm"
+                        android:layout_marginBottom="0.2mm"
+                        android:layout_marginLeft="6dp">
                         <TextView
-                            android:layout_width="120dp"
-                            android:layout_height="80dp"
-                            android:gravity="center"
-                            android:text="100%"
-                            android:textSize="26sp"
-                            android:textColor="#66cc99"
-                            android:layout_gravity="center"
-                            android:background="@mipmap/frame_icon"/>
-                        <TextView
+                            android:id="@+id/locate_6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="2dp"
-                            android:textSize="23sp"
-                            android:text="出勤率"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                            android:layout_centerVertical="true"
+                            android:textColor="#ffffff"
+                            android:text="状态次数统计"
+                            android:layout_marginLeft="5dp"
+                            android:textSize="13dp"/>
                         <TextView
-                            android:layout_width="120dp"
-                            android:layout_height="80dp"
-                            android:gravity="center"
-                            android:text="100%"
-                            android:textSize="26sp"
-                            android:textColor="#66cc99"
-                            android:layout_gravity="center"
-                            android:background="@mipmap/frame_icon"/>
-                        <TextView
+                            android:id="@+id/forth_text"
+                            android:layout_toRightOf="@id/locate_6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="2dp"
-                            android:textSize="23sp"
-                            android:text="专注度"/>
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/detail_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="5dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="详情"
-                        android:textSize="22sp"
-                        android:textColor="#66cc99"
-                        android:layout_gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textColor="#ffffff"
+                            android:layout_marginLeft="10dp"
+                            android:text="最近一个星期"
+                            android:textSize="13dp"
+                            />
+                        <ImageView
+                            android:id="@+id/forth_left_arrow"
+                            android:layout_toLeftOf="@id/forth_right_arrow"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="24dp"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/small_arrow_left"/>
+                        <ImageView
+                            android:id="@+id/forth_right_arrow"
+                            android:layout_alignParentRight="true"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="12dp"
+                            android:src="@mipmap/small_arrow_right"/>
+                    </RelativeLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1mm"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginRight="7dp"
+                        android:background="#90dab5"/>
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/line_chart_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="44mm"
+                        android:layout_marginBottom="1mm"
                         />
-                    <ImageView
-                        android:layout_marginLeft="1dp"
-                        android:layout_width="27dp"
-                        android:layout_height="27dp"
-                        android:src="@mipmap/detail_icon"/>
                 </LinearLayout>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-    </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

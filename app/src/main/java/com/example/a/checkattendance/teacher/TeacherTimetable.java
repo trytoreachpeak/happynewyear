@@ -79,7 +79,7 @@ public class TeacherTimetable extends AppCompatActivity implements View.OnClickL
         Schedule schedule2 = new Schedule("数据结构","JX03-303",
                 "张华",weekList,1,2,3,3);
         scheduleList.add(schedule2);
-        Schedule schedule3 = new Schedule("JAVA编程设计","JX18-205",
+        Schedule schedule3 = new Schedule("JAVA程序设计","JX18-205",
                 "张华",weekList,6,3,5,4);
         scheduleList.add(schedule3);
         mTimetableView.data(scheduleList)

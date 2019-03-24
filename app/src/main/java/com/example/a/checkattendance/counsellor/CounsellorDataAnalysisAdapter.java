@@ -48,6 +48,7 @@ public class CounsellorDataAnalysisAdapter
                 int position = holder.getAdapterPosition();
                 TeacherMessageItem teacherStudyItem = mCounsellorDAItem.get(position);
                 Intent intent = new Intent(v.getContext(),CounsellorDAClass.class);
+                intent.putExtra("title",teacherStudyItem.getMessageCategory());
                 v.getContext().startActivity(intent);
             }
         });

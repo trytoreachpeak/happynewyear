@@ -42,7 +42,16 @@ public class CounsellorDataStatistics extends AppCompatActivity {
     }
     private void initCounsellorDSItem(){
         TeacherMessageItem testExample=new TeacherMessageItem("计161",
-                R.drawable.shenqing_img,"出勤率？% 专注度 高/中/低");
+                R.drawable.banji_img,"出勤率90%");
         CounsellorDSItemList.add(testExample);
+        TeacherMessageItem testExample1=new TeacherMessageItem("计162",
+                R.drawable.banji_img,"出勤率87%");
+        CounsellorDSItemList.add(testExample1);
+        TeacherMessageItem testExample2=new TeacherMessageItem("软工161",
+                R.drawable.banji_img,"出勤率97%");
+        CounsellorDSItemList.add(testExample2);
+        TeacherMessageItem testExample3=new TeacherMessageItem("软工162",
+                R.drawable.banji_img,"出勤率80%");
+        CounsellorDSItemList.add(testExample3);
     }
 }

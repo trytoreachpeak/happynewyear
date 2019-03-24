@@ -1,4 +1,4 @@
-package com.example.a.checkattendance.teacher;
+package com.example.a.checkattendance.counsellor;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -10,11 +10,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.a.checkattendance.R;
+import com.example.a.checkattendance.teacher.TeacherMessageAdapter;
+import com.example.a.checkattendance.teacher.TeacherMessageItem;
+import com.example.a.checkattendance.teacher.TeacherRealtimeClassroom;
+import com.example.a.checkattendance.teacher.TeacherRealtimeTotalAttendance;
 
 import java.util.List;
 
-public class TeacherDataAnalysisCCAdapter
-        extends RecyclerView.Adapter<TeacherDataAnalysisCCAdapter.ViewHolder>{
+public class CounsellorDSClassAdapter
+        extends RecyclerView.Adapter<CounsellorDSClassAdapter.ViewHolder>{
     private List<TeacherMessageItem> mTeacherMessageItem;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
@@ -33,25 +37,26 @@ public class TeacherDataAnalysisCCAdapter
             //teacher_message_name=(TextView)view.findViewById(R.id.teacher_message_name);
         }
     }
-    public TeacherDataAnalysisCCAdapter(List<TeacherMessageItem>teacherMessageItem){
+    public CounsellorDSClassAdapter (List<TeacherMessageItem>teacherMessageItem){
         mTeacherMessageItem=teacherMessageItem;
     }
-
+    public void changeDataSet(List<TeacherMessageItem> mTeacherMessageItem){
+        this.mTeacherMessageItem=mTeacherMessageItem;
+    }
     @NonNull
     @Override
-    public TeacherDataAnalysisCCAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CounsellorDSClassAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.teacher_message_item,parent,false);
-        final TeacherDataAnalysisCCAdapter.ViewHolder holder = new TeacherDataAnalysisCCAdapter.ViewHolder(view);
+        final CounsellorDSClassAdapter.ViewHolder holder = new CounsellorDSClassAdapter.ViewHolder(view);
         holder.messageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
-                TeacherMessageItem item = mTeacherMessageItem.get(position);
-                Intent intent;
-                intent= new Intent(v.getContext(),TeacherDataAnalysis.class);
-                intent.putExtra("whichCourse",position);
-                intent.putExtra("name",item.getMessageCategory());
+                TeacherMessageItem teacherMessageItem=mTeacherMessageItem.get(position);
+                TeacherRealtimeClassroom.initOutside();
+                Intent intent = new Intent(v.getContext(),TeacherRealtimeTotalAttendance.class);
+                intent.putExtra("title",teacherMessageItem.getMessageCategory());
                 v.getContext().startActivity(intent);
             }
         });
@@ -59,7 +64,7 @@ public class TeacherDataAnalysisCCAdapter
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TeacherDataAnalysisCCAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CounsellorDSClassAdapter.ViewHolder holder, int position) {
         TeacherMessageItem teacherMessageItem=mTeacherMessageItem.get(position);
         holder.teacher_message_left_img.setImageResource(teacherMessageItem.getMessageLeftImageId());
         holder.teacher_message_cat.setText(teacherMessageItem.getMessageCategory());

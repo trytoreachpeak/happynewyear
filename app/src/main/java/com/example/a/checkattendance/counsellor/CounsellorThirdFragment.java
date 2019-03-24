@@ -54,6 +54,9 @@ public class CounsellorThirdFragment extends Fragment implements View.OnClickLis
                 break;
             case R.id.person_info:
                 intent = new Intent(getActivity(), TeacherPersoninfo.class);
+                intent.putExtra("name","张恒");
+                intent.putExtra("num","138131061");
+                intent.putExtra("phone","17368690214");
                 startActivity(intent);
                 break;
             case R.id.settings:
@@ -64,10 +67,10 @@ public class CounsellorThirdFragment extends Fragment implements View.OnClickLis
                 intent = new Intent(getActivity(),TeacherFeedback.class);
                 startActivity(intent);
                 break;
-//            case R.id.classes:
-//                intent = new Intent(getActivity(),TeacherMyCourse.class);
-//                startActivity(intent);
-//                break;
+            case R.id.classes:
+                intent = new Intent(getActivity(),CounsellorMyClass.class);
+                startActivity(intent);
+                break;
             default:
                 break;
         }

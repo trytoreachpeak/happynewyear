@@ -1,5 +1,6 @@
 package com.example.a.checkattendance.counsellor;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -12,6 +13,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.AlphabetIndexer;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -57,6 +59,15 @@ public class CounsellorClassmateList extends AppCompatActivity {
 
         final MyAdapter adapter = new MyAdapter(this, list);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                User user = list.get(position);
+                Intent intent =new Intent(CounsellorClassmateList.this,CounsellorDAStudent.class);
+                intent.putExtra("name",user.getUsername());
+                startActivity(intent);
+            }
+        });
 
         TextView textView = (TextView) findViewById(R.id.show_letter_in_center);
         final LetterIndexView letterIndexView = (LetterIndexView) findViewById(R.id.letter_index_view);

@@ -11,11 +11,11 @@
         android:padding="1dp">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/portrait_icon"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
-            android:src="@mipmap/portrait4"
-            android:layout_marginLeft="13dp"
+            android:src="@mipmap/default_portrait_icon"
+            android:layout_marginLeft="21dp"
             />
         <LinearLayout
             android:layout_width="wrap_content"

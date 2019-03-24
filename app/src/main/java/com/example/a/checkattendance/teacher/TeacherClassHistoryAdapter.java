@@ -16,7 +16,10 @@ import java.util.List;
 public class TeacherClassHistoryAdapter
         extends RecyclerView.Adapter<TeacherMessageAdapter.ViewHolder>{
     private List<TeacherMessageItem> mTeacherMessageItem;
-
+    private String whichDay;
+    public void setWhichDay(String str){
+        whichDay = str;
+    }
     static class ViewHolder extends RecyclerView.ViewHolder{
         View messageView;
         ImageView teacher_message_left_img;
@@ -36,7 +39,9 @@ public class TeacherClassHistoryAdapter
     public TeacherClassHistoryAdapter(List<TeacherMessageItem>teacherMessageItem){
         mTeacherMessageItem=teacherMessageItem;
     }
-
+    public void changeDataSet(List<TeacherMessageItem> mTeacherMessageItem){
+        this.mTeacherMessageItem=mTeacherMessageItem;
+    }
     @NonNull
     @Override
     public TeacherMessageAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -48,8 +53,26 @@ public class TeacherClassHistoryAdapter
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
                 TeacherMessageItem teacherMessageItem=mTeacherMessageItem.get(position);
-                Intent intent = new Intent(v.getContext(),TeacherRealtimeClassroom.class);
-                v.getContext().startActivity(intent);
+//                Intent intent = new Intent(v.getContext(),TeacherRealtimeClassroom.class);
+//                v.getContext().startActivity(intent);
+                switch(teacherMessageItem.getMessageCategory()){
+                    case "操作系统":
+                        TeacherRealtimeClassroom.actionStart(v.getContext(), "操作系统",
+                                "已下课",whichDay+" 1-2节","2/2节");
+                        break;
+                    case "数据库原理":
+                        TeacherRealtimeClassroom.actionStart(v.getContext(), "数据库原理",
+                                "已下课",whichDay+" 3-5节","3/3节");
+                        break;
+                    case "数据结构":
+                        TeacherRealtimeClassroom.actionStart(v.getContext(), "数据结构",
+                                "已下课",whichDay+" 1-2节","2/2节");
+                        break;
+                    case "JAVA程序设计":
+                        TeacherRealtimeClassroom.actionStart(v.getContext(), "JAVA程序设计",
+                                "已下课",whichDay+" 6-8节","3/3节");
+                        break;
+                }
             }
         });
         return holder;

@@ -51,11 +51,17 @@ public class CounsellorFirstFragment extends Fragment implements View.OnClickLis
     }
     private void initCounsellorCCItem(){
         TeacherMessageItem testExample=new TeacherMessageItem("计161",
-                R.drawable.banji_img,"正在上课中:高等数学(一)");
+                R.drawable.banji_img,"正在上课中:操作系统");
         CounsellorCCItemList.add(testExample);
         TeacherMessageItem testExample1=new TeacherMessageItem("计162",
-                R.drawable.banji_img,"正在上课中:高等数学(一)");
+                R.drawable.banji_img,"正在上课中:操作系统");
         CounsellorCCItemList.add(testExample1);
+        TeacherMessageItem testExample2=new TeacherMessageItem("软工161",
+                R.drawable.banji_img,"未上课中");
+        CounsellorCCItemList.add(testExample2);
+        TeacherMessageItem testExample3=new TeacherMessageItem("软工162",
+                R.drawable.banji_img,"未上课中");
+        CounsellorCCItemList.add(testExample3);
     }
 
     @Override

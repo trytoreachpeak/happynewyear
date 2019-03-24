@@ -1,6 +1,8 @@
 package com.example.a.checkattendance.teacher;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -18,11 +20,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.a.checkattendance.HttpUtil;
+import com.example.a.checkattendance.Loading_view;
 import com.example.a.checkattendance.R;
 import com.example.a.checkattendance.gsonitem.GetSingleLessonCondtion;
 import com.example.a.checkattendance.gsonitem.ManagerGetAllStudentAttendance;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -54,10 +59,53 @@ public class TeacherRealtimeClassroom extends AppCompatActivity implements View.
     private Button check;
     private TextView totalNum;
     private TextView attendanceCondition;
+    private TextView title;
+    private TextView nowStatus;
+    private TextView time;
+    private TextView nowProgress;
+    private Button update;
+    private Loading_view loading;
+    public static void initOutside(){
+        firstlessonData= new ArrayList<>();
+        secondlessonData= new ArrayList<>();
+        initFakeData();
+    }
+    public static void actionStart(Context context, String title,String status,String time,String progress){
+        Intent intent = new Intent(context,TeacherRealtimeClassroom.class);
+        intent.putExtra("title",title);
+        intent.putExtra("status",status);
+        intent.putExtra("time",time);
+        intent.putExtra("progress",progress);
+        context.startActivity(intent);
+    }
+    public void loding(View v){//点击加载并按钮模仿网络请求
+        loading = new Loading_view(this,R.style.CustomDialog);
+        loading.show();
+        new Handler().postDelayed(new Runnable() {//定义延时任务模仿网络请求
+            @Override
+            public void run() {
+                loading.dismiss();//3秒后调用关闭加载的方法
+                Toast toast = Toast.makeText(TeacherRealtimeClassroom.this, null, Toast.LENGTH_SHORT);
+                toast.setText("更新成功");
+                toast.show();
+            }
+        }, 3000);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_realtime_classroom);
+
+        title=(TextView)findViewById(R.id.title);
+        nowStatus=(TextView)findViewById(R.id.now_status);
+        time=(TextView)findViewById(R.id.time);
+        nowProgress=(TextView)findViewById(R.id.now_progress);
+
+        Intent intent = getIntent();
+        title.setText(intent.getStringExtra("title"));
+        nowStatus.setText(intent.getStringExtra("status"));
+        time.setText(intent.getStringExtra("time"));
+        nowProgress.setText(intent.getStringExtra("progress"));
             firstlessonData= new ArrayList<>();
             secondlessonData= new ArrayList<>();
             firstparentData = new ArrayList<>();;
@@ -158,6 +206,8 @@ public class TeacherRealtimeClassroom extends AppCompatActivity implements View.
 
         check =(Button)findViewById(R.id.check);
         check.setOnClickListener(this);
+        update = (Button)findViewById(R.id.update);
+        update.setOnClickListener(this);
     }
 
     @Override
@@ -166,10 +216,17 @@ public class TeacherRealtimeClassroom extends AppCompatActivity implements View.
             case R.id.check:
                 Intent intent = new Intent(TeacherRealtimeClassroom.this,
                         TeacherRealtimeTotalAttendance.class);
+                intent.putExtra("title","操作系统");
                 //Bundle args = new Bundle();
                 //args.putSerializable("ARRAYLIST",(Serializable)firstchildData);
                 //intent.putExtra("BUNDLE",args);
                 startActivity(intent);
+                break;
+            case R.id.update:
+                loding(v);
+                break;
+            default:
+                break;
         }
     }
     private void initbasicData(){
@@ -336,7 +393,7 @@ public class TeacherRealtimeClassroom extends AppCompatActivity implements View.
         }
 
     }
-    private void initFakeData(){
+    public static void initFakeData(){
         GetSingleLessonCondtion.Data data1 =new GetSingleLessonCondtion.Data();
         data1.setStudentname("杨玥");
         data1.setStudentid("1001");
@@ -386,8 +443,8 @@ public class TeacherRealtimeClassroom extends AppCompatActivity implements View.
         data4.setIslazy(0);
         firstlessonData.add(data4);
         GetSingleLessonCondtion.Data data5 =new GetSingleLessonCondtion.Data();
-        data5.setStudentname("菜鸡邵正宇");
-        data5.setStudentid("250");
+        data5.setStudentname("邵正宇");
+        data5.setStudentid("1005");
         data5.setStudentclass("计162");
         data5.setSstate(4);
         data5.setSseriousnum(0);
@@ -446,8 +503,8 @@ public class TeacherRealtimeClassroom extends AppCompatActivity implements View.
         data9.setIslazy(0);
         secondlessonData.add(data9);
         GetSingleLessonCondtion.Data data10 =new GetSingleLessonCondtion.Data();
-        data10.setStudentname("菜鸡邵正宇");
-        data10.setStudentid("250");
+        data10.setStudentname("邵正宇");
+        data10.setStudentid("1005");
         data10.setStudentclass("计162");
         data10.setSstate(0);
         data10.setSseriousnum(150);

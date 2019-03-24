@@ -73,7 +73,9 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
         banner.setOnBannerListener(new OnBannerListener() {
             @Override
             public void OnBannerClick(int position) {
-                Toast.makeText(getActivity(), "position"+position, Toast.LENGTH_SHORT).show();
+                Toast toast = Toast.makeText(getContext(), null, Toast.LENGTH_SHORT);
+                toast.setText("还没有广告");
+                toast.show();
             }
         });
 
@@ -101,8 +103,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
                 toast.show();
                 break;
             case R.id.now_class:
-                intent = new Intent(getActivity(),TeacherRealtimeClassroom.class);
-                startActivity(intent);
+                TeacherRealtimeClassroom.actionStart(getContext(),"操作系统","正在上课", "2019-03-25 1-2节","2/2节");
                 break;
             case R.id.class_histroy:
                 intent = new Intent(getActivity(),TeacherClassHistory.class);
