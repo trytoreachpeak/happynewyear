@@ -31,7 +31,7 @@ import java.util.List;
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Zuoye zuoye=zuoyeList.get(position);
-                    Intent intent=new Intent(getActivity(),StudentMobanActivity.class);
+                    Intent intent=new Intent(getActivity(),StudentHomeworkActivity.class);
                     startActivity(intent);
                 }
             });

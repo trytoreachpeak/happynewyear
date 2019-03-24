@@ -115,7 +115,7 @@
                     android:id="@+id/first_linearlayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:orientation="vertical">
                     <com.github.mikephil.charting.charts.BarChart
                         android:id="@+id/mBarChart1"
@@ -194,11 +194,11 @@
                                 android:weightSum="3">
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:gravity="center_vertical"
-                                    android:text="" />
+                                    android:text="班级总体状态不错！" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -222,11 +222,11 @@
                                 android:weightSum="3">
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center_vertical"
-                                    android:text="" />
+                                    android:layout_marginLeft="20dp"
+
+                                    android:text="再接再厉！" />
                             </LinearLayout>
 
                         </LinearLayout>
@@ -350,11 +350,11 @@
                                 android:weightSum="3">
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:gravity="center_vertical"
-                                    android:text="" />
+                                    android:text="班级总体上课状态状态不错！" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -378,11 +378,10 @@
                                 android:weightSum="3">
 
                                 <TextView
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center_vertical"
-                                    android:text="" />
+                                    android:layout_marginLeft="20dp"
+                                    android:text="再接再厉！" />
                             </LinearLayout>
 
                         </LinearLayout>

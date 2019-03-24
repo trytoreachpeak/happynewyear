@@ -51,11 +51,11 @@ public class AdminClassStatisticsActivity extends BaseActivity implements View.O
     private BarChart mbarChart1;
     private BarChart mbarChart2;
     private BarChart mbarChart3;
-    private String[] xValues1 = {"高等数学(一)", "英语(二)", "数据结构", "JAVA编程设计", "海淀区"};
+    private String[] xValues1 = {"数据库原理", "操作系统", "数据结构", "JAVA编程设计", "海淀区"};
     private String[] yValues1 = {"91"};
-    private String[] xValues2 = {"高等数学(一)", "英语(二)", "数据结构", "JAVA编程设计", "海淀区"};
+    private String[] xValues2 = {"数据库原理", "操作系统", "数据结构", "JAVA编程设计", "海淀区"};
     private String[] yValues2 = {"91"};
-    private String[] xValues3 = {"高等数学(一)", "英语(二)", "数据结构", "JAVA编程设计", "海淀区"};
+    private String[] xValues3 = {"数据库原理", "操作系统", "数据结构", "JAVA编程设计", "海淀区"};
     private String[] yValues3 = {"91"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {

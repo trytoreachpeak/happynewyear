@@ -59,9 +59,9 @@ public class AdminAnalysisActivity extends BaseActivity implements View.OnClickL
 
     private void initclasses(){
         for (int i=0;i<1;i++) {
-            Teacher teacher1=new Teacher ("高等数学(一)","95%",R.drawable.kecheng);
+            Teacher teacher1=new Teacher ("数据库原理","95%",R.drawable.kecheng);
             teacherList.add(teacher1);
-            Teacher teacher2=new Teacher ("英语(二)","92.2%",R.drawable.kecheng);
+            Teacher teacher2=new Teacher ("操作系统","92.2%",R.drawable.kecheng);
             teacherList.add(teacher2);
             Teacher teacher3=new Teacher ("数据结构","90%",R.drawable.kecheng);
             teacherList.add(teacher3);

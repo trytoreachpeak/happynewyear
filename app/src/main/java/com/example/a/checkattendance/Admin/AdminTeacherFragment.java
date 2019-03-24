@@ -11,7 +11,7 @@ import android.widget.ListView;
 import com.example.a.checkattendance.R;
 
 public class AdminTeacherFragment extends Fragment implements View.OnClickListener {
-    private String[] data = {"林梅", "韩天", "吴林", "李刚", "何敏", "蔡茂", "赵敏", "钱东", "孙鑫", "李伟"};
+    private String[] data = {"秦高", "苗丽丽", "华含", "谢红", "何丽",  "钱强"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

@@ -46,14 +46,6 @@
             android:weightSum="1080"
             android:layout_height="0dp">
 
-            <SearchView
-                android:layout_width="match_parent"
-                android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_height="match_parent"
-                android:background="#ededed"
-                android:layout_weight="4">
-            </SearchView>
         </LinearLayout>
     </LinearLayout>
     
@@ -68,14 +60,13 @@
             android:layout_height="match_parent"
             android:layout_weight="400"
             android:text="考试班级:"
-            android:textStyle="bold"
-            android:textSize="25dp"
+            android:textSize="22dp"
             android:gravity="center"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="物联网181"
-            android:textSize="22dp"
+            android:textSize="20dp"
             android:gravity="center_vertical"
             android:layout_weight="500"/>
     </LinearLayout>
@@ -89,14 +80,13 @@
             android:layout_height="match_parent"
             android:layout_weight="400"
             android:text="考试科目:"
-            android:textStyle="bold"
-            android:textSize="25dp"
+            android:textSize="22dp"
             android:gravity="center"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="高等数学A（一）"
-            android:textSize="22dp"
+            android:textSize="20dp"
             android:gravity="center_vertical"
             android:layout_weight="500"/>
     </LinearLayout>
@@ -110,14 +100,13 @@
             android:layout_height="match_parent"
             android:layout_weight="400"
             android:text="考试时间:"
-            android:textStyle="bold"
-            android:textSize="25dp"
+            android:textSize="22dp"
             android:gravity="center"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="2019-01-09 10:30-12:00"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:gravity="center_vertical"
             android:layout_weight="600"/>
     </LinearLayout>
@@ -131,14 +120,13 @@
             android:layout_height="match_parent"
             android:layout_weight="400"
             android:text="考试教室:"
-            android:textStyle="bold"
-            android:textSize="25dp"
+            android:textSize="22dp"
             android:gravity="center"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="8号楼301"
-            android:textSize="22dp"
+            android:textSize="20dp"
             android:gravity="center_vertical"
             android:layout_weight="500"/>
     </LinearLayout>
@@ -173,8 +161,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="400"
                     android:gravity="center"
-                    android:textSize="27dp"
-                    android:textStyle="bold"
+                    android:textSize="25dp"
                     android:layout_height="match_parent"
                     android:text="考试情况"/>
             </LinearLayout>

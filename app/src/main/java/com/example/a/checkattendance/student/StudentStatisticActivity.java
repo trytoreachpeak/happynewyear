@@ -8,12 +8,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.a.checkattendance.BaseActivity;
 import com.example.a.checkattendance.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentStatisticActivity extends AppCompatActivity {
+public class StudentStatisticActivity extends BaseActivity {
     private List<Class> classList=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {

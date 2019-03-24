@@ -45,13 +45,13 @@ public class AdminClassAnalysisActivity extends BaseActivity implements View.OnC
     private BarChart mbarChart2;
     private BarChart mbarChart3;
     private BarChart mbarChart4;
-    private String[] xValues1 = {"软嵌172", "英语(二)", "数据结构", "JAVA编程设计", "海淀区"};
+    private String[] xValues1 = {"软嵌161", "计161", "物联网161", "网工161", "海淀区"};
     private String[] yValues1 = {"91"};
-    private String[] xValues2 = {"高等数学(一)", "英语(二)", "数据结构", "JAVA编程设计", "海淀区"};
+    private String[] xValues2 = {"软嵌161", "计161", "物联网161", "网工161", "海淀区"};
     private String[] yValues2 = {"91"};
-    private String[] xValues3 = {"高等数学(一)", "英语(二)", "数据结构", "JAVA编程设计", "海淀区"};
+    private String[] xValues3 = {"软嵌161", "计161", "物联网161", "网工161", "海淀区"};
     private String[] yValues3 = {"91"};
-    private String[] xValues4 = {"高等数学(一)", "英语(二)", "数据结构", "JAVA编程设计", "海淀区"};
+    private String[] xValues4 = {"软嵌161", "计161", "物联网161", "网工161", "海淀区"};
     private String[] yValues4 = {"91"};
 
 

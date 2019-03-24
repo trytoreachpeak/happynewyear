@@ -54,6 +54,8 @@ public class AdminStatisticsActivity extends BaseActivity implements View.OnClic
             }
         });
 
+
+
         ep = (ExpandableListView)findViewById(R.id.expandableListView1);
 
         init();
@@ -74,12 +76,12 @@ public class AdminStatisticsActivity extends BaseActivity implements View.OnClic
         cList3 = new ArrayList<ChildInfo>();
         cList4 = new ArrayList<ChildInfo>();
 
-        cList1.add(new ChildInfo("软嵌171", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
-        cList1.add(new ChildInfo("计171", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
-        cList1.add(new ChildInfo("物联网171", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
-        cList1.add(new ChildInfo("网络工程171", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
-        cList1.add(new ChildInfo("计嵌171", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
-        cList1.add(new ChildInfo("软工171", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList2.add(new ChildInfo("软嵌161", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList2.add(new ChildInfo("计161", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList2.add(new ChildInfo("物联网161", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList2.add(new ChildInfo("网络工程161", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList2.add(new ChildInfo("计嵌161", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
+        cList2.add(new ChildInfo("软工161", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
 
         cList3.add(new ChildInfo("软嵌171", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
         cList3.add(new ChildInfo("计171", BitmapFactory.decodeResource(getResources(), R.mipmap.admin_class)));
@@ -102,7 +104,6 @@ public class AdminStatisticsActivity extends BaseActivity implements View.OnClic
         ep.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
             @Override
             public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
-                Toast.makeText(getApplicationContext(), groupList.get(groupPosition).getName(), Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
@@ -113,8 +114,6 @@ public class AdminStatisticsActivity extends BaseActivity implements View.OnClic
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 
-                Toast.makeText(getApplicationContext(), groupList.get(groupPosition).getName(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(getApplicationContext(), "当前点击的是："+groupList.get(groupPosition).getName()+"的"+childList.get(groupPosition).get(childPosition).getChildName(), Toast.LENGTH_SHORT).show();
 
                 String data=childList.get(groupPosition).get(childPosition).getChildName();
                 Intent intent = new Intent(AdminStatisticsActivity.this, AdminClassStatisticsActivity.class);

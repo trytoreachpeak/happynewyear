@@ -102,7 +102,15 @@
         <activity android:name=".teacher.TeacherDataAnalysisChooseClass" />
         <activity android:name=".student.StudentStatisticActivity" />
         <activity android:name=".student.StudentPersonalStatisticActivity" />
-        <activity android:name=".student.StudentChartActivity"></activity>
+        <activity android:name=".student.StudentChartActivity" />
+        <activity android:name=".Admin.AdminTimetableActivity" />
+        <activity android:name=".student.StudentTimetablleActivity" />
+        <activity android:name=".student.StudentHomeworkActivity" />
+        <activity android:name=".Admin.AdminScoreActivity" />
+        <activity android:name=".Admin.AdminMemberScoreActivity" />
+        <activity android:name=".Admin.AdminPersonalScoreActivity" />
+        <activity android:name=".Admin.AdminSettingsActivity" />
+        <activity android:name=".Admin.AdminInformationActivity"></activity>
     </application>
 
 </manifest>
