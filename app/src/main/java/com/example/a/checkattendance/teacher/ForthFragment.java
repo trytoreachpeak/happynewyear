@@ -55,6 +55,9 @@ public class ForthFragment extends Fragment implements View.OnClickListener{
                 break;
             case R.id.person_info:
                 intent = new Intent(getActivity(), TeacherPersoninfo.class);
+                intent.putExtra("name","小刚");
+                intent.putExtra("num","1013013051");
+                intent.putExtra("phone","18816265129");
                 startActivity(intent);
                 break;
             case R.id.settings:

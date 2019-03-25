@@ -108,19 +108,20 @@ public class TeacherRealtimeClassroom extends AppCompatActivity implements View.
         nowStatus.setText(intent.getStringExtra("status"));
         time.setText(intent.getStringExtra("time"));
         nowProgress.setText(intent.getStringExtra("progress"));
-            firstlessonData= new ArrayList<>();
-            secondlessonData= new ArrayList<>();
-            firstparentData = new ArrayList<>();;
-            firstchildData = new ArrayList<>();
-            secondparentData = new ArrayList<>();
-            secondchildData = new ArrayList<>();
-            mergedparentData = new ArrayList<>();
-            mergedchildData = new ArrayList<>();
-            initFakeData();
-            initbasicData();
-            initFirstLessonData();
-            initSecondLessonData();
-            initMergedData();
+        firstlessonData= new ArrayList<>();
+        secondlessonData= new ArrayList<>();
+        firstparentData = new ArrayList<>();;
+        firstchildData = new ArrayList<>();
+        secondparentData = new ArrayList<>();
+        secondchildData = new ArrayList<>();
+        mergedparentData = new ArrayList<>();
+        mergedchildData = new ArrayList<>();
+//            initFakeData();
+        initRealData();
+        initbasicData();
+        initFirstLessonData();
+        initSecondLessonData();
+        initMergedData();
 
         totalNum= (TextView)findViewById(R.id.total_num);
         attendanceCondition=(TextView)findViewById(R.id.attendance_condition);
@@ -527,7 +528,29 @@ public class TeacherRealtimeClassroom extends AppCompatActivity implements View.
                                 java.lang.reflect.Type type = new TypeToken<GetSingleLessonCondtion>() {
                                 }.getType();
                                 final GetSingleLessonCondtion condition = gson.fromJson(response.body().string(), type);
+                                for(GetSingleLessonCondtion.Data data:condition.getData()){
+                                    firstlessonData.add(data);
+                                }
                                 //解析json
+                            }
+                            @Override
+                            public void onFailure(Call call, IOException e) {
+                                serverConnectFail();
+                            }
+                        });
+        HttpUtil.sendLoginRequest
+                ("http://203.195.156.24:7000/api/v1/teachers/studentssign/",
+                        HttpUtil.createSingleClassConditionJson("2019-03-23", 10, "002"), new okhttp3.Callback() {
+                            @Override
+                            public void onResponse(Call call, Response response) throws IOException {
+                                Gson gson = new Gson();
+                                java.lang.reflect.Type type = new TypeToken<GetSingleLessonCondtion>() {
+                                }.getType();
+                                final GetSingleLessonCondtion condition = gson.fromJson(response.body().string(), type);
+                                //解析json
+                                for(GetSingleLessonCondtion.Data data:condition.getData()){
+                                    secondlessonData.add(data);
+                                }
                             }
                             @Override
                             public void onFailure(Call call, IOException e) {
