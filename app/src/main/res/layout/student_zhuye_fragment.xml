@@ -73,7 +73,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:text="计算机"
+                                android:text="操作系统"
                                 android:textColor="#4f4f4f"
                                 android:textSize="19sp" />
                         </LinearLayout>
@@ -123,7 +123,7 @@
                                 android:layout_marginLeft="30dp"
                                 android:gravity="left"
                                 android:textColor="#4f4f4f"
-                                android:text="物联网"/>
+                                android:text="计161 计162"/>
                         </LinearLayout>
                         <LinearLayout
                             android:orientation="horizontal"
@@ -145,7 +145,7 @@
                                 android:gravity="left"
                                 android:textColor="#4f4f4f"
                                 android:textSize="16.5sp"
-                                android:text="5#401"/>
+                                android:text="JX02-302"/>
                         </LinearLayout>
                         <LinearLayout
                             android:orientation="horizontal"
@@ -158,7 +158,7 @@
                                 android:layout_height="wrap_content"
                                 android:textSize="16.5sp"
                                 android:textColor="#4f4f4f"
-                                android:text=" 出 勤 率 "/>
+                                android:text="  出  勤    "/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -167,7 +167,7 @@
                                 android:gravity="left"
                                 android:textColor="#4f4f4f"
                                 android:textSize="16.5sp"
-                                android:text="95.65%"/>
+                                android:text="出勤"/>
                         </LinearLayout>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -205,7 +205,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:text="计算机"
+                                android:text="数据库原理"
                                 android:textColor="#4f4f4f"
                                 android:textSize="19sp" />
                         </LinearLayout>
@@ -233,7 +233,7 @@
                                 android:layout_marginLeft="30dp"
                                 android:gravity="left"
                                 android:textColor="#4f4f4f"
-                                android:text="2019/2/25 1-2节"/>
+                                android:text="2019/2/25 3-5节"/>
                         </LinearLayout>
                         <LinearLayout
                             android:orientation="horizontal"
@@ -255,7 +255,7 @@
                                 android:layout_marginLeft="30dp"
                                 android:gravity="left"
                                 android:textColor="#4f4f4f"
-                                android:text="物联网"/>
+                                android:text="计161 计162"/>
                         </LinearLayout>
                         <LinearLayout
                             android:orientation="horizontal"
@@ -277,7 +277,7 @@
                                 android:gravity="left"
                                 android:textColor="#4f4f4f"
                                 android:textSize="16.5sp"
-                                android:text="5#401"/>
+                                android:text="JX08-514"/>
                         </LinearLayout>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
