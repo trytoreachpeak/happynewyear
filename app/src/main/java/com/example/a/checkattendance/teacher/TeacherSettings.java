@@ -57,6 +57,9 @@ public class TeacherSettings extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()){
             case R.id.person_info:
                 intent = new Intent(this, TeacherPersoninfo.class);
+                intent.putExtra("name","小刚");
+                intent.putExtra("num","1013013051");
+                intent.putExtra("phone","18816265129");
                 startActivity(intent);
                 break;
             case R.id.modify_password:

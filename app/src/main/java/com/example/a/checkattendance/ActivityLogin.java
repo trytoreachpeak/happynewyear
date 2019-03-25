@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +25,7 @@ import com.example.a.checkattendance.gsonitem.LoginStudent;
 import com.example.a.checkattendance.gsonitem.LoginTeacher;
 import com.example.a.checkattendance.student.StudentHomepageActivity;
 import com.example.a.checkattendance.teacher.HomepageOfTeacher;
+import com.example.a.checkattendance.teacher.TeacherRealtimeClassroom;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -35,6 +37,7 @@ import okhttp3.Response;
 public class ActivityLogin extends AppCompatActivity implements View.OnClickListener{
     String[] str = {"学生端", "教师端", "辅导员端", "管理端"};
     private Spinner spinner;
+    private Loading_view loading;
     private EditText accountText;
     private EditText passwordText;
     private Button loginButton;
@@ -122,7 +125,7 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(final View v) {
         Intent intent;
         switch(v.getId()) {
             case R.id.login_button:
@@ -294,7 +297,16 @@ public class ActivityLogin extends AppCompatActivity implements View.OnClickList
     private void getLoginChoice(String str){
         loginChoice = str;
     }
-
+    public void loding(View v){//点击加载并按钮模仿网络请求
+        loading = new Loading_view(this,R.style.CustomDialog);
+        loading.show();
+        new Handler().postDelayed(new Runnable() {//定义延时任务模仿网络请求
+            @Override
+            public void run() {
+                loading.dismiss();//3秒后调用关闭加载的方法
+            }
+        }, 3000);
+    }
     private int judegeContentIsNull(){
         if(loginAccount.equals("")||loginChoice.equals("")){
             Toast toast = Toast.makeText(this,null,Toast.LENGTH_SHORT);
