@@ -49,7 +49,7 @@
                 android:layout_weight="290"
                 android:gravity="center"
                 android:layout_height="20dp"
-                android:text="选择时间范围"/>
+                android:text="2019-3-11"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="50"
@@ -63,7 +63,7 @@
                 android:layout_weight="290"
                 android:gravity="center"
                 android:layout_height="20dp"
-                android:text="选择时间范围"/>
+                android:text="2019-3-23"/>
         </LinearLayout>
     </LinearLayout>
 

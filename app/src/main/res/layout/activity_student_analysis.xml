@@ -45,6 +45,7 @@
             android:layout_weight="340"/>
 
         <ImageView
+            android:id="@+id/chuqin"
             android:layout_width="0dp"
             android:layout_weight="214"
             android:layout_height="match_parent"
@@ -104,6 +105,7 @@
             android:layout_height="match_parent"
             android:layout_weight="9"/>
         <ImageView
+            android:id="@+id/high"
             android:layout_width="0dp"
             android:layout_weight="214"
             android:layout_height="match_parent"

@@ -9,6 +9,7 @@ import android.text.SpannableString;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.a.checkattendance.Admin.AdminClassAnalysisActivity;
 import com.example.a.checkattendance.Admin.AdminPersonAnalysisActivity;
@@ -37,6 +38,12 @@ public class StudentAnalysisActivity extends BaseActivity implements OnChartValu
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_analysis);
+
+        ImageView i_chuqin=(ImageView)findViewById(R.id.chuqin);
+        ImageView i_high=(ImageView)findViewById(R.id.high);
+
+        i_chuqin.setImageResource(R.mipmap.student_chuqin_on);
+        i_high.setImageResource(R.mipmap.student_high_on);
 
 
         initView1(mPiechart1);

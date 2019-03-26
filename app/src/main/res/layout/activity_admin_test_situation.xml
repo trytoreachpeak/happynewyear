@@ -131,6 +131,7 @@
             android:layout_weight="500"/>
     </LinearLayout>
     <android.support.v7.widget.CardView
+        android:layout_marginTop="5mm"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="800"
@@ -145,12 +146,11 @@
             android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:weightSum="1000"
-                android:layout_weight="150">
+                android:layout_height="wrap_content"
+                android:weightSum="1000">
                 <ImageView
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="300"/>
                 <ImageView
                     android:layout_width="0dp"
@@ -162,10 +162,47 @@
                     android:layout_weight="400"
                     android:gravity="center"
                     android:textSize="25dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="考试情况"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="22sp"
+                    android:text="疑似作弊："/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:textSize="17sp"
+                    android:text="何俊男 11：26 疑似作弊"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="查看"
+                    android:layout_marginLeft="40dp"
+                    android:textSize="17sp"
+                    android:textColor="#66cc99"/>
             </LinearLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:text="查看显示图片"
+                android:textSize="18sp"
+                android:textColor="#ff0000"/>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 

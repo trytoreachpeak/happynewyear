@@ -16,8 +16,9 @@ public class CounsellorExamroomConditionDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_counsellor_examroom_condition_detail);
         Intent intent = getIntent();
-        String className = intent.getStringExtra("className");
+        String className = intent.getStringExtra("classroomName");
         TextView title = (TextView)findViewById(R.id.title);
+        title.setText(className);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //toolbar.setTitle("");
         setSupportActionBar(toolbar);
@@ -29,5 +30,6 @@ public class CounsellorExamroomConditionDetail extends AppCompatActivity {
                 finish();
             }
         });
+
     }
 }

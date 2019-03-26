@@ -14,6 +14,7 @@
         app:navigationIcon="@mipmap/ic_back">
         <!--app:navigationIcon="@mipmap/ic_back"-->
         <TextView
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -176,13 +177,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="xxx 几分几秒 疑似作弊"
+                        android:text=" 何俊男  11：26  疑似作弊"
                         android:textSize="17sp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="查看"
-                        android:layout_marginLeft="70dp"
+                        android:layout_marginLeft="50dp"
                         android:textSize="17sp"
                         android:textColor="#66cc99"/>
                 </LinearLayout>
